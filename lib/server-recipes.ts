@@ -1,7 +1,7 @@
 // Server-only utilities - can only be used in Server Components and API routes
 import { promises as fs } from 'fs'
 import path from 'path'
-import { Recipe, Ingredient } from './types'
+import { Recipe } from './types'
 
 const RECIPES_DIR = path.join(process.cwd(), 'data', 'recipes')
 

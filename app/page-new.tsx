@@ -1,4 +1,3 @@
-import { Recipe } from '@/lib/types'
 import { getAllRecipes } from '@/lib/recipes'
 import { RecipeCard } from '@/components/recipe-card'
 import { SearchBar } from '@/components/search-bar'
