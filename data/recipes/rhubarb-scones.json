@@ -1,0 +1,80 @@
+{
+  "slug": "rhubarb-scones",
+  "title": "Rhubarb Scones",
+  "description": "Delicious rhubarb scones recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1-1/4 cups whole wheat pastry flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1-1/4 cups all-purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tablespoon baking powder"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon ground cardamom"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 teaspoon salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup cold unsalted butter, cubed"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1-1/2 cups finely chopped fresh or frozen rhubarb, thawed (3-4 stalks)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup heavy whipping cream"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 cup fat-free milk"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon vanilla extract"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Coarse sugar"
+    }
+  ],
+  "instructions": [
+    "Preheat oven to 400°. In a large bowl, whisk the first 6 ingredients. Cut in butter until mixture resembles coarse crumbs. Add rhubarb; toss to coat.",
+    "In another bowl, whisk cream, milk and vanilla; stir into crumb mixture just until moistened.",
+    "Turn onto a floured surface; knead gently 4-5 times. Divide dough in half; pat into two 6-in. circles. Cut each into 8 wedges. Place wedges on parchment-lined baking sheets; sprinkle with coarse sugar. Bake 18-22 minutes or until golden brown. Serve warm.",
+    "Rhubarb",
+    "If using frozen rhubarb, measure rhubarb while still frozen, then thaw completely. Drain in a colander, but do not press liquid out."
+  ],
+  "tags": [
+    "rhubarb"
+  ],
+  "yield": "16 scones.",
+  "prepTime": "30 min",
+  "cookTime": "20 min"
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "instant-pot-quick-and-easy-spaghetti-sauce",
+  "title": "Instant Pot® Quick and Easy Spaghetti Sauce",
+  "description": "Delicious instant pot® quick and easy spaghetti sauce recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 tablespoons olive oil"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 yellow onions, chopped"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 cloves garlic, minced"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 carrot, chopped"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 celery stalk, chopped"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 pounds plum tomatoes"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon dried oregano"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon Italian seasoning"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon sea salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon dried basil"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon ground black pepper"
+    }
+  ],
+  "instructions": [
+    "Turn on a multi-functional pressure cooker (such as Instant Pot®) and select Saute function. Heat olive oil and stir in onions and garlic; cook until soft and translucent, about 5 minutes. Add carrot, celery, and tomatoes; cook until tender, about 4 minutes. Season with oregano, Italian seasoning, salt, basil, and pepper. Close and lock the lid. Select high pressure according to manufacturer's instructions; set timer for 25 minutes. Allow 10 to 15 minutes for pressure to build.",
+    "Release pressure using the natural-release method according to manufacturer's instructions, 10 to 40 minutes. Unlock and remove the lid. Blend with an immersion blender to desired consistency."
+  ],
+  "tags": [
+    "pasta",
+    "instant-pot",
+    "quick"
+  ],
+  "yield": "6",
+  "image": "/images/recipes/instant-pot-quick-and-easy-spaghetti-sauce.jpg",
+  "prepTime": "10 mins",
+  "cookTime": "45 mins"
+}

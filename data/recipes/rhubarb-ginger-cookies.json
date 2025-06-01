@@ -1,0 +1,81 @@
+{
+  "slug": "rhubarb-ginger-cookies",
+  "title": "Rhubarb Ginger Cookies",
+  "description": "Delicious rhubarb ginger cookies recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 ¾ cups all-purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ cup finely chopped crystallized ginger"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon ground ginger"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon baking powder"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon baking soda"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "¼ teaspoon ground nutmeg"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ cup unsalted butter, softened"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup brown sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 large egg, at room temperature"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 ½ teaspoons vanilla extract"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 ½ cups finely chopped rhubarb"
+    }
+  ],
+  "instructions": [
+    "Preheat the oven to 350 degrees F (175 degrees C). Line 2 baking sheets with parchment paper.",
+    "Whisk together flour, crystallized ginger, ground ginger, baking powder, baking soda, salt, and nutmeg in a bowl until well combined.",
+    "Cream together butter and brown sugar in a large bowl with an electric blender until light and fluffy. Add in egg and vanilla extract, beating until thoroughly combined. Add in half of the flour mixture, and mix until just combined. Pour in remaining flour mixture and mix until just combined. Fold in rhubarb.",
+    "Scoop out 1 1/2 tablespoon-sized balls of dough and place them on the prepared baking sheet 1 1/2 inches apart.",
+    "Bake in the preheated oven until cookies are set and golden, 12 to 15 minutes. Allow to cool on the baking sheets 5 minutes before transferring to a wire rack to cool completely."
+  ],
+  "tags": [
+    "dessert",
+    "rhubarb"
+  ],
+  "yield": "25",
+  "prepTime": "20 mins",
+  "cookTime": "15 mins"
+}

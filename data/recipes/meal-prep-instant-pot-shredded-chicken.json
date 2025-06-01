@@ -1,0 +1,53 @@
+{
+  "slug": "meal-prep-instant-pot-shredded-chicken",
+  "title": "Meal Prep Instant Pot Shredded Chicken",
+  "description": "Delicious meal prep instant pot shredded chicken recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 pounds boneless, skinless chicken thighs"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 teaspoons garlic salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 teaspoons sweet paprika"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon onion powder"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Kosher salt and freshly ground black pepper"
+    }
+  ],
+  "instructions": [
+    "Toss the chicken with the garlic salt, paprika, onion powder, 1/4 teaspoon salt and a few grinds of pepper until evenly coated.",
+    "Place a rack in the bottom of a 6- or 8-quart Instant Pot® and add 1 cup of water. Put the chicken on the rack. Follow the manufacturer's guide for locking the lid and preparing to cook. Set to pressure cook on high for 7 minutes (see Cook's Note). After the pressure-cook cycle is complete, follow the manufacturer's guide for quick release and wait until the quick-release cycle is complete. Being careful of any remaining steam, unlock and remove the lid. Transfer the chicken to a large bowl and shred with two forks, reserving liquid in the pot. Remove the rack.",
+    "Set the pot to saute on high and bring the remaining liquid to a boil. Let cook (uncovered) until reduced back to 1 cup, about 5 minutes. Pour the liquid over the shredded chicken and toss to combine.",
+    "The chicken will keep up to 4 days. Let cool completely before refrigerating.",
+    "BBQ Chicken Sandwiches: Toss the cooked chicken with your favorite BBQ sauce and serve as sandwiches topped with store-bought coleslaw.",
+    "Chicken Tacos: Stir jarred salsa into the cooked chicken and serve in softened corn or flour tortillas with your favorite toppings.",
+    "Pizza Pockets: Spoon jarred pizza sauce over pizza dough and top with the cooked chicken, pepperoni and shredded mozzarella before baking.",
+    "Teriyaki Bowls: Mix the cooked chicken with teriyaki sauce and serve on top of rice with a side of steamed broccoli."
+  ],
+  "tags": [
+    "chicken",
+    "dessert",
+    "rice",
+    "instant-pot",
+    "quick"
+  ],
+  "yield": "About 3 cups",
+  "image": "/images/recipes/meal-prep-instant-pot-shredded-chicken.jpg",
+  "prepTime": "15 min",
+  "cookTime": "45 min"
+}

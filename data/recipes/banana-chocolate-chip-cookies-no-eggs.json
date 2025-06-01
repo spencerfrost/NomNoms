@@ -1,0 +1,78 @@
+{
+  "slug": "banana-chocolate-chip-cookies-no-eggs",
+  "title": "Banana Chocolate Chip Cookies (No Eggs)",
+  "description": "Delicious banana chocolate chip cookies (no eggs) recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup butter, softened to room temperature"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup brown sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 cup sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 over-ripe bananas, mashed"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 tsp vanilla extract"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 cups all purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 Tbsp cornstarch"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tsp baking soda"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 tsp baking powder"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 tsp salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 cups chocolate chips"
+    }
+  ],
+  "instructions": [
+    "Preheat oven to 375 degrees.",
+    "In a large mixing bowl, beat the butter, brown sugar, and sugar until light and fluffy. Beat in mashed bananas and vanilla.",
+    "Whisk together flour, cornstarch, baking soda, baking powder, and salt in a small mixing bowl. Add to the wet ingredients and stir till just combined. Fold in the chocolate chips.",
+    "Drop by spoonfuls onto silpat lined or lightly greased cookie sheets.",
+    "Bake at 375° for 9-10 minutes or till lightly golden brown around the edges. Cool for 3-5 minutes on the cookie sheet, then remove to cooling racks."
+  ],
+  "tags": [
+    "dessert",
+    "banana",
+    "chocolate"
+  ],
+  "yield": "Yield: 2 1/2 dozen",
+  "image": "/images/recipes/banana-chocolate-chip-cookies-no-eggs.jpg",
+  "prepTime": "10 minutes",
+  "cookTime": "10 minutes"
+}

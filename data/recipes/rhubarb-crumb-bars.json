@@ -1,0 +1,96 @@
+{
+  "slug": "rhubarb-crumb-bars",
+  "title": "Rhubarb Crumb Bars",
+  "description": "Delicious rhubarb crumb bars recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "For the Streusel:"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "6 tablespoons unsalted butter, melted, plus room-temperature butter for pan"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup all-purpose flour (spooned and leveled), plus more for pan"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ cup packed light-brown sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "¼ teaspoon salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "For the Cake:"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ pound rhubarb, cut into ½-inch pieces"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tablespoon light-brown sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup all-purpose flour (spooned and leveled)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon baking powder"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "¼ teaspoon salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ cup (1 stick) unsalted butter, room temperature"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup confectioners' sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 large eggs"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon pure vanilla extract"
+    }
+  ],
+  "instructions": [
+    "Preheat oven to 350 degrees. Butter an 8-inch square baking pan. Line with parchment paper, leaving a 2-inch overhang on two sides. Butter and flour parchment and pan, tapping out excess flour.",
+    "Make streusel: Whisk together butter, brown sugar, and salt. Add flour and mix with a fork until large crumbs form. Refrigerate until ready to use.",
+    "Make cake: In a medium bowl, combine rhubarb, brown sugar, and 1/4 cup flour. In another medium bowl, whisk 3/4 cup flour, baking powder, and salt. In a large bowl, using an electric mixer, beat butter and confectioners' sugar until light and fluffy; beat in eggs, one at a time. With mixer on low, beat in vanilla, then flour mixture. Spread batter in prepared pan. Sprinkle with rhubarb and top with streusel.",
+    "Bake cake until golden and a toothpick inserted in center comes out with moist crumbs attached, 45 to 50 minutes. Let cool completely in pan. Using paper overhang, lift cake from pan. Cut into 16 bars."
+  ],
+  "tags": [
+    "dessert",
+    "rhubarb"
+  ],
+  "yield": "16",
+  "image": "/images/recipes/rhubarb-crumb-bars.jpg",
+  "prepTime": "25 mins",
+  "cookTime": "1 hr 25 mins"
+}

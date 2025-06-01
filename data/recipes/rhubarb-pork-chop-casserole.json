@@ -1,0 +1,67 @@
+{
+  "slug": "rhubarb-pork-chop-casserole",
+  "title": "Rhubarb Pork Chop Casserole",
+  "description": "Delicious rhubarb pork chop casserole recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "4 boneless pork loin chops (3/4 inches thick and 4 ounces each)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tablespoon canola oil"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Salt and pepper to taste"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 tablespoons butter"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 cups soft bread crumbs"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 cups sliced fresh or frozen rhubarb (1-inch pieces)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup packed brown sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 cup all-purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon ground cinnamon"
+    }
+  ],
+  "instructions": [
+    "In a large skillet, brown pork chops in oil; sprinkle with salt and pepper. Remove and keep warm. Add butter to the drippings to melt; mix with bread crumbs. Remove from heat.",
+    "In a large bowl, combine the rhubarb, sugar, flour and cinnamon; spoon into a greased 11x7-in. baking dish. Sprinkle crumbs over top.",
+    "Cover with foil and bake at 350° for 25-30 minutes. Remove foil. Arrange pork chops on top. Bake, uncovered, until heated through, 10-15 minutes."
+  ],
+  "tags": [
+    "pork",
+    "dessert",
+    "bread",
+    "rhubarb"
+  ],
+  "yield": "4 servings",
+  "image": "/images/recipes/rhubarb-pork-chop-casserole.jpg",
+  "prepTime": "20 min",
+  "cookTime": "prep: 20 min. bake: 40 min."
+}

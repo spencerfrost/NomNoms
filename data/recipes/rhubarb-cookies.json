@@ -1,0 +1,78 @@
+{
+  "slug": "rhubarb-cookies",
+  "title": "Rhubarb Cookies",
+  "description": "Delicious rhubarb cookies recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 cups uncooked rolled oats"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 cups all-purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon baking soda"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon ground ginger"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "⅛ teaspoon ground nutmeg"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup salted butter, softened"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 ¼ cups white sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 large eggs"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 ½ cups chopped fresh rhubarb"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ cup minced crystallized ginger"
+    }
+  ],
+  "instructions": [
+    "Gather all ingredients.",
+    "Pulse oats in a food processor until smaller crumbs form while some larger pieces remain intact, 8 to 10 pulses. Add oats to a large bowl along with flour, baking soda, ginger, and nutmeg.",
+    "Beat butter and sugar with an electric mixer on medium-high speed until fluffy, about 3 minutes. Beat in eggs, one at a time, until incorporated.",
+    "On low speed, add the oat mixture to the butter mixture, beating until combined, about 30 seconds.",
+    "Stir in rhubarb and crystallized ginger.",
+    "Cover and transfer bowl to a refrigerator to chill for at least 30 minutes.",
+    "Preheat the oven to 350 degrees F (175 degrees C). Line 3 large baking sheets with parchment paper.",
+    "Scoop dough (about 1 ½ tablespoons per cookie) onto prepared baking sheets, leaving about 2 inches in between each cookie.",
+    "Working in batches, bake in the preheated oven until golden brown on the bottoms and sides, 12 to 15 minutes.",
+    "Remove from oven and let cool briefly on baking sheets.",
+    "Transfer to a wire rack to finish cooling (they will firm up as they cool), about 30 minutes. Repeat with remaining cookies."
+  ],
+  "tags": [
+    "dessert",
+    "rhubarb"
+  ],
+  "yield": "32",
+  "image": "/images/recipes/rhubarb-cookies.jpg",
+  "prepTime": "30 mins",
+  "cookTime": "15 mins"
+}

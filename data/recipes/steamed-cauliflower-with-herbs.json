@@ -1,0 +1,42 @@
+{
+  "slug": "steamed-cauliflower-with-herbs",
+  "title": "Steamed Cauliflower with Herbs",
+  "description": "Delicious steamed cauliflower with herbs recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 head cauliflower, cut into florets"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "4 teaspoons extra-virgin olive oil"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3/4 teaspoon coarse kosher salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 teaspoon freshly ground pepper"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "4 teaspoons chopped fresh herbs, see note*"
+    }
+  ],
+  "instructions": [
+    "Bring one to two inches of water to a boil in a large saucepan fitted with a steamer basket over high heat. Add cauliflower to the steamer basket, cover the saucepan, and steam until the cauliflower is fork-tender, 4 to 5 minutes for crisp tender. Steam 1 to 3 minutes longer for softer cauliflower.",
+    "Remove the steamer basket from the saucepan, and pour out the water. Empty the cauliflower out of the steamer basket back into the pot. Drizzle on oil, and sprinkle with salt and pepper. Toss to coat. Add herbs and toss to coat. Serve immediately."
+  ],
+  "tags": [
+    "healthy"
+  ],
+  "yield": "Yield: 7",
+  "image": "/images/recipes/steamed-cauliflower-with-herbs.jpg",
+  "cookTime": "15 minutes"
+}

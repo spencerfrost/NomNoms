@@ -1,0 +1,33 @@
+{
+  "slug": "instant-pot-kidney-beans-fast-tender-no-soaking",
+  "title": "Instant Pot Kidney Beans (Fast, Tender, No Soaking!)",
+  "description": "Delicious instant pot kidney beans (fast, tender, no soaking!) recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup kidney beans"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 ½ cups water (or vegetable broth for more flavor)"
+    }
+  ],
+  "instructions": [
+    "Add kidney beans and water (or vegetable broth) to the Instant Pot and stir to prevent sticking. Pressure cook on high for 40-45 minutes (40 minutes for more firm, 45 for more tender // it will take about 8 minutes for the Instant Pot to pressurize before cooking begins).",
+    "Once the timer goes off, allow to naturally release for 15 minutes, then release any remaining pressure. Carefully remove lid once steam has fully escaped and strain off any excess cooking liquid.",
+    "Enjoy immediately in stews, soups, chili, pasta, salads, or alongside steamed or sautéed greens. Store cooled leftovers in the refrigerator up to 5 days or in the freezer up to 1 month. Reheat in a saucepan on the stovetop, adding a little water, as needed, to prevent sticking."
+  ],
+  "tags": [
+    "soup",
+    "salad",
+    "pasta",
+    "instant-pot",
+    "quick"
+  ],
+  "yield": "Servings (3/4-cup servings)",
+  "image": "/images/recipes/instant-pot-kidney-beans-fast-tender-no-soaking.jpg",
+  "prepTime": "23 minutes",
+  "cookTime": "= 40-45 minutes"
+}

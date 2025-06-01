@@ -1,0 +1,52 @@
+{
+  "slug": "simple-hot-cocoa-for-one",
+  "title": "Simple Hot Cocoa for One",
+  "description": "Delicious simple hot cocoa for one recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Vanilla Extract"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Kosher Salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 tablespoons unsweetened cocoa powder"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 to 2 tablespoons sugar (depending on how sweet you like it)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Pinch of salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup milk or any combination of milk, half-and-half, or cream"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "¼ teaspoon vanilla extract"
+    }
+  ],
+  "instructions": [
+    "Whisk together the cocoa, sugar, salt, and about 2 tablespoons milk in a small saucepan over medium-low heat until cocoa and sugar are dissolved. Whisk in the rest of the milk and heat it over medium heat, whisking occasionally, until it is hot. Stir in the vanilla and serve.",
+    "If you like it frothy, blend it in the blender.",
+    "This recipe multiplies easily. When you get up to a quart of milk, use ¼ teaspoon salt."
+  ],
+  "tags": [
+    "dessert"
+  ],
+  "yield": "4 servings",
+  "image": "/images/recipes/simple-hot-cocoa-for-one.jpg"
+}

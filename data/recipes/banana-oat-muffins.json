@@ -1,0 +1,81 @@
+{
+  "slug": "banana-oat-muffins",
+  "title": "Banana Oat Muffins",
+  "description": "Delicious banana oat muffins recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 ½ cups unbleached all-purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup rolled oats"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ cup white sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ tablespoon cinnamon"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 teaspoons baking powder"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon baking soda"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 egg"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "¾ cup milk"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "⅓ cup vegetable oil"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon vanilla extract"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup mashed bananas"
+    }
+  ],
+  "instructions": [
+    "Preheat the oven to 400 degrees F (205 degrees C). Line a 12-cup muffin tin with paper liners.",
+    "Combine flour, oats, sugar, cinnamon, baking powder, soda, and salt in a medium bowl; set aside.",
+    "Beat egg lightly in a large bowl. Whisk in milk, oil, and vanilla. Stir in mashed bananas. Add the flour mixture and stir until just combined. Spoon batter into the prepared muffin cups, filling each 3/4 full.",
+    "Bake in the preheated oven until tops spring back when lightly pressed, 18 to 20 minutes.",
+    "K"
+  ],
+  "tags": [
+    "banana"
+  ],
+  "yield": "12",
+  "image": "/images/recipes/banana-oat-muffins.jpg",
+  "prepTime": "15 mins",
+  "cookTime": "20 mins"
+}

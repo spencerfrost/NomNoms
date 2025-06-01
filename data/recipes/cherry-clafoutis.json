@@ -1,0 +1,67 @@
+{
+  "slug": "cherry-clafoutis",
+  "title": "Cherry Clafoutis",
+  "description": "Delicious cherry clafoutis recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 1/2 cups sweet cherries, pitted"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 large eggs, room temperature"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup all-purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup granulated sugar , plus 2 Tablespoons for topping"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup whole milk , or Half and Half"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 1/2 teaspoon vanilla extract"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 teaspoon almond extract"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 teaspoon salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "powdered sugar , for dusting on top"
+    }
+  ],
+  "instructions": [
+    "Preheat oven to 350 degrees F. Generously butter the bottom of a 9 or 10 inch round or oval baking dish. (I use a pie dish.)",
+    "Arrange cherries evenly around on bottom of dish.",
+    "In a blender, add all remaining ingredients: eggs, sugar, milk, flour, vanilla, almond extract and salt. Blend until smooth.",
+    "Pour the batter over the cherries and sprinkle with the 2 Tablespoons sugar.",
+    "Bake just until custard is set, about 35-45 minutes.",
+    "Clafoutis is delicious served warm, room temp or cold."
+  ],
+  "tags": [
+    "dessert"
+  ],
+  "yield": "Servings 12",
+  "image": "/images/recipes/cherry-clafoutis.jpg",
+  "prepTime": "10 mins",
+  "cookTime": "45 mins"
+}

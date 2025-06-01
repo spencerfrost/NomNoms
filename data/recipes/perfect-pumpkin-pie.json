@@ -1,0 +1,59 @@
+{
+  "slug": "perfect-pumpkin-pie",
+  "title": "Perfect Pumpkin Pie",
+  "description": "Delicious perfect pumpkin pie recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 (15 ounce) can pumpkin"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 (14 ounce) can Sweetened Condensed Milk"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 large eggs large eggs"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon ground cinnamon"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon ground ginger"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon ground nutmeg"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 (9 inch) unbaked pie crust"
+    }
+  ],
+  "instructions": [
+    "Preheat oven to 425 degrees F. Whisk pumpkin, sweetened condensed milk, eggs, spices and salt in medium bowl until smooth. Pour into crust. Bake 15 minutes.",
+    "Reduce oven temperature to 350 degrees F and continue baking 35 to 40 minutes or until knife inserted 1 inch from crust comes out clean. Cool. Garnish as desired. Store leftovers covered in refrigerator."
+  ],
+  "tags": [
+    "dessert",
+    "baked"
+  ],
+  "yield": "8",
+  "image": "/images/recipes/perfect-pumpkin-pie.jpg",
+  "prepTime": "15 mins",
+  "cookTime": "55 mins"
+}

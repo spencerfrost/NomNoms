@@ -1,0 +1,94 @@
+{
+  "slug": "marry-me-chicken",
+  "title": "Marry Me Chicken",
+  "description": "Delicious marry me chicken recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2-3 lbs chicken breast"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 tbsp olive oil"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tsp salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tsp black pepper"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 garlic cloves minced"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tbsp Italian seasoning"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup sundried tomatoes drained and chopped"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup heavy cream"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 chicken stock"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup Fresh parmesan cheese grated"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Garnish (Optional)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "fresh basil chopped"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Fresh parmesan cheese grated"
+    }
+  ],
+  "instructions": [
+    "Season the chicken breast with salt and pepper.",
+    "Select SAUTE-HIGH and set the time to 30 minutes, when preheated, sear the chicken breast for 4-5 minutes per side, until golden brown. Remove and place it on a plate.",
+    "Add garlic let cook until fragrant for about 2-3 mins.",
+    "Stir Italian seasoning and sundried tomatoes and let cook for 3-4 minutes.",
+    "Pour in heavy cream and chicken stock to deglaze the pan, stirring up brown bits from the bottom.",
+    "Press CANCEL to turn off sauté function. Place the chicken breast back into pot.",
+    "Secure the lid on the pot, valve set to seal.",
+    "Manually select PRESSURE COOK – HIGH. 10 minutes.",
+    "When the program is done carefully release the remaining pressure opening the valve to vent.",
+    "Serve, garnish with fresh chopped basil, fresh grated parmesan cheese and enjoy with some pasta or white rice."
+  ],
+  "tags": [
+    "chicken",
+    "pasta",
+    "rice",
+    "quick"
+  ],
+  "yield": "Servings 4 servings",
+  "image": "/images/recipes/marry-me-chicken.jpg",
+  "prepTime": "10 minutes",
+  "cookTime": "30 minutes"
+}

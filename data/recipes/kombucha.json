@@ -1,0 +1,34 @@
+{
+  "slug": "kombucha",
+  "title": "Kombucha",
+  "description": "Delicious kombucha recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "12 bags black tea"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1.5 cups white sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "16 cups filtered water"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup plain kombucha"
+    }
+  ],
+  "instructions": [
+    "Boil half the water and brew the tea for 10 minutes, stir in the sugar. Pour in cold water, allow to cool until room temperature. Add the scoobie and 1 cup of kombucha. Cover with cheese clothe and let ferment 1-2 weeks. Taste to test.",
+    "USE GLASS JARSDONT USE METAL"
+  ],
+  "tags": [],
+  "yield": "4 servings",
+  "image": "/images/recipes/kombucha.jpg"
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "chunky-rhubarb-applesauce",
+  "title": "Chunky Rhubarb Applesauce",
+  "description": "Delicious chunky rhubarb applesauce recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 pound rhubarb, trimmed and cut into 1/2-inch chunks"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 pounds tart apples, peeled and cut into 1/2-inch chunks"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 to 1 cup sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 teaspoon ground cinnamon"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/8 teaspoon ground nutmeg"
+    }
+  ],
+  "instructions": [
+    "Place rhubarb, apples and sugar to taste in a large saucepan. Cover and simmer until fruit is tender, about 40 minutes.",
+    "Stir in cinnamon and nutmeg. Serve warm or cold."
+  ],
+  "tags": [
+    "rhubarb"
+  ],
+  "yield": "4 cups.",
+  "prepTime": "10 min",
+  "cookTime": "40 min"
+}

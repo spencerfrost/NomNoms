@@ -1,0 +1,68 @@
+{
+  "slug": "rhubarb-crisp",
+  "title": "Rhubarb Crisp",
+  "description": "Delicious rhubarb crisp recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3/4 cup sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 tablespoons cornstarch"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 cups sliced fresh rhubarb or frozen rhubarb, thawed"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 cups sliced peeled apples or sliced strawberries"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup quick-cooking or old-fashioned oats"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup packed brown sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup butter, melted"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/3 cup all-purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon ground cinnamon"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Vanilla ice cream, optional"
+    }
+  ],
+  "instructions": [
+    "In a large bowl, combine sugar and cornstarch. Add rhubarb and apples or strawberries; toss to coat. Spoon into an 8-in. cast-iron skillet or other ovenproof skillet.",
+    "In a small bowl, combine the oats, brown sugar, butter, flour and cinnamon until the mixture resembles coarse crumbs. Sprinkle over fruit. Bake at 350° until crisp is bubbly and fruit is tender, about 45 minutes. If desired, serve warm with ice cream."
+  ],
+  "tags": [
+    "rhubarb",
+    "quick"
+  ],
+  "yield": "8 servings",
+  "prepTime": "15 min",
+  "cookTime": "45 min"
+}

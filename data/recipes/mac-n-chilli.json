@@ -1,0 +1,62 @@
+{
+  "slug": "mac-n-chilli",
+  "title": "Mac N Chilli",
+  "description": "Delicious mac n chilli recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "lean ground beef 1lb"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "garlic 4 cloves minced"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "onion 1"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Canned tomatoes 28oz"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "broth 2 cups"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "macaroni 16oz"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "chilli power 1 tbsp"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "cumin 1/2 tsp"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Chili beans 30oz (kidney beans) (pinto beans)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Velveta cheese (can use cheddar)"
+    }
+  ],
+  "instructions": [],
+  "tags": [
+    "beef"
+  ],
+  "yield": "4 servings"
+}

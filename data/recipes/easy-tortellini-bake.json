@@ -1,0 +1,48 @@
+{
+  "slug": "easy-tortellini-bake",
+  "title": "Easy Tortellini Bake",
+  "description": "Delicious easy tortellini bake recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "4 C tortellini (can be frozen or refrigerated)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 1/2 C spaghetti sauce [url:1][u]Slow Cooker Spaghetti Sauce[/u][/url]"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 to 1 1/2 C of shredded mozzarella cheese"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2-3 tbsp grated parmesan cheese"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Parsley for garnish"
+    }
+  ],
+  "instructions": [
+    "Cook the tortellini according to package directions, about 8-10 minutes.",
+    "Toss with spaghetti sauce.",
+    "Place in a 1 1/2 qt baking dish and top with shredded mozzarella cheese and parmesan cheese.",
+    "Bake at 350 for 8-10 minutes. During the last couple of minutes, turn on your broiler so the cheese gets slightly browned.",
+    "Sprinkle with parsley, if desired."
+  ],
+  "tags": [
+    "pasta",
+    "slow-cooker",
+    "quick"
+  ],
+  "yield": "Yield: 4 servings",
+  "image": "/images/recipes/easy-tortellini-bake.jpg",
+  "prepTime": "10 minutes",
+  "cookTime": "10 minutes"
+}

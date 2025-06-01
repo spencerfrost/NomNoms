@@ -1,0 +1,53 @@
+{
+  "slug": "peanut-butter-bars",
+  "title": "Peanut Butter Bars",
+  "description": "Delicious peanut butter bars recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 cups graham cracker crumbs"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 cups confectioners' sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup butter or margarine, melted"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup peanut butter"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 ½ cups semisweet chocolate chips"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "4 tablespoons peanut butter"
+    }
+  ],
+  "instructions": [
+    "Gather all ingredients.",
+    "Mix together graham cracker crumbs, confectioners' sugar, butter or margarine, and 1 cup peanut butter in a medium bowl until well-blended.",
+    "Press evenly into the bottom of an ungreased 9x13-inch pan.",
+    "Place chocolate chips and 4 tablespoons peanut butter in a microwave-safe bowl. Microwave on high, stirring every 15 seconds, until smooth.",
+    "Spread mixture over crust.",
+    "Refrigerate for at least 1 hour before cutting into 12 squares."
+  ],
+  "tags": [
+    "dessert",
+    "chocolate"
+  ],
+  "yield": "12",
+  "image": "/images/recipes/peanut-butter-bars.jpg",
+  "prepTime": "25 mins",
+  "cookTime": "1 hr 25 mins"
+}

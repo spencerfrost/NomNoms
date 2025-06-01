@@ -1,0 +1,106 @@
+{
+  "slug": "rhubarb-buckle",
+  "title": "Rhubarb Buckle",
+  "description": "Delicious rhubarb buckle recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Cake"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Vegetable-oil cooking spray, for cake pans"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 pound plus 10 ounces rhubarb, trimmed and cut ½ inch thick on the bias"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 cups sugar, divided"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 cups all-purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 ¼ teaspoons baking powder"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon coarse salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 ½ sticks unsalted butter, softened"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon finely grated lemon zest"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 large eggs"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon pure vanilla extract"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ cup sour cream"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Crumb Topping"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup all-purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "¼ cup light-brown sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "¼ teaspoon coarse salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ stick unsalted butter, melted"
+    }
+  ],
+  "instructions": [
+    "Cake: Preheat oven to 350 degrees, with rack in center position. Coat two 9-inch square cake pans with cooking spray, and line with parchment, leaving an overhang on 2 sides. Stir together rhubarb and 1 cup sugar; set aside to macerate.",
+    "Whisk together flour, baking powder, and salt. Beat together butter, remaining cup sugar, and the lemon zest until light and fluffy. Beat in eggs, 1 at a time, then beat in vanilla. Beat in flour mixture in 2 additions, alternating with sour cream, beginning and ending with flour mixture.",
+    "Crumb topping: Stir together flour, brown sugar, and salt. Add melted butter; stir to combine.",
+    "Divide batter between pans. Top with rhubarb mixture, and sprinkle with crumb topping. Bake until golden on top and cooked through, about 1 hour 5 minutes. Let cool completely in pans on wire racks, then lift cakes from pans using parchment. Remove parchment. Before serving, cut buckle into 2-inch squares."
+  ],
+  "tags": [
+    "dessert",
+    "rhubarb"
+  ],
+  "yield": "32 squares",
+  "image": "/images/recipes/rhubarb-buckle.jpg",
+  "prepTime": "15 mins",
+  "cookTime": "2 hrs 20 mins"
+}

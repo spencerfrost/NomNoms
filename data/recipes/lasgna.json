@@ -1,0 +1,115 @@
+{
+  "slug": "lasgna",
+  "title": "Lasgna",
+  "description": "Delicious lasgna recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "NOODLES"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 quarts water"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 teaspoons salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tablespoon vegetable oil"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "8 ounces lasagna noodles"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "SAUCE"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 pound ground beef"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tablespoon olive oil"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 medium onion, finely diced"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 clove garlic, minced"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 650ml can spaghetti sauce (more is better than less)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon crumbled dried oregano"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon crumbled dried sweet basil"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "FILLING"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "8 ounces ricotta or pot cheese or cottage cheese"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 egg"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "8 ounces mozzarella cheese (grated)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ cup freshly grated Parmesan cheese (optional)"
+    }
+  ],
+  "instructions": [
+    "PREPARE PASTA9 noodles = 3 per row.Combine water and salt in large kettle. Float oil on surface of water; bring to boil. Slowly add noodles, a few at a time; cook 15 minutes. Drain; rinse with cold water.Arrange on toweling to drain.",
+    "PREPARE SAUCEsauté onion and garlic over low heat 5 minutes and add beef in large skillet until brown.Add oil to skillet. Add spaghetti sauce and seasonings. Cook over low heat 20 minutes or until thick.",
+    "Taste sauce. If bland add:1 tsp apple cider vinegar1 tsp sugar 1/2 tsp salt",
+    "ASSEMBLYLightly grease 13 × 9 × 2-inch baking dish.Ladle approximately ¾ cup sauce into pan. Top with ⅓ of noodles. Mix egg with cheese and Dot with ½ the ricotta and ½ the mozzarella. Add layer of sauce and ⅓ of noodles and remaining ricotta and mozzarella",
+    "COOKPreheat oven to 350, cover with aluminum foil and bake for 30 minutes.Remove the foil and bake for an additional 5-10 minutes"
+  ],
+  "tags": [
+    "beef",
+    "dessert",
+    "pasta"
+  ],
+  "yield": "4 servings"
+}

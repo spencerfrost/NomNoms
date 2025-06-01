@@ -1,0 +1,12 @@
+{
+  "slug": "brownies",
+  "title": "Brownies",
+  "description": "Delicious brownies recipe",
+  "ingredients": [],
+  "instructions": [],
+  "tags": [
+    "dessert"
+  ],
+  "yield": "4 servings",
+  "image": "/images/recipes/brownies.jpg"
+}

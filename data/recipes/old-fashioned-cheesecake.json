@@ -1,0 +1,90 @@
+{
+  "slug": "old-fashioned-cheesecake",
+  "title": "Old Fashioned Cheesecake",
+  "description": "Delicious old fashioned cheesecake recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Crust"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 1/2 cup (375 mL) graham cracker crumbs"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 tsp (1 mL) ground cinnamon"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 cup (60 mL) butter melted"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Filling"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 1/2 lb (750 g) Canadian Cream cheese"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup (250 mL) sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 eggs"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tsp (5 mL) vanilla extract"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup (125 mL) sour cream"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Topping"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup (250 mL) sour cream"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 tbsp (45 mL) sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tsp (5 mL) vanilla extract"
+    }
+  ],
+  "instructions": [
+    "Combine graham cracker crumbs with cinnamon and butter. Press into the bottom of a 9-inch (23 cm) springform pan.",
+    "For the filling, beat Cream cheese with sugar. Add eggs one at a time, beating well after each addition. Stir in vanilla extract and sour cream. Pour over crust.",
+    "Bake in a preheated 350 °F (180 °C) oven for 45 to 50 min or until just set when gently shaken.",
+    "Combine sour cream with sugar and vanilla extract. Spread over hot cheesecake. Bake 5 min longer. Chill thoroughly before serving."
+  ],
+  "tags": [
+    "dessert"
+  ],
+  "yield": "Yields 8 - 10 servings",
+  "image": "/images/recipes/old-fashioned-cheesecake.jpg",
+  "prepTime": "15 min",
+  "cookTime": "55 min"
+}

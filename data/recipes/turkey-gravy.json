@@ -1,0 +1,68 @@
+{
+  "slug": "turkey-gravy",
+  "title": "Turkey Gravy",
+  "description": "Delicious turkey gravy recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 stick unsalted butter"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1½ cups finely chopped yellow onions"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "¼ cup all purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Defatted turkey drippings plus chicken broth to make 2½ cups"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tablespoon Cognac or Brandy"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tablespoon heavy cream"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tablespoon chopped fresh herbs (such as thyme, sage, rosemary or parsley)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Salt and pepper, to taste"
+    }
+  ],
+  "instructions": [
+    "Begin by melting the butter in a medium saucepan.",
+    "Add the onions.",
+    "Cook until very soft, about 15 minutes.",
+    "Whisk in the flour and cook for a few minutes to get rid of the raw flour taste.",
+    "Then whisk in your turkey drippings/chicken broth and Cognac.",
+    "Cook for about 5 minutes until thickened, then stir in the cream and fresh herbs.",
+    "Season to taste with salt and pepper. Remember, the gravy should be generously seasoned because turkey is very bland. And always taste the gravy with a piece of meat to be sure the seasoning is right.",
+    "Melt the butter in a medium saucepan over medium-low heat. Add the onions and cook until very soft and translucent, about 15 minutes.",
+    "Whisk in the flour and cook for 2 to 3 minutes, stirring occasionally. Whisk in the turkey drippings/chicken broth and Cognac and bring to a boil over medium-high heat. Reduce the heat to a simmer and cook, stirring occasionally, until thickened, about 5 minutes. Stir in the cream and fresh herbs and season to taste with salt and pepper. (Gravy should be generously seasoned because turkey is pretty bland; I usually add at least ¼ teaspoon salt and ¼ teaspoon pepper, but it depends on how salty your broth and drippings are.) Transfer the gravy to a gravy boat and serve.",
+    "Make-Ahead Instructions: The gravy can be made, without the turkey drippings, up to 2 days ahead of time and refrigerated. Use 2 cups of chicken broth and add about ½ cup defatted turkey drippings after cooking the turkey when you reheat the gravy. Note that the gravy will thicken up in the fridge; thin it to the desired consistency with water or chicken broth upon reheating."
+  ],
+  "tags": [
+    "chicken",
+    "dessert",
+    "quick"
+  ],
+  "yield": "about 3 cups",
+  "image": "/images/recipes/turkey-gravy.jpg",
+  "prepTime": "10 minutes",
+  "cookTime": "25 minutes"
+}

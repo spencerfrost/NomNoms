@@ -1,0 +1,39 @@
+{
+  "slug": "fresh-ginger-tea",
+  "title": "Fresh Ginger Tea",
+  "description": "Delicious fresh ginger tea recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1-inch chunk of fresh ginger (no need to peel), sliced into pieces no wider than ¼-inch"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup water"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Optional flavorings (choose just one): 1 cinnamon stick, 1-inch piece of fresh turmeric (cut into thin slices, same as the ginger), or several sprigs of fresh mint"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Optional add-ins: 1 thin round of fresh lemon or orange, and/or 1 teaspoon honey or maple syrup, to taste"
+    }
+  ],
+  "instructions": [
+    "Combine the sliced ginger and water in a saucepan over high heat. If you’re adding a cinnamon stick, fresh turmeric, or fresh mint, add it now. Bring the mixture to a simmer, then reduce the heat as necessary to maintain a gentle simmer for 5 minutes (for extra-strong ginger flavor, simmer for up to 10 minutes).",
+    "Remove the pot from the heat. Carefully pour the mixture through a mesh sieve into a heat-safe liquid measuring cup, or directly into a mug.",
+    "If desired, serve with a lemon round and/or a drizzle of honey or maple syrup, to taste. Serve hot."
+  ],
+  "tags": [
+    "dessert"
+  ],
+  "yield": "1",
+  "image": "/images/recipes/fresh-ginger-tea.jpg",
+  "prepTime": "1 min",
+  "cookTime": "9 min"
+}

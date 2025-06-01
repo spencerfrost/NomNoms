@@ -1,0 +1,60 @@
+{
+  "slug": "easy-fast-tomato-marinara",
+  "title": "Easy, Fast Tomato Marinara",
+  "description": "Delicious easy, fast tomato marinara recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "tbsp",
+      "name": "olive oil"
+    },
+    {
+      "amount": 0,
+      "unit": "clove",
+      "name": "garlic, minced"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "(6 oz) can tomato paste"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 1/2"
+    },
+    {
+      "amount": 0,
+      "unit": "cups",
+      "name": "water"
+    },
+    {
+      "amount": 0,
+      "unit": "tsp",
+      "name": "Italian seasoning"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Salt and pepper, to taste"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Pinch of sugar"
+    }
+  ],
+  "instructions": [
+    "Heat the olive oil over medium heat in a medium saucepan. Add the garlic and cook until just softened -- just a minute or two.",
+    "Add the tomato paste, water, Italian seasoning, salt, pepper and sugar to the pan. Bring to a boil over medium heat, stirring occasionally.",
+    "Reduce heat, cover and simmer for 10 minutes. Taste, and adjust seasoning as desired.",
+    "Serve."
+  ],
+  "tags": [
+    "quick"
+  ],
+  "yield": "4",
+  "image": "/images/recipes/easy-fast-tomato-marinara.jpg",
+  "prepTime": "2 min",
+  "cookTime": "20 min"
+}

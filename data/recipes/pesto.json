@@ -1,0 +1,56 @@
+{
+  "slug": "pesto",
+  "title": "Pesto",
+  "description": "Blanche, the almonds, boil some water and submerge the almonds for one minute, then rinse with cold water and remove the skinsadd the basil and the almonds together and pulse in the food processor. Then add the cheese and garlic. slowly pour in the oil once you’re done add the salt and pepper Make sure to scrape down the sides of the food processor occasionally Freeze in an ice cube tray or muffin tray",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 cups basil leaves"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/3 cup almonds"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup parmesan cheese"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 cloves garlic"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "OR"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tsp garlic"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup olive oil"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 tsp salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/8 tsp pepper"
+    }
+  ],
+  "instructions": [],
+  "tags": [],
+  "yield": "4 servings",
+  "image": "/images/recipes/pesto.jpg"
+}

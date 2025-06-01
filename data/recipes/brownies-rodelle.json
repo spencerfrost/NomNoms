@@ -1,0 +1,61 @@
+{
+  "slug": "brownies-rodelle",
+  "title": "Brownies (Rodelle)",
+  "description": "Delicious brownies (rodelle) recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup + 2 tbsp butter"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 1/2 cups sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "5 eggs"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 1/2 tbsp Rodelle Vanilla Extract"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3/4 cup + 1 tbsp Rodelle Cocoa Powder"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3/4 cup + 1 tbsp flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup semisweet chocolate chips"
+    }
+  ],
+  "instructions": [
+    "1. Preheat Oven: Preheat oven to 350°F (175°C).",
+    "2. Prepare Pan: Line a 9x13-inch (23x33 cm) pan with parchment paper and spray lightly with cooking spray.",
+    "3. Melt Butter: Melt butter in a small saucepan and transfer to a large mixing bowl.",
+    "4. Mix Ingredients:",
+    "• Add sugar and mix well.",
+    "• Gradually add eggs, mixing thoroughly after each addition.",
+    "• Stir in Rodelle Vanilla Extract.",
+    "• Add Rodelle Cocoa Powder and mix.",
+    "• Gently stir in flour until combined.",
+    "• Fold in chocolate chips and nuts, if using.",
+    "5. Bake: Pour batter into prepared pan and bake for approximately 35 minutes. Do not overbake.",
+    "6. Cool and Serve: Allow brownies to cool completely in the pan. Turn onto a surface, peel off parchment paper, and cut into squares."
+  ],
+  "tags": [
+    "dessert",
+    "chocolate"
+  ],
+  "yield": "4 servings"
+}

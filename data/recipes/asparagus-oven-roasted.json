@@ -1,0 +1,53 @@
+{
+  "slug": "asparagus-oven-roasted",
+  "title": "Asparagus Oven-Roasted",
+  "description": "Delicious asparagus oven-roasted recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 bunch thin asparagus spears, trimmed"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 tablespoons olive oil"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 ½ tablespoons grated Parmesan cheese (Optional)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 clove garlic, minced (Optional)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon sea salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon ground black pepper"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tablespoon lemon juice (Optional)"
+    }
+  ],
+  "instructions": [
+    "Preheat the oven to 425 degrees F (220 degrees C).",
+    "Place asparagus into a mixing bowl; drizzle with olive oil and toss to coat. Sprinkle with Parmesan cheese, garlic, salt, and pepper. Arrange asparagus in a single layer in a baking dish.",
+    "Bake in the preheated oven until just tender, 12 to 15 minutes depending on thickness. Sprinkle with lemon juice just before serving.",
+    "RITA"
+  ],
+  "tags": [],
+  "yield": "4",
+  "image": "/images/recipes/asparagus-oven-roasted.jpg",
+  "prepTime": "10 mins",
+  "cookTime": "15 mins"
+}

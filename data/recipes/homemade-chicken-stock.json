@@ -1,0 +1,88 @@
+{
+  "slug": "homemade-chicken-stock",
+  "title": "Homemade Chicken Stock",
+  "description": "Delicious homemade chicken stock recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Brown Stock Ingredients:"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Chicken, beef, pork, or lamb bones (about 2-4# or 1-2 kg is a good start)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 large carrot, rough chop"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 large onion (you can leave the skin on), rough chop"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 ribs celery, rough chop"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "White Stock Ingredients:"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "Chicken, beef, pork, or lamb bones (although usually chicken)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 large peeled onion, rough chopped"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "5 cloves garlic rough chopped"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 ribs celery, rough chopped"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 bay leaf"
+    }
+  ],
+  "instructions": [
+    "NOTES:",
+    "Don't season your chicken stock with salt or pepper. This is something that's overlooked quite often. Season whenever you use it in a recipe. The reason why is that if you season it nicely when it's freshly made, then it will likely end up too salty if it gets reduced for a sauce or added to a soup, etc.",
+    "I also said 2-4 hours on the stock, then said 3-4 hours. It should be 2-4 hours... Just to clear up any potential confusion.",
+    "Brown Stock Method:",
+    "To remove the bones from your chicken, start by removing the legs. To do this, cut the layer of skin that connects the legs to the breast. Reveal the joint attaching them to the body and cut around that to fully separate the two. Repeat this process with the wings.",
+    "For the breast itself, take your knife and cut along the breast bone, keeping it on the bone the entire time. Peel the meat from the bones.",
+    "To remove the meat from the legs and wings, find where the bone is underneath the meat. Cut along the bone to reveal it and run your knife to slice it free.",
+    "Place your chicken bones on a baking rack and drizzle with oil. Roast in the oven at 425 degrees Fahrenheit for 40-45 minutes. Once done, transfer to a large pot.",
+    "To make the mirepoix; chop one carrot into large pieces, one peeled yellow onion and two stalks of celery. Place all of this into your pot with the chicken bones. Add enough water to cover an inch above your bones and heat on the stove over medium-high heat. As soon as it starts to boil, reduce to a low simmer. Make sure to remove any scum that floats to the surface with a ladle. Let this sit for 4-6 hours.",
+    "Take a spider and remove the bones from the pot and place in a bowl off to the side. Strain your stock through a fine mesh sieve.",
+    "White Stock Method:",
+    "Place your chicken bones in a large pot and cover with cold water. Bring it up to a rapid boil and let it sit for 10 seconds.",
+    "Strain through a mesh strainer and rinse your bones off with water. Place the bones back in the pot and cover with water again.",
+    "Add in your mirepoix: celery, 5 cloves of garlic, 1 bay leaf. Bring it up to a boil and then reduce to a light simmer. Let it steep for 3-4 hours, skimming away any scum that forms at the top.",
+    "Once done, strain your bones and mirepoix."
+  ],
+  "tags": [
+    "chicken",
+    "beef",
+    "pork",
+    "dessert",
+    "soup"
+  ],
+  "yield": "4 servings",
+  "image": "/images/recipes/homemade-chicken-stock.jpg"
+}

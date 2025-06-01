@@ -1,0 +1,118 @@
+{
+  "slug": "rhubarbecue",
+  "title": "Rhubarbecue",
+  "description": "Delicious rhubarbecue recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1-1/2 teaspoons salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1-1/2 teaspoons paprika"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon coarsely ground pepper"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 to 4 pounds boneless country-style pork ribs"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "sauce:"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 cups sliced fresh or frozen rhubarb (about 7 stalks)"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 cups fresh strawberries, halved"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 to 3 tablespoons olive oil"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 medium onion, chopped"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup packed brown sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3/4 cup ketchup"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup red wine vinegar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup bourbon"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 cup reduced-sodium soy sauce"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 cup honey"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 tablespoons Worcestershire sauce"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 teaspoons garlic powder"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon crushed red pepper flakes"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon coarsely ground pepper"
+    }
+  ],
+  "instructions": [
+    "Preheat oven to 325°. Mix salt, paprika and pepper; sprinkle over ribs. Refrigerate, covered, while preparing sauce.",
+    "In a large saucepan, combine rhubarb and strawberries; add water to cover. Bring to a boil. Cook, uncovered, until rhubarb is tender, 8-10 minutes. Drain; return to pan. Mash until blended.",
+    "In a Dutch oven, heat 1 tablespoon oil over medium heat. Brown ribs in batches, adding more oil as needed. Remove from pan.",
+    "Add onion to same pan; cook and stir until tender, 4-6 minutes. Add remaining ingredients; stir in rhubarb mixture. Return ribs to pan, turning to coat. Bring to a boil. Cover and bake until ribs are tender, about 2 hours. Bake, uncovered, until sauce is slightly thickened, 30-35 minutes.",
+    "Rhubarb",
+    "If using frozen rhubarb, measure rhubarb while still frozen, then thaw completely. Drain in a colander, but do not press liquid out."
+  ],
+  "tags": [
+    "pork",
+    "rhubarb"
+  ],
+  "yield": "8 servings",
+  "image": "/images/recipes/rhubarbecue.jpg",
+  "prepTime": "20 min",
+  "cookTime": "prep: 45 min. bake: 2-1/2 hours"
+}

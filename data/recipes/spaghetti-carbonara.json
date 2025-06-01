@@ -1,0 +1,18 @@
+{
+  "slug": "spaghetti-carbonara",
+  "title": "Spaghetti Carbonara",
+  "description": "A quick Roman pasta dish with eggs, cheese, and guanciale.",
+  "ingredients": [
+    { "amount": 200, "unit": "g", "name": "spaghetti" },
+    { "amount": 100, "unit": "g", "name": "guanciale" },
+    { "amount": 2, "unit": "", "name": "eggs" },
+    { "amount": 50, "unit": "g", "name": "pecorino romano" }
+  ],
+  "instructions": [
+    "Boil pasta until al dente.",
+    "Fry guanciale until crispy.",
+    "Mix eggs and cheese, combine with pasta and guanciale off-heat."
+  ],
+  "tags": ["italian", "pasta", "quick"],
+  "yield": "2 servings"
+}

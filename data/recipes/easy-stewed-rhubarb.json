@@ -1,0 +1,32 @@
+{
+  "slug": "easy-stewed-rhubarb",
+  "title": "Easy Stewed Rhubarb",
+  "description": "Delicious easy stewed rhubarb recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "6 cups chopped rhubarb"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup granulated sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 tablespoons water"
+    }
+  ],
+  "instructions": [
+    "In large saucepan, combine rhubarb, sugar and water; cook over medium heat, stirring, until sugar has dissolved. Reduce heat to medium-low; simmer, uncovered and stirring occasionally, for about 15 minutes or until slightly thickened and rhubarb is in threads. Let cool. (Rhubarb can be refrigerated in airtight container for up to 5 days.)"
+  ],
+  "tags": [
+    "rhubarb",
+    "quick"
+  ],
+  "yield": "4 servings",
+  "prepTime": "5 minutes",
+  "cookTime": "15 minutes"
+}

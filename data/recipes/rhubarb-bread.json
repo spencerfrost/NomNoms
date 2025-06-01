@@ -1,0 +1,74 @@
+{
+  "slug": "rhubarb-bread",
+  "title": "Rhubarb Bread",
+  "description": "Delicious rhubarb bread recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1-1/3 cups packed brown sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2/3 cup vegetable oil"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 large egg, room temperature, beaten"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon vanilla extract"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup buttermilk"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2-1/2 cups all-purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3/4 teaspoon salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 teaspoon ground cinnamon"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon baking soda"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1-1/2 to 2 cups finely diced rhubarb, 1/4-inch cuts"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup chopped nuts"
+    }
+  ],
+  "instructions": [
+    "In a bowl, combine the sugar and oil; blend in egg, vanilla and milk. Combine flour, salt, cinnamon and baking soda; add to moist ingredients. Stir in rhubarb and nuts. Transfer to 2 well-greased 8x4-in. loaf pans.",
+    "Bake at 350° until a toothpick inserted in the center comes out clean, about 45 minutes. Cool for 10 minutes before removing from pans to wire racks."
+  ],
+  "tags": [
+    "dessert",
+    "bread",
+    "rhubarb"
+  ],
+  "yield": "2 loaves (16 pieces each).",
+  "prepTime": "15 min",
+  "cookTime": "45 min"
+}

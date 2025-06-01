@@ -1,0 +1,61 @@
+{
+  "slug": "mashed-potatoes",
+  "title": "Mashed Potatoes",
+  "description": "Delicious mashed potatoes recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 lbs russet potatoes peeled and quartered"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 garlic cloves peeled and smashed"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup low-sodium chicken"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "broth or water"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup half-and-half or whole milk"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 tbsp unsalted butter"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tsp fine sea salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "ground black pepper"
+    }
+  ],
+  "instructions": [
+    "PRESSURE COOK.",
+    "Combine the potatoes, garlic, and broth in the inner cooking pot. Lock the lid into place and turn the valve to “sealing.” Select Manual or Pressure cook and adjust the pressure to High. Set the time for 8 minutes. When cooking ends, carefully turn the valve to “venting” to quick release the pressure.",
+    "MASH THE POTATOES.",
+    "Drain the potatoes in a colander set over a large bowl, reserving most of the cooking liquid in the bowl. Transfer the potatoes to another large bowl and add the half-and-half and butter to them. Use a potato masher (or electric mixer) to mash the potatoes, adding the reserved cooking water a little at a time, until they are the texture you like. Season with the salt and pepper."
+  ],
+  "tags": [
+    "chicken",
+    "quick"
+  ],
+  "yield": "Servings 6 servings",
+  "image": "/images/recipes/mashed-potatoes.jpg",
+  "prepTime": "10 minutes",
+  "cookTime": "18 minutes"
+}

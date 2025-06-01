@@ -1,0 +1,82 @@
+{
+  "slug": "banana-oatmeal-bread",
+  "title": "Banana Oatmeal Bread",
+  "description": "Delicious banana oatmeal bread recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup white sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ cup shortening"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "2 large eggs, beaten"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon vanilla extract"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup all-purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 cup quick cooking oats"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 teaspoon baking soda"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ teaspoon ground cinnamon"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 ½ cups mashed bananas"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "¼ cup milk"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "½ cup chopped raisins (Optional)"
+    }
+  ],
+  "instructions": [
+    "Preheat the oven to 350 degrees F (175 degrees C). Grease a 9x5-inch loaf pan and set aside.",
+    "Cream together sugar and shortening. Add eggs and vanilla; beat until fluffy.",
+    "Sift together flour, oats, baking soda, salt, and cinnamon. Add dry ingredients alternately with bananas and milk to wet ingredients. Mix until blended. Fold in raisins and pour into the prepared pan.",
+    "Bake in the preheated oven for 50 to 60 minutes; remove from oven and cover for 5 minutes."
+  ],
+  "tags": [
+    "bread",
+    "banana",
+    "quick"
+  ],
+  "yield": "12",
+  "image": "/images/recipes/banana-oatmeal-bread.jpg",
+  "prepTime": "25 mins",
+  "cookTime": "50 mins"
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "spring-roll-dipping-sauce",
+  "title": "Spring Roll Dipping Sauce",
+  "description": "Delicious spring roll dipping sauce recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 cup water"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 cup rice vinegar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 cup white vinegar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 cup granulated sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 1/2 teaspoon chili garlic sauce"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 teaspoon fish sauce"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1–4 garlic cloves, smashed"
+    }
+  ],
+  "instructions": [
+    "Combine Ingredients in saucepan. Bring to simmer and reduce for approx. 15 min or until you have consistency you desire.",
+    "Remove from heat (it will continue to thicken as it cools) and set aside. Use once cooled or, if you made it ahead of time, place in an airtight container and place in the refrigerator for up to 5 days."
+  ],
+  "tags": [
+    "rice"
+  ],
+  "yield": "1/2 cup category: sauces method: stove top cuisine: asian-inspired",
+  "image": "/images/recipes/spring-roll-dipping-sauce.jpg",
+  "prepTime": "5 minutes",
+  "cookTime": "15 minutes"
+}

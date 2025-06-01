@@ -1,0 +1,50 @@
+{
+  "slug": "waffles-from-the-joy-of-cooking",
+  "title": "Waffles From the Joy of Cooking",
+  "description": "Delicious waffles from the joy of cooking recipe",
+  "ingredients": [
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 3/4 cups all-purpose flour"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tbsp baking powder"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 tbsp sugar"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/2 tsp salt"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "3 eggs"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1/4 to 1 cup butter, melted"
+    },
+    {
+      "amount": 0,
+      "unit": "",
+      "name": "1 1/2 cups milk"
+    }
+  ],
+  "instructions": [
+    "Mix all dry ingredients. Mix all wet ingredients. Pour wet ingredients into dry ingredients. Be careful not to overmix here or you will have a stringly batter from developing the flour. Cook on waffle iron. A deep pocket iron is preferable for a perfect balance of crispy, yet light."
+  ],
+  "tags": [
+    "quick"
+  ],
+  "yield": "4 servings",
+  "image": "/images/recipes/waffles-from-the-joy-of-cooking.jpg"
+}
