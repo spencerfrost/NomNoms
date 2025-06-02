@@ -1,6 +1,7 @@
 import { getAllRecipes } from '@/lib/recipes'
 import { ClientSearchBar } from '@/components/client-search-bar'
 import { Button } from '@/components/ui/button'
+import AuthButton from '@/components/auth-button'
 import { Plus } from 'lucide-react'
 import Link from 'next/link'
 
@@ -18,12 +19,15 @@ export default async function HomePage() {
             <p className="text-muted-foreground">Discover and manage your favorite recipes</p>
           </div>
           
-          <Link href="/add">
-            <Button>
-              <Plus className="h-4 w-4 mr-2" />
-              Add Recipe
-            </Button>
-          </Link>
+          <div className="flex items-center gap-4">
+            <AuthButton />
+            <Link href="/add">
+              <Button>
+                <Plus className="h-4 w-4 mr-2" />
+                Add Recipe
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {/* Search and Recipe Grid */}

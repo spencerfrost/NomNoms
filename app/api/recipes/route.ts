@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getAllRecipes, saveRecipe } from '@/lib/server-recipes'
 import { Recipe } from '@/lib/types'
+import { getServerSession } from 'next-auth/next'
+import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 
 export async function GET() {
   try {
@@ -17,6 +19,15 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   try {
+    const session = await getServerSession(authOptions)
+    
+    if (!session) {
+      return NextResponse.json(
+        { error: 'Authentication required to add recipes' },
+        { status: 401 }
+      )
+    }
+
     const recipe: Recipe = await request.json()
     
     // Validate required fields
