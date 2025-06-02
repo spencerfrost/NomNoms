@@ -21,12 +21,6 @@ export default async function HomePage() {
           
           <div className="flex items-center gap-4">
             <AuthButton />
-            <Link href="/add">
-              <Button>
-                <Plus className="h-4 w-4 mr-2" />
-                Add Recipe
-              </Button>
-            </Link>
           </div>
         </div>
 
