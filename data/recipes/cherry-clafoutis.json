@@ -4,44 +4,44 @@
   "description": "Delicious cherry clafoutis recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 1/2 cups sweet cherries, pitted"
+      "amount": "1 1/2",
+      "unit": "cups",
+      "name": "sweet cherries, pitted"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 large eggs, room temperature"
+      "amount": "3",
+      "unit": "large",
+      "name": "eggs, room temperature"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup all-purpose flour"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "all-purpose flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup granulated sugar , plus 2 Tablespoons for topping"
+      "amount": "1/2 cup granulated sugar , plus 2",
+      "unit": "tablespoons",
+      "name": "for topping"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup whole milk , or Half and Half"
+      "amount": "1",
+      "unit": "cup",
+      "name": "whole milk , or Half and Half"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 1/2 teaspoon vanilla extract"
+      "amount": "1 1/2",
+      "unit": "teaspoon",
+      "name": "vanilla extract"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 teaspoon almond extract"
+      "amount": "1/2",
+      "unit": "teaspoon",
+      "name": "almond extract"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 teaspoon salt"
+      "amount": "1/4",
+      "unit": "teaspoon",
+      "name": "salt"
     },
     {
       "amount": 0,

@@ -4,39 +4,39 @@
   "description": "Delicious banana oat muffins recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ½ cups unbleached all-purpose flour"
+      "amount": "1 ½",
+      "unit": "cups",
+      "name": "unbleached all-purpose flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup rolled oats"
+      "amount": "1",
+      "unit": "cup",
+      "name": "rolled oats"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup white sugar"
+      "amount": "½",
+      "unit": "cup",
+      "name": "white sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ tablespoon cinnamon"
+      "amount": "½",
+      "unit": "tablespoon",
+      "name": "cinnamon"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 teaspoons baking powder"
+      "amount": "2",
+      "unit": "teaspoons",
+      "name": "baking powder"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon baking soda"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "baking soda"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ teaspoon salt"
+      "amount": "½",
+      "unit": "teaspoon",
+      "name": "salt"
     },
     {
       "amount": 0,
@@ -44,24 +44,24 @@
       "name": "1 egg"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¾ cup milk"
+      "amount": "¾",
+      "unit": "cup",
+      "name": "milk"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "⅓ cup vegetable oil"
+      "amount": "⅓",
+      "unit": "cup",
+      "name": "vegetable oil"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ teaspoon vanilla extract"
+      "amount": "½",
+      "unit": "teaspoon",
+      "name": "vanilla extract"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup mashed bananas"
+      "amount": "1",
+      "unit": "cup",
+      "name": "mashed bananas"
     }
   ],
   "instructions": [

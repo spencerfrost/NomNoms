@@ -4,69 +4,69 @@
   "description": "Delicious peach salsa recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "10 large ripe peaches ~4 lbs/1.8kg (8 cups peeled, pitted, and finely diced)"
+      "amount": "10",
+      "unit": "large",
+      "name": "ripe peaches ~4 lbs/1.8kg (8 cups peeled, pitted, and finely diced)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¾ cup (180ml) lime juice, fresh (6-7 limes) or bottled, divided"
+      "amount": "¾",
+      "unit": "cup",
+      "name": "(180ml) lime juice, fresh (6-7 limes) or bottled, divided"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "5 large fresh tomatoes ~2½ lbs/1.15kg (4 cups peeled, seeded, and chopped)"
+      "amount": "5",
+      "unit": "large",
+      "name": "fresh tomatoes ~2½ lbs/1.15kg (4 cups peeled, seeded, and chopped)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 large orange or yellow sweet bell peppers, or one of each, ~2½ cups finely diced"
+      "amount": "2",
+      "unit": "large",
+      "name": "orange or yellow sweet bell peppers, or one of each, ~2½ cups finely diced"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 medium onions, finely diced ~2 cups"
+      "amount": "2",
+      "unit": "medium",
+      "name": "onions, finely diced ~2 cups"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 large jalapeño peppers, seeded and finely diced ~½ cup"
+      "amount": "2",
+      "unit": "large",
+      "name": "jalapeño peppers, seeded and finely diced ~½ cup"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "6 cloves garlic, minced 2 tablespoons"
+      "amount": "6 cloves garlic, minced 2",
+      "unit": "tablespoons",
+      "name": ""
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tablespoon ground cumin"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "ground cumin"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tablespoon hot red pepper flakes/chili flakes/crushed red pepper"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "hot red pepper flakes/chili flakes/crushed red pepper"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1½ tablespoons (4½ teaspoons) smoked paprika (mild)"
+      "amount": "1½",
+      "unit": "tablespoons",
+      "name": "(4½ teaspoons) smoked paprika (mild)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1½ teaspoons fine sea salt"
+      "amount": "1½",
+      "unit": "teaspoons",
+      "name": "fine sea salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¾ cup (180ml) white vinegar"
+      "amount": "¾",
+      "unit": "cup",
+      "name": "(180ml) white vinegar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 tablespoons cornstarch"
+      "amount": "2",
+      "unit": "tablespoons",
+      "name": "cornstarch"
     }
   ],
   "instructions": [

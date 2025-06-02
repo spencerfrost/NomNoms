@@ -4,39 +4,39 @@
   "description": "Delicious edible cookie dough recipe {for two} recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 cup packed brown sugar"
+      "amount": "1/4",
+      "unit": "cup",
+      "name": "packed brown sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 Tablespoons butter, softened"
+      "amount": "2",
+      "unit": "tablespoons",
+      "name": "butter, softened"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/8 teaspoon of salt"
+      "amount": "1/8",
+      "unit": "teaspoon",
+      "name": "of salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/8 teaspoon vanilla"
+      "amount": "1/8",
+      "unit": "teaspoon",
+      "name": "vanilla"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 Tablespoon milk"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "milk"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "5 Tablespoons flour - To eliminating any bacteria risks, toast your flour at 350 degrees F for 5 minutes we kill off any harmful bacteria."
+      "amount": "5",
+      "unit": "tablespoons",
+      "name": "flour - To eliminating any bacteria risks, toast your flour at 350 degrees F for 5 minutes we kill off any harmful bacteria."
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 Tablespoons chocolate chips"
+      "amount": "2",
+      "unit": "tablespoons",
+      "name": "chocolate chips"
     }
   ],
   "instructions": [

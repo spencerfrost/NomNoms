@@ -4,9 +4,9 @@
   "description": "Delicious instant pot® quick and easy spaghetti sauce recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 tablespoons olive oil"
+      "amount": "2",
+      "unit": "tablespoons",
+      "name": "olive oil"
     },
     {
       "amount": 0,
@@ -14,9 +14,9 @@
       "name": "2 yellow onions, chopped"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cloves garlic, minced"
+      "amount": "2",
+      "unit": "cloves",
+      "name": "garlic, minced"
     },
     {
       "amount": 0,
@@ -29,34 +29,34 @@
       "name": "1 celery stalk, chopped"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 pounds plum tomatoes"
+      "amount": "3",
+      "unit": "pounds",
+      "name": "plum tomatoes"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon dried oregano"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "dried oregano"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon Italian seasoning"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "Italian seasoning"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon sea salt"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "sea salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon dried basil"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "dried basil"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ teaspoon ground black pepper"
+      "amount": "½",
+      "unit": "teaspoon",
+      "name": "ground black pepper"
     }
   ],
   "instructions": [

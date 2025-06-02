@@ -4,24 +4,24 @@
   "description": "Delicious french onion soup recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "6 large red or yellow onions (about 3 pounds)"
+      "amount": "6",
+      "unit": "large",
+      "name": "red or yellow onions (about 3 pounds)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "4 tablespoons extra virgin olive oil"
+      "amount": "4",
+      "unit": "tablespoons",
+      "name": "extra virgin olive oil"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 tablespoons butter"
+      "amount": "2",
+      "unit": "tablespoons",
+      "name": "butter"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon sugar"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "sugar"
     },
     {
       "amount": 0,
@@ -29,19 +29,19 @@
       "name": "Kosher salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cloves garlic, minced"
+      "amount": "2",
+      "unit": "cloves",
+      "name": "garlic, minced"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "8 cups beef stock, chicken stock, or a combination of the two"
+      "amount": "8",
+      "unit": "cups",
+      "name": "beef stock, chicken stock, or a combination of the two"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup dry vermouth or dry white wine"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "dry vermouth or dry white wine"
     },
     {
       "amount": 0,
@@ -49,29 +49,29 @@
       "name": "2 bay leaves"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tablespoon fresh thyme leaves, a few sprigs of fresh thyme, OR 1/2 teaspoon dried thyme"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "fresh thyme leaves, a few sprigs of fresh thyme, OR 1/2 teaspoon dried thyme"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 teaspoon freshly ground black pepper"
+      "amount": "1/2",
+      "unit": "teaspoon",
+      "name": "freshly ground black pepper"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 tablespoons brandy (optional)"
+      "amount": "2",
+      "unit": "tablespoons",
+      "name": "brandy (optional)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "8 slices (1 inch thick) French bread or baguette"
+      "amount": "8",
+      "unit": "slices",
+      "name": "(1 inch thick) French bread or baguette"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 1/2 cups grated Gruyere cheese"
+      "amount": "1 1/2",
+      "unit": "cups",
+      "name": "grated Gruyere cheese"
     },
     {
       "amount": 0,

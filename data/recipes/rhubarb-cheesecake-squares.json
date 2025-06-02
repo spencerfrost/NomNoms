@@ -4,64 +4,64 @@
   "description": "Delicious rhubarb cheesecake squares recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1-1/4 cups all-purpose flour"
+      "amount": "1-1/4",
+      "unit": "cups",
+      "name": "all-purpose flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup old-fashioned oats"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "old-fashioned oats"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup packed brown sugar"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "packed brown sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup cold butter, cubed"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "cold butter, cubed"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 package (8 ounces) cream cheese, softened"
+      "amount": "1",
+      "unit": "package",
+      "name": "(8 ounces) cream cheese, softened"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3/4 cup sugar"
+      "amount": "3/4",
+      "unit": "cup",
+      "name": "sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 teaspoon salt"
+      "amount": "1/2",
+      "unit": "teaspoon",
+      "name": "salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 teaspoon ground cinnamon"
+      "amount": "1/4",
+      "unit": "teaspoon",
+      "name": "ground cinnamon"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/8 teaspoon ground nutmeg"
+      "amount": "1/8",
+      "unit": "teaspoon",
+      "name": "ground nutmeg"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 large egg, room temperature, lightly beaten"
+      "amount": "1",
+      "unit": "large",
+      "name": "egg, room temperature, lightly beaten"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 teaspoon vanilla extract"
+      "amount": "1/2",
+      "unit": "teaspoon",
+      "name": "vanilla extract"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1-1/2 cups diced fresh or frozen rhubarb, thawed"
+      "amount": "1-1/2",
+      "unit": "cups",
+      "name": "diced fresh or frozen rhubarb, thawed"
     }
   ],
   "instructions": [

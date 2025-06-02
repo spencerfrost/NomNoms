@@ -4,14 +4,14 @@
   "description": "Delicious brownies (rodelle) recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup + 2 tbsp butter"
+      "amount": "1 cup + 2",
+      "unit": "tbsp",
+      "name": "butter"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 1/2 cups sugar"
+      "amount": "2 1/2",
+      "unit": "cups",
+      "name": "sugar"
     },
     {
       "amount": 0,
@@ -19,24 +19,24 @@
       "name": "5 eggs"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 1/2 tbsp Rodelle Vanilla Extract"
+      "amount": "1 1/2",
+      "unit": "tbsp",
+      "name": "Rodelle Vanilla Extract"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3/4 cup + 1 tbsp Rodelle Cocoa Powder"
+      "amount": "3/4 cup + 1",
+      "unit": "tbsp",
+      "name": "Rodelle Cocoa Powder"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3/4 cup + 1 tbsp flour"
+      "amount": "3/4 cup + 1",
+      "unit": "tbsp",
+      "name": "flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup semisweet chocolate chips"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "semisweet chocolate chips"
     }
   ],
   "instructions": [

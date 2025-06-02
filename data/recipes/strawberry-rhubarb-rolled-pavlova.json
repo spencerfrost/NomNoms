@@ -14,9 +14,9 @@
       "name": "Unsalted butter, softened, for brushing"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "5 large egg whites"
+      "amount": "5",
+      "unit": "large",
+      "name": "egg whites"
     },
     {
       "amount": 0,
@@ -24,24 +24,24 @@
       "name": "Pinch of kosher salt (we use Diamond Crystal)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup granulated sugar"
+      "amount": "1",
+      "unit": "cup",
+      "name": "granulated sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 teaspoons pure vanilla extract"
+      "amount": "2",
+      "unit": "teaspoons",
+      "name": "pure vanilla extract"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 teaspoons cornstarch"
+      "amount": "2",
+      "unit": "teaspoons",
+      "name": "cornstarch"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 teaspoons distilled white vinegar"
+      "amount": "2",
+      "unit": "teaspoons",
+      "name": "distilled white vinegar"
     },
     {
       "amount": 0,
@@ -54,29 +54,29 @@
       "name": "Filling"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup Rhubarb-Raspberry Jam"
+      "amount": "1",
+      "unit": "cup",
+      "name": "Rhubarb-Raspberry Jam"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup sliced strawberries, plus 1 cup whole or halved, for serving"
+      "amount": "1",
+      "unit": "cup",
+      "name": "sliced strawberries, plus 1 cup whole or halved, for serving"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¾ cup heavy cream"
+      "amount": "¾",
+      "unit": "cup",
+      "name": "heavy cream"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 tablespoons granulated sugar"
+      "amount": "2",
+      "unit": "tablespoons",
+      "name": "granulated sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon fresh lemon juice"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "fresh lemon juice"
     }
   ],
   "instructions": [

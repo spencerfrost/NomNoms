@@ -4,24 +4,24 @@
   "description": "Delicious baked thick-cut bacon with rhubarb chutney recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "⅓ cup sugar"
+      "amount": "⅓",
+      "unit": "cup",
+      "name": "sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¼ cup light corn syrup"
+      "amount": "¼",
+      "unit": "cup",
+      "name": "light corn syrup"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 tablespoons white-wine vinegar"
+      "amount": "3",
+      "unit": "tablespoons",
+      "name": "white-wine vinegar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "8 ounces rhubarb, cut into a ½-inch dice (2 cups)"
+      "amount": "8",
+      "unit": "ounces",
+      "name": "rhubarb, cut into a ½-inch dice (2 cups)"
     },
     {
       "amount": 0,
@@ -29,9 +29,9 @@
       "name": "1 shallot, finely chopped (⅓ cup)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tablespoon finely chopped fresh ginger (from a 1 ½-inch piece)"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "finely chopped fresh ginger (from a 1 ½-inch piece)"
     },
     {
       "amount": 0,
@@ -44,9 +44,9 @@
       "name": "Kosher salt and freshly ground pepper"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ¼ pounds extra-thick-cut bacon, halved crosswise"
+      "amount": "1 ¼",
+      "unit": "pounds",
+      "name": "extra-thick-cut bacon, halved crosswise"
     }
   ],
   "instructions": [

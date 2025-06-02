@@ -9,24 +9,24 @@
       "name": "For the Streusel:"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "6 tablespoons unsalted butter, melted, plus room-temperature butter for pan"
+      "amount": "6",
+      "unit": "tablespoons",
+      "name": "unsalted butter, melted, plus room-temperature butter for pan"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup all-purpose flour (spooned and leveled), plus more for pan"
+      "amount": "1",
+      "unit": "cup",
+      "name": "all-purpose flour (spooned and leveled), plus more for pan"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup packed light-brown sugar"
+      "amount": "½",
+      "unit": "cup",
+      "name": "packed light-brown sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¼ teaspoon salt"
+      "amount": "¼",
+      "unit": "teaspoon",
+      "name": "salt"
     },
     {
       "amount": 0,
@@ -34,49 +34,49 @@
       "name": "For the Cake:"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ pound rhubarb, cut into ½-inch pieces"
+      "amount": "½ pound rhubarb, cut into ½-inch",
+      "unit": "pieces",
+      "name": ""
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tablespoon light-brown sugar"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "light-brown sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup all-purpose flour (spooned and leveled)"
+      "amount": "1",
+      "unit": "cup",
+      "name": "all-purpose flour (spooned and leveled)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ teaspoon baking powder"
+      "amount": "½",
+      "unit": "teaspoon",
+      "name": "baking powder"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¼ teaspoon salt"
+      "amount": "¼",
+      "unit": "teaspoon",
+      "name": "salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup (1 stick) unsalted butter, room temperature"
+      "amount": "½",
+      "unit": "cup",
+      "name": "(1 stick) unsalted butter, room temperature"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup confectioners' sugar"
+      "amount": "1",
+      "unit": "cup",
+      "name": "confectioners' sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 large eggs"
+      "amount": "2",
+      "unit": "large",
+      "name": "eggs"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ teaspoon pure vanilla extract"
+      "amount": "½",
+      "unit": "teaspoon",
+      "name": "pure vanilla extract"
     }
   ],
   "instructions": [

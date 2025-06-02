@@ -4,19 +4,19 @@
   "description": "Delicious easy stewed rhubarb recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "6 cups chopped rhubarb"
+      "amount": "6",
+      "unit": "cups",
+      "name": "chopped rhubarb"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup granulated sugar"
+      "amount": "1",
+      "unit": "cup",
+      "name": "granulated sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 tablespoons water"
+      "amount": "2",
+      "unit": "tablespoons",
+      "name": "water"
     }
   ],
   "instructions": [

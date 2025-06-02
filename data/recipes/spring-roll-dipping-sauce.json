@@ -4,34 +4,34 @@
   "description": "Delicious spring roll dipping sauce recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup water"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "water"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 cup rice vinegar"
+      "amount": "1/4",
+      "unit": "cup",
+      "name": "rice vinegar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 cup white vinegar"
+      "amount": "1/4",
+      "unit": "cup",
+      "name": "white vinegar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 cup granulated sugar"
+      "amount": "1/4",
+      "unit": "cup",
+      "name": "granulated sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 1/2 teaspoon chili garlic sauce"
+      "amount": "1 1/2",
+      "unit": "teaspoon",
+      "name": "chili garlic sauce"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 teaspoon fish sauce"
+      "amount": "1/4",
+      "unit": "teaspoon",
+      "name": "fish sauce"
     },
     {
       "amount": 0,

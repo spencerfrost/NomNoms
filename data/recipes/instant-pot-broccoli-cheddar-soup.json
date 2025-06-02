@@ -4,14 +4,14 @@
   "description": "Delicious instant pot broccoli cheddar soup recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 Tbsp butter"
+      "amount": "1",
+      "unit": "tbsp",
+      "name": "butter"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 medium yellow onion, diced"
+      "amount": "1",
+      "unit": "medium",
+      "name": "yellow onion, diced"
     },
     {
       "amount": 0,
@@ -24,39 +24,39 @@
       "name": "2 or 3 carrots, match-stick style or grated or diced"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "4 cups coarsely chopped fresh broccoli florets"
+      "amount": "4",
+      "unit": "cups",
+      "name": "coarsely chopped fresh broccoli florets"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 cups chicken broth (or 3 cups of water and 3 tsp of Better than Bouillon Chicken Base)"
+      "amount": "3",
+      "unit": "cups",
+      "name": "chicken broth (or 3 cups of water and 3 tsp of Better than Bouillon Chicken Base)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 cup butter"
+      "amount": "1/4",
+      "unit": "cup",
+      "name": "butter"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 cup flour"
+      "amount": "1/4",
+      "unit": "cup",
+      "name": "flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cups milk"
+      "amount": "2",
+      "unit": "cups",
+      "name": "milk"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 (8 oz) block of sharp cheddar, grated"
+      "amount": "1 (8 oz)",
+      "unit": "block",
+      "name": "of sharp cheddar, grated"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 tsp salt"
+      "amount": "1/2",
+      "unit": "tsp",
+      "name": "salt"
     },
     {
       "amount": 0,

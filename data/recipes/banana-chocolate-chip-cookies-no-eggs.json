@@ -4,19 +4,19 @@
   "description": "Delicious banana chocolate chip cookies (no eggs) recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup butter, softened to room temperature"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "butter, softened to room temperature"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup brown sugar"
+      "amount": "1",
+      "unit": "cup",
+      "name": "brown sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 cup sugar"
+      "amount": "1/4",
+      "unit": "cup",
+      "name": "sugar"
     },
     {
       "amount": 0,
@@ -24,39 +24,39 @@
       "name": "2 over-ripe bananas, mashed"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 tsp vanilla extract"
+      "amount": "2",
+      "unit": "tsp",
+      "name": "vanilla extract"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cups all purpose flour"
+      "amount": "2",
+      "unit": "cups",
+      "name": "all purpose flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 Tbsp cornstarch"
+      "amount": "1",
+      "unit": "tbsp",
+      "name": "cornstarch"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tsp baking soda"
+      "amount": "1",
+      "unit": "tsp",
+      "name": "baking soda"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 tsp baking powder"
+      "amount": "1/2",
+      "unit": "tsp",
+      "name": "baking powder"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 tsp salt"
+      "amount": "1/2",
+      "unit": "tsp",
+      "name": "salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cups chocolate chips"
+      "amount": "2",
+      "unit": "cups",
+      "name": "chocolate chips"
     }
   ],
   "instructions": [

@@ -4,54 +4,54 @@
   "description": "Delicious chicken fried rice recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3/4 pound boneless skinless chicken thighs"
+      "amount": "3/4",
+      "unit": "pound",
+      "name": "boneless skinless chicken thighs"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon salt, divided"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "salt, divided"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 tablespoons canola oil (or any high heat oil), divided"
+      "amount": "3",
+      "unit": "tablespoons",
+      "name": "canola oil (or any high heat oil), divided"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 large eggs, whisked"
+      "amount": "3",
+      "unit": "large",
+      "name": "eggs, whisked"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2/3 cup yellow onions, diced"
+      "amount": "2/3",
+      "unit": "cup",
+      "name": "yellow onions, diced"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cloves garlic, minced"
+      "amount": "2",
+      "unit": "cloves",
+      "name": "garlic, minced"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 teaspoons minced ginger"
+      "amount": "2",
+      "unit": "teaspoons",
+      "name": "minced ginger"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 large carrot, peeled and diced"
+      "amount": "1",
+      "unit": "large",
+      "name": "carrot, peeled and diced"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2/3 cup frozen peas, rinsed under warm tap water for a few seconds thaw"
+      "amount": "2/3",
+      "unit": "cup",
+      "name": "frozen peas, rinsed under warm tap water for a few seconds thaw"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "4 cups cooked jasmine rice (preferably leftover from at least a day before, see Recipe Note)"
+      "amount": "4",
+      "unit": "cups",
+      "name": "cooked jasmine rice (preferably leftover from at least a day before, see Recipe Note)"
     },
     {
       "amount": 0,
@@ -59,19 +59,19 @@
       "name": "2 scallions, sliced (separate the white and light green parts from the dark green part)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 teaspoon Chinese five-spice powder, optional"
+      "amount": "1/2",
+      "unit": "teaspoon",
+      "name": "Chinese five-spice powder, optional"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 1/2 tablespoons soy sauce or tamari"
+      "amount": "2 1/2",
+      "unit": "tablespoons",
+      "name": "soy sauce or tamari"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon sesame oil"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "sesame oil"
     },
     {
       "amount": 0,

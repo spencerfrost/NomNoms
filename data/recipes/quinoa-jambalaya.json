@@ -4,14 +4,14 @@
   "description": "Delicious quinoa jambalaya recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tablespoon vegetable oil, or as needed"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "vegetable oil, or as needed"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 pound kielbasa (Polish) sausage, halved lengthwise and sliced"
+      "amount": "1",
+      "unit": "pound",
+      "name": "kielbasa (Polish) sausage, halved lengthwise and sliced"
     },
     {
       "amount": 0,
@@ -24,44 +24,44 @@
       "name": "6 miniature multi-colored sweet peppers, diced"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon dried oregano"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "dried oregano"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon dried thyme"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "dried thyme"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ teaspoon cayenne pepper"
+      "amount": "½",
+      "unit": "teaspoon",
+      "name": "cayenne pepper"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¼ teaspoon celery salt"
+      "amount": "¼",
+      "unit": "teaspoon",
+      "name": "celery salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 pinch red pepper flakes"
+      "amount": "1",
+      "unit": "pinch",
+      "name": "red pepper flakes"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup quinoa"
+      "amount": "1",
+      "unit": "cup",
+      "name": "quinoa"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cups chicken broth"
+      "amount": "2",
+      "unit": "cups",
+      "name": "chicken broth"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup marinara sauce"
+      "amount": "½",
+      "unit": "cup",
+      "name": "marinara sauce"
     }
   ],
   "instructions": [

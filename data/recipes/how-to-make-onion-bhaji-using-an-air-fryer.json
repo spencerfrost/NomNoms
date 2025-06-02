@@ -4,64 +4,64 @@
   "description": "Delicious how to make onion bhaji using an air fryer recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "One large white onion – thinly sliced"
+      "amount": "One",
+      "unit": "large",
+      "name": "white onion – thinly sliced"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup chickpea flour"
+      "amount": "1",
+      "unit": "cup",
+      "name": "chickpea flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tsp cumin"
+      "amount": "1",
+      "unit": "tsp",
+      "name": "cumin"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tsp salt"
+      "amount": "1",
+      "unit": "tsp",
+      "name": "salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tsp coriander powder"
+      "amount": "1",
+      "unit": "tsp",
+      "name": "coriander powder"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tsp turmeric"
+      "amount": "1",
+      "unit": "tsp",
+      "name": "turmeric"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 tsp smoked paprika"
+      "amount": "1/2",
+      "unit": "tsp",
+      "name": "smoked paprika"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 tsp cayenne powder"
+      "amount": "1/4",
+      "unit": "tsp",
+      "name": "cayenne powder"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 tsp baking soda"
+      "amount": "1/4",
+      "unit": "tsp",
+      "name": "baking soda"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tsp lemon juice"
+      "amount": "1",
+      "unit": "tsp",
+      "name": "lemon juice"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tbsp vegetable oil"
+      "amount": "1",
+      "unit": "tbsp",
+      "name": "vegetable oil"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "6 tbsp cold water"
+      "amount": "6",
+      "unit": "tbsp",
+      "name": "cold water"
     }
   ],
   "instructions": [

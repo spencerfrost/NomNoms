@@ -9,34 +9,34 @@
       "name": "1 unbaked Flaky Pie Crust (what I used) or All Butter Pie Crust*"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "4 large eggs"
+      "amount": "4",
+      "unit": "large",
+      "name": "eggs"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup whole milk*"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "whole milk*"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup heavy cream or heavy whipping cream*"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "heavy cream or heavy whipping cream*"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 teaspoon each salt and pepper*"
+      "amount": "1/4",
+      "unit": "teaspoon",
+      "name": "each salt and pepper*"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup shredded or crumbled cheese such as feta, cheddar, goat cheese, or gruyere"
+      "amount": "1",
+      "unit": "cup",
+      "name": "shredded or crumbled cheese such as feta, cheddar, goat cheese, or gruyere"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "up to 2 cups add-ins (see recipe note)"
+      "amount": "up to 2",
+      "unit": "cups",
+      "name": "add-ins (see recipe note)"
     },
     {
       "amount": 0,

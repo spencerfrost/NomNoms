@@ -9,29 +9,29 @@
       "name": "Dough"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ½ cups unbleached all-purpose flour, plus more for dusting"
+      "amount": "1 ½",
+      "unit": "cups",
+      "name": "unbleached all-purpose flour, plus more for dusting"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 teaspoons sugar"
+      "amount": "2",
+      "unit": "teaspoons",
+      "name": "sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon kosher salt (we use Diamond Crystal)"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "kosher salt (we use Diamond Crystal)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "10 tablespoons cold unsalted butter, cut into small pieces"
+      "amount": "10",
+      "unit": "tablespoons",
+      "name": "cold unsalted butter, cut into small pieces"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "4 to 5 tablespoons ice-cold water"
+      "amount": "4 to 5",
+      "unit": "tablespoons",
+      "name": "ice-cold water"
     },
     {
       "amount": 0,
@@ -39,39 +39,39 @@
       "name": "Filling"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 pound rhubarb, halved lengthwise into ¾-inch stalks if thick"
+      "amount": "1",
+      "unit": "pound",
+      "name": "rhubarb, halved lengthwise into ¾-inch stalks if thick"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ¼ cups sugar"
+      "amount": "1 ¼",
+      "unit": "cups",
+      "name": "sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "⅓ cup unbleached all-purpose flour, plus more for dusting"
+      "amount": "⅓",
+      "unit": "cup",
+      "name": "unbleached all-purpose flour, plus more for dusting"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ teaspoon kosher salt (we use Diamond Crystal)"
+      "amount": "½",
+      "unit": "teaspoon",
+      "name": "kosher salt (we use Diamond Crystal)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 large eggs"
+      "amount": "2",
+      "unit": "large",
+      "name": "eggs"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup heavy cream"
+      "amount": "½",
+      "unit": "cup",
+      "name": "heavy cream"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon pure vanilla paste or extract"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "pure vanilla paste or extract"
     }
   ],
   "instructions": [

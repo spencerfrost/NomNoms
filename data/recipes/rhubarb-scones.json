@@ -4,59 +4,59 @@
   "description": "Delicious rhubarb scones recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1-1/4 cups whole wheat pastry flour"
+      "amount": "1-1/4",
+      "unit": "cups",
+      "name": "whole wheat pastry flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1-1/4 cups all-purpose flour"
+      "amount": "1-1/4",
+      "unit": "cups",
+      "name": "all-purpose flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup sugar"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tablespoon baking powder"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "baking powder"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon ground cardamom"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "ground cardamom"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 teaspoon salt"
+      "amount": "1/2",
+      "unit": "teaspoon",
+      "name": "salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup cold unsalted butter, cubed"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "cold unsalted butter, cubed"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1-1/2 cups finely chopped fresh or frozen rhubarb, thawed (3-4 stalks)"
+      "amount": "1-1/2",
+      "unit": "cups",
+      "name": "finely chopped fresh or frozen rhubarb, thawed (3-4 stalks)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup heavy whipping cream"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "heavy whipping cream"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 cup fat-free milk"
+      "amount": "1/4",
+      "unit": "cup",
+      "name": "fat-free milk"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon vanilla extract"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "vanilla extract"
     },
     {
       "amount": 0,

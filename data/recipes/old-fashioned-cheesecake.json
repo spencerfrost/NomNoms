@@ -9,19 +9,19 @@
       "name": "Crust"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 1/2 cup (375 mL) graham cracker crumbs"
+      "amount": "1 1/2",
+      "unit": "cup",
+      "name": "(375 mL) graham cracker crumbs"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 tsp (1 mL) ground cinnamon"
+      "amount": "1/4",
+      "unit": "tsp",
+      "name": "(1 mL) ground cinnamon"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 cup (60 mL) butter melted"
+      "amount": "1/4",
+      "unit": "cup",
+      "name": "(60 mL) butter melted"
     },
     {
       "amount": 0,
@@ -29,14 +29,14 @@
       "name": "Filling"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 1/2 lb (750 g) Canadian Cream cheese"
+      "amount": "1 1/2",
+      "unit": "lb",
+      "name": "(750 g) Canadian Cream cheese"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup (250 mL) sugar"
+      "amount": "1",
+      "unit": "cup",
+      "name": "(250 mL) sugar"
     },
     {
       "amount": 0,
@@ -44,14 +44,14 @@
       "name": "3 eggs"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tsp (5 mL) vanilla extract"
+      "amount": "1",
+      "unit": "tsp",
+      "name": "(5 mL) vanilla extract"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup (125 mL) sour cream"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "(125 mL) sour cream"
     },
     {
       "amount": 0,
@@ -59,19 +59,19 @@
       "name": "Topping"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup (250 mL) sour cream"
+      "amount": "1",
+      "unit": "cup",
+      "name": "(250 mL) sour cream"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 tbsp (45 mL) sugar"
+      "amount": "3",
+      "unit": "tbsp",
+      "name": "(45 mL) sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tsp (5 mL) vanilla extract"
+      "amount": "1",
+      "unit": "tsp",
+      "name": "(5 mL) vanilla extract"
     }
   ],
   "instructions": [

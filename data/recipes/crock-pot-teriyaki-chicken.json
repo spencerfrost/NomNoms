@@ -9,39 +9,39 @@
       "name": "SLOW COOK"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 1/2 pounds boneless, skinless chicken thighs"
+      "amount": "1 1/2",
+      "unit": "pounds",
+      "name": "boneless, skinless chicken thighs"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2/3 cup low-sodium soy sauce"
+      "amount": "2/3",
+      "unit": "cup",
+      "name": "low-sodium soy sauce"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 tablespoons rice vinegar"
+      "amount": "3",
+      "unit": "tablespoons",
+      "name": "rice vinegar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 tablespoons honey"
+      "amount": "3",
+      "unit": "tablespoons",
+      "name": "honey"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 tablespoons brown sugar"
+      "amount": "3",
+      "unit": "tablespoons",
+      "name": "brown sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 clove garlic minced"
+      "amount": "1",
+      "unit": "clove",
+      "name": "garlic minced"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tablespoon minced fresh ginger"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "minced fresh ginger"
     },
     {
       "amount": 0,
@@ -49,14 +49,14 @@
       "name": "SAUCE"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 tablespoons water"
+      "amount": "2",
+      "unit": "tablespoons",
+      "name": "water"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tablespoon cornstarch"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "cornstarch"
     },
     {
       "amount": 0,

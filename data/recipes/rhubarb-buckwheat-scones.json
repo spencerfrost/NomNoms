@@ -4,49 +4,49 @@
   "description": "Delicious rhubarb-buckwheat scones recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "6 ounces rhubarb, cut into ¼-inch slices if stalks are narrow, diced if large (1 ½ cups)"
+      "amount": "6",
+      "unit": "ounces",
+      "name": "rhubarb, cut into ¼-inch slices if stalks are narrow, diced if large (1 ½ cups)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup granulated sugar"
+      "amount": "½",
+      "unit": "cup",
+      "name": "granulated sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¾ cup cold heavy cream, plus more for brushing"
+      "amount": "¾",
+      "unit": "cup",
+      "name": "cold heavy cream, plus more for brushing"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 large egg, beaten"
+      "amount": "1",
+      "unit": "large",
+      "name": "egg, beaten"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ¾ cups unbleached all-purpose flour, plus more for dusting"
+      "amount": "1 ¾",
+      "unit": "cups",
+      "name": "unbleached all-purpose flour, plus more for dusting"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "⅓ cup buckwheat flour"
+      "amount": "⅓",
+      "unit": "cup",
+      "name": "buckwheat flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 ¼ teaspoons baking powder"
+      "amount": "2 ¼",
+      "unit": "teaspoons",
+      "name": "baking powder"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ¼ teaspoons kosher salt"
+      "amount": "1 ¼",
+      "unit": "teaspoons",
+      "name": "kosher salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "6 tablespoons cold unsalted butter, cut into pieces"
+      "amount": "6",
+      "unit": "tablespoons",
+      "name": "cold unsalted butter, cut into pieces"
     },
     {
       "amount": 0,

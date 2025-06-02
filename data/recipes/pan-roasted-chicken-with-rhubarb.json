@@ -4,9 +4,9 @@
   "description": "Delicious pan roasted chicken with rhubarb recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "4 small boneless skinless chicken breast halves, patted dry (about 1 ½ pounds)"
+      "amount": "4",
+      "unit": "small",
+      "name": "boneless skinless chicken breast halves, patted dry (about 1 ½ pounds)"
     },
     {
       "amount": 0,
@@ -19,54 +19,54 @@
       "name": "Unbleached all-purpose flour, for dusting"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 tablespoons extra-virgin olive oil"
+      "amount": "3",
+      "unit": "tablespoons",
+      "name": "extra-virgin olive oil"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cups thinly sliced onions (from 1 large onion or 2 small)"
+      "amount": "2 cups thinly sliced onions (from 1",
+      "unit": "large",
+      "name": "onion or 2 small)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 tablespoons minced garlic (from 4 to 5 cloves)"
+      "amount": "2",
+      "unit": "tablespoons",
+      "name": "minced garlic (from 4 to 5 cloves)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "4 teaspoons peeled minced ginger (from 2-inch piece)"
+      "amount": "4",
+      "unit": "teaspoons",
+      "name": "peeled minced ginger (from 2-inch piece)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon ground cumin"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "ground cumin"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ teaspoon ground turmeric"
+      "amount": "½",
+      "unit": "teaspoon",
+      "name": "ground turmeric"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 teaspoons sugar"
+      "amount": "2",
+      "unit": "teaspoons",
+      "name": "sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¾ cup low-sodium chicken broth"
+      "amount": "¾",
+      "unit": "cup",
+      "name": "low-sodium chicken broth"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "8 ounces rhubarb, halved if thick, cut into 2-inch pieces"
+      "amount": "8",
+      "unit": "ounces",
+      "name": "rhubarb, halved if thick, cut into 2-inch pieces"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup chopped fresh cilantro, plus leaves for serving"
+      "amount": "½",
+      "unit": "cup",
+      "name": "chopped fresh cilantro, plus leaves for serving"
     },
     {
       "amount": 0,

@@ -4,34 +4,34 @@
   "description": "Delicious peanut butter bars recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cups graham cracker crumbs"
+      "amount": "2",
+      "unit": "cups",
+      "name": "graham cracker crumbs"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cups confectioners' sugar"
+      "amount": "2",
+      "unit": "cups",
+      "name": "confectioners' sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup butter or margarine, melted"
+      "amount": "1",
+      "unit": "cup",
+      "name": "butter or margarine, melted"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup peanut butter"
+      "amount": "1",
+      "unit": "cup",
+      "name": "peanut butter"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ½ cups semisweet chocolate chips"
+      "amount": "1 ½",
+      "unit": "cups",
+      "name": "semisweet chocolate chips"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "4 tablespoons peanut butter"
+      "amount": "4",
+      "unit": "tablespoons",
+      "name": "peanut butter"
     }
   ],
   "instructions": [

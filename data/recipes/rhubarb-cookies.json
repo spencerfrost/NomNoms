@@ -4,54 +4,54 @@
   "description": "Delicious rhubarb cookies recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cups uncooked rolled oats"
+      "amount": "2",
+      "unit": "cups",
+      "name": "uncooked rolled oats"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cups all-purpose flour"
+      "amount": "2",
+      "unit": "cups",
+      "name": "all-purpose flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon baking soda"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "baking soda"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ teaspoon ground ginger"
+      "amount": "½",
+      "unit": "teaspoon",
+      "name": "ground ginger"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "⅛ teaspoon ground nutmeg"
+      "amount": "⅛",
+      "unit": "teaspoon",
+      "name": "ground nutmeg"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup salted butter, softened"
+      "amount": "1",
+      "unit": "cup",
+      "name": "salted butter, softened"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ¼ cups white sugar"
+      "amount": "1 ¼",
+      "unit": "cups",
+      "name": "white sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 large eggs"
+      "amount": "2",
+      "unit": "large",
+      "name": "eggs"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ½ cups chopped fresh rhubarb"
+      "amount": "1 ½",
+      "unit": "cups",
+      "name": "chopped fresh rhubarb"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup minced crystallized ginger"
+      "amount": "½",
+      "unit": "cup",
+      "name": "minced crystallized ginger"
     }
   ],
   "instructions": [

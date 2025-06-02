@@ -49,49 +49,49 @@
       "name": "Spicy Asian Chimichurri Sauce"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¼ cup fish sauce - - see Note 1; vegetarian option in Note 2"
+      "amount": "¼",
+      "unit": "cup",
+      "name": "fish sauce - - see Note 1; vegetarian option in Note 2"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¼ cup sugar"
+      "amount": "¼",
+      "unit": "cup",
+      "name": "sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "⅓ cup water"
+      "amount": "⅓",
+      "unit": "cup",
+      "name": "water"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 Tablespoons lime juice - - freshly squeezed (about half a lime)"
+      "amount": "2",
+      "unit": "tablespoons",
+      "name": "lime juice - - freshly squeezed (about half a lime)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 teaspoons rice wine vinegar - - see Note 3"
+      "amount": "2",
+      "unit": "teaspoons",
+      "name": "rice wine vinegar - - see Note 3"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 clove garlic - - finely diced"
+      "amount": "1",
+      "unit": "clove",
+      "name": "garlic - - finely diced"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 small Thai chili pepper - - finely diced"
+      "amount": "1",
+      "unit": "small",
+      "name": "Thai chili pepper - - finely diced"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 Tablespoon shredded carrot"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "shredded carrot"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon chili garlic sauce - - (optional)"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "chili garlic sauce - - (optional)"
     }
   ],
   "instructions": [

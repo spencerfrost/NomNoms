@@ -4,24 +4,24 @@
   "description": "Delicious rhubarbecue recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1-1/2 teaspoons salt"
+      "amount": "1-1/2",
+      "unit": "teaspoons",
+      "name": "salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1-1/2 teaspoons paprika"
+      "amount": "1-1/2",
+      "unit": "teaspoons",
+      "name": "paprika"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon coarsely ground pepper"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "coarsely ground pepper"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 to 4 pounds boneless country-style pork ribs"
+      "amount": "3 to 4",
+      "unit": "pounds",
+      "name": "boneless country-style pork ribs"
     },
     {
       "amount": 0,
@@ -29,74 +29,74 @@
       "name": "sauce:"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 cups sliced fresh or frozen rhubarb (about 7 stalks)"
+      "amount": "3",
+      "unit": "cups",
+      "name": "sliced fresh or frozen rhubarb (about 7 stalks)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cups fresh strawberries, halved"
+      "amount": "2",
+      "unit": "cups",
+      "name": "fresh strawberries, halved"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 to 3 tablespoons olive oil"
+      "amount": "2 to 3",
+      "unit": "tablespoons",
+      "name": "olive oil"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 medium onion, chopped"
+      "amount": "1",
+      "unit": "medium",
+      "name": "onion, chopped"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup packed brown sugar"
+      "amount": "1",
+      "unit": "cup",
+      "name": "packed brown sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3/4 cup ketchup"
+      "amount": "3/4",
+      "unit": "cup",
+      "name": "ketchup"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup red wine vinegar"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "red wine vinegar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/2 cup bourbon"
+      "amount": "1/2",
+      "unit": "cup",
+      "name": "bourbon"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 cup reduced-sodium soy sauce"
+      "amount": "1/4",
+      "unit": "cup",
+      "name": "reduced-sodium soy sauce"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1/4 cup honey"
+      "amount": "1/4",
+      "unit": "cup",
+      "name": "honey"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 tablespoons Worcestershire sauce"
+      "amount": "2",
+      "unit": "tablespoons",
+      "name": "Worcestershire sauce"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 teaspoons garlic powder"
+      "amount": "2",
+      "unit": "teaspoons",
+      "name": "garlic powder"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon crushed red pepper flakes"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "crushed red pepper flakes"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon coarsely ground pepper"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "coarsely ground pepper"
     }
   ],
   "instructions": [

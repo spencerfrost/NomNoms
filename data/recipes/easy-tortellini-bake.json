@@ -19,9 +19,9 @@
       "name": "1 to 1 1/2 C of shredded mozzarella cheese"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2-3 tbsp grated parmesan cheese"
+      "amount": "2-3",
+      "unit": "tbsp",
+      "name": "grated parmesan cheese"
     },
     {
       "amount": 0,

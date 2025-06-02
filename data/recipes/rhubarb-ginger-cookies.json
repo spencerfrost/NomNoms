@@ -4,64 +4,64 @@
   "description": "Delicious rhubarb ginger cookies recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ¾ cups all-purpose flour"
+      "amount": "1 ¾",
+      "unit": "cups",
+      "name": "all-purpose flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup finely chopped crystallized ginger"
+      "amount": "½",
+      "unit": "cup",
+      "name": "finely chopped crystallized ginger"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon ground ginger"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "ground ginger"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ teaspoon baking powder"
+      "amount": "½",
+      "unit": "teaspoon",
+      "name": "baking powder"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ teaspoon baking soda"
+      "amount": "½",
+      "unit": "teaspoon",
+      "name": "baking soda"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ teaspoon salt"
+      "amount": "½",
+      "unit": "teaspoon",
+      "name": "salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¼ teaspoon ground nutmeg"
+      "amount": "¼",
+      "unit": "teaspoon",
+      "name": "ground nutmeg"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup unsalted butter, softened"
+      "amount": "½",
+      "unit": "cup",
+      "name": "unsalted butter, softened"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup brown sugar"
+      "amount": "1",
+      "unit": "cup",
+      "name": "brown sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 large egg, at room temperature"
+      "amount": "1",
+      "unit": "large",
+      "name": "egg, at room temperature"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ½ teaspoons vanilla extract"
+      "amount": "1 ½",
+      "unit": "teaspoons",
+      "name": "vanilla extract"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ½ cups finely chopped rhubarb"
+      "amount": "1 ½",
+      "unit": "cups",
+      "name": "finely chopped rhubarb"
     }
   ],
   "instructions": [

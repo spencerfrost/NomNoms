@@ -9,44 +9,44 @@
       "name": "Crumb Layer:"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ⅓ cups all-purpose flour"
+      "amount": "1 ⅓",
+      "unit": "cups",
+      "name": "all-purpose flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ teaspoon baking soda"
+      "amount": "½",
+      "unit": "teaspoon",
+      "name": "baking soda"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 pinch salt"
+      "amount": "1",
+      "unit": "pinch",
+      "name": "salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ⅓ cups quick cooking oats"
+      "amount": "1 ⅓",
+      "unit": "cups",
+      "name": "quick cooking oats"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup lightly packed light brown sugar"
+      "amount": "½",
+      "unit": "cup",
+      "name": "lightly packed light brown sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup white sugar"
+      "amount": "½",
+      "unit": "cup",
+      "name": "white sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "¾ cup melted unsalted butter"
+      "amount": "¾",
+      "unit": "cup",
+      "name": "melted unsalted butter"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 teaspoons pure vanilla extract"
+      "amount": "2",
+      "unit": "teaspoons",
+      "name": "pure vanilla extract"
     },
     {
       "amount": 0,
@@ -54,29 +54,29 @@
       "name": "Filling:"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ⅔ cups strawberries, hulled and diced"
+      "amount": "1 ⅔",
+      "unit": "cups",
+      "name": "strawberries, hulled and diced"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ½ cups fresh rhubarb, cut into 1/4 inch pieces"
+      "amount": "1 ½ cups fresh rhubarb, cut into 1/4 inch",
+      "unit": "pieces",
+      "name": ""
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tablespoon freshly squeezed lemon juice"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "freshly squeezed lemon juice"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "⅓ cup white sugar"
+      "amount": "⅓",
+      "unit": "cup",
+      "name": "white sugar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tablespoon cornstarch"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "cornstarch"
     }
   ],
   "instructions": [

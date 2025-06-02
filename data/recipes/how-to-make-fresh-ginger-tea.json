@@ -9,14 +9,14 @@
       "name": "GINGER TEA"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 ½ Tbsp chopped fresh ginger (peeling optional // organic when possible // a 2-inch piece yields ~2 Tbsp)"
+      "amount": "2 ½ Tbsp chopped fresh ginger (peeling optional // organic when possible // a 2-inch",
+      "unit": "piece",
+      "name": "yields ~2 Tbsp)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 ½ cups water"
+      "amount": "2 ½",
+      "unit": "cups",
+      "name": "water"
     },
     {
       "amount": 0,
@@ -24,24 +24,24 @@
       "name": "ADD-INS optional"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 whole cinnamon stick (for sweetness)"
+      "amount": "1 whole cinnamon",
+      "unit": "stick",
+      "name": "(for sweetness)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 Tbsp chopped fresh turmeric (peeling optional // a 2-inch piece yields ~1 Tbsp)"
+      "amount": "1 Tbsp chopped fresh turmeric (peeling optional // a 2-inch",
+      "unit": "piece",
+      "name": "yields ~1 Tbsp)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 (3-inch) pieces fresh orange peel (for zestiness)"
+      "amount": "2 (3-inch)",
+      "unit": "pieces",
+      "name": "fresh orange peel (for zestiness)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tsp fennel seeds (for sweetness and a subtle licorice flavor)"
+      "amount": "1",
+      "unit": "tsp",
+      "name": "fennel seeds (for sweetness and a subtle licorice flavor)"
     },
     {
       "amount": 0,

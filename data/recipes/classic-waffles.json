@@ -4,24 +4,24 @@
   "description": "Delicious classic waffles recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 cups all-purpose flour"
+      "amount": "2",
+      "unit": "cups",
+      "name": "all-purpose flour"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon salt"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "salt"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "4 teaspoons baking powder"
+      "amount": "4",
+      "unit": "teaspoons",
+      "name": "baking powder"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "2 tablespoons white sugar"
+      "amount": "2",
+      "unit": "tablespoons",
+      "name": "white sugar"
     },
     {
       "amount": 0,
@@ -29,19 +29,19 @@
       "name": "2 eggs"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 ½ cups warm milk"
+      "amount": "1 ½",
+      "unit": "cups",
+      "name": "warm milk"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "⅓ cup butter, melted"
+      "amount": "⅓",
+      "unit": "cup",
+      "name": "butter, melted"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon vanilla extract"
+      "amount": "1",
+      "unit": "teaspoon",
+      "name": "vanilla extract"
     }
   ],
   "instructions": [

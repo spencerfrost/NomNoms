@@ -4,24 +4,24 @@
   "description": "Delicious fresh ginger tea recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1-inch chunk of fresh ginger (no need to peel), sliced into pieces no wider than ¼-inch"
+      "amount": "1-inch chunk of fresh ginger (no need to peel), sliced into",
+      "unit": "pieces",
+      "name": "no wider than ¼-inch"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 cup water"
+      "amount": "1",
+      "unit": "cup",
+      "name": "water"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "Optional flavorings (choose just one): 1 cinnamon stick, 1-inch piece of fresh turmeric (cut into thin slices, same as the ginger), or several sprigs of fresh mint"
+      "amount": "Optional flavorings (choose just one): 1 cinnamon stick, 1-inch piece of fresh turmeric (cut into thin slices, same as the ginger), or several",
+      "unit": "sprigs",
+      "name": "of fresh mint"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "Optional add-ins: 1 thin round of fresh lemon or orange, and/or 1 teaspoon honey or maple syrup, to taste"
+      "amount": "Optional add-ins: 1 thin round of fresh lemon or orange, and/or 1",
+      "unit": "teaspoon",
+      "name": "honey or maple syrup, to taste"
     }
   ],
   "instructions": [

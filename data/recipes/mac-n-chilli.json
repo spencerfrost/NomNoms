@@ -9,9 +9,9 @@
       "name": "lean ground beef 1lb"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "garlic 4 cloves minced"
+      "amount": "garlic 4",
+      "unit": "cloves",
+      "name": "minced"
     },
     {
       "amount": 0,
@@ -24,9 +24,9 @@
       "name": "Canned tomatoes 28oz"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "broth 2 cups"
+      "amount": "broth 2",
+      "unit": "cups",
+      "name": ""
     },
     {
       "amount": 0,
@@ -34,14 +34,14 @@
       "name": "macaroni 16oz"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "chilli power 1 tbsp"
+      "amount": "chilli power 1",
+      "unit": "tbsp",
+      "name": ""
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "cumin 1/2 tsp"
+      "amount": "cumin 1/2",
+      "unit": "tsp",
+      "name": ""
     },
     {
       "amount": 0,

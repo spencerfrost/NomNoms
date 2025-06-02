@@ -4,34 +4,34 @@
   "description": "Delicious pork chops with rhubarb-cherry sauce recipe",
   "ingredients": [
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup dried cherries"
+      "amount": "½",
+      "unit": "cup",
+      "name": "dried cherries"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 tablespoon balsamic vinegar"
+      "amount": "1",
+      "unit": "tablespoon",
+      "name": "balsamic vinegar"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "1 teaspoon plus 2 tablespoons olive oil"
+      "amount": "1 teaspoon plus 2",
+      "unit": "tablespoons",
+      "name": "olive oil"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "½ cup finely chopped onion"
+      "amount": "½",
+      "unit": "cup",
+      "name": "finely chopped onion"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "8 to 10 ounces rhubarb, ends trimmed, cut crosswise into 1/2-inch pieces (2 cups)"
+      "amount": "8 to 10",
+      "unit": "ounces",
+      "name": "rhubarb, ends trimmed, cut crosswise into 1/2-inch pieces (2 cups)"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "3 tablespoons sugar"
+      "amount": "3",
+      "unit": "tablespoons",
+      "name": "sugar"
     },
     {
       "amount": 0,
@@ -44,9 +44,9 @@
       "name": "Coarse salt and ground pepper"
     },
     {
-      "amount": 0,
-      "unit": "",
-      "name": "4 pork loin chops, (each ½ inch thick and 6 to 8 ounces)"
+      "amount": "4 pork loin chops, (each ½",
+      "unit": "inch",
+      "name": "thick and 6 to 8 ounces)"
     }
   ],
   "instructions": [
