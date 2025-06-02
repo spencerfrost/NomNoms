@@ -11,8 +11,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, Clock, ChefHat } from 'lucide-react'
 import Link from 'next/link'
-import { formatAmount } from '@/lib/recipe-utils'
-import { scaleIngredientStringAmount } from '@/lib/recipe-utils'
+import { formatIngredientAmount } from '@/lib/recipe-utils'
 
 export default function RecipePage() {
   const params = useParams()
@@ -155,15 +154,18 @@ export default function RecipePage() {
                 
                 <ul className="space-y-2">
                   {recipe.ingredients.map((ingredient) => {
-                    // Join fields into a string for scaling/formatting
-                    const ingredientString = [ingredient.amount, ingredient.unit].filter(Boolean).join(' ').trim();
-                    const scaled = scaleIngredientStringAmount(ingredientString, multiplier);
-                    const formatted = formatAmount(scaled);
+                    // Scale the amount and format for display
+                    const scaledAmount = ingredient.amount * multiplier;
+                    const formattedAmount = formatIngredientAmount(scaledAmount);
+                    const displayText = ingredient.unit 
+                      ? `${formattedAmount} ${ingredient.unit}`
+                      : formattedAmount;
+                    
                     return (
                       <li key={ingredient.name} className="flex justify-between items-start">
                         <span className="font-medium">{ingredient.name}</span>
                         <span className="text-muted-foreground text-sm ml-2 flex-shrink-0">
-                          {formatted}
+                          {displayText}
                         </span>
                       </li>
                     );
