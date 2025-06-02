@@ -37,7 +37,8 @@ export default function SignIn() {
           router.push('/')
         }
       }
-    } catch (error) {
+    } catch (err) {
+      console.error('Sign in error:', err)
       setError('Something went wrong')
     } finally {
       setIsLoading(false)
@@ -110,7 +111,7 @@ export default function SignIn() {
             <div className="text-center text-sm text-gray-600 mt-4">
               <p>You can browse recipes without signing in</p>
               <p className="mt-2">
-                Don't have an account?{' '}
+                Don&apos;t have an account?{' '}
                 <Link href="/auth/signup" className="text-blue-600 hover:underline">
                   Create one
                 </Link>

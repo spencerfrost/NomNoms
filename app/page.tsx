@@ -1,9 +1,6 @@
-import { getAllRecipes } from '@/lib/recipes'
+import { getAllRecipes } from '@/lib/recipes-db'
 import { ClientSearchBar } from '@/components/client-search-bar'
-import { Button } from '@/components/ui/button'
 import AuthButton from '@/components/auth-button'
-import { Plus } from 'lucide-react'
-import Link from 'next/link'
 
 // Server Component for better SSR performance
 export default async function HomePage() {

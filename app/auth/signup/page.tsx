@@ -82,8 +82,8 @@ export default function SignUp() {
           router.push("/");
         }
       }, 1500);
-    } catch (error: any) {
-      setError(error.message);
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : 'An error occurred');
     } finally {
       setIsLoading(false);
     }
@@ -99,7 +99,7 @@ export default function SignUp() {
                 <div className="text-green-600 text-4xl mb-4">✓</div>
                 <h2 className="text-xl font-semibold mb-2">Account Created!</h2>
                 <p className="text-gray-600 mb-4">
-                  Welcome to NomNoms! You're being signed in...
+                  Welcome to NomNoms! You&apos;re being signed in...
                 </p>
               </div>
             </CardContent>
