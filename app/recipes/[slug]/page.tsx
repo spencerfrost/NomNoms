@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import Image from 'next/image'
 import { Recipe } from '@/lib/types'
-import { scaleRecipe, formatAmount } from '@/lib/recipe-utils'
 import { getRecipeBySlug } from '@/lib/client-recipes'
 import { ScaleControls } from '@/components/scale-controls'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -12,6 +11,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, Clock, ChefHat } from 'lucide-react'
 import Link from 'next/link'
+import { formatAmount } from '@/lib/recipe-utils'
+import { scaleIngredientStringAmount } from '@/lib/recipe-utils'
 
 export default function RecipePage() {
   const params = useParams()
@@ -71,7 +72,6 @@ export default function RecipePage() {
     )
   }
 
-  const scaledRecipe = scaleRecipe(recipe, multiplier)
   const scaledYield = recipe.yield.replace(/\d+/g, (match) => 
     String(Math.round(parseInt(match) * multiplier))
   )
@@ -154,14 +154,20 @@ export default function RecipePage() {
                 </div>
                 
                 <ul className="space-y-2">
-                  {scaledRecipe.ingredients.map((ingredient) => (
-                    <li key={ingredient.name} className="flex justify-between items-start">
-                      <span className="font-medium">{ingredient.name}</span>
-                      <span className="text-muted-foreground text-sm ml-2 flex-shrink-0">
-                        {formatAmount(ingredient.amount, ingredient.unit)}
-                      </span>
-                    </li>
-                  ))}
+                  {recipe.ingredients.map((ingredient) => {
+                    // Join fields into a string for scaling/formatting
+                    const ingredientString = [ingredient.amount, ingredient.unit].filter(Boolean).join(' ').trim();
+                    const scaled = scaleIngredientStringAmount(ingredientString, multiplier);
+                    const formatted = formatAmount(scaled);
+                    return (
+                      <li key={ingredient.name} className="flex justify-between items-start">
+                        <span className="font-medium">{ingredient.name}</span>
+                        <span className="text-muted-foreground text-sm ml-2 flex-shrink-0">
+                          {formatted}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </CardContent>
             </Card>
