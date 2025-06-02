@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getAllRecipes, saveRecipe } from '@/lib/server-recipes'
+import { getAllRecipes, createRecipe } from '@/lib/recipes-db'
 import { Recipe } from '@/lib/types'
 import { getServerSession } from 'next-auth/next'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import { authOptions } from '@/lib/auth-config'
 
 export async function GET() {
   try {
@@ -21,14 +21,14 @@ export async function POST(request: NextRequest) {
   try {
     const session = await getServerSession(authOptions)
     
-    if (!session) {
+    if (!session?.user?.id) {
       return NextResponse.json(
         { error: 'Authentication required to add recipes' },
         { status: 401 }
       )
     }
 
-    const recipe: Recipe = await request.json()
+    const recipe: Omit<Recipe, 'id' | 'authorId' | 'createdAt' | 'updatedAt'> = await request.json()
     
     // Validate required fields
     if (!recipe.title || !recipe.description || !recipe.ingredients || !recipe.instructions) {
@@ -38,10 +38,10 @@ export async function POST(request: NextRequest) {
       )
     }
     
-    const slug = await saveRecipe(recipe)
+    const newRecipe = await createRecipe(recipe, session.user.id)
     
     return NextResponse.json(
-      { message: 'Recipe saved successfully', slug },
+      { message: 'Recipe saved successfully', recipe: newRecipe },
       { status: 201 }
     )
   } catch (error) {

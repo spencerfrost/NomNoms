@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createUser } from '@/lib/users'
+import { createUser } from '@/lib/users-db'
 
 export async function POST(request: NextRequest) {
   try {
@@ -45,8 +45,8 @@ export async function POST(request: NextRequest) {
       { status: 201 }
     )
 
-  } catch (error: any) {
-    if (error.message === 'User already exists') {
+  } catch (error: unknown) {
+    if (error instanceof Error && error.message === 'User already exists') {
       return NextResponse.json(
         { error: 'An account with this email already exists' },
         { status: 409 }
