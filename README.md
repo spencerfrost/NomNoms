@@ -1,16 +1,40 @@
 # NomNoms Recipe App
 
-NomNoms is a modern recipe manager built with Next.js. It helps you convert, organize, and browse your favorite recipes with ease.
+NomNoms is a modern recipe manager built with Next.js that's evolving into a comprehensive personal cooking companion. It helps you organize, plan, and enhance your cooking experience.
 
-## Features
-- Convert old HTML recipe files to structured JSON
-- Automatic image extraction and renaming
-- Browse, search, and view recipes in a clean UI
-- Add, edit, and scale recipes with authentication
-- Tag-based filtering (e.g., vegetarian, dessert, quick, etc.)
-- **Authentication** - Guests can view recipes, sign in required to add/edit/delete
-- Built with Next.js App Router, TypeScript, and NextAuth.js
-- Styled with Tailwind CSS and [shadcn/ui](https://ui.shadcn.com/)
+## ✨ Current Features
+- 🔍 Browse, search, and view recipes in a clean UI
+- 📏 Recipe scaling with intelligent unit conversion
+- 🏷️ Tag-based filtering (vegetarian, dessert, quick, etc.)
+- 👤 **User Authentication** - Secure recipe management with NextAuth.js
+- ✏️ Add, edit, and manage your personal recipes
+- 🔒 **Public/Private Recipes** - Control recipe visibility
+- 📱 Mobile-responsive design for kitchen use
+- 🎨 Modern UI built with Tailwind CSS and [shadcn/ui](https://ui.shadcn.com/)
+
+## 🚀 Planned Features
+
+### 📚 Recipe Organization
+- **Recipe Collections/Cookbooks** - Organize recipes into themed collections
+- **Favorite Recipes** - Quick access to your most-loved recipes  
+- **Recipe Forking** - Create and share recipe variations
+- **Recipe Import** - Import recipes from cooking websites via URL
+
+### 🍽️ Personal Cooking Assistant
+- **Recipe Notes** - Add personal modifications and cooking tips
+- **Cooking History** - Track what you've cooked and when
+- **Ingredient Substitutions** - Smart ingredient swapping suggestions
+
+### 📅 Meal Planning & Shopping
+- **Meal Planning Calendar** - Plan meals in advance with drag-and-drop
+- **Smart Shopping Lists** - Auto-generate lists from meal plans
+
+### 🌟 Discovery & Social
+- **Recipe Sharing** - Discover trending recipes from the community
+- **Advanced Search** - Find recipes by ingredients, dietary needs, cook time
+- **Seasonal Suggestions** - Recipe recommendations based on time of year
+
+> 📋 See our detailed [ROADMAP.md](./docs/ROADMAP.md) for complete feature plans and timeline
 
 ## Authentication Setup
 
@@ -48,7 +72,14 @@ GITHUB_SECRET=your-github-client-secret
 2. Create a new OAuth App
 3. Set Authorization callback URL to `http://localhost:3000/api/auth/callback/github`
 
-## Getting Started
+## 🛠️ Tech Stack
+- **Frontend**: Next.js 15 with App Router, React 19, TypeScript
+- **Styling**: Tailwind CSS + shadcn/ui components
+- **Authentication**: NextAuth.js with multiple OAuth providers
+- **Database**: PostgreSQL with Prisma ORM (migrating from JSON files)
+- **Deployment**: Vercel-ready with environment configuration
+
+## 🚀 Getting Started
 
 1. **Install dependencies:**
    ```bash
@@ -84,16 +115,38 @@ GITHUB_SECRET=your-github-client-secret
 
    Open [http://localhost:3000](http://localhost:3000) to see the app.
 
-## Project Structure
-- `app/` – Next.js app pages and routes
-- `components/` – UI and recipe components (built with shadcn/ui)
-- `data/recipes/` – Recipe JSON files
-- `lib/` – Utilities and type definitions
-- `public/images/recipes/` – Recipe images
-- `convert-recipes.js` – Script to convert old HTML recipes
+## 📁 Project Structure
+- `app/` – Next.js app router pages and API routes
+- `components/` – Reusable UI components (built with shadcn/ui)
+- `lib/` – Utilities, types, and business logic
+- `data/` – Current JSON-based data storage (migrating to database)
+- `public/` – Static assets and recipe images
+- `prisma/` – Database schema and migrations (coming soon)
 
-## Contributing
-Pull requests and issues are welcome! Please open an issue to discuss your idea or bug before submitting a PR.
+## 🤝 Contributing
+We welcome contributions! Here's how you can help:
+
+1. **🐛 Bug Reports** - Open an issue with detailed reproduction steps
+2. **💡 Feature Requests** - Check our [roadmap](./docs/ROADMAP.md) and suggest new ideas
+3. **🔧 Code Contributions** - Pick up an issue or implement a planned feature
+4. **📖 Documentation** - Help improve our docs and guides
+
+### Development Workflow
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes and add tests
+4. Commit with clear, descriptive messages
+5. Push to your branch and open a Pull Request
+
+## 📈 Project Status
+- ✅ **MVP Complete** - Core recipe management functionality
+- 🚧 **Database Migration** - Moving from JSON files to PostgreSQL  
+- 📋 **Feature Development** - Implementing planned cooking assistant features
+
+## 📞 Support
+- 📧 Issues: [GitHub Issues](https://github.com/yourusername/nomnoms/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/yourusername/nomnoms/discussions)
+- 📚 Documentation: [Wiki](https://github.com/yourusername/nomnoms/wiki)
 
 ## License
 MIT
