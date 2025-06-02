@@ -4,9 +4,10 @@
   "description": "Delicious slow cooker texas pulled pork recipe",
   "ingredients": [
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "vegetable oil"
+      "name": "vegetable oil",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -14,54 +15,64 @@
       "name": "1 (4 pound) pork shoulder roast"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "barbeque sauce"
+      "name": "barbeque sauce",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "apple cider vinegar"
+      "name": "apple cider vinegar",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "chicken broth"
+      "name": "chicken broth",
+      "_originalAmount": "½"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "light brown sugar"
+      "name": "light brown sugar",
+      "_originalAmount": "¼"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "prepared yellow mustard"
+      "name": "prepared yellow mustard",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "Worcestershire sauce"
+      "name": "Worcestershire sauce",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "chili powder"
+      "name": "chili powder",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "extra large",
-      "name": "onion, chopped"
+      "name": "onion, chopped",
+      "_originalAmount": "1"
     },
     {
-      "amount": "2 large",
+      "amount": 2,
       "unit": "cloves",
-      "name": "garlic, crushed"
+      "name": "garlic, crushed",
+      "_originalAmount": "2 large"
     },
     {
-      "amount": "1 ½",
+      "amount": 1.5,
       "unit": "teaspoons",
-      "name": "dried thyme"
+      "name": "dried thyme",
+      "_originalAmount": "1 ½"
     },
     {
       "amount": 0,
@@ -69,9 +80,10 @@
       "name": "8 hamburger buns, split"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "butter, or as needed"
+      "name": "butter, or as needed",
+      "_originalAmount": "2"
     }
   ],
   "instructions": [

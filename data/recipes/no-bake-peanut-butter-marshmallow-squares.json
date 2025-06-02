@@ -4,29 +4,34 @@
   "description": "Delicious no bake peanut butter marshmallow squares recipe",
   "ingredients": [
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "package",
-      "name": "butterscotch chips, 300g package (I used Chipits)"
+      "name": "butterscotch chips, 300g package (I used Chipits)",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "crunchy or creamy peanut butter"
+      "name": "crunchy or creamy peanut butter",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "butter"
+      "name": "butter",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "package",
-      "name": "rainbow miniature marshmallows, 250g package"
+      "name": "rainbow miniature marshmallows, 250g package",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "vanilla extract"
+      "name": "vanilla extract",
+      "_originalAmount": "1"
     }
   ],
   "instructions": [

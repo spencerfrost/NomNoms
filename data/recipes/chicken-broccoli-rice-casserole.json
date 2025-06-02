@@ -54,19 +54,22 @@
       "name": "Butter"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "butter"
+      "name": "butter",
+      "_originalAmount": "2"
     },
     {
-      "amount": "2 boneless skinless chicken breasts, or 2",
+      "amount": 2,
       "unit": "cups",
-      "name": "diced rotisserie chicken"
+      "name": "diced rotisserie chicken",
+      "_originalAmount": "2 boneless skinless chicken breasts, or 2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "Italian Seasoning"
+      "name": "Italian Seasoning",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -74,24 +77,28 @@
       "name": "Salt/Pepper, to taste"
     },
     {
-      "amount": "2 1/2",
+      "amount": 2.5,
       "unit": "cups",
-      "name": "chicken broth"
+      "name": "chicken broth",
+      "_originalAmount": "2 1/2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "olive oil"
+      "name": "olive oil",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1 1/4",
+      "amount": 1.25,
       "unit": "cups",
-      "name": "white long grain rice, uncooked"
+      "name": "white long grain rice, uncooked",
+      "_originalAmount": "1 1/4"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "cups",
-      "name": "fresh broccoli florets, uncooked"
+      "name": "fresh broccoli florets, uncooked",
+      "_originalAmount": "2"
     },
     {
       "amount": 0,
@@ -99,19 +106,22 @@
       "name": "10.5 oz. Condensed Cream of Chicken Soup"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "milk"
+      "name": "milk",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "sour cream"
+      "name": "sour cream",
+      "_originalAmount": "½"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "cups",
-      "name": "shredded cheddar cheese, separated"
+      "name": "shredded cheddar cheese, separated",
+      "_originalAmount": "2"
     },
     {
       "amount": 0,
@@ -119,14 +129,16 @@
       "name": "Optional Seasonings"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "dried thyme"
+      "name": "dried thyme",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "garlic powder"
+      "name": "garlic powder",
+      "_originalAmount": "1/2"
     },
     {
       "amount": 0,
@@ -134,14 +146,16 @@
       "name": "Casserole Topping"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "Ritz crackers, crushed"
+      "name": "Ritz crackers, crushed",
+      "_originalAmount": "1"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "melted butter"
+      "name": "melted butter",
+      "_originalAmount": "2"
     }
   ],
   "instructions": [

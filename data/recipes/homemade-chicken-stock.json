@@ -9,19 +9,22 @@
       "name": "Brown Stock Ingredients:"
     },
     {
-      "amount": "Chicken, beef, pork, or lamb bones (about 2-4# or 1-2",
+      "amount": 0,
       "unit": "kg",
-      "name": "is a good start)"
+      "name": "is a good start)",
+      "_originalAmount": "Chicken, beef, pork, or lamb bones (about 2-4# or 1-2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "large",
-      "name": "carrot, rough chop"
+      "name": "carrot, rough chop",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "large",
-      "name": "onion (you can leave the skin on), rough chop"
+      "name": "onion (you can leave the skin on), rough chop",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -39,14 +42,16 @@
       "name": "Chicken, beef, pork, or lamb bones (although usually chicken)"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "large",
-      "name": "peeled onion, rough chopped"
+      "name": "peeled onion, rough chopped",
+      "_originalAmount": "1"
     },
     {
-      "amount": "5",
+      "amount": 5,
       "unit": "cloves",
-      "name": "garlic rough chopped"
+      "name": "garlic rough chopped",
+      "_originalAmount": "5"
     },
     {
       "amount": 0,

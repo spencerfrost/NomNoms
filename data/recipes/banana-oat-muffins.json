@@ -4,39 +4,46 @@
   "description": "Delicious banana oat muffins recipe",
   "ingredients": [
     {
-      "amount": "1 ½",
+      "amount": 1.5,
       "unit": "cups",
-      "name": "unbleached all-purpose flour"
+      "name": "unbleached all-purpose flour",
+      "_originalAmount": "1 ½"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "rolled oats"
+      "name": "rolled oats",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "white sugar"
+      "name": "white sugar",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "tablespoon",
-      "name": "cinnamon"
+      "name": "cinnamon",
+      "_originalAmount": "½"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "teaspoons",
-      "name": "baking powder"
+      "name": "baking powder",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "baking soda"
+      "name": "baking soda",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "½"
     },
     {
       "amount": 0,
@@ -44,24 +51,28 @@
       "name": "1 egg"
     },
     {
-      "amount": "¾",
+      "amount": 0.75,
       "unit": "cup",
-      "name": "milk"
+      "name": "milk",
+      "_originalAmount": "¾"
     },
     {
-      "amount": "⅓",
+      "amount": 0.3333333333333333,
       "unit": "cup",
-      "name": "vegetable oil"
+      "name": "vegetable oil",
+      "_originalAmount": "⅓"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "vanilla extract"
+      "name": "vanilla extract",
+      "_originalAmount": "½"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "mashed bananas"
+      "name": "mashed bananas",
+      "_originalAmount": "1"
     }
   ],
   "instructions": [

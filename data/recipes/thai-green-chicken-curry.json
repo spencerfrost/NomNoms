@@ -4,14 +4,16 @@
   "description": "Delicious thai green chicken curry recipe",
   "ingredients": [
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "coconut oil, separated"
+      "name": "coconut oil, separated",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1 lb boneless, skinless chicken thighs (455 g), cut into thin",
+      "amount": 1,
       "unit": "slices",
-      "name": ""
+      "name": "",
+      "_originalAmount": "1 lb boneless, skinless chicken thighs (455 g), cut into thin"
     },
     {
       "amount": 0,
@@ -19,14 +21,16 @@
       "name": "2 thai green chilis, sliced lengthwise"
     },
     {
-      "amount": "1 ½",
+      "amount": 1.5,
       "unit": "tablespoons",
-      "name": "fresh ginger, minced"
+      "name": "fresh ginger, minced",
+      "_originalAmount": "1 ½"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "garlic, minced"
+      "name": "garlic, minced",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -34,14 +38,16 @@
       "name": "1 shallot, small, sliced thinly"
     },
     {
-      "amount": "1 ½",
+      "amount": 1.5,
       "unit": "cups",
-      "name": "red bell pepper (150 g), sliced thinly"
+      "name": "red bell pepper (150 g), sliced thinly",
+      "_originalAmount": "1 ½"
     },
     {
-      "amount": "5 broccolini stalks, split lengthwise if",
+      "amount": 5,
       "unit": "large",
-      "name": "so they are relatively the same size"
+      "name": "so they are relatively the same size",
+      "_originalAmount": "5 broccolini stalks, split lengthwise if"
     },
     {
       "amount": 0,
@@ -49,9 +55,10 @@
       "name": "10 sugar snap peas, split open"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "large",
-      "name": "carrot, sliced in thin rounds"
+      "name": "carrot, sliced in thin rounds",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -59,19 +66,22 @@
       "name": "1 green onion, sliced on a bias (keep green ends for garnish)"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "tablespoons",
-      "name": "thai green curry paste, (found in the International aisle at the grocery store)"
+      "name": "thai green curry paste, (found in the International aisle at the grocery store)",
+      "_originalAmount": "3"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "can",
-      "name": "coconut milk, full fat"
+      "name": "coconut milk, full fat",
+      "_originalAmount": "1"
     },
     {
-      "amount": "fresh basil, thai, if you",
+      "amount": 0,
       "unit": "can",
-      "name": "find it"
+      "name": "find it",
+      "_originalAmount": "fresh basil, thai, if you"
     },
     {
       "amount": 0,

@@ -4,44 +4,52 @@
   "description": "Delicious marry me chicken recipe",
   "ingredients": [
     {
-      "amount": "2-3",
+      "amount": 2,
       "unit": "lbs",
-      "name": "chicken breast"
+      "name": "chicken breast",
+      "_originalAmount": "2-3"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tbsp",
-      "name": "olive oil"
+      "name": "olive oil",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "black pepper"
+      "name": "black pepper",
+      "_originalAmount": "1"
     },
     {
-      "amount": "3 garlic",
+      "amount": 3,
       "unit": "cloves",
-      "name": "minced"
+      "name": "minced",
+      "_originalAmount": "3 garlic"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tbsp",
-      "name": "Italian seasoning"
+      "name": "Italian seasoning",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "sundried tomatoes drained and chopped"
+      "name": "sundried tomatoes drained and chopped",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "heavy cream"
+      "name": "heavy cream",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -49,9 +57,10 @@
       "name": "1/2 chicken stock"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "Fresh parmesan cheese grated"
+      "name": "Fresh parmesan cheese grated",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,

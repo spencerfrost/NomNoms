@@ -4,24 +4,28 @@
   "description": "Blanche, the almonds, boil some water and submerge the almonds for one minute, then rinse with cold water and remove the skinsadd the basil and the almonds together and pulse in the food processor. Then add the cheese and garlic. slowly pour in the oil once you’re done add the salt and pepper Make sure to scrape down the sides of the food processor occasionally Freeze in an ice cube tray or muffin tray",
   "ingredients": [
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "cups",
-      "name": "basil leaves"
+      "name": "basil leaves",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1/3",
+      "amount": 0.3333333333333333,
       "unit": "cup",
-      "name": "almonds"
+      "name": "almonds",
+      "_originalAmount": "1/3"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "parmesan cheese"
+      "name": "parmesan cheese",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "cloves",
-      "name": "garlic"
+      "name": "garlic",
+      "_originalAmount": "3"
     },
     {
       "amount": 0,
@@ -29,24 +33,28 @@
       "name": "OR"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "garlic"
+      "name": "garlic",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "olive oil"
+      "name": "olive oil",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "tsp",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "1/4"
     },
     {
-      "amount": "1/8",
+      "amount": 0.125,
       "unit": "tsp",
-      "name": "pepper"
+      "name": "pepper",
+      "_originalAmount": "1/8"
     }
   ],
   "instructions": [],

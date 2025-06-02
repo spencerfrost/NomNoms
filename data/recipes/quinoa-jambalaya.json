@@ -4,14 +4,16 @@
   "description": "Delicious quinoa jambalaya recipe",
   "ingredients": [
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "vegetable oil, or as needed"
+      "name": "vegetable oil, or as needed",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "pound",
-      "name": "kielbasa (Polish) sausage, halved lengthwise and sliced"
+      "name": "kielbasa (Polish) sausage, halved lengthwise and sliced",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -24,44 +26,52 @@
       "name": "6 miniature multi-colored sweet peppers, diced"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "dried oregano"
+      "name": "dried oregano",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "dried thyme"
+      "name": "dried thyme",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "cayenne pepper"
+      "name": "cayenne pepper",
+      "_originalAmount": "½"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "teaspoon",
-      "name": "celery salt"
+      "name": "celery salt",
+      "_originalAmount": "¼"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "pinch",
-      "name": "red pepper flakes"
+      "name": "red pepper flakes",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "quinoa"
+      "name": "quinoa",
+      "_originalAmount": "1"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "cups",
-      "name": "chicken broth"
+      "name": "chicken broth",
+      "_originalAmount": "2"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "marinara sauce"
+      "name": "marinara sauce",
+      "_originalAmount": "½"
     }
   ],
   "instructions": [

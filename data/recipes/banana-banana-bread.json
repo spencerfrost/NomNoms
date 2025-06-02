@@ -4,34 +4,40 @@
   "description": "Delicious banana banana bread recipe",
   "ingredients": [
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "cups",
-      "name": "all-purpose flour"
+      "name": "all-purpose flour",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "baking soda"
+      "name": "baking soda",
+      "_originalAmount": "1"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "teaspoon",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "¼"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "cinnamon"
+      "name": "cinnamon",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "butter"
+      "name": "butter",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "brown sugar"
+      "name": "brown sugar",
+      "_originalAmount": "½"
     },
     {
       "amount": 0,
@@ -39,9 +45,10 @@
       "name": "2 eggs, beaten"
     },
     {
-      "amount": "2 ⅓",
+      "amount": 2.3333333333333335,
       "unit": "cups",
-      "name": "mashed overripe bananas"
+      "name": "mashed overripe bananas",
+      "_originalAmount": "2 ⅓"
     }
   ],
   "instructions": [

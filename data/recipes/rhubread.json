@@ -4,59 +4,70 @@
   "description": "Delicious rhubread recipe",
   "ingredients": [
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "cups",
-      "name": "coarsely chopped fresh rhubarb (about 12 ounces)"
+      "name": "coarsely chopped fresh rhubarb (about 12 ounces)",
+      "_originalAmount": "3"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "plus 1-3/4 cups sugar, divided"
+      "name": "plus 1-3/4 cups sugar, divided",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "canola oil"
+      "name": "canola oil",
+      "_originalAmount": "1"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "large",
-      "name": "eggs"
+      "name": "eggs",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "vanilla extract"
+      "name": "vanilla extract",
+      "_originalAmount": "1"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "cups",
-      "name": "all-purpose flour"
+      "name": "all-purpose flour",
+      "_originalAmount": "3"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "baking soda"
+      "name": "baking soda",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "ground cinnamon"
+      "name": "ground cinnamon",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "teaspoon",
-      "name": "baking powder"
+      "name": "baking powder",
+      "_originalAmount": "1/4"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "chopped pecans, optional"
+      "name": "chopped pecans, optional",
+      "_originalAmount": "1/2"
     }
   ],
   "instructions": [

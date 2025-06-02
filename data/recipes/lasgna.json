@@ -9,24 +9,28 @@
       "name": "NOODLES"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "quarts",
-      "name": "water"
+      "name": "water",
+      "_originalAmount": "3"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "teaspoons",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "vegetable oil"
+      "name": "vegetable oil",
+      "_originalAmount": "1"
     },
     {
-      "amount": "8",
+      "amount": 8,
       "unit": "ounces",
-      "name": "lasagna noodles"
+      "name": "lasagna noodles",
+      "_originalAmount": "8"
     },
     {
       "amount": 0,
@@ -34,44 +38,52 @@
       "name": "SAUCE"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "pound",
-      "name": "ground beef"
+      "name": "ground beef",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "olive oil"
+      "name": "olive oil",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "medium",
-      "name": "onion, finely diced"
+      "name": "onion, finely diced",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "clove",
-      "name": "garlic, minced"
+      "name": "garlic, minced",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1 650ml",
+      "amount": 1,
       "unit": "can",
-      "name": "spaghetti sauce (more is better than less)"
+      "name": "spaghetti sauce (more is better than less)",
+      "_originalAmount": "1 650ml"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "crumbled dried oregano"
+      "name": "crumbled dried oregano",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "crumbled dried sweet basil"
+      "name": "crumbled dried sweet basil",
+      "_originalAmount": "½"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "sugar"
+      "name": "sugar",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -79,9 +91,10 @@
       "name": "FILLING"
     },
     {
-      "amount": "8",
+      "amount": 8,
       "unit": "ounces",
-      "name": "ricotta or pot cheese or cottage cheese"
+      "name": "ricotta or pot cheese or cottage cheese",
+      "_originalAmount": "8"
     },
     {
       "amount": 0,
@@ -89,14 +102,16 @@
       "name": "1 egg"
     },
     {
-      "amount": "8",
+      "amount": 8,
       "unit": "ounces",
-      "name": "mozzarella cheese (grated)"
+      "name": "mozzarella cheese (grated)",
+      "_originalAmount": "8"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "freshly grated Parmesan cheese (optional)"
+      "name": "freshly grated Parmesan cheese (optional)",
+      "_originalAmount": "½"
     }
   ],
   "instructions": [

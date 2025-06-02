@@ -4,9 +4,10 @@
   "description": "Delicious slow cooker chili mac recipe",
   "ingredients": [
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "lb",
-      "name": "Extra Lean Ground Beef or Lean Ground Turkey (93%-97% lean)"
+      "name": "Extra Lean Ground Beef or Lean Ground Turkey (93%-97% lean)",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -24,74 +25,88 @@
       "name": "1 Bay Leaf"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "Chili Powder (mild)"
+      "name": "Chili Powder (mild)",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "Cumin"
+      "name": "Cumin",
+      "_originalAmount": "1"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "teaspoons",
-      "name": "Smoked Paprika"
+      "name": "Smoked Paprika",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "Oregano"
+      "name": "Oregano",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "Kosher Salt (or ¼ tsp table salt)"
+      "name": "Kosher Salt (or ¼ tsp table salt)",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "Pepper"
+      "name": "Pepper",
+      "_originalAmount": "½"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "teaspoon",
-      "name": "Cayenne Pepper (optional)"
+      "name": "Cayenne Pepper (optional)",
+      "_originalAmount": "¼"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "can",
-      "name": "Diced Green Chiles, mild"
+      "name": "Diced Green Chiles, mild",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1 (14 oz)",
+      "amount": 1,
       "unit": "can",
-      "name": "Diced Tomatoes (with juice)"
+      "name": "Diced Tomatoes (with juice)",
+      "_originalAmount": "1 (14 oz)"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "cups",
-      "name": "Beef Broth** (low sodium)"
+      "name": "Beef Broth** (low sodium)",
+      "_originalAmount": "3"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "teaspoons",
-      "name": "Beef Bouillon (such as Better Than Bouillon®)"
+      "name": "Beef Bouillon (such as Better Than Bouillon®)",
+      "_originalAmount": "2"
     },
     {
-      "amount": "2 (14 oz)",
+      "amount": 2,
       "unit": "cans",
-      "name": "Beans (red kidney, black, or pinto) drained &amp; rinsed"
+      "name": "Beans (red kidney, black, or pinto) drained &amp; rinsed",
+      "_originalAmount": "2 (14 oz)"
     },
     {
-      "amount": "1 (6 oz)",
+      "amount": 1,
       "unit": "can",
-      "name": "Tomato Paste"
+      "name": "Tomato Paste",
+      "_originalAmount": "1 (6 oz)"
     },
     {
-      "amount": "2 cups",
+      "amount": 2,
       "unit": "small",
-      "name": "Elbow Macaroni (or 8 oz other pasta) dry"
+      "name": "Elbow Macaroni (or 8 oz other pasta) dry",
+      "_originalAmount": "2 cups"
     },
     {
       "amount": 0,

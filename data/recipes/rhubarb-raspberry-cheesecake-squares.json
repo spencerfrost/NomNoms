@@ -4,34 +4,40 @@
   "description": "Delicious rhubarb-raspberry cheesecake squares recipe",
   "ingredients": [
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "stick",
-      "name": "unsalted butter, melted, plus more, room temperature, for pan"
+      "name": "unsalted butter, melted, plus more, room temperature, for pan",
+      "_originalAmount": "1"
     },
     {
-      "amount": "18 graham-cracker",
+      "amount": 18,
       "unit": "sheets",
-      "name": ""
+      "name": "",
+      "_originalAmount": "18 graham-cracker"
     },
     {
-      "amount": "2 cups plus 2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "sugar"
+      "name": "sugar",
+      "_originalAmount": "2 cups plus 2"
     },
     {
-      "amount": "16",
+      "amount": 16,
       "unit": "ounces",
-      "name": "cream cheese, room temperature"
+      "name": "cream cheese, room temperature",
+      "_originalAmount": "16"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "sour cream, room temperature"
+      "name": "sour cream, room temperature",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "pure vanilla extract"
+      "name": "pure vanilla extract",
+      "_originalAmount": "½"
     },
     {
       "amount": 0,
@@ -39,24 +45,28 @@
       "name": "Pinch of coarse salt"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "large",
-      "name": "eggs, room temperature, lightly beaten"
+      "name": "eggs, room temperature, lightly beaten",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1 ½",
+      "amount": 1.5,
       "unit": "pounds",
-      "name": "rhubarb stalks, 5 stalks trimmed and halved lengthwise, the rest chopped (1 ¾ cups)"
+      "name": "rhubarb stalks, 5 stalks trimmed and halved lengthwise, the rest chopped (1 ¾ cups)",
+      "_originalAmount": "1 ½"
     },
     {
-      "amount": "6",
+      "amount": 6,
       "unit": "ounces",
-      "name": "fresh raspberries"
+      "name": "fresh raspberries",
+      "_originalAmount": "6"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "fresh lemon juice"
+      "name": "fresh lemon juice",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,

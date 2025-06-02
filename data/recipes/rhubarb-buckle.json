@@ -14,54 +14,64 @@
       "name": "Vegetable-oil cooking spray, for cake pans"
     },
     {
-      "amount": "1 pound plus 10",
+      "amount": 1,
       "unit": "ounces",
-      "name": "rhubarb, trimmed and cut ½ inch thick on the bias"
+      "name": "rhubarb, trimmed and cut ½ inch thick on the bias",
+      "_originalAmount": "1 pound plus 10"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "cups",
-      "name": "sugar, divided"
+      "name": "sugar, divided",
+      "_originalAmount": "2"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "cups",
-      "name": "all-purpose flour"
+      "name": "all-purpose flour",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1 ¼",
+      "amount": 1.25,
       "unit": "teaspoons",
-      "name": "baking powder"
+      "name": "baking powder",
+      "_originalAmount": "1 ¼"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "coarse salt"
+      "name": "coarse salt",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1 ½",
+      "amount": 1.5,
       "unit": "sticks",
-      "name": "unsalted butter, softened"
+      "name": "unsalted butter, softened",
+      "_originalAmount": "1 ½"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "finely grated lemon zest"
+      "name": "finely grated lemon zest",
+      "_originalAmount": "1"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "large",
-      "name": "eggs"
+      "name": "eggs",
+      "_originalAmount": "3"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "pure vanilla extract"
+      "name": "pure vanilla extract",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "sour cream"
+      "name": "sour cream",
+      "_originalAmount": "½"
     },
     {
       "amount": 0,
@@ -69,24 +79,28 @@
       "name": "Crumb Topping"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "all-purpose flour"
+      "name": "all-purpose flour",
+      "_originalAmount": "1"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "light-brown sugar"
+      "name": "light-brown sugar",
+      "_originalAmount": "¼"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "teaspoon",
-      "name": "coarse salt"
+      "name": "coarse salt",
+      "_originalAmount": "¼"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "stick",
-      "name": "unsalted butter, melted"
+      "name": "unsalted butter, melted",
+      "_originalAmount": "½"
     }
   ],
   "instructions": [

@@ -14,9 +14,10 @@
       "name": "garlic, minced"
     },
     {
-      "amount": "(6 oz)",
+      "amount": 0,
       "unit": "can",
-      "name": "tomato paste"
+      "name": "tomato paste",
+      "_originalAmount": "(6 oz)"
     },
     {
       "amount": 0,

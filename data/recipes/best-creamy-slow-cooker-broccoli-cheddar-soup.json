@@ -4,39 +4,46 @@
   "description": "Delicious best creamy slow cooker broccoli cheddar soup recipe",
   "ingredients": [
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "tablespoons",
-      "name": "whole wheat flour or white whole wheat"
+      "name": "whole wheat flour or white whole wheat",
+      "_originalAmount": "3"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "low-fat milk organic preferred"
+      "name": "low-fat milk organic preferred",
+      "_originalAmount": "1"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "tablespoons",
-      "name": "olive oil"
+      "name": "olive oil",
+      "_originalAmount": "3"
     },
     {
-      "amount": "4",
+      "amount": 4,
       "unit": "cups",
-      "name": "chicken broth or vegetable broth, low sodium preferred"
+      "name": "chicken broth or vegetable broth, low sodium preferred",
+      "_originalAmount": "4"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "pound",
-      "name": "broccoli frozen, thawed and chopped"
+      "name": "broccoli frozen, thawed and chopped",
+      "_originalAmount": "1"
     },
     {
-      "amount": "3 cups cheddar cheese shredded, skim not recommended for this recipe, please buy the",
+      "amount": 3,
       "unit": "block",
-      "name": "and shred yourself to avoid waxes"
+      "name": "and shred yourself to avoid waxes",
+      "_originalAmount": "3 cups cheddar cheese shredded, skim not recommended for this recipe, please buy the"
     },
     {
-      "amount": "1 garlic",
+      "amount": 1,
       "unit": "clove",
-      "name": "minced"
+      "name": "minced",
+      "_originalAmount": "1 garlic"
     }
   ],
   "instructions": [

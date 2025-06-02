@@ -9,29 +9,34 @@
       "name": "1 Tbsp. unsalted butter"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "carrot finely chopped"
+      "name": "carrot finely chopped",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "3/4",
+      "amount": 0.75,
       "unit": "cup",
-      "name": "celery finely chopped"
+      "name": "celery finely chopped",
+      "_originalAmount": "3/4"
     },
     {
-      "amount": "3/4",
+      "amount": 0.75,
       "unit": "cup",
-      "name": "white onion finely chopped"
+      "name": "white onion finely chopped",
+      "_originalAmount": "3/4"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "leeks finely chopped"
+      "name": "leeks finely chopped",
+      "_originalAmount": "1"
     },
     {
-      "amount": "2 large",
+      "amount": 2,
       "unit": "cloves",
-      "name": "garlic minced"
+      "name": "garlic minced",
+      "_originalAmount": "2 large"
     },
     {
       "amount": 0,
@@ -44,19 +49,22 @@
       "name": "1/4 tsp. pepper"
     },
     {
-      "amount": "2 large russet potatoes peeled and chopped into thin",
+      "amount": 2,
       "unit": "slices",
-      "name": "or 1\" cubes"
+      "name": "or 1\" cubes",
+      "_originalAmount": "2 large russet potatoes peeled and chopped into thin"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "cups",
-      "name": "chicken broth"
+      "name": "chicken broth",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "half and half"
+      "name": "half and half",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,

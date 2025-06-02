@@ -4,49 +4,58 @@
   "description": "Delicious rhubarb-buckwheat scones recipe",
   "ingredients": [
     {
-      "amount": "6",
+      "amount": 6,
       "unit": "ounces",
-      "name": "rhubarb, cut into ¼-inch slices if stalks are narrow, diced if large (1 ½ cups)"
+      "name": "rhubarb, cut into ¼-inch slices if stalks are narrow, diced if large (1 ½ cups)",
+      "_originalAmount": "6"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "granulated sugar"
+      "name": "granulated sugar",
+      "_originalAmount": "½"
     },
     {
-      "amount": "¾",
+      "amount": 0.75,
       "unit": "cup",
-      "name": "cold heavy cream, plus more for brushing"
+      "name": "cold heavy cream, plus more for brushing",
+      "_originalAmount": "¾"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "large",
-      "name": "egg, beaten"
+      "name": "egg, beaten",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1 ¾",
+      "amount": 1.75,
       "unit": "cups",
-      "name": "unbleached all-purpose flour, plus more for dusting"
+      "name": "unbleached all-purpose flour, plus more for dusting",
+      "_originalAmount": "1 ¾"
     },
     {
-      "amount": "⅓",
+      "amount": 0.3333333333333333,
       "unit": "cup",
-      "name": "buckwheat flour"
+      "name": "buckwheat flour",
+      "_originalAmount": "⅓"
     },
     {
-      "amount": "2 ¼",
+      "amount": 2.25,
       "unit": "teaspoons",
-      "name": "baking powder"
+      "name": "baking powder",
+      "_originalAmount": "2 ¼"
     },
     {
-      "amount": "1 ¼",
+      "amount": 1.25,
       "unit": "teaspoons",
-      "name": "kosher salt"
+      "name": "kosher salt",
+      "_originalAmount": "1 ¼"
     },
     {
-      "amount": "6",
+      "amount": 6,
       "unit": "tablespoons",
-      "name": "cold unsalted butter, cut into pieces"
+      "name": "cold unsalted butter, cut into pieces",
+      "_originalAmount": "6"
     },
     {
       "amount": 0,

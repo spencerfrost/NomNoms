@@ -9,29 +9,34 @@
       "name": "Maple Dijon Marinade"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "dijon mustard"
+      "name": "dijon mustard",
+      "_originalAmount": "1/4"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "maple syrup"
+      "name": "maple syrup",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "apple cider vinegar"
+      "name": "apple cider vinegar",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "dried thyme"
+      "name": "dried thyme",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "sea salt"
+      "name": "sea salt",
+      "_originalAmount": "½"
     }
   ],
   "instructions": [

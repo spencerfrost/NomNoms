@@ -9,14 +9,16 @@
       "name": "MEAT FILLING:"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "olive oil"
+      "name": "olive oil",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "chopped yellow onion"
+      "name": "chopped yellow onion",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -24,64 +26,76 @@
       "name": "1 lb. 90% lean ground beef -or ground lamb"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "teaspoons",
-      "name": "dried parsley leaves"
+      "name": "dried parsley leaves",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "dried rosemary leaves"
+      "name": "dried rosemary leaves",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "dried thyme leaves"
+      "name": "dried thyme leaves",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "ground black pepper"
+      "name": "ground black pepper",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "Worcestershire sauce"
+      "name": "Worcestershire sauce",
+      "_originalAmount": "1"
     },
     {
-      "amount": "2 garlic",
+      "amount": 2,
       "unit": "cloves",
-      "name": "-minced"
+      "name": "-minced",
+      "_originalAmount": "2 garlic"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "all purpose flour"
+      "name": "all purpose flour",
+      "_originalAmount": "2"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "tomato paste"
+      "name": "tomato paste",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "beef broth"
+      "name": "beef broth",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "frozen mixed peas &amp; carrots*"
+      "name": "frozen mixed peas &amp; carrots*",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "frozen corn kernels"
+      "name": "frozen corn kernels",
+      "_originalAmount": "1/2"
     },
     {
       "amount": 0,
@@ -89,39 +103,46 @@
       "name": "POTATO TOPPING:"
     },
     {
-      "amount": "1 ½ - 2 lb. russet potatoes -about 2 large potatoes peeled and cut into 1 inch",
+      "amount": 1.5,
       "unit": "cubes",
-      "name": ""
+      "name": "",
+      "_originalAmount": "1 ½ - 2 lb. russet potatoes -about 2 large potatoes peeled and cut into 1 inch"
     },
     {
-      "amount": "8",
+      "amount": 8,
       "unit": "tablespoons",
-      "name": "unsalted butter -1 stick"
+      "name": "unsalted butter -1 stick",
+      "_originalAmount": "8"
     },
     {
-      "amount": "1/3",
+      "amount": 0.3333333333333333,
       "unit": "cup",
-      "name": "half &amp; half"
+      "name": "half &amp; half",
+      "_originalAmount": "1/3"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "garlic powder"
+      "name": "garlic powder",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "teaspoon",
-      "name": "ground black pepper"
+      "name": "ground black pepper",
+      "_originalAmount": "1/4"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "parmesan cheese"
+      "name": "parmesan cheese",
+      "_originalAmount": "1/4"
     }
   ],
   "instructions": [

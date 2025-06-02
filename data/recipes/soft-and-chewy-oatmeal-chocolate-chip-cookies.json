@@ -4,64 +4,76 @@
   "description": "Delicious soft and chewy oatmeal chocolate chip cookies recipe",
   "ingredients": [
     {
-      "amount": "1 and 1/2 (188g)",
+      "amount": 1.5,
       "unit": "cups",
-      "name": "all-purpose flour (spooned & leveled)"
+      "name": "all-purpose flour (spooned & leveled)",
+      "_originalAmount": "1 and 1/2 (188g)"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "ground cinnamon (optional)"
+      "name": "ground cinnamon (optional)",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "baking soda"
+      "name": "baking soda",
+      "_originalAmount": "1"
     },
     {
-      "amount": "3/4",
+      "amount": 0.75,
       "unit": "teaspoon",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "3/4"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "(2 sticks; 230g) unsalted butter, softened to room temperature"
+      "name": "(2 sticks; 230g) unsalted butter, softened to room temperature",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "(200g) packed light or dark brown sugar"
+      "name": "(200g) packed light or dark brown sugar",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "(100g) granulated sugar"
+      "name": "(100g) granulated sugar",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "large",
-      "name": "eggs, at room temperature"
+      "name": "eggs, at room temperature",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "(15ml) unsulphured or dark molasses (do not use blackstrap; I prefer Grandma’s brand)"
+      "name": "(15ml) unsulphured or dark molasses (do not use blackstrap; I prefer Grandma’s brand)",
+      "_originalAmount": "1"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "teaspoons",
-      "name": "pure vanilla extract"
+      "name": "pure vanilla extract",
+      "_originalAmount": "2"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "cups",
-      "name": "(255g) old-fashioned whole rolled oats"
+      "name": "(255g) old-fashioned whole rolled oats",
+      "_originalAmount": "3"
     },
     {
-      "amount": "1 and 3/4",
+      "amount": 1.75,
       "unit": "cups",
-      "name": "semi-sweet chocolate chips*"
+      "name": "semi-sweet chocolate chips*",
+      "_originalAmount": "1 and 3/4"
     }
   ],
   "instructions": [

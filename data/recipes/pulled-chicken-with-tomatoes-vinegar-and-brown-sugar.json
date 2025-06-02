@@ -4,64 +4,76 @@
   "description": "Delicious pulled chicken with tomatoes, vinegar, and brown sugar recipe",
   "ingredients": [
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "chicken broth"
+      "name": "chicken broth",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1 1/2",
+      "amount": 1.5,
       "unit": "tbsp",
-      "name": "apple cider vinegar"
+      "name": "apple cider vinegar",
+      "_originalAmount": "1 1/2"
     },
     {
-      "amount": "4",
+      "amount": 4,
       "unit": "small",
-      "name": "roma or plum tomatoes quartered"
+      "name": "roma or plum tomatoes quartered",
+      "_originalAmount": "4"
     },
     {
-      "amount": "6",
+      "amount": 6,
       "unit": "medium",
-      "name": "scallions trimmed and thinly sliced (1½ cups)"
+      "name": "scallions trimmed and thinly sliced (1½ cups)",
+      "_originalAmount": "6"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tbsp",
-      "name": "mild paprika"
+      "name": "mild paprika",
+      "_originalAmount": "2"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tsp",
-      "name": "onion powder"
+      "name": "onion powder",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "garlic powder"
+      "name": "garlic powder",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "dried thyme"
+      "name": "dried thyme",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "table salt"
+      "name": "table salt",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "tsp",
-      "name": "ground allspice"
+      "name": "ground allspice",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "tsp",
-      "name": "ground black pepper"
+      "name": "ground black pepper",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "12",
+      "amount": 12,
       "unit": "tsp",
-      "name": "ground dried cayenne"
+      "name": "ground dried cayenne",
+      "_originalAmount": "12"
     },
     {
       "amount": 0,
@@ -69,19 +81,22 @@
       "name": "Five 5- to 6-ounce boneless skinless chicken breasts"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "ketchup"
+      "name": "ketchup",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tbsp",
-      "name": "light brown sugar"
+      "name": "light brown sugar",
+      "_originalAmount": "2"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tbsp",
-      "name": "honey"
+      "name": "honey",
+      "_originalAmount": "2"
     },
     {
       "amount": 0,

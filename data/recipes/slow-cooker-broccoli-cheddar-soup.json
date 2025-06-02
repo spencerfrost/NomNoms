@@ -4,59 +4,70 @@
   "description": "Delicious slow cooker broccoli cheddar soup recipe",
   "ingredients": [
     {
-      "amount": "4 cups broccoli florets cut into small bite sized",
+      "amount": 4,
       "unit": "pieces",
-      "name": ""
+      "name": "",
+      "_originalAmount": "4 cups broccoli florets cut into small bite sized"
     },
     {
-      "amount": "1/2 yellow onion diced",
+      "amount": 0.5,
       "unit": "small",
-      "name": ""
+      "name": "",
+      "_originalAmount": "1/2 yellow onion diced"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "cups",
-      "name": "shredded carrots"
+      "name": "shredded carrots",
+      "_originalAmount": "2"
     },
     {
-      "amount": "4",
+      "amount": 4,
       "unit": "cups",
-      "name": "chicken stock (or vegetable stock)"
+      "name": "chicken stock (or vegetable stock)",
+      "_originalAmount": "4"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "kosher salt"
+      "name": "kosher salt",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "tsp",
-      "name": "black pepper"
+      "name": "black pepper",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1/8",
+      "amount": 0.125,
       "unit": "tsp",
-      "name": "nutmeg"
+      "name": "nutmeg",
+      "_originalAmount": "1/8"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "tbsp",
-      "name": "unsalted butter"
+      "name": "unsalted butter",
+      "_originalAmount": "3"
     },
     {
-      "amount": "1/3",
+      "amount": 0.3333333333333333,
       "unit": "cup",
-      "name": "all purpose flour"
+      "name": "all purpose flour",
+      "_originalAmount": "1/3"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "half and half"
+      "name": "half and half",
+      "_originalAmount": "1"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "cups",
-      "name": "shredded cheddar cheese (see note)"
+      "name": "shredded cheddar cheese (see note)",
+      "_originalAmount": "2"
     }
   ],
   "instructions": [

@@ -4,39 +4,46 @@
   "description": "Delicious edible cookie dough recipe {for two} recipe",
   "ingredients": [
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "packed brown sugar"
+      "name": "packed brown sugar",
+      "_originalAmount": "1/4"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "butter, softened"
+      "name": "butter, softened",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1/8",
+      "amount": 0.125,
       "unit": "teaspoon",
-      "name": "of salt"
+      "name": "of salt",
+      "_originalAmount": "1/8"
     },
     {
-      "amount": "1/8",
+      "amount": 0.125,
       "unit": "teaspoon",
-      "name": "vanilla"
+      "name": "vanilla",
+      "_originalAmount": "1/8"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "milk"
+      "name": "milk",
+      "_originalAmount": "1"
     },
     {
-      "amount": "5",
+      "amount": 5,
       "unit": "tablespoons",
-      "name": "flour - To eliminating any bacteria risks, toast your flour at 350 degrees F for 5 minutes we kill off any harmful bacteria."
+      "name": "flour - To eliminating any bacteria risks, toast your flour at 350 degrees F for 5 minutes we kill off any harmful bacteria.",
+      "_originalAmount": "5"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "chocolate chips"
+      "name": "chocolate chips",
+      "_originalAmount": "2"
     }
   ],
   "instructions": [

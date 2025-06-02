@@ -4,39 +4,46 @@
   "description": "Delicious asparagus oven-roasted recipe",
   "ingredients": [
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "bunch",
-      "name": "thin asparagus spears, trimmed"
+      "name": "thin asparagus spears, trimmed",
+      "_originalAmount": "1"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "tablespoons",
-      "name": "olive oil"
+      "name": "olive oil",
+      "_originalAmount": "3"
     },
     {
-      "amount": "1 ½",
+      "amount": 1.5,
       "unit": "tablespoons",
-      "name": "grated Parmesan cheese (Optional)"
+      "name": "grated Parmesan cheese (Optional)",
+      "_originalAmount": "1 ½"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "clove",
-      "name": "garlic, minced (Optional)"
+      "name": "garlic, minced (Optional)",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "sea salt"
+      "name": "sea salt",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "ground black pepper"
+      "name": "ground black pepper",
+      "_originalAmount": "½"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "lemon juice (Optional)"
+      "name": "lemon juice (Optional)",
+      "_originalAmount": "1"
     }
   ],
   "instructions": [

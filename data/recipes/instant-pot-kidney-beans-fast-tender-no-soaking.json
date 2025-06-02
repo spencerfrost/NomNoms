@@ -4,14 +4,16 @@
   "description": "Delicious instant pot kidney beans (fast, tender, no soaking!) recipe",
   "ingredients": [
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "kidney beans"
+      "name": "kidney beans",
+      "_originalAmount": "1"
     },
     {
-      "amount": "3 ½",
+      "amount": 3.5,
       "unit": "cups",
-      "name": "water (or vegetable broth for more flavor)"
+      "name": "water (or vegetable broth for more flavor)",
+      "_originalAmount": "3 ½"
     }
   ],
   "instructions": [

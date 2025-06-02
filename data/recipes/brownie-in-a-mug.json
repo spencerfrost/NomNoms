@@ -4,24 +4,28 @@
   "description": "Delicious brownie in a mug recipe",
   "ingredients": [
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "butter, mild extra virgin olive oil, or neutral oil"
+      "name": "butter, mild extra virgin olive oil, or neutral oil",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "(30g) all-purpose flour"
+      "name": "(30g) all-purpose flour",
+      "_originalAmount": "1/4"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "tablespoons",
-      "name": "(35g) sugar"
+      "name": "(35g) sugar",
+      "_originalAmount": "3"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "(13g) natural unsweetened cocoa powder"
+      "name": "(13g) natural unsweetened cocoa powder",
+      "_originalAmount": "2"
     },
     {
       "amount": 0,
@@ -29,19 +33,22 @@
       "name": "Pinch kosher salt"
     },
     {
-      "amount": "Tiny",
+      "amount": 0,
       "unit": "pinch",
-      "name": "cinnamon, optional"
+      "name": "cinnamon, optional",
+      "_originalAmount": "Tiny"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "tablespoons",
-      "name": "(44ml) milk, water, or coffee"
+      "name": "(44ml) milk, water, or coffee",
+      "_originalAmount": "3"
     },
     {
-      "amount": "1/8",
+      "amount": 0.125,
       "unit": "teaspoon",
-      "name": "vanilla extract"
+      "name": "vanilla extract",
+      "_originalAmount": "1/8"
     },
     {
       "amount": 0,

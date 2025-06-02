@@ -9,44 +9,52 @@
       "name": "Crumb Layer:"
     },
     {
-      "amount": "1 ⅓",
+      "amount": 1.3333333333333333,
       "unit": "cups",
-      "name": "all-purpose flour"
+      "name": "all-purpose flour",
+      "_originalAmount": "1 ⅓"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "baking soda"
+      "name": "baking soda",
+      "_originalAmount": "½"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "pinch",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1 ⅓",
+      "amount": 1.3333333333333333,
       "unit": "cups",
-      "name": "quick cooking oats"
+      "name": "quick cooking oats",
+      "_originalAmount": "1 ⅓"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "lightly packed light brown sugar"
+      "name": "lightly packed light brown sugar",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "white sugar"
+      "name": "white sugar",
+      "_originalAmount": "½"
     },
     {
-      "amount": "¾",
+      "amount": 0.75,
       "unit": "cup",
-      "name": "melted unsalted butter"
+      "name": "melted unsalted butter",
+      "_originalAmount": "¾"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "teaspoons",
-      "name": "pure vanilla extract"
+      "name": "pure vanilla extract",
+      "_originalAmount": "2"
     },
     {
       "amount": 0,
@@ -54,29 +62,34 @@
       "name": "Filling:"
     },
     {
-      "amount": "1 ⅔",
+      "amount": 1.6666666666666665,
       "unit": "cups",
-      "name": "strawberries, hulled and diced"
+      "name": "strawberries, hulled and diced",
+      "_originalAmount": "1 ⅔"
     },
     {
-      "amount": "1 ½ cups fresh rhubarb, cut into 1/4 inch",
-      "unit": "pieces",
-      "name": ""
+      "amount": 1.5,
+      "unit": "cups",
+      "name": "fresh rhubarb, diced",
+      "_originalAmount": "1 ½ cups fresh rhubarb, cut into 1/4 inch"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "freshly squeezed lemon juice"
+      "name": "freshly squeezed lemon juice",
+      "_originalAmount": "1"
     },
     {
-      "amount": "⅓",
+      "amount": 0.3333333333333333,
       "unit": "cup",
-      "name": "white sugar"
+      "name": "white sugar",
+      "_originalAmount": "⅓"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "cornstarch"
+      "name": "cornstarch",
+      "_originalAmount": "1"
     }
   ],
   "instructions": [

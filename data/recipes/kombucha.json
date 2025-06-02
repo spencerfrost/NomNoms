@@ -4,24 +4,28 @@
   "description": "Delicious kombucha recipe",
   "ingredients": [
     {
-      "amount": "12",
+      "amount": 12,
       "unit": "bags",
-      "name": "black tea"
+      "name": "black tea",
+      "_originalAmount": "12"
     },
     {
-      "amount": "1.5",
+      "amount": 1.5,
       "unit": "cups",
-      "name": "white sugar"
+      "name": "white sugar",
+      "_originalAmount": "1.5"
     },
     {
-      "amount": "16",
+      "amount": 16,
       "unit": "cups",
-      "name": "filtered water"
+      "name": "filtered water",
+      "_originalAmount": "16"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "plain kombucha"
+      "name": "plain kombucha",
+      "_originalAmount": "1"
     }
   ],
   "instructions": [

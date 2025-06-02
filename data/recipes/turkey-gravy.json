@@ -4,39 +4,46 @@
   "description": "Delicious turkey gravy recipe",
   "ingredients": [
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "stick",
-      "name": "unsalted butter"
+      "name": "unsalted butter",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1½",
+      "amount": 1.5,
       "unit": "cups",
-      "name": "finely chopped yellow onions"
+      "name": "finely chopped yellow onions",
+      "_originalAmount": "1½"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "all purpose flour"
+      "name": "all purpose flour",
+      "_originalAmount": "¼"
     },
     {
-      "amount": "Defatted turkey drippings plus chicken broth to make 2½",
+      "amount": 0,
       "unit": "cups",
-      "name": ""
+      "name": "",
+      "_originalAmount": "Defatted turkey drippings plus chicken broth to make 2½"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "Cognac or Brandy"
+      "name": "Cognac or Brandy",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "heavy cream"
+      "name": "heavy cream",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "chopped fresh herbs (such as thyme, sage, rosemary or parsley)"
+      "name": "chopped fresh herbs (such as thyme, sage, rosemary or parsley)",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,

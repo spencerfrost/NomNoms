@@ -4,39 +4,46 @@
   "description": "Delicious perfect pumpkin pie recipe",
   "ingredients": [
     {
-      "amount": "1 (15 ounce)",
+      "amount": 1,
       "unit": "can",
-      "name": "pumpkin"
+      "name": "pumpkin",
+      "_originalAmount": "1 (15 ounce)"
     },
     {
-      "amount": "1 (14 ounce)",
+      "amount": 1,
       "unit": "can",
-      "name": "Sweetened Condensed Milk"
+      "name": "Sweetened Condensed Milk",
+      "_originalAmount": "1 (14 ounce)"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "large",
-      "name": "eggs large eggs"
+      "name": "eggs large eggs",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "ground cinnamon"
+      "name": "ground cinnamon",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "ground ginger"
+      "name": "ground ginger",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "ground nutmeg"
+      "name": "ground nutmeg",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "½"
     },
     {
       "amount": 0,

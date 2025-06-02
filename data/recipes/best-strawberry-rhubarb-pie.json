@@ -4,34 +4,40 @@
   "description": "Delicious best strawberry-rhubarb pie recipe",
   "ingredients": [
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "large",
-      "name": "egg"
+      "name": "egg",
+      "_originalAmount": "1"
     },
     {
-      "amount": "4 to 5",
+      "amount": 4,
       "unit": "tablespoons",
-      "name": "ice water, divided"
+      "name": "ice water, divided",
+      "_originalAmount": "4 to 5"
     },
     {
-      "amount": "3/4",
+      "amount": 0.75,
       "unit": "teaspoon",
-      "name": "white vinegar"
+      "name": "white vinegar",
+      "_originalAmount": "3/4"
     },
     {
-      "amount": "2-1/4",
+      "amount": 2,
       "unit": "cups",
-      "name": "all-purpose flour"
+      "name": "all-purpose flour",
+      "_originalAmount": "2-1/4"
     },
     {
-      "amount": "3/4",
+      "amount": 0.75,
       "unit": "teaspoon",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "3/4"
     },
     {
-      "amount": "3/4",
+      "amount": 0.75,
       "unit": "cup",
-      "name": "cold lard"
+      "name": "cold lard",
+      "_originalAmount": "3/4"
     },
     {
       "amount": 0,
@@ -39,34 +45,40 @@
       "name": "filling:"
     },
     {
-      "amount": "1-1/4",
+      "amount": 1,
       "unit": "cups",
-      "name": "sugar"
+      "name": "sugar",
+      "_originalAmount": "1-1/4"
     },
     {
-      "amount": "6",
+      "amount": 6,
       "unit": "tablespoons",
-      "name": "quick-cooking tapioca"
+      "name": "quick-cooking tapioca",
+      "_originalAmount": "6"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "cups",
-      "name": "sliced fresh or frozen rhubarb, thawed"
+      "name": "sliced fresh or frozen rhubarb, thawed",
+      "_originalAmount": "3"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "cups",
-      "name": "halved fresh strawberries"
+      "name": "halved fresh strawberries",
+      "_originalAmount": "3"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "tablespoons",
-      "name": "butter"
+      "name": "butter",
+      "_originalAmount": "3"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "2% milk"
+      "name": "2% milk",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,

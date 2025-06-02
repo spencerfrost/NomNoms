@@ -9,29 +9,34 @@
       "name": "FOR THE FILLING:"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "pound",
-      "name": "rhubarb stalks, trimmed and sliced ½-inch thick"
+      "name": "rhubarb stalks, trimmed and sliced ½-inch thick",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "pound",
-      "name": "strawberries, hulled and quartered"
+      "name": "strawberries, hulled and quartered",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "granulated sugar"
+      "name": "granulated sugar",
+      "_originalAmount": "½"
     },
     {
-      "amount": "1½",
+      "amount": 1.5,
       "unit": "tablespoons",
-      "name": "cornstarch"
+      "name": "cornstarch",
+      "_originalAmount": "1½"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "vanilla extract"
+      "name": "vanilla extract",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -39,34 +44,40 @@
       "name": "FOR THE TOPPING:"
     },
     {
-      "amount": "¾",
+      "amount": 0.75,
       "unit": "cup",
-      "name": "all-purpose flour, spooned into measuring cup and leveled-off with a knife"
+      "name": "all-purpose flour, spooned into measuring cup and leveled-off with a knife",
+      "_originalAmount": "¾"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "packed light brown sugar"
+      "name": "packed light brown sugar",
+      "_originalAmount": "½"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "granulated sugar"
+      "name": "granulated sugar",
+      "_originalAmount": "2"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "teaspoon",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "¼"
     },
     {
-      "amount": "6",
+      "amount": 6,
       "unit": "tablespoons",
-      "name": "unsalted butter, cut into ½-inch cubes"
+      "name": "unsalted butter, cut into ½-inch cubes",
+      "_originalAmount": "6"
     },
     {
-      "amount": "¾",
+      "amount": 0.75,
       "unit": "cup",
-      "name": "old fashioned rolled oats"
+      "name": "old fashioned rolled oats",
+      "_originalAmount": "¾"
     },
     {
       "amount": 0,

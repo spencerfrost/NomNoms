@@ -4,64 +4,76 @@
   "description": "Delicious how to make onion bhaji using an air fryer recipe",
   "ingredients": [
     {
-      "amount": "One",
+      "amount": 0,
       "unit": "large",
-      "name": "white onion – thinly sliced"
+      "name": "white onion – thinly sliced",
+      "_originalAmount": "One"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "chickpea flour"
+      "name": "chickpea flour",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "cumin"
+      "name": "cumin",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "coriander powder"
+      "name": "coriander powder",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "turmeric"
+      "name": "turmeric",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "tsp",
-      "name": "smoked paprika"
+      "name": "smoked paprika",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "tsp",
-      "name": "cayenne powder"
+      "name": "cayenne powder",
+      "_originalAmount": "1/4"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "tsp",
-      "name": "baking soda"
+      "name": "baking soda",
+      "_originalAmount": "1/4"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "lemon juice"
+      "name": "lemon juice",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tbsp",
-      "name": "vegetable oil"
+      "name": "vegetable oil",
+      "_originalAmount": "1"
     },
     {
-      "amount": "6",
+      "amount": 6,
       "unit": "tbsp",
-      "name": "cold water"
+      "name": "cold water",
+      "_originalAmount": "6"
     }
   ],
   "instructions": [

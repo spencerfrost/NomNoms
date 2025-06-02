@@ -4,29 +4,34 @@
   "description": "Delicious steamed cauliflower with herbs recipe",
   "ingredients": [
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "head",
-      "name": "cauliflower, cut into florets"
+      "name": "cauliflower, cut into florets",
+      "_originalAmount": "1"
     },
     {
-      "amount": "4",
+      "amount": 4,
       "unit": "teaspoons",
-      "name": "extra-virgin olive oil"
+      "name": "extra-virgin olive oil",
+      "_originalAmount": "4"
     },
     {
-      "amount": "3/4",
+      "amount": 0.75,
       "unit": "teaspoon",
-      "name": "coarse kosher salt"
+      "name": "coarse kosher salt",
+      "_originalAmount": "3/4"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "teaspoon",
-      "name": "freshly ground pepper"
+      "name": "freshly ground pepper",
+      "_originalAmount": "1/4"
     },
     {
-      "amount": "4",
+      "amount": 4,
       "unit": "teaspoons",
-      "name": "chopped fresh herbs, see note*"
+      "name": "chopped fresh herbs, see note*",
+      "_originalAmount": "4"
     }
   ],
   "instructions": [

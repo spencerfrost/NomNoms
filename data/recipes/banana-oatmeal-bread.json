@@ -4,64 +4,76 @@
   "description": "Delicious banana oatmeal bread recipe",
   "ingredients": [
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "white sugar"
+      "name": "white sugar",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "shortening"
+      "name": "shortening",
+      "_originalAmount": "½"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "large",
-      "name": "eggs, beaten"
+      "name": "eggs, beaten",
+      "_originalAmount": "2"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "vanilla extract"
+      "name": "vanilla extract",
+      "_originalAmount": "½"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "all-purpose flour"
+      "name": "all-purpose flour",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "quick cooking oats"
+      "name": "quick cooking oats",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "baking soda"
+      "name": "baking soda",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "ground cinnamon"
+      "name": "ground cinnamon",
+      "_originalAmount": "½"
     },
     {
-      "amount": "1 ½",
+      "amount": 1.5,
       "unit": "cups",
-      "name": "mashed bananas"
+      "name": "mashed bananas",
+      "_originalAmount": "1 ½"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "milk"
+      "name": "milk",
+      "_originalAmount": "¼"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "chopped raisins (Optional)"
+      "name": "chopped raisins (Optional)",
+      "_originalAmount": "½"
     }
   ],
   "instructions": [

@@ -9,19 +9,22 @@
       "name": "Broth:"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "pound",
-      "name": "pigs trotters (skin on) (you can also use some spine and neck bones as well. You definitely want some trotters though)"
+      "name": "pigs trotters (skin on) (you can also use some spine and neck bones as well. You definitely want some trotters though)",
+      "_originalAmount": "3"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "bunch",
-      "name": "green onion"
+      "name": "green onion",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "large",
-      "name": "yellow onion"
+      "name": "yellow onion",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -29,9 +32,10 @@
       "name": "2 shallots"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "inch",
-      "name": "knob ginger"
+      "name": "knob ginger",
+      "_originalAmount": "2"
     },
     {
       "amount": 0,
@@ -49,44 +53,52 @@
       "name": "Chashu:"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "pound",
-      "name": "pork belly (skin on or off)"
+      "name": "pork belly (skin on or off)",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "soy sauce or tamari"
+      "name": "soy sauce or tamari",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "3/4",
+      "amount": 0.75,
       "unit": "cup",
-      "name": "mirin"
+      "name": "mirin",
+      "_originalAmount": "3/4"
     },
     {
-      "amount": "1/3",
+      "amount": 0.3333333333333333,
       "unit": "cup",
-      "name": "water"
+      "name": "water",
+      "_originalAmount": "1/3"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "rice wine (1/2 cup sake, 1/2 cup shiao tsing wine or just use all sake)"
+      "name": "rice wine (1/2 cup sake, 1/2 cup shiao tsing wine or just use all sake)",
+      "_originalAmount": "1"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "inch",
-      "name": "knob ginger"
+      "name": "knob ginger",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "bunch",
-      "name": "green onion"
+      "name": "green onion",
+      "_originalAmount": "1"
     },
     {
-      "amount": "4-5",
+      "amount": 4,
       "unit": "cloves",
-      "name": "garlic"
+      "name": "garlic",
+      "_originalAmount": "4-5"
     },
     {
       "amount": 0,
@@ -94,29 +106,34 @@
       "name": "Tare:"
     },
     {
-      "amount": "Dashi- 3-2inch",
+      "amount": 0,
       "unit": "pieces",
-      "name": "kombu, 1/2 cup bonito flakes, 3/4 cup water"
+      "name": "kombu, 1/2 cup bonito flakes, 3/4 cup water",
+      "_originalAmount": "Dashi- 3-2inch"
     },
     {
-      "amount": "3/4",
+      "amount": 0.75,
       "unit": "cup",
-      "name": "soy sauce"
+      "name": "soy sauce",
+      "_originalAmount": "3/4"
     },
     {
-      "amount": "1/4 cup + 2",
+      "amount": 0.25,
       "unit": "tbsp",
-      "name": "mirin"
+      "name": "mirin",
+      "_originalAmount": "1/4 cup + 2"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "shiitake mushroom soaking water (optional but recommended)"
+      "name": "shiitake mushroom soaking water (optional but recommended)",
+      "_originalAmount": "1/4"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "chashu braising liquid (optional)"
+      "name": "chashu braising liquid (optional)",
+      "_originalAmount": "1/4"
     }
   ],
   "instructions": [

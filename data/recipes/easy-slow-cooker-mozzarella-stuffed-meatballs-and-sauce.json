@@ -9,39 +9,46 @@
       "name": "SAUCE"
     },
     {
-      "amount": "7",
+      "amount": 7,
       "unit": "cups",
-      "name": "crushed tomato (1.4 kg)"
+      "name": "crushed tomato (1.4 kg)",
+      "_originalAmount": "7"
     },
     {
-      "amount": "⅓",
+      "amount": 0.3333333333333333,
       "unit": "cup",
-      "name": "onion (50 g), chopped"
+      "name": "onion (50 g), chopped",
+      "_originalAmount": "⅓"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "cloves",
-      "name": "garlic, crushed"
+      "name": "garlic, crushed",
+      "_originalAmount": "2"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "teaspoons",
-      "name": "dried basil"
+      "name": "dried basil",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "dried oregano"
+      "name": "dried oregano",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "pepper"
+      "name": "pepper",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "½"
     },
     {
       "amount": 0,
@@ -49,59 +56,70 @@
       "name": "MEATBALLS"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "lb",
-      "name": "beef (455 g)"
+      "name": "beef (455 g)",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "lb",
-      "name": "mild sausage (455 g)"
+      "name": "mild sausage (455 g)",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "breadcrumb (115 g)"
+      "name": "breadcrumb (115 g)",
+      "_originalAmount": "1"
     },
     {
-      "amount": "⅓",
+      "amount": 0.3333333333333333,
       "unit": "cup",
-      "name": "onion (50 g), chopped"
+      "name": "onion (50 g), chopped",
+      "_originalAmount": "⅓"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "parmesan cheese (25 g)"
+      "name": "parmesan cheese (25 g)",
+      "_originalAmount": "¼"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "onion powder"
+      "name": "onion powder",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "garlic powder"
+      "name": "garlic powder",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "dried thyme"
+      "name": "dried thyme",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "dried oregano"
+      "name": "dried oregano",
+      "_originalAmount": "1"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "pepper"
+      "name": "pepper",
+      "_originalAmount": "½"
     },
     {
       "amount": 0,
@@ -109,19 +127,22 @@
       "name": "2 eggs"
     },
     {
-      "amount": "4",
+      "amount": 4,
       "unit": "sticks",
-      "name": "mozzarella cheese, cut into 4-5 even pieces each"
+      "name": "mozzarella cheese, cut into 4-5 even pieces each",
+      "_originalAmount": "4"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "whole milk"
+      "name": "whole milk",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "parsley"
+      "name": "parsley",
+      "_originalAmount": "½"
     }
   ],
   "instructions": [

@@ -4,49 +4,58 @@
   "description": "Delicious rhubarb crisp recipe",
   "ingredients": [
     {
-      "amount": "3/4",
+      "amount": 0.75,
       "unit": "cup",
-      "name": "sugar"
+      "name": "sugar",
+      "_originalAmount": "3/4"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "tablespoons",
-      "name": "cornstarch"
+      "name": "cornstarch",
+      "_originalAmount": "3"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "cups",
-      "name": "sliced fresh rhubarb or frozen rhubarb, thawed"
+      "name": "sliced fresh rhubarb or frozen rhubarb, thawed",
+      "_originalAmount": "3"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "cups",
-      "name": "sliced peeled apples or sliced strawberries"
+      "name": "sliced peeled apples or sliced strawberries",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "quick-cooking or old-fashioned oats"
+      "name": "quick-cooking or old-fashioned oats",
+      "_originalAmount": "1"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "packed brown sugar"
+      "name": "packed brown sugar",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "butter, melted"
+      "name": "butter, melted",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1/3",
+      "amount": 0.3333333333333333,
       "unit": "cup",
-      "name": "all-purpose flour"
+      "name": "all-purpose flour",
+      "_originalAmount": "1/3"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "ground cinnamon"
+      "name": "ground cinnamon",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,

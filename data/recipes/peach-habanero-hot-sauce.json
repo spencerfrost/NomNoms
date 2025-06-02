@@ -4,24 +4,28 @@
   "description": "Delicious peach habanero hot sauce recipe",
   "ingredients": [
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "pounds",
-      "name": "peaches, quartered and peeled"
+      "name": "peaches, quartered and peeled",
+      "_originalAmount": "3"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "cups",
-      "name": "apple cider vinegar"
+      "name": "apple cider vinegar",
+      "_originalAmount": "2"
     },
     {
-      "amount": "3/4",
+      "amount": 0.75,
       "unit": "cup",
-      "name": "sugar"
+      "name": "sugar",
+      "_originalAmount": "3/4"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "small",
-      "name": "onion, chopped"
+      "name": "onion, chopped",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -39,14 +43,16 @@
       "name": "5 garlic cloves, peeled"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "bottled lemon juice"
+      "name": "bottled lemon juice",
+      "_originalAmount": "1/4"
     },
     {
-      "amount": "1 1/2",
+      "amount": 1.5,
       "unit": "tablespoons",
-      "name": "sea salt"
+      "name": "sea salt",
+      "_originalAmount": "1 1/2"
     }
   ],
   "instructions": [

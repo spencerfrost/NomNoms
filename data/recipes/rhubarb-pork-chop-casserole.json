@@ -4,14 +4,16 @@
   "description": "Delicious rhubarb pork chop casserole recipe",
   "ingredients": [
     {
-      "amount": "4 boneless pork loin chops (3/4 inches thick and 4",
+      "amount": 4,
       "unit": "ounces",
-      "name": "each)"
+      "name": "each)",
+      "_originalAmount": "4 boneless pork loin chops (3/4 inches thick and 4"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "canola oil"
+      "name": "canola oil",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -19,34 +21,40 @@
       "name": "Salt and pepper to taste"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "butter"
+      "name": "butter",
+      "_originalAmount": "2"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "cups",
-      "name": "soft bread crumbs"
+      "name": "soft bread crumbs",
+      "_originalAmount": "3"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "cups",
-      "name": "sliced fresh or frozen rhubarb (1-inch pieces)"
+      "name": "sliced fresh or frozen rhubarb (1-inch pieces)",
+      "_originalAmount": "3"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "packed brown sugar"
+      "name": "packed brown sugar",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "all-purpose flour"
+      "name": "all-purpose flour",
+      "_originalAmount": "1/4"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "teaspoon",
-      "name": "ground cinnamon"
+      "name": "ground cinnamon",
+      "_originalAmount": "1"
     }
   ],
   "instructions": [

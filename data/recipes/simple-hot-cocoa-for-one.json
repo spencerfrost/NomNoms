@@ -14,14 +14,16 @@
       "name": "Kosher Salt"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "tablespoons",
-      "name": "unsweetened cocoa powder"
+      "name": "unsweetened cocoa powder",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1 to 2",
+      "amount": 1,
       "unit": "tablespoons",
-      "name": "sugar (depending on how sweet you like it)"
+      "name": "sugar (depending on how sweet you like it)",
+      "_originalAmount": "1 to 2"
     },
     {
       "amount": 0,
@@ -29,14 +31,16 @@
       "name": "Pinch of salt"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "milk or any combination of milk, half-and-half, or cream"
+      "name": "milk or any combination of milk, half-and-half, or cream",
+      "_originalAmount": "1"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "teaspoon",
-      "name": "vanilla extract"
+      "name": "vanilla extract",
+      "_originalAmount": "¼"
     }
   ],
   "instructions": [

@@ -4,19 +4,22 @@
   "description": "Delicious mashed potatoes recipe",
   "ingredients": [
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "lbs",
-      "name": "russet potatoes peeled and quartered"
+      "name": "russet potatoes peeled and quartered",
+      "_originalAmount": "3"
     },
     {
-      "amount": "3 garlic",
+      "amount": 3,
       "unit": "cloves",
-      "name": "peeled and smashed"
+      "name": "peeled and smashed",
+      "_originalAmount": "3 garlic"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "low-sodium chicken"
+      "name": "low-sodium chicken",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -24,19 +27,22 @@
       "name": "broth or water"
     },
     {
-      "amount": "1/2",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "half-and-half or whole milk"
+      "name": "half-and-half or whole milk",
+      "_originalAmount": "1/2"
     },
     {
-      "amount": "3",
+      "amount": 3,
       "unit": "tbsp",
-      "name": "unsalted butter"
+      "name": "unsalted butter",
+      "_originalAmount": "3"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tsp",
-      "name": "fine sea salt"
+      "name": "fine sea salt",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,

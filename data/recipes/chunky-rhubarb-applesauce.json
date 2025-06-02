@@ -4,29 +4,34 @@
   "description": "Delicious chunky rhubarb applesauce recipe",
   "ingredients": [
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "pound",
-      "name": "rhubarb, trimmed and cut into 1/2-inch chunks"
+      "name": "rhubarb, trimmed and cut into 1/2-inch chunks",
+      "_originalAmount": "1"
     },
     {
-      "amount": "2",
+      "amount": 2,
       "unit": "pounds",
-      "name": "tart apples, peeled and cut into 1/2-inch chunks"
+      "name": "tart apples, peeled and cut into 1/2-inch chunks",
+      "_originalAmount": "2"
     },
     {
-      "amount": "1/2 to 1",
+      "amount": 0.5,
       "unit": "cup",
-      "name": "sugar"
+      "name": "sugar",
+      "_originalAmount": "1/2 to 1"
     },
     {
-      "amount": "1/4",
+      "amount": 0.25,
       "unit": "teaspoon",
-      "name": "ground cinnamon"
+      "name": "ground cinnamon",
+      "_originalAmount": "1/4"
     },
     {
-      "amount": "1/8",
+      "amount": 0.125,
       "unit": "teaspoon",
-      "name": "ground nutmeg"
+      "name": "ground nutmeg",
+      "_originalAmount": "1/8"
     }
   ],
   "instructions": [

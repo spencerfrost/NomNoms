@@ -9,29 +9,34 @@
       "name": "For the Chicken Marinade:"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "creamy balsamic dressing or vinaigrette"
+      "name": "creamy balsamic dressing or vinaigrette",
+      "_originalAmount": "¼"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "tangy BBQ sauce (gluten free)"
+      "name": "tangy BBQ sauce (gluten free)",
+      "_originalAmount": "¼"
     },
     {
-      "amount": "2 garlic",
+      "amount": 2,
       "unit": "cloves",
-      "name": ""
+      "name": "",
+      "_originalAmount": "2 garlic"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "salt"
+      "name": "salt",
+      "_originalAmount": "½"
     },
     {
-      "amount": "½",
+      "amount": 0.5,
       "unit": "teaspoon",
-      "name": "black pepper"
+      "name": "black pepper",
+      "_originalAmount": "½"
     },
     {
       "amount": 0,
@@ -39,14 +44,16 @@
       "name": "2 -3 rhubarb stalks, shaved/peeled (Keep the shavings for topping)"
     },
     {
-      "amount": "¼",
+      "amount": 0.25,
       "unit": "cup",
-      "name": "maple syrup"
+      "name": "maple syrup",
+      "_originalAmount": "¼"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "tablespoon",
-      "name": "lemon juice"
+      "name": "lemon juice",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
@@ -54,9 +61,10 @@
       "name": "For the Lemon Chicken bake and Crispy Rhubarb:"
     },
     {
-      "amount": "1 ½",
+      "amount": 1.5,
       "unit": "pounds",
-      "name": "skinless boneless chicken thighs (about 5 small thighs)"
+      "name": "skinless boneless chicken thighs (about 5 small thighs)",
+      "_originalAmount": "1 ½"
     },
     {
       "amount": 0,
@@ -84,14 +92,16 @@
       "name": "Rhubarb shavings"
     },
     {
-      "amount": "Optional: ¼",
+      "amount": 0,
       "unit": "teaspoon",
-      "name": "lemon garlic seasoning or lemon pepper"
+      "name": "lemon garlic seasoning or lemon pepper",
+      "_originalAmount": "Optional: ¼"
     },
     {
-      "amount": "1",
+      "amount": 1,
       "unit": "cup",
-      "name": "pearled onions"
+      "name": "pearled onions",
+      "_originalAmount": "1"
     },
     {
       "amount": 0,
