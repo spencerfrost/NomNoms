@@ -1,5 +1,5 @@
 export interface Ingredient {
-  amount: number;
+  amount: number; // Always store as decimal number for easy scaling
   unit: string;
   name: string;
 }
