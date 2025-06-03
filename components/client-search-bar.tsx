@@ -24,7 +24,7 @@ export function ClientSearchBar({ recipes }: ClientSearchBarProps) {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex flex-col md:flex-row justify-between gap-4">
         {/* Search Input */}
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
@@ -33,7 +33,7 @@ export function ClientSearchBar({ recipes }: ClientSearchBarProps) {
             placeholder="Search recipes, ingredients, or tags..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10"
+            className="pl-10 border-border"
           />
         </div>
         <Link href="/add">

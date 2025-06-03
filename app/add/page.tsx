@@ -158,7 +158,7 @@ export default function AddRecipePage() {
         </div>
 
         {error && (
-          <div className="bg-destructive/10 border border-destructive/20 text-destructive px-4 py-3 rounded-md mb-6">
+          <div className="bg-destructive/10 border border-destructive/20 text-destructive px-4 py-3 mb-6">
             {error}
           </div>
         )}

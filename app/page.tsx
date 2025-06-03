@@ -1,6 +1,7 @@
 import { getAllRecipes } from '@/lib/recipes-db'
 import { ClientSearchBar } from '@/components/client-search-bar'
 import AuthButton from '@/components/auth-button'
+import ThemeToggle from '@/components/theme-toggle'
 
 // Server Component for better SSR performance
 export default async function HomePage() {
@@ -18,6 +19,7 @@ export default async function HomePage() {
           
           <div className="flex items-center gap-4">
             <AuthButton />
+            <ThemeToggle />
           </div>
         </div>
 

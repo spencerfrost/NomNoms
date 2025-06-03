@@ -122,7 +122,7 @@ export default function RecipePage() {
             
             {recipe.image && (
               <div className="lg:col-span-1">
-                <div className="relative h-64 w-full rounded-lg overflow-hidden">
+                <div className="relative h-64 w-full overflow-hidden">
                   <Image
                     src={recipe.image}
                     alt={recipe.title}
