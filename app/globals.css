@@ -1,90 +1,108 @@
 @import "tailwindcss";
+@import "./palette.css";
+
+/* Custom Font Utilities */
+@utility font-display {
+  font-weight: 400;
+  font-family: Marcellus;
+}
+
+@utility font-body {
+  font-weight: 400;
+  font-family: Poppins;
+}
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --background: var(--color-secondary-100);
+    --foreground: var(--color-primary-1900);
+
+    --primary: var(--color-primary-900);
+    --primary-foreground: var(--color-primary-2200);
+    --secondary: var(--color-secondary-1100);
+    --secondary-foreground: var(--color-primary-100);
+    --muted: var(--color-primary-200);
+    --muted-foreground: var(--color-primary-1600);
+    --accent: var(--color-secondary-900);
+    --accent-foreground: var(--color-primary-100);
+    --destructive: #d30000;
+    --destructive-foreground: var(--color-primary-0);
+
+    --card: var(--color-secondary-100);
+    --card-foreground: var(--color-primary-1900);
+    --popover: var(--color-secondary-100);
+    --popover-foreground: var(--color-primary-1900);
+
+    --border: var(--color-primary-600);
+    --input: var(--color-primary-300);
+    --ring: var(--color-primary-900);
+
+    /* Chart Colors (example selection from your palette) */
+    --chart-1: var(--color-primary-800);
+    --chart-2: var(--color-secondary-900);
+    --chart-3: var(--color-primary-1600);
+    --chart-4: var(--color-secondary-600);
+    --chart-5: var(--color-primary-1400);
   }
 
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --background: var(--color-primary-2200);
+    --foreground: var(--color-primary-0);
+
+    --primary: var(--color-primary-700);
+    --primary-foreground: var(--color-primary-2200);
+    --secondary: var(--color-secondary-1200);
+    --secondary-foreground: var(--color-primary-0);
+    --muted: var(--color-primary-2000);
+    --muted-foreground: var(--color-primary-500);
+    --accent: var(--color-primary-1200);
+    --accent-foreground: var(--color-primary-2200);
+    --destructive: #a00000;
+    --destructive-foreground: var(--color-primary-0);
+    
+    --card: var(--color-primary-2400);
+    --card-foreground: var(--color-primary-300);
+    --popover: var(--color-primary-2400);
+    --popover-foreground: var(--color-primary-300);
+
+    --border: var(--color-primary-1600);
+    --input: var(--color-primary-2100);
+    --ring: var(--color-primary-800);
+
+    /* Chart Colors (example selection for dark theme) */
+    --chart-1: var(--color-primary-700);
+    --chart-2: var(--color-secondary-500);
+    --chart-3: var(--color-primary-1500);
+    --chart-4: var(--color-secondary-800);
+    --chart-5: var(--color-primary-500);
   }
 }
 
 @theme inline {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-  --color-chart-1: hsl(var(--chart-1));
-  --color-chart-2: hsl(var(--chart-2));
-  --color-chart-3: hsl(var(--chart-3));
-  --color-chart-4: hsl(var(--chart-4));
-  --color-chart-5: hsl(var(--chart-5));
-  --border-radius: var(--radius);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
 }
 
 @layer base {
@@ -94,77 +112,28 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
   }
 }
 
-/* Dark */
-@theme {
-    --color-primary-0: #fff;
-    --color-primary-100: #f8f8f8;
-    --color-primary-200: #e8f6f4;
-    --color-primary-300: #d6f3f0;
-    --color-primary-400: #c1efeb;
-    --color-primary-500: #a9ebe5;
-    --color-primary-600: #8be6df;
-    --color-primary-700: #64e1d8;
-    --color-primary-800: #0cdad1;
-    --color-primary-900: #00d3c8;
-    --color-primary-1000: #00cabf;
-    --color-primary-1100: #00c0b5;
-    --color-primary-1200: #00b5ab;
-    --color-primary-1300: #00a9a0;
-    --color-primary-1400: #009b95;
-    --color-primary-1500: #008681;
-    --color-primary-1600: #00726d;
-    --color-primary-1700: #00605c;
-    --color-primary-1800: #00504c;
-    --color-primary-1900: #00413d;
-    --color-primary-2000: #003431;
-    --color-primary-2100: #002926;
-    --color-primary-2200: #001f1d;
-    --color-primary-2300: #001614;
-    --color-primary-2400: #000f0d;
-    --color-primary-2500: #000807;
-    --color-primary-2600: #000404;
-    --color-primary-2700: #020202;
-    --color-secondary-0: #fff;
-    --color-secondary-100: #f8f8f8;
-    --color-secondary-200: #ecefdb;
-    --color-secondary-300: #e0e6be;
-    --color-secondary-400: #d5dd9f;
-    --color-secondary-500: #cad37f;
-    --color-secondary-600: #bfc95c;
-    --color-secondary-700: #b4bf2a;
-    --color-secondary-800: #aab500;
-    --color-secondary-900: #a0ab00;
-    --color-secondary-1000: #97a000;
-    --color-secondary-1100: #8e9500;
-    --color-secondary-1200: #858a00;
-    --color-secondary-1300: #7c7f00;
-    --color-secondary-1400: #747400;
-    --color-secondary-1500: #696900;
-    --color-secondary-1600: #5f5f00;
-    --color-secondary-1700: #545500;
-    --color-secondary-1800: #4a4b00;
-    --color-secondary-1900: #404100;
-    --color-secondary-2000: #373800;
-    --color-secondary-2100: #2d2f00;
-    --color-secondary-2200: #242600;
-    --color-secondary-2300: #1c1d00;
-    --color-secondary-2400: #131500;
-    --color-secondary-2500: #0b0d00;
-    --color-secondary-2600: #050600;
-    --color-secondary-2700: #020202;
-}  
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-display font-medium;
+}
 
-@utility font-display {
-    font-weight: 400;
-    font-family: Marcellus;
+div,
+p,
+span,
+a,
+li,
+button,
+input,
+textarea,
+label,
+select {
+  @apply font-body;
 }
-    
-@utility font-body {
-    font-weight: 400;
-    font-family: Poppins;
-}
-  
