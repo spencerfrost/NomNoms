@@ -1,10 +1,10 @@
 // Database-based recipe utilities - replaces server-recipes.ts
 import { prisma } from './prisma'
-import { Recipe, getRecipeIngredients } from './types'
+import { Recipe, getRecipeIngredients } from '@/types'
 import { Prisma } from '@prisma/client'
 
 // Re-export types for convenience
-export type { Recipe, Ingredient } from './types'
+export type { Recipe, Ingredient } from '@/types'
 
 // Interface for recipe creation (matches what the API receives)
 interface RecipeCreateData {

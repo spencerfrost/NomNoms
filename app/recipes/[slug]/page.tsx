@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import Image from 'next/image'
-import { Recipe, getRecipeIngredients } from '@/lib/types'
+import { Recipe, getRecipeIngredients } from '@/types'
 import { getRecipeBySlug } from '@/lib/client-recipes'
 import { ScaleControls } from '@/components/scale-controls'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'

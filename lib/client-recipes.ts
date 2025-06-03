@@ -1,4 +1,4 @@
-import { Recipe, getRecipeIngredients, Ingredient } from '@/lib/types'
+import { Recipe, getRecipeIngredients, Ingredient } from '@/types'
 
 // Interface for creating new recipes
 interface CreateRecipeData {

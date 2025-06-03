@@ -1,4 +1,4 @@
-import { Recipe, Ingredient, getRecipeIngredients } from './types';
+import { Recipe, Ingredient, getRecipeIngredients } from '@/types';
 import { parseAmountToDecimal, formatDecimalAsFraction, scaleAndFormatAmount } from './amount-utils';
 
 // Client-safe utility functions for recipes

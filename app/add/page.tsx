@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Ingredient } from '@/lib/types'
+import { Ingredient } from '@/types'
 import { saveRecipe } from '@/lib/client-recipes'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'

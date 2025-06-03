@@ -1,4 +1,4 @@
-import { Recipe as PrismaRecipe, User as PrismaUser } from '@prisma/client'
+import { Recipe as PrismaRecipe } from '@prisma/client'
 
 export interface Ingredient {
   amount: number; // Always store as decimal number for easy scaling
@@ -14,9 +14,6 @@ export type Recipe = PrismaRecipe & {
     email: string;
   };
 }
-
-// Use Prisma User type directly - it has name as nullable which matches the schema
-export type User = PrismaUser
 
 // Type guard to check if a JsonValue is an array of ingredients
 export function isIngredientArray(value: unknown): value is Ingredient[] {

@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs'
 import { prisma } from './prisma'
-import { User } from './types'
+import { User } from '@/types'
 
 // Get user by email
 export const getUserByEmail = async (email: string): Promise<User | null> => {

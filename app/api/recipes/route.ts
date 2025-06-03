@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getAllRecipes, createRecipe } from '@/lib/recipes-db'
-import { Recipe } from '@/lib/types'
+import { Recipe } from '@/types'
 import { getServerSession } from 'next-auth/next'
 import { authOptions } from '@/lib/auth-config'
 

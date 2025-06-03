@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Recipe } from "@/lib/types";
+import { Recipe } from "@/types";
 import { searchRecipes } from "@/lib/recipe-utils";
 import { RecipeCard } from "@/components/recipe-card";
 import { Input } from "@/components/ui/input";
