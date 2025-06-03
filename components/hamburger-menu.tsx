@@ -19,7 +19,6 @@ import {
   LogOut, 
   Sun, 
   Moon,
-  Settings 
 } from 'lucide-react'
 import Link from 'next/link'
 
