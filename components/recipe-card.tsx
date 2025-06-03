@@ -12,9 +12,9 @@ interface RecipeCardProps {
 export function RecipeCard({ recipe }: RecipeCardProps) {
   return (
     <Link href={`/recipes/${recipe.slug}`}>
-      <Card className="h-full transition-colors hover:bg-muted/50 cursor-pointer overflow-hidden">
-        {recipe.image && (
-          <div className="relative h-48 w-full">
+      <Card className="h-full transition-colors bg-transparent cursor-pointer overflow-hidden pt-0">
+        {recipe.image ? (
+            <div className="relative aspect-video w-full">
             <Image
               src={recipe.image}
               alt={recipe.title}
@@ -22,8 +22,13 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
               className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-          </div>
-        )}
+            </div>
+          ) : (
+            <div className="aspect-video w-full bg-muted flex items-center justify-center">
+            <span className="text-muted-foreground">No Image</span>
+            </div>
+        )
+        }
         <CardHeader>
           <CardTitle className="line-clamp-2">{recipe.title}</CardTitle>
           <CardDescription className="line-clamp-3">{recipe.description}</CardDescription>
