@@ -8,13 +8,19 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { ArrowLeft, Plus, X } from 'lucide-react'
+import { ArrowLeft, Plus, X, FileText, Globe } from 'lucide-react'
 import Link from 'next/link'
+import PageHeader from '@/components/page-header'
+import RecipeUrlImport from '@/components/recipe-url-import'
+import { ImportedRecipe } from '@/lib/recipe-import-utils'
+
+type CreateMode = 'select' | 'manual' | 'url'
 
 export default function AddRecipePage() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [createMode, setCreateMode] = useState<CreateMode>('select')
   
   const [formData, setFormData] = useState({
     title: '',
@@ -141,21 +147,112 @@ export default function AddRecipePage() {
     }
   }
 
+  const handleImportedRecipe = (imported: ImportedRecipe) => {
+    // Populate form with imported data
+    setFormData({
+      title: imported.name,
+      description: imported.description,
+      yield: `${imported.servings} ${imported.servings === 1 ? 'serving' : 'servings'}`,
+      newTag: ''
+    })
+    
+    setIngredients(imported.ingredients.length > 0 ? imported.ingredients : [{ amount: 0, unit: '', name: '' }])
+    setInstructions(imported.instructions.length > 0 ? imported.instructions : [''])
+    setTags(imported.tags)
+    
+    // Switch to manual mode to allow editing
+    setCreateMode('manual')
+  }
+
+  // Mode selection screen
+  if (createMode === 'select') {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="max-w-2xl mx-auto">
+          <PageHeader>
+            <div>
+              <Link href="/">
+                <Button variant="ghost" className="mb-4">
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  Back to Recipes
+                </Button>
+              </Link>
+              
+              <h1 className="text-4xl font-bold mb-2">Add New Recipe</h1>
+              <p className="text-muted-foreground">Choose how you'd like to create your recipe</p>
+            </div>
+          </PageHeader>
+
+          <div className="grid gap-4">
+            <Card className="cursor-pointer hover:shadow-md transition-shadow" onClick={() => setCreateMode('manual')}>
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <FileText className="h-6 w-6" />
+                  <div>
+                    <CardTitle>Create from Scratch</CardTitle>
+                    <CardDescription>Manually enter all recipe details</CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+
+            <Card className="cursor-pointer hover:shadow-md transition-shadow" onClick={() => setCreateMode('url')}>
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <Globe className="h-6 w-6" />
+                  <div>
+                    <CardTitle>Import from URL</CardTitle>
+                    <CardDescription>Import recipe from AllRecipes, Food Network, and other popular sites</CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // URL import screen
+  if (createMode === 'url') {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <PageHeader>
+          <div>
+            <Button variant="ghost" className="mb-4" onClick={() => setCreateMode('select')}>
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Options
+            </Button>
+            
+            <h1 className="text-4xl font-bold mb-2">Import Recipe</h1>
+            <p className="text-muted-foreground">Import a recipe from a URL</p>
+          </div>
+        </PageHeader>
+
+        <RecipeUrlImport 
+          onImported={handleImportedRecipe}
+          onCancel={() => setCreateMode('select')}
+        />
+      </div>
+    )
+  }
+
+  // Manual creation screen
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
-        <div className="mb-6">
-          <Link href="/">
-            <Button variant="ghost" className="mb-4">
+        <PageHeader>
+          <div>
+            <Button variant="ghost" className="mb-4" onClick={() => setCreateMode('select')}>
               <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Recipes
+              Back to Options
             </Button>
-          </Link>
-          
-          <h1 className="text-4xl font-bold mb-2">Add New Recipe</h1>
-          <p className="text-muted-foreground">Create a new recipe for your collection</p>
-        </div>
+            
+            <h1 className="text-4xl font-bold mb-2">Add New Recipe</h1>
+            <p className="text-muted-foreground">Create a new recipe for your collection</p>
+          </div>
+        </PageHeader>
 
         {error && (
           <div className="bg-destructive/10 border border-destructive/20 text-destructive px-4 py-3 mb-6">
@@ -337,11 +434,6 @@ export default function AddRecipePage() {
             <Button type="submit" disabled={loading} className="flex-1">
               {loading ? 'Saving...' : 'Save Recipe'}
             </Button>
-            <Link href="/">
-              <Button type="button" variant="outline">
-                Cancel
-              </Button>
-            </Link>
           </div>
         </form>
       </div>
