@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import PageHeader from "@/components/page-header";
+import { LoadingSpinner, NotFound } from "@/components/common";
 
 export default function RecipePage() {
   const params = useParams();
@@ -48,33 +49,22 @@ export default function RecipePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-2">Loading recipe...</h2>
-          <p className="text-muted-foreground">
-            Please wait while we fetch your recipe
-          </p>
-        </div>
-      </div>
+      <LoadingSpinner
+        text="Loading recipe..."
+        size="large"
+        fullScreen
+      />
     );
   }
 
   if (error || !recipe) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-2">Recipe Not Found</h2>
-          <p className="text-muted-foreground mb-4">
-            {error || "The recipe you're looking for doesn't exist."}
-          </p>
-          <Link href="/">
-            <Button>
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Recipes
-            </Button>
-          </Link>
-        </div>
-      </div>
+      <NotFound
+        title="Recipe Not Found"
+        message={error || "The recipe you're looking for doesn't exist."}
+        backButtonText="Back to Recipes"
+        backButtonUrl="/"
+      />
     );
   }
 
