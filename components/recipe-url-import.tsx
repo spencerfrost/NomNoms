@@ -1,87 +1,104 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { Loader2, Globe, Check, X } from 'lucide-react'
-import { ImportedRecipe } from '@/lib/recipe-import-utils'
-import { Ingredient } from '@/types/recipe'
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Loader2, Globe, Check, X } from "lucide-react";
+import { ImportedRecipe } from "@/lib/recipe-import-utils";
+import { Ingredient } from "@/types/recipe";
 
 interface RecipeUrlImportProps {
   onImported: (recipe: ImportedRecipe) => void;
   onCancel: () => void;
 }
 
-export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImportProps) {
-  const [url, setUrl] = useState('')
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-  const [importedRecipe, setImportedRecipe] = useState<ImportedRecipe | null>(null)
+export default function RecipeUrlImport({
+  onImported,
+  onCancel,
+}: RecipeUrlImportProps) {
+  const [url, setUrl] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [importedRecipe, setImportedRecipe] = useState<ImportedRecipe | null>(
+    null
+  );
 
   const handleImport = async () => {
     if (!url.trim()) {
-      setError('Please enter a recipe URL')
-      return
+      setError("Please enter a recipe URL");
+      return;
     }
 
-    setLoading(true)
-    setError(null)
+    setLoading(true);
+    setError(null);
 
     try {
-      const response = await fetch('/api/recipes/import', {
-        method: 'POST',
+      const response = await fetch("/api/recipes/import", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ url: url.trim() }),
-      })
+      });
 
-      const data = await response.json()
+      const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to import recipe')
+        throw new Error(data.error || "Failed to import recipe");
       }
 
-      setImportedRecipe(data)
+      setImportedRecipe(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to import recipe')
+      setError(err instanceof Error ? err.message : "Failed to import recipe");
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const handleUseRecipe = () => {
     if (importedRecipe) {
-      onImported(importedRecipe)
+      onImported(importedRecipe);
     }
-  }
+  };
 
-  const handleEditIngredient = (index: number, field: keyof Ingredient, value: string | number) => {
-    if (!importedRecipe) return
-    
-    const updatedIngredients = importedRecipe.ingredients.map((ingredient, i) => 
+  const handleEditIngredient = (
+    index: number,
+    field: keyof Ingredient,
+    value: string | number
+  ) => {
+    if (!importedRecipe) return;
+
+    const updatedIngredients = importedRecipe.ingredients.map((ingredient, i) =>
       i === index ? { ...ingredient, [field]: value } : ingredient
-    )
-    
+    );
+
     setImportedRecipe({
       ...importedRecipe,
-      ingredients: updatedIngredients
-    })
-  }
+      ingredients: updatedIngredients,
+    });
+  };
 
   const formatTime = (minutes: number) => {
-    if (minutes === 0) return 'Not specified'
-    if (minutes < 60) return `${minutes} min`
-    const hours = Math.floor(minutes / 60)
-    const remainingMinutes = minutes % 60
-    return remainingMinutes > 0 ? `${hours}h ${remainingMinutes}m` : `${hours}h`
-  }
+    if (minutes === 0) return "Not specified";
+    if (minutes < 60) return `${minutes} min`;
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+    return remainingMinutes > 0
+      ? `${hours}h ${remainingMinutes}m`
+      : `${hours}h`;
+  };
 
   if (importedRecipe) {
     return (
-      <Card className="w-full max-w-4xl mx-auto">
+      <Card className="w-full">
         <CardHeader>
           <div className="flex items-center gap-2">
             <Check className="h-5 w-5 text-green-600" />
@@ -94,10 +111,14 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
         <CardContent className="space-y-6">
           {/* Recipe Title */}
           <div>
-            <label className="block text-sm font-medium mb-2">Recipe Name</label>
+            <label className="block text-sm font-medium mb-2">
+              Recipe Name
+            </label>
             <Input
               value={importedRecipe.name}
-              onChange={(e) => setImportedRecipe({ ...importedRecipe, name: e.target.value })}
+              onChange={(e) =>
+                setImportedRecipe({ ...importedRecipe, name: e.target.value })
+              }
               placeholder="Recipe name"
             />
           </div>
@@ -105,15 +126,17 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
           {/* Recipe Image */}
           {importedRecipe.imageUrl && (
             <div>
-              <label className="block text-sm font-medium mb-2">Recipe Image</label>
+              <label className="block text-sm font-medium mb-2">
+                Recipe Image
+              </label>
               <div className="relative w-full h-48 md:h-64 rounded-lg overflow-hidden bg-gray-100">
                 <img
                   src={importedRecipe.imageUrl}
-                  alt={importedRecipe.name || 'Recipe image'}
+                  alt={importedRecipe.name || "Recipe image"}
                   className="w-full h-full object-contain"
                   onError={(e) => {
                     // Hide the image if it fails to load
-                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.style.display = "none";
                   }}
                 />
               </div>
@@ -126,22 +149,32 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
           {/* Recipe Info */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-medium mb-2">Prep Time</label>
-              <p className="text-sm text-gray-600">{formatTime(importedRecipe.prepTimeMinutes)}</p>
+              <label className="block text-sm font-medium mb-2">
+                Prep Time
+              </label>
+              <p className="text-sm text-gray-600">
+                {formatTime(importedRecipe.prepTimeMinutes)}
+              </p>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">Cook Time</label>
-              <p className="text-sm text-gray-600">{formatTime(importedRecipe.cookTimeMinutes)}</p>
+              <label className="block text-sm font-medium mb-2">
+                Cook Time
+              </label>
+              <p className="text-sm text-gray-600">
+                {formatTime(importedRecipe.cookTimeMinutes)}
+              </p>
             </div>
             <div>
               <label className="block text-sm font-medium mb-2">Servings</label>
               <Input
                 type="number"
                 value={importedRecipe.servings}
-                onChange={(e) => setImportedRecipe({ 
-                  ...importedRecipe, 
-                  servings: parseInt(e.target.value) || 1 
-                })}
+                onChange={(e) =>
+                  setImportedRecipe({
+                    ...importedRecipe,
+                    servings: parseInt(e.target.value) || 1,
+                  })
+                }
                 min="1"
               />
             </div>
@@ -149,10 +182,17 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
 
           {/* Description */}
           <div>
-            <label className="block text-sm font-medium mb-2">Description</label>
+            <label className="block text-sm font-medium mb-2">
+              Description
+            </label>
             <Input
               value={importedRecipe.description}
-              onChange={(e) => setImportedRecipe({ ...importedRecipe, description: e.target.value })}
+              onChange={(e) =>
+                setImportedRecipe({
+                  ...importedRecipe,
+                  description: e.target.value,
+                })
+              }
               placeholder="Recipe description (optional)"
             />
           </div>
@@ -168,20 +208,30 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
                   <Input
                     type="number"
                     step="0.25"
-                    value={ingredient.amount || ''}
-                    onChange={(e) => handleEditIngredient(index, 'amount', parseFloat(e.target.value) || 0)}
+                    value={ingredient.amount || ""}
+                    onChange={(e) =>
+                      handleEditIngredient(
+                        index,
+                        "amount",
+                        parseFloat(e.target.value) || 0
+                      )
+                    }
                     placeholder="Amount"
                     className="w-20"
                   />
                   <Input
                     value={ingredient.unit}
-                    onChange={(e) => handleEditIngredient(index, 'unit', e.target.value)}
+                    onChange={(e) =>
+                      handleEditIngredient(index, "unit", e.target.value)
+                    }
                     placeholder="Unit"
                     className="w-24"
                   />
                   <Input
                     value={ingredient.name}
-                    onChange={(e) => handleEditIngredient(index, 'name', e.target.value)}
+                    onChange={(e) =>
+                      handleEditIngredient(index, "name", e.target.value)
+                    }
                     placeholder="Ingredient name"
                     className="flex-1"
                   />
@@ -198,7 +248,10 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
             <div className="space-y-2 max-h-40 overflow-y-auto">
               {importedRecipe.instructions.map((instruction, index) => (
                 <div key={index} className="text-sm p-2 bg-gray-50 rounded">
-                  <span className="font-medium text-gray-600">{index + 1}.</span> {instruction}
+                  <span className="font-medium text-gray-600">
+                    {index + 1}.
+                  </span>{" "}
+                  {instruction}
                 </div>
               ))}
             </div>
@@ -210,7 +263,9 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
               <label className="block text-sm font-medium mb-2">Tags</label>
               <div className="flex flex-wrap gap-2">
                 {importedRecipe.tags.map((tag, index) => (
-                  <Badge key={index} variant="secondary">{tag}</Badge>
+                  <Badge key={index} variant="secondary">
+                    {tag}
+                  </Badge>
                 ))}
               </div>
             </div>
@@ -219,7 +274,9 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
           {/* Source URL */}
           <div>
             <label className="block text-sm font-medium mb-2">Source</label>
-            <p className="text-sm text-blue-600 break-all">{importedRecipe.sourceUrl}</p>
+            <p className="text-sm text-blue-600 break-all">
+              {importedRecipe.sourceUrl}
+            </p>
           </div>
 
           {/* Actions */}
@@ -233,23 +290,27 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
           </div>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
+    <Card className="w-full">
       <CardHeader>
         <div className="flex items-center gap-2">
           <Globe className="h-5 w-5" />
           <CardTitle>Import Recipe from URL</CardTitle>
         </div>
         <CardDescription>
-          Paste a URL from recipe websites that include structured data (most modern recipe sites)
+          Paste a URL from recipe websites that include structured data (most
+          modern recipe sites)
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div>
-          <label htmlFor="recipe-url" className="block text-sm font-medium mb-2">
+          <label
+            htmlFor="recipe-url"
+            className="block text-sm font-medium mb-2"
+          >
             Recipe URL
           </label>
           <Input
@@ -270,8 +331,8 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
         )}
 
         <div className="flex gap-2">
-          <Button 
-            onClick={handleImport} 
+          <Button
+            onClick={handleImport}
             disabled={loading || !url.trim()}
             className="flex-1"
           >
@@ -281,7 +342,7 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
                 Importing Recipe...
               </>
             ) : (
-              'Import Recipe'
+              "Import Recipe"
             )}
           </Button>
           <Button variant="outline" onClick={onCancel}>
@@ -290,10 +351,15 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
         </div>
 
         <div className="text-xs text-gray-500">
-          <p className="font-medium mb-1">Works with sites that include structured recipe data:</p>
-          <p>AllRecipes, Food Network, Simply Recipes, Bon Appétit, Serious Eats, Minimalist Baker, BBC Good Food, and many more modern recipe sites</p>
+          <p className="font-medium mb-1">
+            Works with sites that include structured recipe data:
+          </p>
+          <p>
+            AllRecipes, Food Network, Simply Recipes, Bon Appétit, Serious Eats,
+            Minimalist Baker, BBC Good Food, and many more modern recipe sites
+          </p>
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
