@@ -1,3 +1,5 @@
+import { ErrorMessage } from '@/components/common'
+
 interface AuthErrorDisplayProps {
   error: string
   className?: string
@@ -5,8 +7,10 @@ interface AuthErrorDisplayProps {
 
 export function AuthErrorDisplay({ error, className = '' }: AuthErrorDisplayProps) {
   return (
-    <div className={`text-red-600 text-sm text-center ${className}`}>
-      {error}
-    </div>
+    <ErrorMessage
+      variant="inline"
+      message={error}
+      className={className}
+    />
   )
 }
