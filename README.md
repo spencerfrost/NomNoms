@@ -46,7 +46,7 @@ Create a `.env.local` file in the root directory with the following variables:
 
 ```bash
 # NextAuth.js
-NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_URL=http://localhost:3001
 NEXTAUTH_SECRET=your-secret-key-here
 
 # Google OAuth (optional)
@@ -65,12 +65,12 @@ GITHUB_SECRET=your-github-client-secret
 2. Create a new project or select existing
 3. Enable Google+ API
 4. Create OAuth 2.0 credentials
-5. Add `http://localhost:3000/api/auth/callback/google` to authorized redirect URIs
+5. Add `http://localhost:3001/api/auth/callback/google` to authorized redirect URIs
 
 #### GitHub OAuth:
 1. Go to GitHub Settings > Developer settings > OAuth Apps
 2. Create a new OAuth App
-3. Set Authorization callback URL to `http://localhost:3000/api/auth/callback/github`
+3. Set Authorization callback URL to `http://localhost:3001/api/auth/callback/github`
 
 ## 🛠️ Tech Stack
 - **Frontend**: Next.js 15 with App Router, React 19, TypeScript
@@ -113,7 +113,7 @@ GITHUB_SECRET=your-github-client-secret
    bun dev
    ```
 
-   Open [http://localhost:3000](http://localhost:3000) to see the app.
+   Open [http://localhost:3001](http://localhost:3001) to see the app.
 
 ## 📁 Project Structure
 - `app/` – Next.js app router pages and API routes
