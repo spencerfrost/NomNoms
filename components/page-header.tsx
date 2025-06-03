@@ -7,7 +7,7 @@ interface PageHeaderProps {
 
 export default function PageHeader({ children }: PageHeaderProps) {
   return (
-    <div className="flex justify-between items-start mb-8">
+    <div className="flex justify-between items-start mb-4">
       <div className="flex-1">
         {children}
       </div>
