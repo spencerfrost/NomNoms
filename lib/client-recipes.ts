@@ -1,4 +1,19 @@
-import { Recipe } from '@/lib/types'
+import { Recipe, getRecipeIngredients, Ingredient } from '@/lib/types'
+
+// Interface for creating new recipes
+interface CreateRecipeData {
+  slug?: string;
+  title: string;
+  description: string;
+  ingredients: Ingredient[];
+  instructions: string[];
+  tags: string[];
+  yield?: string;
+  prepTime?: string;
+  cookTime?: string;
+  image?: string;
+  visibility?: string;
+}
 
 // Client-side functions for recipe management
 export async function getAllRecipes(): Promise<Recipe[]> {
@@ -30,14 +45,14 @@ export async function getRecipeBySlug(slug: string): Promise<Recipe | null> {
   }
 }
 
-export async function saveRecipe(recipe: Recipe): Promise<string> {
+export async function saveRecipe(recipeData: CreateRecipeData): Promise<string> {
   try {
     const response = await fetch('/api/recipes', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(recipe),
+      body: JSON.stringify(recipeData),
     })
     
     if (!response.ok) {
@@ -57,10 +72,13 @@ export function searchRecipes(recipes: Recipe[], query: string): Recipe[] {
   if (!query.trim()) return recipes
   
   const lowerQuery = query.toLowerCase()
-  return recipes.filter(recipe => 
-    recipe.title.toLowerCase().includes(lowerQuery) ||
-    recipe.description.toLowerCase().includes(lowerQuery) ||
-    recipe.tags.some(tag => tag.toLowerCase().includes(lowerQuery)) ||
-    recipe.ingredients.some(ingredient => ingredient.name.toLowerCase().includes(lowerQuery))
-  )
+  return recipes.filter(recipe => {
+    const ingredients = getRecipeIngredients(recipe);
+    return (
+      recipe.title.toLowerCase().includes(lowerQuery) ||
+      recipe.description.toLowerCase().includes(lowerQuery) ||
+      recipe.tags.some(tag => tag.toLowerCase().includes(lowerQuery)) ||
+      ingredients.some(ingredient => ingredient.name.toLowerCase().includes(lowerQuery))
+    );
+  });
 }

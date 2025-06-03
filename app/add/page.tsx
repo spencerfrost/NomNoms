@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Recipe, Ingredient } from '@/lib/types'
+import { Ingredient } from '@/lib/types'
 import { saveRecipe } from '@/lib/client-recipes'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -121,7 +121,8 @@ export default function AddRecipePage() {
         throw new Error('At least one instruction is required')
       }
 
-      const recipe: Recipe = {
+      // Create the recipe data for the API
+      const recipeData = {
         slug: generateSlug(formData.title),
         title: formData.title.trim(),
         description: formData.description.trim(),
@@ -131,8 +132,8 @@ export default function AddRecipePage() {
         tags: tags
       }
 
-      await saveRecipe(recipe)
-      router.push(`/recipes/${recipe.slug}`)
+      const slug = await saveRecipe(recipeData)
+      router.push(`/recipes/${slug}`)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to save recipe')
     } finally {

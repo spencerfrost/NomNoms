@@ -15,4 +15,28 @@ export type Recipe = PrismaRecipe & {
   };
 }
 
+// Use Prisma User type directly - it has name as nullable which matches the schema
 export type User = PrismaUser
+
+// Type guard to check if a JsonValue is an array of ingredients
+export function isIngredientArray(value: unknown): value is Ingredient[] {
+  return Array.isArray(value) && value.every(item => 
+    typeof item === 'object' && 
+    item !== null &&
+    'amount' in item &&
+    'unit' in item &&
+    'name' in item &&
+    typeof item.amount === 'number' &&
+    typeof item.unit === 'string' &&
+    typeof item.name === 'string'
+  );
+}
+
+// Helper to safely get ingredients from a recipe
+export function getRecipeIngredients(recipe: PrismaRecipe): Ingredient[] {
+  if (!recipe.ingredients) return [];
+  if (isIngredientArray(recipe.ingredients)) {
+    return recipe.ingredients;
+  }
+  return [];
+}

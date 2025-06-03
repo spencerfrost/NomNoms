@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import Image from 'next/image'
-import { Recipe } from '@/lib/types'
+import { Recipe, getRecipeIngredients } from '@/lib/types'
 import { getRecipeBySlug } from '@/lib/client-recipes'
 import { ScaleControls } from '@/components/scale-controls'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -71,9 +71,9 @@ export default function RecipePage() {
     )
   }
 
-  const scaledYield = recipe.yield.replace(/\d+/g, (match) => 
+  const scaledYield = recipe.yield?.replace(/\d+/g, (match) => 
     String(Math.round(parseInt(match) * multiplier))
-  )
+  ) || ''
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -153,7 +153,7 @@ export default function RecipePage() {
                 </div>
                 
                 <ul className="space-y-2">
-                  {recipe.ingredients.map((ingredient) => {
+                  {getRecipeIngredients(recipe).map((ingredient) => {
                     // Scale the amount and format for display
                     const scaledAmount = ingredient.amount * multiplier;
                     const formattedAmount = formatIngredientAmount(scaledAmount);

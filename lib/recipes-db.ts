@@ -1,9 +1,25 @@
 // Database-based recipe utilities - replaces server-recipes.ts
 import { prisma } from './prisma'
-import { Recipe } from './types'
+import { Recipe, getRecipeIngredients } from './types'
+import { Prisma } from '@prisma/client'
 
 // Re-export types for convenience
 export type { Recipe, Ingredient } from './types'
+
+// Interface for recipe creation (matches what the API receives)
+interface RecipeCreateData {
+  slug?: string;
+  title: string;
+  description: string;
+  ingredients: unknown; // Will be cast to InputJsonValue
+  instructions: string[];
+  tags: string[];
+  yield?: string | null;
+  prepTime?: string | null;
+  cookTime?: string | null;
+  image?: string | null;
+  visibility?: string;
+}
 
 export async function getAllRecipes(userId?: string): Promise<Recipe[]> {
   try {
@@ -65,7 +81,7 @@ export async function getRecipeBySlug(slug: string, userId?: string): Promise<Re
   }
 }
 
-export async function createRecipe(recipeData: Omit<Recipe, 'id' | 'createdAt' | 'updatedAt' | 'authorId' | 'author'>, authorId: string): Promise<Recipe> {
+export async function createRecipe(recipeData: RecipeCreateData, authorId: string): Promise<Recipe> {
   try {
     // Generate slug from title if not provided
     const slug = recipeData.slug || recipeData.title
@@ -84,7 +100,15 @@ export async function createRecipe(recipeData: Omit<Recipe, 'id' | 'createdAt' |
     
     const recipe = await prisma.recipe.create({
       data: {
-        ...recipeData,
+        title: recipeData.title,
+        description: recipeData.description,
+        ingredients: recipeData.ingredients as Prisma.InputJsonValue,
+        instructions: recipeData.instructions,
+        tags: recipeData.tags,
+        yield: recipeData.yield,
+        prepTime: recipeData.prepTime,
+        cookTime: recipeData.cookTime,
+        image: recipeData.image,
         slug,
         authorId,
         visibility: recipeData.visibility || 'public'
@@ -127,13 +151,16 @@ export async function updateRecipe(slug: string, recipeData: Partial<Recipe>, us
     const updatedRecipe = await prisma.recipe.update({
       where: { slug },
       data: {
-        ...recipeData,
-        // Don't allow changing authorId or slug via update
-        authorId: undefined,
-        slug: undefined,
-        id: undefined,
-        createdAt: undefined,
-        updatedAt: undefined
+        ...(recipeData.title && { title: recipeData.title }),
+        ...(recipeData.description && { description: recipeData.description }),
+        ...(recipeData.ingredients && { ingredients: recipeData.ingredients as Prisma.InputJsonValue }),
+        ...(recipeData.instructions && { instructions: recipeData.instructions }),
+        ...(recipeData.tags && { tags: recipeData.tags }),
+        ...(recipeData.yield !== undefined && { yield: recipeData.yield }),
+        ...(recipeData.prepTime !== undefined && { prepTime: recipeData.prepTime }),
+        ...(recipeData.cookTime !== undefined && { cookTime: recipeData.cookTime }),
+        ...(recipeData.image !== undefined && { image: recipeData.image }),
+        ...(recipeData.visibility && { visibility: recipeData.visibility }),
       },
       include: {
         author: {
@@ -205,9 +232,10 @@ export async function getUserRecipes(userId: string): Promise<Recipe[]> {
 
 // Pure utility functions (can be used anywhere)
 export function scaleRecipe(recipe: Recipe, multiplier: number): Recipe {
+  const ingredients = getRecipeIngredients(recipe);
   return {
     ...recipe,
-    ingredients: recipe.ingredients.map(ingredient => ({
+    ingredients: ingredients.map(ingredient => ({
       ...ingredient,
       amount: Math.round((ingredient.amount * multiplier) * 100) / 100
     }))
@@ -218,12 +246,15 @@ export function searchRecipes(recipes: Recipe[], query: string): Recipe[] {
   if (!query.trim()) return recipes
   
   const lowerQuery = query.toLowerCase()
-  return recipes.filter(recipe => 
-    recipe.title.toLowerCase().includes(lowerQuery) ||
-    recipe.description.toLowerCase().includes(lowerQuery) ||
-    recipe.tags.some(tag => tag.toLowerCase().includes(lowerQuery)) ||
-    recipe.ingredients.some(ingredient => ingredient.name.toLowerCase().includes(lowerQuery))
-  )
+  return recipes.filter(recipe => {
+    const ingredients = getRecipeIngredients(recipe);
+    return (
+      recipe.title.toLowerCase().includes(lowerQuery) ||
+      recipe.description.toLowerCase().includes(lowerQuery) ||
+      recipe.tags.some(tag => tag.toLowerCase().includes(lowerQuery)) ||
+      ingredients.some(ingredient => ingredient.name.toLowerCase().includes(lowerQuery))
+    );
+  });
 }
 
 export function formatAmount(amount: number, unit: string): string {
