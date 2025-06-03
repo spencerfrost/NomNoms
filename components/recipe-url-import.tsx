@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { Loader2, Globe, Check, X } from "lucide-react";
 import { ImportedRecipe } from "@/lib/recipe-import-utils";
 import { Ingredient } from "@/types/recipe";
+import Image from "next/image";
 
 interface RecipeUrlImportProps {
   onImported: (recipe: ImportedRecipe) => void;
@@ -130,7 +131,7 @@ export default function RecipeUrlImport({
                 Recipe Image
               </label>
               <div className="relative w-full h-48 md:h-64 rounded-lg overflow-hidden bg-gray-100">
-                <img
+                <Image
                   src={importedRecipe.imageUrl}
                   alt={importedRecipe.name || "Recipe image"}
                   className="w-full h-full object-contain"

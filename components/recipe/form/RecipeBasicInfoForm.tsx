@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
+import Image from 'next/image'
 
 interface FormData {
   title: string
@@ -59,7 +60,7 @@ export default function RecipeBasicInfoForm({ formData, onChange }: RecipeBasicI
           {formData.imageUrl && (
             <div className="mt-2">
               <div className="relative w-full h-32 rounded-lg overflow-hidden bg-gray-100">
-                <img
+                <Image
                   src={formData.imageUrl}
                   alt="Recipe preview"
                   className="w-full h-full object-cover"
