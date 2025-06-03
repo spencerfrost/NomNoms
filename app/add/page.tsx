@@ -25,6 +25,7 @@ export default function AddRecipePage() {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
+    imageUrl: '',
     yield: '',
     newTag: ''
   })
@@ -127,18 +128,21 @@ export default function AddRecipePage() {
         throw new Error('At least one instruction is required')
       }
 
+      const slug = generateSlug(formData.title)
+
       // Create the recipe data for the API
       const recipeData = {
-        slug: generateSlug(formData.title),
+        slug,
         title: formData.title.trim(),
         description: formData.description.trim(),
+        image: formData.imageUrl.trim() || null,
         yield: formData.yield.trim() || '1 serving',
         ingredients: validIngredients,
         instructions: validInstructions,
         tags: tags
       }
 
-      const slug = await saveRecipe(recipeData)
+      await saveRecipe(recipeData)
       router.push(`/recipes/${slug}`)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to save recipe')
@@ -152,6 +156,7 @@ export default function AddRecipePage() {
     setFormData({
       title: imported.name,
       description: imported.description,
+      imageUrl: imported.imageUrl || '',
       yield: `${imported.servings} ${imported.servings === 1 ? 'serving' : 'servings'}`,
       newTag: ''
     })
@@ -285,6 +290,30 @@ export default function AddRecipePage() {
                   onChange={(e) => handleInputChange('description', e.target.value)}
                   placeholder="A brief description of your recipe"
                 />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-2">Image URL</label>
+                <Input
+                  type="url"
+                  value={formData.imageUrl}
+                  onChange={(e) => handleInputChange('imageUrl', e.target.value)}
+                  placeholder="https://example.com/recipe-image.jpg"
+                />
+                {formData.imageUrl && (
+                  <div className="mt-2">
+                    <div className="relative w-full h-32 rounded-lg overflow-hidden bg-gray-100">
+                      <img
+                        src={formData.imageUrl}
+                        alt="Recipe preview"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                        }}
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
               
               <div>

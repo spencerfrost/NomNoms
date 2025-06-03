@@ -11,7 +11,7 @@ interface CreateRecipeData {
   yield?: string;
   prepTime?: string;
   cookTime?: string;
-  image?: string;
+  image?: string | null;
   visibility?: string;
 }
 

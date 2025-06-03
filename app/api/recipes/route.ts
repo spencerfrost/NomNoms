@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     const newRecipe = await createRecipe(recipe, session.user.id)
     
     return NextResponse.json(
-      { message: 'Recipe saved successfully', recipe: newRecipe },
+      { message: 'Recipe saved successfully', slug: newRecipe.slug },
       { status: 201 }
     )
   } catch (error) {

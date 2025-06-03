@@ -102,6 +102,27 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
             />
           </div>
 
+          {/* Recipe Image */}
+          {importedRecipe.imageUrl && (
+            <div>
+              <label className="block text-sm font-medium mb-2">Recipe Image</label>
+              <div className="relative w-full h-48 md:h-64 rounded-lg overflow-hidden bg-gray-100">
+                <img
+                  src={importedRecipe.imageUrl}
+                  alt={importedRecipe.name || 'Recipe image'}
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    // Hide the image if it fails to load
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
+              <p className="text-xs text-gray-500 mt-1 break-all">
+                {importedRecipe.imageUrl}
+              </p>
+            </div>
+          )}
+
           {/* Recipe Info */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
@@ -223,7 +244,7 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
           <CardTitle>Import Recipe from URL</CardTitle>
         </div>
         <CardDescription>
-          Paste a URL from popular recipe websites like AllRecipes, Food Network, or Bon Appétit
+          Paste a URL from recipe websites that include structured data (most modern recipe sites)
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -269,8 +290,8 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
         </div>
 
         <div className="text-xs text-gray-500">
-          <p className="font-medium mb-1">Supported sites include:</p>
-          <p>AllRecipes, Food Network, Simply Recipes, Bon Appétit, Serious Eats, Minimalist Baker, BBC Good Food, and many more</p>
+          <p className="font-medium mb-1">Works with sites that include structured recipe data:</p>
+          <p>AllRecipes, Food Network, Simply Recipes, Bon Appétit, Serious Eats, Minimalist Baker, BBC Good Food, and many more modern recipe sites</p>
         </div>
       </CardContent>
     </Card>

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth-config';
-import { isValidRecipeUrl, transformScrapedRecipe, getImportErrorMessage } from '@/lib/recipe-import-utils';
+import { scrapeRecipeFromUrl } from '@/lib/recipe-import-utils';
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,45 +25,36 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!isValidRecipeUrl(url)) {
-      return NextResponse.json(
-        { error: 'Please enter a valid recipe URL' },
-        { status: 400 }
-      );
-    }
-
-    // Dynamic import of recipe-scraper to avoid issues
-    const recipeScraper = (await import('recipe-scraper')).default;
+    console.log('Importing recipe from URL:', url);
     
-    // Scrape the recipe
-    let scrapedData;
-    try {
-      scrapedData = await recipeScraper(url);
-    } catch (error) {
-      console.error('Recipe scraping error:', error);
-      return NextResponse.json(
-        { error: getImportErrorMessage(error) },
-        { status: 400 }
-      );
-    }
+    // Use our custom scraping function with JSON-LD parsing
+    const recipe = await scrapeRecipeFromUrl(url);
+    
+    console.log('Successfully scraped recipe:', recipe.name);
+    
+    // Return the scraped recipe data
+    return NextResponse.json(recipe);
 
-    // Validate scraped data
-    if (!scrapedData || !scrapedData.name) {
-      return NextResponse.json(
-        { error: 'No recipe was found at this URL. Please check the link and try again.' },
-        { status: 400 }
-      );
-    }
-
-    // Transform to NomNoms format
-    const transformedRecipe = transformScrapedRecipe(scrapedData, url);
-
-    return NextResponse.json(transformedRecipe);
   } catch (error) {
-    console.error('Recipe import error:', error);
+    console.error('Import error:', error);
+    
+    // Determine appropriate status code based on error
+    let statusCode = 500;
+    if (error instanceof Error) {
+      if (error.message.includes('Invalid URL format')) {
+        statusCode = 400;
+      } else if (error.message.includes('404') || error.message.includes('not found')) {
+        statusCode = 404;
+      } else if (error.message.includes('timeout')) {
+        statusCode = 408;
+      } else if (error.message.includes('403') || error.message.includes('Forbidden')) {
+        statusCode = 403;
+      }
+    }
+    
     return NextResponse.json(
-      { error: getImportErrorMessage(error) },
-      { status: 500 }
+      { error: error instanceof Error ? error.message : 'Failed to import recipe' },
+      { status: statusCode }
     );
   }
 }
