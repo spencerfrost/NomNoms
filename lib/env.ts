@@ -62,7 +62,7 @@ function validateEnvironment(): Environment {
   if (!DATABASE_URL) {
     errors.push('DATABASE_URL is required')
   } else if (!isDatabaseUrl(DATABASE_URL)) {
-    errors.push('DATABASE_URL must be a valid PostgreSQL connection string')
+    errors.push('DATABASE_URL must be a valid PostgreSQL connection string (supports postgresql://, postgres://, or prisma+postgres:// protocols)')
   }
 
   if (!NODE_ENV || !['development', 'production', 'test'].includes(NODE_ENV)) {
@@ -126,7 +126,10 @@ function isValidUrl(urlString: string): boolean {
 function isDatabaseUrl(urlString: string): boolean {
   try {
     const url = new URL(urlString)
-    return url.protocol === 'postgresql:' || url.protocol === 'postgres:'
+    // Support standard PostgreSQL and Prisma Accelerate URLs
+    return url.protocol === 'postgresql:' || 
+           url.protocol === 'postgres:' || 
+           url.protocol === 'prisma+postgres:'
   } catch {
     return false
   }
