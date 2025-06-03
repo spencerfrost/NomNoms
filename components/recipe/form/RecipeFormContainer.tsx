@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import PageHeader from "@/components/page-header";
+import { ErrorMessage } from "@/components/common";
 
 interface RecipeFormContainerProps {
   children: React.ReactNode;
@@ -40,8 +41,11 @@ export default function RecipeFormContainer({
       </div>
 
       {error && (
-        <div className="bg-destructive/10 border border-destructive/20 text-destructive px-4 py-3 mb-6">
-          {error}
+        <div className="mb-6">
+          <ErrorMessage
+            variant="banner"
+            message={error}
+          />
         </div>
       )}
 

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import HamburgerMenu from '@/components/hamburger-menu'
+import HamburgerMenu from '@/components/common/hamburger-menu'
 
 interface PageHeaderProps {
   children: ReactNode

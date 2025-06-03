@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, Plus } from "lucide-react";
 import Link from "next/link";
+import { EmptyState } from "@/components/common";
+import { useRouter } from "next/navigation";
 
 interface ClientSearchBarProps {
   readonly recipes: Recipe[];
@@ -16,6 +18,7 @@ interface ClientSearchBarProps {
 export function ClientSearchBar({ recipes }: ClientSearchBarProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>(recipes);
+  const router = useRouter();
 
   useEffect(() => {
     const filtered = searchRecipes(recipes, searchQuery);
@@ -59,28 +62,26 @@ export function ClientSearchBar({ recipes }: ClientSearchBarProps) {
           ))}
         </div>
       ) : (
-        <div className="text-center py-12">
-          <h3 className="text-xl font-semibold mb-2">
-            {searchQuery ? "No recipes found" : "No recipes yet"}
-          </h3>
-          <p className="text-muted-foreground mb-4">
-            {searchQuery
+        <EmptyState
+          title={searchQuery ? "No recipes found" : "No recipes yet"}
+          description={
+            searchQuery
               ? "Try a different search term or browse all recipes"
-              : "Start building your recipe collection by adding your first recipe"}
-          </p>
-          {searchQuery ? (
-            <Button variant="outline" onClick={() => setSearchQuery("")}>
-              Clear Search
-            </Button>
-          ) : (
-            <Link href="/add">
-              <Button>
-                <Plus className="h-4 w-4 mr-2" />
-                Add Your First Recipe
-              </Button>
-            </Link>
-          )}
-        </div>
+              : "Start building your recipe collection by adding your first recipe"
+          }
+          action={
+            searchQuery
+              ? {
+                  label: "Clear Search",
+                  onClick: () => setSearchQuery(""),
+                  variant: "secondary" as const
+                }
+              : {
+                  label: "Add Your First Recipe",
+                  onClick: () => router.push("/add")
+                }
+          }
+        />
       )}
     </div>
   );
