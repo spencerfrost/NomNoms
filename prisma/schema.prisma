@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,22 +7,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// NextAuth.js models (required for the Prisma adapter)
 model Account {
   id                String  @id @default(cuid())
   userId            String
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
   @@map("accounts")
@@ -50,44 +45,38 @@ model VerificationToken {
   @@map("verificationtokens")
 }
 
-// Application models
 model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
+  id        String    @id @default(cuid())
+  email     String    @unique
   name      String?
   password  String
-  role      String   @default("user")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  // NextAuth.js relations
-  accounts Account[]
-  sessions Session[]
-  
-  // Application relations
+  role      String    @default("user")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  accounts  Account[]
   recipes   Recipe[]
-  
+  sessions  Session[]
+
   @@map("users")
 }
 
 model Recipe {
-  id          String   @id @default(cuid())
-  slug        String   @unique
-  title       String
-  description String
-  ingredients Json     // Store as JSON for flexibility with current structure
-  instructions String[] // Array of instruction steps
-  tags        String[]
-  yield       String?
-  prepTime    String?
-  cookTime    String?
-  image       String?
-  visibility  String   @default("public") // "public" | "private"
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  
-  authorId    String
-  author      User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  title        String
+  description  String
+  ingredients  Json
+  instructions String[]
+  tags         String[]
+  yield        String?
+  prepTime     String?
+  cookTime     String?
+  image        String?
+  visibility   String   @default("public")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  authorId     String
+  author       User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
   @@map("recipes")
 }
