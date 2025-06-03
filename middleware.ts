@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getToken } from 'next-auth/jwt'
+import { env } from './lib/env'
 
 export async function middleware(request: NextRequest) {
   // Protect write operations (POST, PUT, DELETE) on recipe routes
@@ -8,7 +9,7 @@ export async function middleware(request: NextRequest) {
     
     const token = await getToken({ 
       req: request, 
-      secret: process.env.NEXTAUTH_SECRET 
+      secret: env.NEXTAUTH_SECRET 
     })
 
     if (!token) {
@@ -23,7 +24,7 @@ export async function middleware(request: NextRequest) {
   if (request.nextUrl.pathname.startsWith('/add')) {
     const token = await getToken({ 
       req: request, 
-      secret: process.env.NEXTAUTH_SECRET 
+      secret: env.NEXTAUTH_SECRET 
     })
 
     if (!token) {
