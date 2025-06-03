@@ -3,17 +3,13 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { 
+  AuthFormContainer, 
+  AuthForm, 
+  FormField, 
+  AuthFooter, 
+  AuthSuccessMessage 
+} from '@/components/auth'
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -91,126 +87,79 @@ export default function SignUp() {
 
   if (success) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 flex items-center justify-center p-4">
-        <div className="w-full max-w-md">
-          <Card>
-            <CardContent className="pt-6">
-              <div className="text-center">
-                <div className="text-green-600 text-4xl mb-4">✓</div>
-                <h2 className="text-xl font-semibold mb-2">Account Created!</h2>
-                <p className="text-gray-600 mb-4">
-                  Welcome to NomNoms! You&apos;re being signed in...
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
+      <AuthFormContainer
+        title="Account Created!"
+        description="Welcome to NomNoms! You're being signed in..."
+        showBackLink={false}
+      >
+        <AuthSuccessMessage
+          title="Account Created!"
+          message="Welcome to NomNoms!"
+          autoRedirect={true}
+        />
+      </AuthFormContainer>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <Link
-          href="/"
-          className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 mb-8"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to recipes
-        </Link>
+    <AuthFormContainer
+      title="Create Account"
+      description="Join NomNoms to add and manage your recipes"
+    >
+      <AuthForm
+        onSubmit={handleSubmit}
+        submitText="Create Account"
+        isLoading={isLoading}
+        error={error}
+      >
+        <FormField
+          id="name"
+          label="Name"
+          type="text"
+          placeholder="Your full name"
+          value={name}
+          onChange={setName}
+          required
+        />
 
-        <Card>
-          <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold">Create Account</CardTitle>
-            <CardDescription>
-              Join NomNoms to add and manage your recipes
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium">
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  type="text"
-                  placeholder="Your full name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </div>
+        <FormField
+          id="email"
+          label="Email"
+          type="email"
+          placeholder="your@email.com"
+          value={email}
+          onChange={setEmail}
+          required
+        />
 
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
+        <FormField
+          id="password"
+          label="Password"
+          type="password"
+          placeholder="At least 6 characters"
+          value={password}
+          onChange={setPassword}
+          required
+        />
 
-              <div className="space-y-2">
-                <label htmlFor="password" className="text-sm font-medium">
-                  Password
-                </label>
-                <Input
-                  id="password"
-                  type="password"
-                  placeholder="At least 6 characters"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </div>
+        <FormField
+          id="confirmPassword"
+          label="Confirm Password"
+          type="password"
+          placeholder="Confirm your password"
+          value={confirmPassword}
+          onChange={setConfirmPassword}
+          required
+        />
+      </AuthForm>
 
-              <div className="space-y-2">
-                <label
-                  htmlFor="confirmPassword"
-                  className="text-sm font-medium"
-                >
-                  Confirm Password
-                </label>
-                <Input
-                  id="confirmPassword"
-                  type="password"
-                  placeholder="Confirm your password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  required
-                />
-              </div>
-
-              {error && (
-                <div className="text-red-600 text-sm text-center">{error}</div>
-              )}
-
-              <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Creating Account..." : "Create Account"}
-              </Button>
-            </form>
-
-            <div className="text-center text-sm text-gray-600 mt-4">
-              <p>
-                Already have an account?{" "}
-                <Link
-                  href="/auth/signin"
-                  className="text-blue-600 hover:underline"
-                >
-                  Sign in
-                </Link>
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+      <div className="px-6 pb-6">
+        <AuthFooter
+          primaryText="Already have an account?"
+          linkText="Sign in"
+          linkUrl="/auth/signin"
+        />
       </div>
-    </div>
+    </AuthFormContainer>
   );
 }

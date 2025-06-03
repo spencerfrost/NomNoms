@@ -3,11 +3,12 @@
 import { signIn, getSession } from 'next-auth/react'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+import { 
+  AuthFormContainer, 
+  AuthForm, 
+  FormField, 
+  AuthFooter 
+} from '@/components/auth'
 
 export default function SignIn() {
   const [email, setEmail] = useState('')
@@ -46,80 +47,46 @@ export default function SignIn() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <Link 
-          href="/" 
-          className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 mb-8"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to recipes
-        </Link>
+    <AuthFormContainer
+      title="Sign In"
+      description="Sign in to add and manage your recipes"
+    >
+      <AuthForm
+        onSubmit={handleSubmit}
+        submitText="Sign In"
+        isLoading={isLoading}
+        error={error}
+      >
+        <FormField
+          id="email"
+          label="Email"
+          type="email"
+          placeholder="your@email.com"
+          value={email}
+          onChange={setEmail}
+          required
+        />
         
-        <Card>
-          <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold">Sign In</CardTitle>
-            <CardDescription>
-              Sign in to add and manage your recipes
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-              
-              <div className="space-y-2">
-                <label htmlFor="password" className="text-sm font-medium">
-                  Password
-                </label>
-                <Input
-                  id="password"
-                  type="password"
-                  placeholder="Your password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </div>
-
-              {error && (
-                <div className="text-red-600 text-sm text-center">
-                  {error}
-                </div>
-              )}
-
-              <Button 
-                type="submit" 
-                className="w-full" 
-                disabled={isLoading}
-              >
-                {isLoading ? 'Signing in...' : 'Sign In'}
-              </Button>
-            </form>
-            
-            <div className="text-center text-sm text-gray-600 mt-4">
-              <p>You can browse recipes without signing in</p>
-              <p className="mt-2">
-                Don&apos;t have an account?{' '}
-                <Link href="/auth/signup" className="text-blue-600 hover:underline">
-                  Create one
-                </Link>
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+        <FormField
+          id="password"
+          label="Password"
+          type="password"
+          placeholder="Your password"
+          value={password}
+          onChange={setPassword}
+          required
+        />
+      </AuthForm>
+      
+      <div className="px-6 pb-6">
+        <AuthFooter
+          primaryText="Don't have an account?"
+          linkText="Create one"
+          linkUrl="/auth/signup"
+          secondaryText="You can browse recipes without signing in"
+        />
       </div>
-    </div>
+    </AuthFormContainer>
   )
 }
+
