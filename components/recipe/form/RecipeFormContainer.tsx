@@ -11,6 +11,10 @@ interface RecipeFormContainerProps {
   onBack: () => void;
   loading?: boolean;
   error?: string | null;
+  /** Whether the form is in edit mode */
+  isEditing?: boolean;
+  /** Original recipe title for editing */
+  recipeTitle?: string;
 }
 
 /**
@@ -22,6 +26,8 @@ export default function RecipeFormContainer({
   onBack,
   loading = false,
   error = null,
+  isEditing = false,
+  recipeTitle,
 }: RecipeFormContainerProps) {
   return (
     <div className="container max-w-3xl mx-auto px-4 py-8">
@@ -34,9 +40,13 @@ export default function RecipeFormContainer({
       </PageHeader>
 
       <div className="mb-6">
-        <h1 className="text-4xl font-bold mb-2">Add New Recipe</h1>
+        <h1 className="text-4xl font-bold mb-2">
+          {isEditing ? `Edit Recipe: ${recipeTitle}` : 'Add New Recipe'}
+        </h1>
         <p className="text-muted-foreground">
-          Create a new recipe for your collection
+          {isEditing
+            ? 'Modify your recipe details and save your changes'
+            : 'Create a new recipe for your collection'}
         </p>
       </div>
 

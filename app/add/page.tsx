@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Ingredient } from '@/types'
 import { saveRecipe } from '@/lib/client-recipes'
 import { ImportedRecipe } from '@/lib/recipe-import-utils'
+import { generateSlug } from '@/lib/recipe-utils'
 import {
   RecipeModeSelector,
   RecipeBasicInfoForm,
@@ -86,15 +87,6 @@ export default function AddRecipePage() {
 
   const removeTag = (tagToRemove: string) => {
     setTags(prev => prev.filter(tag => tag !== tagToRemove))
-  }
-
-  const generateSlug = (title: string): string => {
-    return title
-      .toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .trim()
   }
 
   const handleSubmit = async (e: React.FormEvent) => {

@@ -57,4 +57,16 @@ export function scaleAndFormatIngredientAmount(amount: string | number, multipli
   return scaleAndFormatAmount(amount, multiplier);
 }
 
+/**
+ * Generate a URL-friendly slug from a recipe title
+ */
+export function generateSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .trim()
+}
+
 

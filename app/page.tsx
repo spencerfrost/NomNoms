@@ -8,7 +8,7 @@ export default async function HomePage() {
       {/* Header */}
       <PageHeader>
         <div>
-          <h1 className="text-4xl font-bold mb-2">Recipe Collection</h1>
+          <h1 className="text-4xl font-bold mb-2">NomNoms</h1>
           <p className="text-muted-foreground">
             Discover and manage your favorite recipes
           </p>

@@ -2,13 +2,17 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import Image from 'next/image'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import RecipeImagePreview from './RecipeImagePreview'
 
 interface FormData {
   title: string
   description: string
   imageUrl: string
   yield: string
+  prepTime: string
+  cookTime: string
+  visibility: string
 }
 
 interface RecipeBasicInfoFormProps {
@@ -72,18 +76,14 @@ export default function RecipeBasicInfoForm({ formData, onChange }: RecipeBasicI
           />
           {formData.imageUrl && isValidImageUrl(formData.imageUrl) && (
             <div className="mt-2">
-              <div className="relative w-full h-32 overflow-hidden bg-gray-100">
-                <Image
-                  src={formData.imageUrl}
-                  alt="Recipe preview"
-                  width={400}
-                  height={128}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-              </div>
+              <RecipeImagePreview
+                src={formData.imageUrl}
+                alt="Recipe preview"
+                className="w-full h-32"
+              />
+              <p className="text-xs text-muted-foreground mt-1">
+                Image preview - if this doesn't load, check that the URL is valid and publicly accessible
+              </p>
             </div>
           )}
         </div>

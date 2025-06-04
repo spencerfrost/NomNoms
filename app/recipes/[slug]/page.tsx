@@ -12,18 +12,23 @@ import {
   RecipeLayout,
 } from "@/components/recipe/display";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Edit } from "lucide-react";
 import Link from "next/link";
 import PageHeader from "@/components/page-header";
 import { LoadingSpinner, NotFound } from "@/components/common";
+import { useSession } from "next-auth/react";
 
 export default function RecipePage() {
   const params = useParams();
   const slug = params.slug as string;
+  const { data: session } = useSession();
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [multiplier, setMultiplier] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Check if current user can edit this recipe
+  const canEdit = session?.user?.id && recipe?.authorId === session.user.id;
 
   useEffect(() => {
     async function loadRecipe() {
@@ -72,12 +77,23 @@ export default function RecipePage() {
     <RecipeLayout>
       {/* Header */}
       <PageHeader>
-        <Link href="/">
-          <Button variant="ghost" className="mb-4">
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Recipes
-          </Button>
-        </Link>
+        <div className="flex items-center justify-between w-full mb-4">
+          <Link href="/">
+            <Button variant="ghost">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Recipes
+            </Button>
+          </Link>
+          
+          {canEdit && (
+            <Link href={`/recipes/${slug}/edit`}>
+              <Button variant="outline" size="sm">
+                <Edit className="h-4 w-4 mr-2" />
+                Edit Recipe
+              </Button>
+            </Link>
+          )}
+        </div>
       </PageHeader>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">

@@ -68,6 +68,29 @@ export async function saveRecipe(recipeData: CreateRecipeData): Promise<string> 
   }
 }
 
+export async function updateRecipe(slug: string, recipeData: Partial<CreateRecipeData>): Promise<string> {
+  try {
+    const response = await fetch(`/api/recipes/${slug}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(recipeData),
+    })
+    
+    if (!response.ok) {
+      const errorData = await response.json()
+      throw new Error(errorData.error || 'Failed to update recipe')
+    }
+    
+    const result = await response.json()
+    return result.slug
+  } catch (error) {
+    console.error('Error updating recipe:', error)
+    throw error
+  }
+}
+
 export function searchRecipes(recipes: Recipe[], query: string): Recipe[] {
   if (!query.trim()) return recipes
   
