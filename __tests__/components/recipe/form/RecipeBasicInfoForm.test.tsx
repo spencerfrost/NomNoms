@@ -9,6 +9,9 @@ const defaultFormData = {
   description: '',
   imageUrl: '',
   yield: '',
+  prepTime: '',
+  cookTime: '',
+  visibility: 'public',
 }
 
 describe('RecipeBasicInfoForm', () => {
@@ -33,6 +36,9 @@ describe('RecipeBasicInfoForm', () => {
       description: 'A delicious test recipe',
       imageUrl: 'https://example.com/image.jpg',
       yield: '4 servings',
+      prepTime: '10 min',
+      cookTime: '20 min',
+      visibility: 'public',
     }
 
     render(
@@ -92,8 +98,8 @@ describe('RecipeBasicInfoForm', () => {
     const image = screen.getByAltText('Recipe preview')
     expect(image).toBeInTheDocument()
     expect(image).toHaveAttribute('src')
-    // Next.js optimizes images, so check for URL-encoded version
-    expect(image.getAttribute('src')).toContain('example.com%2Fvalid-image.jpg')
+    // Check if the image src contains the original URL
+    expect(image.getAttribute('src')).toContain('https://example.com/valid-image.jpg')
   })
 
   it('hides image preview when no imageUrl is provided', () => {

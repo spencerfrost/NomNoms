@@ -29,6 +29,9 @@ export default function AddRecipePage() {
     description: '',
     imageUrl: '',
     yield: '',
+    prepTime: '',
+    cookTime: '',
+    visibility: 'public',
     newTag: ''
   })
   
@@ -144,6 +147,9 @@ export default function AddRecipePage() {
       description: imported.description,
       imageUrl: imported.imageUrl || '',
       yield: `${imported.servings} ${imported.servings === 1 ? 'serving' : 'servings'}`,
+      prepTime: imported.prepTimeMinutes ? `${imported.prepTimeMinutes} min` : '',
+      cookTime: imported.cookTimeMinutes ? `${imported.cookTimeMinutes} min` : '',
+      visibility: imported.isPublic ? 'public' : 'private',
       newTag: ''
     })
     
@@ -183,7 +189,10 @@ export default function AddRecipePage() {
           title: formData.title,
           description: formData.description,
           imageUrl: formData.imageUrl,
-          yield: formData.yield
+          yield: formData.yield,
+          prepTime: formData.prepTime,
+          cookTime: formData.cookTime,
+          visibility: formData.visibility
         }}
         onChange={handleInputChange}
       />
