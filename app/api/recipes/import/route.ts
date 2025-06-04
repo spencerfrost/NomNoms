@@ -8,10 +8,7 @@ export async function POST(request: NextRequest) {
     // Check authentication
     const session = await getServerSession(authOptions);
     if (!session?.user?.email) {
-      return NextResponse.json(
-        { error: 'Authentication required' },
-        { status: 401 }
-      );
+      return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
     }
 
     const body = await request.json();
@@ -19,25 +16,21 @@ export async function POST(request: NextRequest) {
 
     // Validate URL
     if (!url || typeof url !== 'string') {
-      return NextResponse.json(
-        { error: 'URL is required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'URL is required' }, { status: 400 });
     }
 
     console.log('Importing recipe from URL:', url);
-    
+
     // Use our custom scraping function with JSON-LD parsing
     const recipe = await scrapeRecipeFromUrl(url);
-    
+
     console.log('Successfully scraped recipe:', recipe.name);
-    
+
     // Return the scraped recipe data
     return NextResponse.json(recipe);
-
   } catch (error) {
     console.error('Import error:', error);
-    
+
     // Determine appropriate status code based on error
     let statusCode = 500;
     if (error instanceof Error) {
@@ -51,7 +44,7 @@ export async function POST(request: NextRequest) {
         statusCode = 403;
       }
     }
-    
+
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Failed to import recipe' },
       { status: statusCode }
