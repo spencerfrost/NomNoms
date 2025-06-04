@@ -68,11 +68,6 @@ export default function RecipePage() {
     );
   }
 
-  const scaledYield =
-    recipe.yield?.replace(/\d+/g, (match) =>
-      String(Math.round(parseInt(match) * multiplier))
-    ) || "";
-
   return (
     <RecipeLayout>
       {/* Header */}

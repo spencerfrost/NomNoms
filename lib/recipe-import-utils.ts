@@ -310,12 +310,14 @@ export function transformJsonLdRecipe(jsonLd: JsonLdRecipe, sourceUrl: string): 
         imageUrl = firstImage;
       } else if (firstImage && typeof firstImage === 'object') {
         // Handle both { url: "..." } and { "@type": "ImageObject", url: "..." }
-        imageUrl = (firstImage as any).url || (firstImage as any)['@url'] || null;
+        const imgObj = firstImage as ImageObject;
+        imageUrl = imgObj.url || imgObj['@url'] || null;
         console.log('Extracted from object:', imageUrl);
       }
     } else if (typeof jsonLd.image === 'object') {
       // Handle single image object
-      imageUrl = (jsonLd.image as any).url || (jsonLd.image as any)['@url'] || null;
+      const imgObj = jsonLd.image as ImageObject;
+      imageUrl = imgObj.url || imgObj['@url'] || null;
       console.log('Single image object:', imageUrl);
     }
   }

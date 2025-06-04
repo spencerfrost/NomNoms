@@ -1,17 +1,23 @@
 import { GET } from '@/app/api/recipes/infinite/route'
 import { NextRequest } from 'next/server'
-import { prisma } from '@/lib/prisma'
 
-// Mock Prisma
+// Mock the prisma module before importing
+const mockFindMany = jest.fn()
 jest.mock('@/lib/prisma', () => ({
   prisma: {
     recipe: {
-      findMany: jest.fn()
+      findMany: mockFindMany
     }
   }
 }))
 
-const mockPrisma = prisma as jest.Mocked<typeof prisma>
+type MockRecipe = {
+  id: string
+  title: string
+  description: string
+  createdAt: Date
+  author: { id: string; name: string }
+}
 
 describe('/api/recipes/infinite', () => {
   beforeEach(() => {
@@ -19,7 +25,7 @@ describe('/api/recipes/infinite', () => {
   })
 
   it('should return recipes with pagination info', async () => {
-    const mockRecipes = [
+    const mockRecipes: MockRecipe[] = [
       { 
         id: '1', 
         title: 'Recipe 1', 
@@ -36,7 +42,7 @@ describe('/api/recipes/infinite', () => {
       }
     ]
 
-    mockPrisma.recipe.findMany.mockResolvedValue(mockRecipes)
+    mockFindMany.mockResolvedValue(mockRecipes)
 
     const request = new NextRequest('http://localhost:3001/api/recipes/infinite?limit=24')
     const response = await GET(request)
@@ -49,8 +55,8 @@ describe('/api/recipes/infinite', () => {
   })
 
   it('should handle search parameters', async () => {
-    const mockRecipes = []
-    mockPrisma.recipe.findMany.mockResolvedValue(mockRecipes)
+    const mockRecipes: MockRecipe[] = []
+    mockFindMany.mockResolvedValue(mockRecipes)
 
     const searchParams = new URLSearchParams({
       search: 'pasta',
@@ -61,7 +67,7 @@ describe('/api/recipes/infinite', () => {
     const request = new NextRequest(`http://localhost:3001/api/recipes/infinite?${searchParams}`)
     await GET(request)
 
-    expect(mockPrisma.recipe.findMany).toHaveBeenCalledWith({
+    expect(mockFindMany).toHaveBeenCalledWith({
       where: {
         AND: [
           {
@@ -88,8 +94,8 @@ describe('/api/recipes/infinite', () => {
   })
 
   it('should handle cursor pagination', async () => {
-    const mockRecipes = []
-    mockPrisma.recipe.findMany.mockResolvedValue(mockRecipes)
+    const mockRecipes: MockRecipe[] = []
+    mockFindMany.mockResolvedValue(mockRecipes)
 
     const searchParams = new URLSearchParams({
       cursor: 'recipe123',
@@ -99,7 +105,7 @@ describe('/api/recipes/infinite', () => {
     const request = new NextRequest(`http://localhost:3001/api/recipes/infinite?${searchParams}`)
     await GET(request)
 
-    expect(mockPrisma.recipe.findMany).toHaveBeenCalledWith(
+    expect(mockFindMany).toHaveBeenCalledWith(
       expect.objectContaining({
         cursor: { id: 'recipe123' },
         skip: 1
@@ -109,7 +115,7 @@ describe('/api/recipes/infinite', () => {
 
   it('should detect when there are more results', async () => {
     // Return limit + 1 recipes to simulate hasMore = true
-    const mockRecipes = Array.from({ length: 25 }, (_, i) => ({
+    const mockRecipes: MockRecipe[] = Array.from({ length: 25 }, (_, i) => ({
       id: `recipe-${i}`,
       title: `Recipe ${i}`,
       description: `Description ${i}`,
@@ -117,7 +123,7 @@ describe('/api/recipes/infinite', () => {
       author: { id: 'user1', name: 'Chef' }
     }))
 
-    mockPrisma.recipe.findMany.mockResolvedValue(mockRecipes)
+    mockFindMany.mockResolvedValue(mockRecipes)
 
     const request = new NextRequest('http://localhost:3001/api/recipes/infinite?limit=24')
     const response = await GET(request)
