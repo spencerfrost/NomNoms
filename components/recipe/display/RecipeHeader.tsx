@@ -1,5 +1,5 @@
-import { Badge } from "@/components/ui/badge";
-import { Clock, ChefHat } from "lucide-react";
+import { Badge } from '@/components/ui/badge';
+import { Clock, ChefHat } from 'lucide-react';
 
 interface RecipeHeaderProps {
   title: string;
@@ -20,19 +20,16 @@ export function RecipeHeader({
   cookTime,
   multiplier = 1,
 }: RecipeHeaderProps) {
-  const scaledYield = recipeYield?.replace(/\d+/g, (match) =>
-    String(Math.round(parseInt(match) * multiplier))
-  ) || "";
+  const scaledYield =
+    recipeYield?.replace(/\d+/g, match => String(Math.round(parseInt(match) * multiplier))) || '';
 
   return (
     <div>
       <h1 className="text-4xl font-bold mb-2">{title}</h1>
-      {description && (
-        <p className="text-muted-foreground text-lg mb-4">{description}</p>
-      )}
+      {description && <p className="text-muted-foreground text-lg mb-4">{description}</p>}
 
       <div className="flex flex-wrap gap-2 mb-4">
-        {tags.map((tag) => (
+        {tags.map(tag => (
           <Badge key={tag} variant="secondary">
             {tag}
           </Badge>
