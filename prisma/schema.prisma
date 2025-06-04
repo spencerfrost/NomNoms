@@ -78,5 +78,8 @@ model Recipe {
   authorId     String
   author       User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
 
+  @@index([createdAt, id]) // For cursor pagination
+  @@index([title, createdAt]) // For search + pagination
+  @@index([visibility, createdAt]) // For filtering public recipes
   @@map("recipes")
 }
