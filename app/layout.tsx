@@ -1,26 +1,26 @@
-import type { Metadata } from "next";
-import { Marcellus, Poppins } from "next/font/google";
-import "./globals.css";
-import AuthProvider from "@/components/auth-provider";
-import BackgroundGradient from "@/components/background-gradient";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Toaster } from "@/components/ui/sonner";
+import type { Metadata } from 'next';
+import { Marcellus, Poppins } from 'next/font/google';
+import './globals.css';
+import AuthProvider from '@/components/auth-provider';
+import BackgroundGradient from '@/components/background-gradient';
+import { ThemeProvider } from '@/components/theme-provider';
+import { Toaster } from '@/components/ui/sonner';
 
 const marcellus = Marcellus({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: "400",
+  variable: '--font-display',
+  subsets: ['latin'],
+  weight: '400',
 });
 
 const poppins = Poppins({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  variable: '--font-body',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
-  title: "🍽️ NomNoms - Personal Recipe Manager",
-  description: "Your personal recipe collection. Search, scale, and manage your favorite recipes.",
+  title: '🍽️ NomNoms - Personal Recipe Manager',
+  description: 'Your personal recipe collection. Search, scale, and manage your favorite recipes.',
 };
 
 export default function RootLayout({
@@ -55,9 +55,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AuthProvider>
-            {children}
-          </AuthProvider>
+          <AuthProvider>{children}</AuthProvider>
         </ThemeProvider>
         <Toaster />
       </body>

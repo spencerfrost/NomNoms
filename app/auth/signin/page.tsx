@@ -1,62 +1,49 @@
-'use client'
+'use client';
 
-import { signIn, getSession } from 'next-auth/react'
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { 
-  AuthFormContainer, 
-  AuthForm, 
-  FormField, 
-  AuthFooter 
-} from '@/components/auth'
+import { signIn, getSession } from 'next-auth/react';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { AuthFormContainer, AuthForm, FormField, AuthFooter } from '@/components/auth';
 
 export default function SignIn() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState('')
-  const router = useRouter()
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setError('')
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
 
     try {
       const result = await signIn('credentials', {
         email,
         password,
         redirect: false,
-      })
+      });
 
       if (result?.error) {
-        setError('Invalid credentials')
+        setError('Invalid credentials');
       } else {
         // Check if sign in was successful
-        const session = await getSession()
+        const session = await getSession();
         if (session) {
-          router.push('/')
+          router.push('/');
         }
       }
     } catch (err) {
-      console.error('Sign in error:', err)
-      setError('Something went wrong')
+      console.error('Sign in error:', err);
+      setError('Something went wrong');
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
-    <AuthFormContainer
-      title="Sign In"
-      description="Sign in to add and manage your recipes"
-    >
-      <AuthForm
-        onSubmit={handleSubmit}
-        submitText="Sign In"
-        isLoading={isLoading}
-        error={error}
-      >
+    <AuthFormContainer title="Sign In" description="Sign in to add and manage your recipes">
+      <AuthForm onSubmit={handleSubmit} submitText="Sign In" isLoading={isLoading} error={error}>
         <FormField
           id="email"
           label="Email"
@@ -66,7 +53,7 @@ export default function SignIn() {
           onChange={setEmail}
           required
         />
-        
+
         <FormField
           id="password"
           label="Password"
@@ -77,7 +64,7 @@ export default function SignIn() {
           required
         />
       </AuthForm>
-      
+
       <div className="px-6 pb-6">
         <AuthFooter
           primaryText="Don't have an account?"
@@ -87,6 +74,5 @@ export default function SignIn() {
         />
       </div>
     </AuthFormContainer>
-  )
+  );
 }
-

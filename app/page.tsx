@@ -1,5 +1,5 @@
-import { RecipeLibrary } from "@/components/recipe-library";
-import PageHeader from "@/components/page-header";
+import { RecipeLibrary } from '@/components/recipe-library';
+import PageHeader from '@/components/page-header';
 
 // Server Component for better SSR performance
 export default async function HomePage() {
@@ -9,9 +9,7 @@ export default async function HomePage() {
       <PageHeader>
         <div>
           <h1 className="text-4xl font-bold mb-2">NomNoms</h1>
-          <p className="text-muted-foreground">
-            Discover and manage your favorite recipes
-          </p>
+          <p className="text-muted-foreground">Discover and manage your favorite recipes</p>
         </div>
       </PageHeader>
 

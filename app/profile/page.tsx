@@ -1,25 +1,18 @@
-import { redirect } from 'next/navigation'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/lib/auth-config'
-import { prisma } from '@/lib/prisma'
-import PageHeader from '@/components/page-header'
-import ProfileForm from '@/components/profile/profile-form'
-import UserRecipesList from '@/components/profile/user-recipes-list'
+import { redirect } from 'next/navigation';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth-config';
+import { prisma } from '@/lib/prisma';
+import PageHeader from '@/components/page-header';
+import ProfileForm from '@/components/profile/profile-form';
+import UserRecipesList from '@/components/profile/user-recipes-list';
 
 export default async function ProfilePage() {
-  const session = await getServerSession(authOptions)
-  
-  // Debug logging
-  console.log('Profile page - Session:', session)
-  console.log('Profile page - User ID:', session?.user?.id)
-  console.log('Profile page - Session exists:', !!session)
-  
+  const session = await getServerSession(authOptions);
+
   if (!session?.user?.id) {
-    console.log('Profile page - Redirecting to signin: No session or user ID')
-    redirect('/auth/signin')
+    redirect('/auth/signin');
   }
 
-  // Fetch user data with recipes
   const user = await prisma.user.findUnique({
     where: { id: session.user.id },
     include: {
@@ -35,13 +28,13 @@ export default async function ProfilePage() {
           createdAt: true,
           updatedAt: true,
           tags: true,
-        }
-      }
-    }
-  })
+        },
+      },
+    },
+  });
 
   if (!user) {
-    redirect('/auth/signin')
+    redirect('/auth/signin');
   }
 
   return (
@@ -49,9 +42,7 @@ export default async function ProfilePage() {
       <PageHeader>
         <div>
           <h1 className="text-3xl font-bold mb-2">Profile</h1>
-          <p className="text-muted-foreground">
-            Manage your account and recipes
-          </p>
+          <p className="text-muted-foreground">Manage your account and recipes</p>
         </div>
       </PageHeader>
 
@@ -69,5 +60,5 @@ export default async function ProfilePage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

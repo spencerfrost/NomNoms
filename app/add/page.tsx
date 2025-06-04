@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { Ingredient } from '@/types'
-import { saveRecipe } from '@/lib/client-recipes'
-import { ImportedRecipe } from '@/lib/recipe-import-utils'
-import { generateSlug } from '@/lib/recipe-utils'
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { Ingredient } from '@/types';
+import { saveRecipe } from '@/lib/client-recipes';
+import { ImportedRecipe } from '@/lib/recipe-import-utils';
+import { generateSlug } from '@/lib/recipe-utils';
 import {
   RecipeModeSelector,
   RecipeBasicInfoForm,
@@ -13,17 +13,17 @@ import {
   RecipeIngredientsEditor,
   RecipeInstructionsEditor,
   RecipeFormContainer,
-  RecipeUrlImportScreen
-} from '@/components/recipe/form'
+  RecipeUrlImportScreen,
+} from '@/components/recipe/form';
 
-type CreateMode = 'select' | 'manual' | 'url'
+type CreateMode = 'select' | 'manual' | 'url';
 
 export default function AddRecipePage() {
-  const router = useRouter()
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-  const [createMode, setCreateMode] = useState<CreateMode>('select')
-  
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [createMode, setCreateMode] = useState<CreateMode>('select');
+
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -32,92 +32,88 @@ export default function AddRecipePage() {
     prepTime: '',
     cookTime: '',
     visibility: 'public',
-    newTag: ''
-  })
-  
-  const [ingredients, setIngredients] = useState<Ingredient[]>([
-    { amount: 0, unit: '', name: '' }
-  ])
-  
-  const [instructions, setInstructions] = useState<string[]>([''])
-  const [tags, setTags] = useState<string[]>([])
+    newTag: '',
+  });
+
+  const [ingredients, setIngredients] = useState<Ingredient[]>([{ amount: 0, unit: '', name: '' }]);
+
+  const [instructions, setInstructions] = useState<string[]>(['']);
+  const [tags, setTags] = useState<string[]>([]);
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }))
-  }
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
 
-  const handleIngredientChange = (index: number, field: keyof Ingredient, value: string | number) => {
-    setIngredients(prev => 
-      prev.map((ingredient, i) => 
-        i === index ? { ...ingredient, [field]: value } : ingredient
-      )
-    )
-  }
+  const handleIngredientChange = (
+    index: number,
+    field: keyof Ingredient,
+    value: string | number
+  ) => {
+    setIngredients(prev =>
+      prev.map((ingredient, i) => (i === index ? { ...ingredient, [field]: value } : ingredient))
+    );
+  };
 
   const addIngredient = () => {
-    setIngredients(prev => [...prev, { amount: 0, unit: '', name: '' }])
-  }
+    setIngredients(prev => [...prev, { amount: 0, unit: '', name: '' }]);
+  };
 
   const removeIngredient = (index: number) => {
     if (ingredients.length > 1) {
-      setIngredients(prev => prev.filter((_, i) => i !== index))
+      setIngredients(prev => prev.filter((_, i) => i !== index));
     }
-  }
+  };
 
   const handleInstructionChange = (index: number, value: string) => {
-    setInstructions(prev => 
-      prev.map((instruction, i) => i === index ? value : instruction)
-    )
-  }
+    setInstructions(prev => prev.map((instruction, i) => (i === index ? value : instruction)));
+  };
 
   const addInstruction = () => {
-    setInstructions(prev => [...prev, ''])
-  }
+    setInstructions(prev => [...prev, '']);
+  };
 
   const removeInstruction = (index: number) => {
     if (instructions.length > 1) {
-      setInstructions(prev => prev.filter((_, i) => i !== index))
+      setInstructions(prev => prev.filter((_, i) => i !== index));
     }
-  }
+  };
 
   const addTag = () => {
-    const tag = formData.newTag.trim().toLowerCase()
+    const tag = formData.newTag.trim().toLowerCase();
     if (tag && !tags.includes(tag)) {
-      setTags(prev => [...prev, tag])
-      setFormData(prev => ({ ...prev, newTag: '' }))
+      setTags(prev => [...prev, tag]);
+      setFormData(prev => ({ ...prev, newTag: '' }));
     }
-  }
+  };
 
   const removeTag = (tagToRemove: string) => {
-    setTags(prev => prev.filter(tag => tag !== tagToRemove))
-  }
+    setTags(prev => prev.filter(tag => tag !== tagToRemove));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    setError(null)
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
 
     try {
       // Validate form
       if (!formData.title.trim()) {
-        throw new Error('Title is required')
+        throw new Error('Title is required');
       }
 
-      const validIngredients = ingredients.filter(
-        ing => ing.name.trim() && ing.amount > 0
-      )
+      const validIngredients = ingredients.filter(ing => ing.name.trim() && ing.amount > 0);
 
       if (validIngredients.length === 0) {
-        throw new Error('At least one ingredient is required')
+        throw new Error('At least one ingredient is required');
       }
 
-      const validInstructions = instructions.filter(inst => inst.trim())
+      const validInstructions = instructions.filter(inst => inst.trim());
 
       if (validInstructions.length === 0) {
-        throw new Error('At least one instruction is required')
+        throw new Error('At least one instruction is required');
       }
 
-      const slug = generateSlug(formData.title)
+      const slug = generateSlug(formData.title);
 
       // Create the recipe data for the API
       const recipeData = {
@@ -128,17 +124,17 @@ export default function AddRecipePage() {
         yield: formData.yield.trim() || '1 serving',
         ingredients: validIngredients,
         instructions: validInstructions,
-        tags: tags
-      }
+        tags: tags,
+      };
 
-      await saveRecipe(recipeData)
-      router.push(`/recipes/${slug}`)
+      await saveRecipe(recipeData);
+      router.push(`/recipes/${slug}`);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to save recipe')
+      setError(err instanceof Error ? err.message : 'Failed to save recipe');
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const handleImportedRecipe = (imported: ImportedRecipe) => {
     // Populate form with imported data
@@ -150,30 +146,32 @@ export default function AddRecipePage() {
       prepTime: imported.prepTimeMinutes ? `${imported.prepTimeMinutes} min` : '',
       cookTime: imported.cookTimeMinutes ? `${imported.cookTimeMinutes} min` : '',
       visibility: imported.isPublic ? 'public' : 'private',
-      newTag: ''
-    })
-    
-    setIngredients(imported.ingredients.length > 0 ? imported.ingredients : [{ amount: 0, unit: '', name: '' }])
-    setInstructions(imported.instructions.length > 0 ? imported.instructions : [''])
-    setTags(imported.tags)
-    
+      newTag: '',
+    });
+
+    setIngredients(
+      imported.ingredients.length > 0 ? imported.ingredients : [{ amount: 0, unit: '', name: '' }]
+    );
+    setInstructions(imported.instructions.length > 0 ? imported.instructions : ['']);
+    setTags(imported.tags);
+
     // Switch to manual mode to allow editing
-    setCreateMode('manual')
-  }
+    setCreateMode('manual');
+  };
 
   // Mode selection screen
   if (createMode === 'select') {
-    return <RecipeModeSelector onModeChange={setCreateMode} />
+    return <RecipeModeSelector onModeChange={setCreateMode} />;
   }
 
   // URL import screen
   if (createMode === 'url') {
     return (
-      <RecipeUrlImportScreen 
+      <RecipeUrlImportScreen
         onImported={handleImportedRecipe}
         onCancel={() => setCreateMode('select')}
       />
-    )
+    );
   }
 
   // Manual creation screen
@@ -192,7 +190,7 @@ export default function AddRecipePage() {
           yield: formData.yield,
           prepTime: formData.prepTime,
           cookTime: formData.cookTime,
-          visibility: formData.visibility
+          visibility: formData.visibility,
         }}
         onChange={handleInputChange}
       />
@@ -202,7 +200,7 @@ export default function AddRecipePage() {
         newTag={formData.newTag}
         onTagAdd={addTag}
         onTagRemove={removeTag}
-        onNewTagChange={(value) => handleInputChange('newTag', value)}
+        onNewTagChange={value => handleInputChange('newTag', value)}
       />
 
       <RecipeIngredientsEditor
@@ -219,5 +217,5 @@ export default function AddRecipePage() {
         onRemove={removeInstruction}
       />
     </RecipeFormContainer>
-  )
+  );
 }

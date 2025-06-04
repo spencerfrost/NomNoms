@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
-import { Recipe, getRecipeIngredients } from "@/types";
-import { getRecipeBySlug } from "@/lib/client-recipes";
+import { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
+import { Recipe, getRecipeIngredients } from '@/types';
+import { getRecipeBySlug } from '@/lib/client-recipes';
 import {
   RecipeHeader,
   RecipeImage,
   RecipeIngredientsList,
   RecipeInstructionsList,
   RecipeLayout,
-} from "@/components/recipe/display";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, Edit } from "lucide-react";
-import Link from "next/link";
-import PageHeader from "@/components/page-header";
-import { LoadingSpinner, NotFound } from "@/components/common";
-import { useSession } from "next-auth/react";
+} from '@/components/recipe/display';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft, Edit } from 'lucide-react';
+import Link from 'next/link';
+import PageHeader from '@/components/page-header';
+import { LoadingSpinner, NotFound } from '@/components/common';
+import { useSession } from 'next-auth/react';
 
 export default function RecipePage() {
   const params = useParams();
@@ -37,11 +37,11 @@ export default function RecipePage() {
         if (recipeData) {
           setRecipe(recipeData);
         } else {
-          setError("Recipe not found");
+          setError('Recipe not found');
         }
       } catch (err) {
-        console.error("Error loading recipe:", err);
-        setError("Failed to load recipe");
+        console.error('Error loading recipe:', err);
+        setError('Failed to load recipe');
       } finally {
         setLoading(false);
       }
@@ -53,13 +53,7 @@ export default function RecipePage() {
   }, [slug]);
 
   if (loading) {
-    return (
-      <LoadingSpinner
-        text="Loading recipe..."
-        size="large"
-        fullScreen
-      />
-    );
+    return <LoadingSpinner text="Loading recipe..." size="large" fullScreen />;
   }
 
   if (error || !recipe) {
@@ -84,7 +78,7 @@ export default function RecipePage() {
               Back to Recipes
             </Button>
           </Link>
-          
+
           {canEdit && (
             <Link href={`/recipes/${slug}/edit`}>
               <Button variant="outline" size="sm">

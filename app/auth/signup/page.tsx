@@ -1,55 +1,55 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
-import { 
-  AuthFormContainer, 
-  AuthForm, 
-  FormField, 
-  AuthFooter, 
-  AuthSuccessMessage 
-} from '@/components/auth'
+import { useState } from 'react';
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import {
+  AuthFormContainer,
+  AuthForm,
+  FormField,
+  AuthFooter,
+  AuthSuccessMessage,
+} from '@/components/auth';
 
 export default function SignUp() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setError("");
+    setError('');
 
     // Validation
     if (!name || !email || !password || !confirmPassword) {
-      setError("All fields are required");
+      setError('All fields are required');
       setIsLoading(false);
       return;
     }
 
     if (password !== confirmPassword) {
-      setError("Passwords do not match");
+      setError('Passwords do not match');
       setIsLoading(false);
       return;
     }
 
     if (password.length < 6) {
-      setError("Password must be at least 6 characters long");
+      setError('Password must be at least 6 characters long');
       setIsLoading(false);
       return;
     }
 
     try {
-      const response = await fetch("/api/auth/signup", {
-        method: "POST",
+      const response = await fetch('/api/auth/signup', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           name,
@@ -61,21 +61,21 @@ export default function SignUp() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Failed to create account");
+        throw new Error(data.error || 'Failed to create account');
       }
 
       setSuccess(true);
 
       // Auto sign in after successful signup
       setTimeout(async () => {
-        const result = await signIn("credentials", {
+        const result = await signIn('credentials', {
           email,
           password,
           redirect: false,
         });
 
         if (result?.ok) {
-          router.push("/");
+          router.push('/');
         }
       }, 1500);
     } catch (error: unknown) {
