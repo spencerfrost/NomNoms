@@ -130,7 +130,7 @@ export default function RecipeUrlImport({
               <label className="block text-sm font-medium mb-2">
                 Recipe Image
               </label>
-              <div className="relative w-full h-48 md:h-64 rounded-lg overflow-hidden bg-gray-100">
+              <div className="relative w-full h-48 md:h-64 overflow-hidden bg-gray-100">
                 <Image
                   src={importedRecipe.imageUrl}
                   alt={importedRecipe.name || "Recipe image"}
@@ -325,7 +325,7 @@ export default function RecipeUrlImport({
         </div>
 
         {error && (
-          <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-md">
+          <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200">
             <X className="h-4 w-4 text-red-600" />
             <p className="text-sm text-red-700">{error}</p>
           </div>

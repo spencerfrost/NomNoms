@@ -59,7 +59,7 @@ export default function RecipeBasicInfoForm({ formData, onChange }: RecipeBasicI
           />
           {formData.imageUrl && (
             <div className="mt-2">
-              <div className="relative w-full h-32 rounded-lg overflow-hidden bg-gray-100">
+              <div className="relative w-full h-32 overflow-hidden bg-gray-100">
                 <Image
                   src={formData.imageUrl}
                   alt="Recipe preview"

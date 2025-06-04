@@ -89,7 +89,7 @@ export function SuccessMessage({
     case 'toast':
       return (
         <div className={cn(
-          "fixed top-4 right-4 z-50 border border-green-200 bg-green-50 px-4 py-3 rounded-md shadow-md dark:border-green-800 dark:bg-green-950/90",
+          "fixed top-4 right-4 z-50 border border-green-200 bg-green-50 px-4 py-3 shadow-md dark:border-green-800 dark:bg-green-950/90",
           className
         )}>
           <Alert className="border-0 bg-transparent p-0">
