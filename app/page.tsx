@@ -1,11 +1,8 @@
-import { getAllRecipes } from "@/lib/recipes-db";
-import { ClientSearchBar } from "@/components/client-search-bar";
+import { RecipeLibrary } from "@/components/recipe-library";
 import PageHeader from "@/components/page-header";
 
 // Server Component for better SSR performance
 export default async function HomePage() {
-  const recipes = await getAllRecipes();
-
   return (
     <div className="container max-w-6xl mx-auto px-4 py-8">
       {/* Header */}
@@ -18,8 +15,8 @@ export default async function HomePage() {
         </div>
       </PageHeader>
 
-      {/* Search and Recipe Grid */}
-      <ClientSearchBar recipes={recipes} />
+      {/* Search and Recipe Grid with Infinite Scroll */}
+      <RecipeLibrary />
     </div>
   );
 }
