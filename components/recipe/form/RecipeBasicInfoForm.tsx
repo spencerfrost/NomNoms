@@ -81,7 +81,7 @@ export default function RecipeBasicInfoForm({ formData, onChange }: RecipeBasicI
                 className="w-full h-32"
               />
               <p className="text-xs text-muted-foreground mt-1">
-                Image preview - if this doesn't load, check that the URL is valid and publicly accessible
+                Image preview - if this doesn&apos;t load, check that the URL is valid and publicly accessible
               </p>
             </div>
           )}
