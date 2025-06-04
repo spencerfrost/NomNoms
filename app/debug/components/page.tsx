@@ -1,7 +1,7 @@
-"use client"
+'use client';
 
-import { ComponentLibrary } from "./ComponentLibrary"
+import { ComponentLibrary } from './ComponentLibrary';
 
 export default function ComponentShowcasePage() {
-  return <ComponentLibrary />
+  return <ComponentLibrary />;
 }

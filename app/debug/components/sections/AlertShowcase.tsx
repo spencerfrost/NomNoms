@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { ComponentSection } from "../ComponentSection";
-import { 
-  AlertCircle, 
-  CheckCircle2, 
-  Info, 
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { ComponentSection } from '../ComponentSection';
+import {
+  AlertCircle,
+  CheckCircle2,
+  Info,
   AlertTriangle,
   Terminal,
   Lightbulb,
   Heart,
   Clock,
-  X
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
+  X,
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 
 export function AlertShowcase() {
   const [dismissedAlerts, setDismissedAlerts] = useState<string[]>([]);
@@ -84,9 +84,7 @@ import { AlertCircle } from "lucide-react";
             <Alert className="border-green-200 bg-green-50 text-green-800">
               <CheckCircle2 className="h-4 w-4 text-green-600" />
               <AlertTitle>Success</AlertTitle>
-              <AlertDescription>
-                Your recipe has been saved successfully!
-              </AlertDescription>
+              <AlertDescription>Your recipe has been saved successfully!</AlertDescription>
             </Alert>
 
             <Alert className="border-yellow-200 bg-yellow-50 text-yellow-800">
@@ -101,7 +99,8 @@ import { AlertCircle } from "lucide-react";
               <Lightbulb className="h-4 w-4 text-blue-600" />
               <AlertTitle>Tip</AlertTitle>
               <AlertDescription>
-                For best results, let the dough rest in the refrigerator for at least 30 minutes before baking.
+                For best results, let the dough rest in the refrigerator for at least 30 minutes
+                before baking.
               </AlertDescription>
             </Alert>
 
@@ -109,7 +108,8 @@ import { AlertCircle } from "lucide-react";
               <Heart className="h-4 w-4 text-purple-600" />
               <AlertTitle>Pro Tip</AlertTitle>
               <AlertDescription>
-                This recipe is a favorite among our community! Try adding a pinch of sea salt on top.
+                This recipe is a favorite among our community! Try adding a pinch of sea salt on
+                top.
               </AlertDescription>
             </Alert>
           </div>
@@ -168,7 +168,8 @@ import { AlertCircle } from "lucide-react";
                   <div className="flex-1">
                     <AlertTitle>App Updated</AlertTitle>
                     <AlertDescription>
-                      New features available! Check out the improved recipe scaling and meal planning tools.
+                      New features available! Check out the improved recipe scaling and meal
+                      planning tools.
                     </AlertDescription>
                   </div>
                   <Button
@@ -206,12 +207,7 @@ import { AlertCircle } from "lucide-react";
             )}
 
             {dismissedAlerts.length > 0 && (
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={resetAlerts}
-                className="mt-2"
-              >
+              <Button variant="outline" size="sm" onClick={resetAlerts} className="mt-2">
                 Reset Dismissed Alerts
               </Button>
             )}
@@ -232,7 +228,11 @@ import { AlertCircle } from "lucide-react";
                 <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
                   Import Recipe
                 </Button>
-                <Button variant="outline" size="sm" className="border-blue-300 text-blue-700 hover:bg-blue-100">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-blue-300 text-blue-700 hover:bg-blue-100"
+                >
                   Dismiss
                 </Button>
               </div>
@@ -242,13 +242,18 @@ import { AlertCircle } from "lucide-react";
               <AlertTriangle className="h-4 w-4 text-yellow-600" />
               <AlertTitle>Storage Almost Full</AlertTitle>
               <AlertDescription className="mb-3">
-                You&apos;ve used 90% of your recipe storage. Consider upgrading to premium for unlimited recipes.
+                You&apos;ve used 90% of your recipe storage. Consider upgrading to premium for
+                unlimited recipes.
               </AlertDescription>
               <div className="flex gap-2">
                 <Button size="sm" className="bg-yellow-600 hover:bg-yellow-700">
                   Upgrade Now
                 </Button>
-                <Button variant="outline" size="sm" className="border-yellow-300 text-yellow-700 hover:bg-yellow-100">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-yellow-300 text-yellow-700 hover:bg-yellow-100"
+                >
                   Manage Recipes
                 </Button>
               </div>
@@ -278,8 +283,8 @@ import { AlertCircle } from "lucide-react";
           <div className="space-y-4">
             <div className="space-y-2">
               <label className="text-sm font-medium">Recipe Title</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 className="w-full px-3 py-2 border border-red-300  focus:outline-none focus:ring-2 focus:ring-red-500"
                 defaultValue="My Recipe"
               />
@@ -293,8 +298,8 @@ import { AlertCircle } from "lucide-react";
 
             <div className="space-y-2">
               <label className="text-sm font-medium">Cooking Time</label>
-              <input 
-                type="number" 
+              <input
+                type="number"
                 className="w-full px-3 py-2 border border-green-300  focus:outline-none focus:ring-2 focus:ring-green-500"
                 defaultValue="30"
               />

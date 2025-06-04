@@ -1,16 +1,8 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { ComponentSection } from "../ComponentSection";
-import { 
-  Download, 
-  Plus, 
-  Trash2, 
-  Settings, 
-  ArrowRight,
-  Heart,
-  ExternalLink 
-} from "lucide-react";
+import { Button } from '@/components/ui/button';
+import { ComponentSection } from '../ComponentSection';
+import { Download, Plus, Trash2, Settings, ArrowRight, Heart, ExternalLink } from 'lucide-react';
 
 export function ButtonShowcase() {
   const codeExample = `import { Button } from "@/components/ui/button";

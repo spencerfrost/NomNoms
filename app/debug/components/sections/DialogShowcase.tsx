@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   AlertDialog,
@@ -10,10 +10,10 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
-import { ComponentSection } from "../ComponentSection";
-import { Trash2, LogOut, Download, Share2, AlertTriangle, Info } from "lucide-react";
+} from '@/components/ui/alert-dialog';
+import { Button } from '@/components/ui/button';
+import { ComponentSection } from '../ComponentSection';
+import { Trash2, LogOut, Download, Share2, AlertTriangle, Info } from 'lucide-react';
 
 export function DialogShowcase() {
   const codeExample = `import {
@@ -92,7 +92,8 @@ export function DialogShowcase() {
                 <AlertDialogHeader>
                   <AlertDialogTitle>Sign Out</AlertDialogTitle>
                   <AlertDialogDescription>
-                    Are you sure you want to sign out? You&apos;ll need to sign in again to access your recipes.
+                    Are you sure you want to sign out? You&apos;ll need to sign in again to access
+                    your recipes.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
@@ -119,8 +120,8 @@ export function DialogShowcase() {
                 <AlertDialogHeader>
                   <AlertDialogTitle>Export Recipe Data</AlertDialogTitle>
                   <AlertDialogDescription>
-                    This will download all your recipes as a JSON file. The file will include recipe details,
-                    ingredients, and instructions but not images.
+                    This will download all your recipes as a JSON file. The file will include recipe
+                    details, ingredients, and instructions but not images.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
@@ -144,8 +145,8 @@ export function DialogShowcase() {
                 <AlertDialogHeader>
                   <AlertDialogTitle>Share &ldquo;Spaghetti Carbonara&rdquo;</AlertDialogTitle>
                   <AlertDialogDescription>
-                    This will make your recipe public and generate a shareable link. Anyone with the link
-                    will be able to view and copy this recipe.
+                    This will make your recipe public and generate a shareable link. Anyone with the
+                    link will be able to view and copy this recipe.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
@@ -178,8 +179,8 @@ export function DialogShowcase() {
                     <AlertDialogTitle>Unsaved Changes</AlertDialogTitle>
                   </div>
                   <AlertDialogDescription>
-                    You have unsaved changes to this recipe. If you leave now, your changes will be lost.
-                    Would you like to save your changes first?
+                    You have unsaved changes to this recipe. If you leave now, your changes will be
+                    lost. Would you like to save your changes first?
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
@@ -208,8 +209,8 @@ export function DialogShowcase() {
                     <AlertDialogTitle>Storage Limit Reached</AlertDialogTitle>
                   </div>
                   <AlertDialogDescription>
-                    You&apos;ve reached your storage limit of 50 recipes. To add more recipes, you&apos;ll need to
-                    upgrade to a premium plan or delete some existing recipes.
+                    You&apos;ve reached your storage limit of 50 recipes. To add more recipes,
+                    you&apos;ll need to upgrade to a premium plan or delete some existing recipes.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
@@ -263,9 +264,7 @@ export function DialogShowcase() {
 
             <AlertDialog>
               <AlertDialogTrigger asChild>
-                <Button variant="outline">
-                  Import Complete
-                </Button>
+                <Button variant="outline">Import Complete</Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
@@ -299,9 +298,7 @@ export function DialogShowcase() {
           <div className="flex flex-wrap gap-4">
             <AlertDialog>
               <AlertDialogTrigger asChild>
-                <Button variant="destructive">
-                  Clear All Data
-                </Button>
+                <Button variant="destructive">Clear All Data</Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
@@ -338,9 +335,7 @@ export function DialogShowcase() {
 
             <AlertDialog>
               <AlertDialogTrigger asChild>
-                <Button>
-                  Upgrade Account
-                </Button>
+                <Button>Upgrade Account</Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>

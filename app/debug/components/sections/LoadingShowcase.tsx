@@ -1,13 +1,10 @@
-"use client";
+'use client';
 
-import { 
-  LoadingSpinner, 
-  LoadingDots 
-} from "@/components/common";
-import { Progress } from "@/components/ui/progress";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ComponentSection } from "../ComponentSection";
+import { LoadingSpinner, LoadingDots } from '@/components/common';
+import { Progress } from '@/components/ui/progress';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { ComponentSection } from '../ComponentSection';
 
 export function LoadingShowcase() {
   const codeExample = `import { LoadingSpinner, LoadingDots } from "@/components/common";
@@ -170,7 +167,7 @@ import { Skeleton } from "@/components/ui/skeleton";
                 <Skeleton className="h-4 w-3/4" />
               </div>
             </div>
-            
+
             <div>
               <h5 className="text-sm font-medium mb-2">Recipe Instructions</h5>
               <div className="space-y-3">
@@ -185,7 +182,7 @@ import { Skeleton } from "@/components/ui/skeleton";
                 ))}
               </div>
             </div>
-            
+
             <div>
               <h5 className="text-sm font-medium mb-2">Ingredient List</h5>
               <div className="space-y-2">
@@ -234,7 +231,7 @@ import { Skeleton } from "@/components/ui/skeleton";
                     ))}
                   </div>
                 </div>
-                
+
                 <div>
                   <Skeleton className="h-6 w-28 mb-3" />
                   <div className="space-y-3">
@@ -247,7 +244,7 @@ import { Skeleton } from "@/components/ui/skeleton";
                   </div>
                 </div>
               </div>
-              
+
               <div className="space-y-4">
                 <Skeleton className="h-6 w-24 mb-3" />
                 <div className="space-y-3">

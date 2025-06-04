@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Badge } from "@/components/ui/badge";
-import { ComponentSection } from "../ComponentSection";
-import { Clock, Users, Star, Flame, Leaf } from "lucide-react";
+import { Badge } from '@/components/ui/badge';
+import { ComponentSection } from '../ComponentSection';
+import { Clock, Users, Star, Flame, Leaf } from 'lucide-react';
 
 export function BadgeShowcase() {
   const codeExample = `import { Badge } from "@/components/ui/badge";
@@ -46,8 +46,7 @@ export function BadgeShowcase() {
               30 min
             </Badge>
             <Badge variant="outline" className="gap-1">
-              <Users className="h-3 w-3" />
-              4 servings
+              <Users className="h-3 w-3" />4 servings
             </Badge>
             <Badge variant="default" className="gap-1">
               <Star className="h-3 w-3" />
@@ -77,7 +76,7 @@ export function BadgeShowcase() {
                 <Badge variant="secondary">127 reviews</Badge>
               </div>
             </div>
-            
+
             <div>
               <p className="text-sm text-muted-foreground mb-2">Status & Categories</p>
               <div className="flex flex-wrap gap-2">
@@ -87,7 +86,7 @@ export function BadgeShowcase() {
                 <Badge variant="outline">Private</Badge>
               </div>
             </div>
-            
+
             <div>
               <p className="text-sm text-muted-foreground mb-2">Recipe Tags</p>
               <div className="flex flex-wrap gap-2">
@@ -122,8 +121,7 @@ export function BadgeShowcase() {
                 25 min
               </Badge>
               <Badge variant="outline" className="gap-1">
-                <Users className="h-3 w-3" />
-                4 servings
+                <Users className="h-3 w-3" />4 servings
               </Badge>
               <Badge variant="default" className="gap-1">
                 <Star className="h-3 w-3" />

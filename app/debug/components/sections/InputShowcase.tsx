@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ComponentSection } from "../ComponentSection";
-import { Search, Eye, EyeOff, Mail, Lock, Phone } from "lucide-react";
-import { useState } from "react";
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ComponentSection } from '../ComponentSection';
+import { Search, Eye, EyeOff, Mail, Lock, Phone } from 'lucide-react';
+import { useState } from 'react';
 
 export function InputShowcase() {
   const [showPassword, setShowPassword] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
 
   const codeExample = `import { Input } from "@/components/ui/input";
 
@@ -44,46 +44,28 @@ export function InputShowcase() {
               <label htmlFor="text-input" className="text-sm font-medium">
                 Text Input
               </label>
-              <Input 
-                id="text-input"
-                type="text" 
-                placeholder="Enter some text..." 
-              />
+              <Input id="text-input" type="text" placeholder="Enter some text..." />
             </div>
-            
+
             <div className="space-y-2">
               <label htmlFor="email-input" className="text-sm font-medium">
                 Email Input
               </label>
-              <Input 
-                id="email-input"
-                type="email" 
-                placeholder="email@example.com" 
-              />
+              <Input id="email-input" type="email" placeholder="email@example.com" />
             </div>
-            
+
             <div className="space-y-2">
               <label htmlFor="password-input" className="text-sm font-medium">
                 Password Input
               </label>
-              <Input 
-                id="password-input"
-                type="password" 
-                placeholder="Enter password..." 
-              />
+              <Input id="password-input" type="password" placeholder="Enter password..." />
             </div>
-            
+
             <div className="space-y-2">
               <label htmlFor="number-input" className="text-sm font-medium">
                 Number Input
               </label>
-              <Input 
-                id="number-input"
-                type="number" 
-                placeholder="0" 
-                min="0"
-                max="100"
-              />
+              <Input id="number-input" type="number" placeholder="0" min="0" max="100" />
             </div>
           </div>
         </div>
@@ -96,17 +78,17 @@ export function InputShowcase() {
               <label className="text-sm font-medium">Normal State</label>
               <Input placeholder="Normal input" />
             </div>
-            
+
             <div className="space-y-2">
               <label className="text-sm font-medium">Disabled State</label>
               <Input disabled placeholder="Disabled input" />
             </div>
-            
+
             <div className="space-y-2">
               <label className="text-sm font-medium">With Value</label>
               <Input defaultValue="Pre-filled value" />
             </div>
-            
+
             <div className="space-y-2">
               <label className="text-sm font-medium">Read Only</label>
               <Input readOnly value="Read-only value" />
@@ -122,35 +104,31 @@ export function InputShowcase() {
               <label className="text-sm font-medium">Search Input</label>
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input 
-                  className="pl-10" 
-                  placeholder="Search recipes..." 
+                <Input
+                  className="pl-10"
+                  placeholder="Search recipes..."
                   value={searchValue}
-                  onChange={(e) => setSearchValue(e.target.value)}
+                  onChange={e => setSearchValue(e.target.value)}
                 />
               </div>
             </div>
-            
+
             <div className="space-y-2">
               <label className="text-sm font-medium">Email with Icon</label>
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input 
-                  className="pl-10" 
-                  type="email"
-                  placeholder="your@email.com" 
-                />
+                <Input className="pl-10" type="email" placeholder="your@email.com" />
               </div>
             </div>
-            
+
             <div className="space-y-2">
               <label className="text-sm font-medium">Password with Toggle</label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input 
-                  className="pl-10 pr-10" 
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Enter password..." 
+                <Input
+                  className="pl-10 pr-10"
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Enter password..."
                 />
                 <Button
                   type="button"
@@ -159,24 +137,16 @@ export function InputShowcase() {
                   className="absolute right-1 top-1/2 transform -translate-y-1/2 h-8 w-8 p-0"
                   onClick={() => setShowPassword(!showPassword)}
                 >
-                  {showPassword ? (
-                    <EyeOff className="h-4 w-4" />
-                  ) : (
-                    <Eye className="h-4 w-4" />
-                  )}
+                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </Button>
               </div>
             </div>
-            
+
             <div className="space-y-2">
               <label className="text-sm font-medium">Phone Number</label>
               <div className="relative">
                 <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input 
-                  className="pl-10" 
-                  type="tel"
-                  placeholder="+1 (555) 000-0000" 
-                />
+                <Input className="pl-10" type="tel" placeholder="+1 (555) 000-0000" />
               </div>
             </div>
           </div>
@@ -198,30 +168,30 @@ export function InputShowcase() {
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input 
+                    <Input
                       id="login-email"
-                      className="pl-10" 
+                      className="pl-10"
                       type="email"
-                      placeholder="your@email.com" 
+                      placeholder="your@email.com"
                     />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="login-password" className="text-sm font-medium">
                     Password
                   </label>
                   <div className="relative">
                     <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input 
+                    <Input
                       id="login-password"
-                      className="pl-10" 
+                      className="pl-10"
                       type="password"
-                      placeholder="Enter password..." 
+                      placeholder="Enter password..."
                     />
                   </div>
                 </div>
-                
+
                 <Button className="w-full">Sign In</Button>
               </CardContent>
             </Card>
@@ -236,48 +206,32 @@ export function InputShowcase() {
                   <label htmlFor="recipe-title" className="text-sm font-medium">
                     Recipe Title
                   </label>
-                  <Input 
-                    id="recipe-title"
-                    placeholder="Enter recipe title..." 
-                  />
+                  <Input id="recipe-title" placeholder="Enter recipe title..." />
                 </div>
-                
+
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label htmlFor="prep-time" className="text-sm font-medium">
                       Prep Time (min)
                     </label>
-                    <Input 
-                      id="prep-time"
-                      type="number"
-                      placeholder="15"
-                      min="0"
-                    />
+                    <Input id="prep-time" type="number" placeholder="15" min="0" />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label htmlFor="servings" className="text-sm font-medium">
                       Servings
                     </label>
-                    <Input 
-                      id="servings"
-                      type="number"
-                      placeholder="4"
-                      min="1"
-                    />
+                    <Input id="servings" type="number" placeholder="4" min="1" />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <label htmlFor="recipe-tags" className="text-sm font-medium">
                     Tags (comma separated)
                   </label>
-                  <Input 
-                    id="recipe-tags"
-                    placeholder="italian, pasta, quick, easy" 
-                  />
+                  <Input id="recipe-tags" placeholder="italian, pasta, quick, easy" />
                 </div>
-                
+
                 <Button className="w-full">Save Recipe</Button>
               </CardContent>
             </Card>
@@ -289,23 +243,19 @@ export function InputShowcase() {
           <h4 className="font-medium mb-4">Validation States</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <label className="text-sm font-medium text-green-700">
-                Valid Input
-              </label>
-              <Input 
-                className="border-green-500 focus:ring-green-500" 
+              <label className="text-sm font-medium text-green-700">Valid Input</label>
+              <Input
+                className="border-green-500 focus:ring-green-500"
                 placeholder="valid@email.com"
                 defaultValue="valid@email.com"
               />
               <p className="text-xs text-green-600">✓ Valid email address</p>
             </div>
-            
+
             <div className="space-y-2">
-              <label className="text-sm font-medium text-red-700">
-                Invalid Input
-              </label>
-              <Input 
-                className="border-red-500 focus:ring-red-500" 
+              <label className="text-sm font-medium text-red-700">Invalid Input</label>
+              <Input
+                className="border-red-500 focus:ring-red-500"
                 placeholder="invalid-email"
                 defaultValue="invalid-email"
               />
@@ -320,25 +270,17 @@ export function InputShowcase() {
           <div className="space-y-4">
             <div className="space-y-2">
               <label className="text-sm font-medium">Small Input</label>
-              <Input 
-                className="h-8 text-sm" 
-                placeholder="Small input..." 
-              />
+              <Input className="h-8 text-sm" placeholder="Small input..." />
             </div>
-            
+
             <div className="space-y-2">
               <label className="text-sm font-medium">Default Input</label>
-              <Input 
-                placeholder="Default input..." 
-              />
+              <Input placeholder="Default input..." />
             </div>
-            
+
             <div className="space-y-2">
               <label className="text-sm font-medium">Large Input</label>
-              <Input 
-                className="h-12 text-lg" 
-                placeholder="Large input..." 
-              />
+              <Input className="h-12 text-lg" placeholder="Large input..." />
             </div>
           </div>
         </div>

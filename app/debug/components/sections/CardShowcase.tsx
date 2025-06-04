@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Card,
@@ -7,11 +7,11 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ComponentSection } from "../ComponentSection";
-import { Heart, Share2, Clock, Users, Star } from "lucide-react";
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { ComponentSection } from '../ComponentSection';
+import { Heart, Share2, Clock, Users, Star } from 'lucide-react';
 
 export function CardShowcase() {
   const codeExample = `import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -55,9 +55,7 @@ export function CardShowcase() {
             <Card>
               <CardHeader>
                 <CardTitle>Card with Description</CardTitle>
-                <CardDescription>
-                  This card includes a description below the title.
-                </CardDescription>
+                <CardDescription>This card includes a description below the title.</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm">Main content goes here.</p>
@@ -67,14 +65,10 @@ export function CardShowcase() {
             <Card>
               <CardHeader>
                 <CardTitle>Card with Footer</CardTitle>
-                <CardDescription>
-                  This card has actions in the footer.
-                </CardDescription>
+                <CardDescription>This card has actions in the footer.</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Content with footer actions below.
-                </p>
+                <p className="text-sm text-muted-foreground">Content with footer actions below.</p>
               </CardContent>
               <CardFooter>
                 <Button size="sm">Action</Button>
@@ -135,34 +129,24 @@ export function CardShowcase() {
             <Card>
               <CardHeader>
                 <CardTitle>Quick Tomato Soup</CardTitle>
-                <CardDescription>
-                  Comforting soup ready in just 15 minutes
-                </CardDescription>
+                <CardDescription>Comforting soup ready in just 15 minutes</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">
-                      Prep Time
-                    </span>
+                    <span className="text-sm text-muted-foreground">Prep Time</span>
                     <span className="text-sm font-medium">5 min</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">
-                      Cook Time
-                    </span>
+                    <span className="text-sm text-muted-foreground">Cook Time</span>
                     <span className="text-sm font-medium">10 min</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">
-                      Servings
-                    </span>
+                    <span className="text-sm text-muted-foreground">Servings</span>
                     <span className="text-sm font-medium">2-3</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">
-                      Difficulty
-                    </span>
+                    <span className="text-sm text-muted-foreground">Difficulty</span>
                     <Badge variant="secondary">Easy</Badge>
                   </div>
                 </div>
@@ -186,9 +170,7 @@ export function CardShowcase() {
                 </div>
                 <div className="flex-1 p-4">
                   <h5 className="font-semibold mb-1">Horizontal Layout</h5>
-                  <p className="text-sm text-muted-foreground mb-2">
-                    Card with side image layout
-                  </p>
+                  <p className="text-sm text-muted-foreground mb-2">Card with side image layout</p>
                   <div className="flex gap-2">
                     <Badge variant="secondary" className="text-xs">
                       Tag
@@ -207,31 +189,19 @@ export function CardShowcase() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-blue-600">127</div>
-                    <div className="text-xs text-muted-foreground">
-                      Total Recipes
-                    </div>
+                    <div className="text-xs text-muted-foreground">Total Recipes</div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-green-600">45</div>
-                    <div className="text-xs text-muted-foreground">
-                      Favorites
-                    </div>
+                    <div className="text-xs text-muted-foreground">Favorites</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-orange-600">
-                      892
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Total Cooks
-                    </div>
+                    <div className="text-2xl font-bold text-orange-600">892</div>
+                    <div className="text-xs text-muted-foreground">Total Cooks</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-600">
-                      4.8
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Avg Rating
-                    </div>
+                    <div className="text-2xl font-bold text-purple-600">4.8</div>
+                    <div className="text-xs text-muted-foreground">Avg Rating</div>
                   </div>
                 </div>
               </CardContent>
@@ -246,18 +216,14 @@ export function CardShowcase() {
             <Card className="cursor-pointer hover:shadow-md transition-shadow">
               <CardHeader>
                 <CardTitle className="text-lg">Clickable Card</CardTitle>
-                <CardDescription>
-                  This entire card is clickable with hover effects
-                </CardDescription>
+                <CardDescription>This entire card is clickable with hover effects</CardDescription>
               </CardHeader>
             </Card>
 
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Card with Actions</CardTitle>
-                <CardDescription>
-                  Multiple interactive elements within the card
-                </CardDescription>
+                <CardDescription>Multiple interactive elements within the card</CardDescription>
               </CardHeader>
               <CardFooter className="justify-between">
                 <div className="flex gap-2">

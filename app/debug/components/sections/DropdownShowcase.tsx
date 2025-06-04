@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   DropdownMenu,
@@ -13,14 +13,14 @@ import {
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { ComponentSection } from "../ComponentSection";
-import { 
-  ChevronDown, 
-  Settings, 
-  User, 
-  LogOut, 
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
+import { ComponentSection } from '../ComponentSection';
+import {
+  ChevronDown,
+  Settings,
+  User,
+  LogOut,
   Plus,
   Edit,
   Trash2,
@@ -31,9 +31,9 @@ import {
   Heart,
   Star,
   Clock,
-  Users
-} from "lucide-react";
-import { useState } from "react";
+  Users,
+} from 'lucide-react';
+import { useState } from 'react';
 
 export function DropdownShowcase() {
   const [checkedItems, setCheckedItems] = useState({
@@ -41,7 +41,7 @@ export function DropdownShowcase() {
     recent: true,
     shared: false,
   });
-  const [sortBy, setSortBy] = useState("name");
+  const [sortBy, setSortBy] = useState('name');
 
   const codeExample = `import {
   DropdownMenu,
@@ -151,7 +151,7 @@ export function DropdownShowcase() {
               <DropdownMenuSeparator />
               <DropdownMenuCheckboxItem
                 checked={checkedItems.favorites}
-                onCheckedChange={(checked) =>
+                onCheckedChange={checked =>
                   setCheckedItems(prev => ({ ...prev, favorites: checked }))
                 }
               >
@@ -160,18 +160,14 @@ export function DropdownShowcase() {
               </DropdownMenuCheckboxItem>
               <DropdownMenuCheckboxItem
                 checked={checkedItems.recent}
-                onCheckedChange={(checked) =>
-                  setCheckedItems(prev => ({ ...prev, recent: checked }))
-                }
+                onCheckedChange={checked => setCheckedItems(prev => ({ ...prev, recent: checked }))}
               >
                 <Clock className="mr-2 h-4 w-4" />
                 Recent Recipes
               </DropdownMenuCheckboxItem>
               <DropdownMenuCheckboxItem
                 checked={checkedItems.shared}
-                onCheckedChange={(checked) =>
-                  setCheckedItems(prev => ({ ...prev, shared: checked }))
-                }
+                onCheckedChange={checked => setCheckedItems(prev => ({ ...prev, shared: checked }))}
               >
                 <Share2 className="mr-2 h-4 w-4" />
                 Shared with Me
@@ -194,12 +190,8 @@ export function DropdownShowcase() {
               <DropdownMenuLabel>Sort by</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuRadioGroup value={sortBy} onValueChange={setSortBy}>
-                <DropdownMenuRadioItem value="name">
-                  Recipe Name
-                </DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="date">
-                  Date Created
-                </DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="name">Recipe Name</DropdownMenuRadioItem>
+                <DropdownMenuRadioItem value="date">Date Created</DropdownMenuRadioItem>
                 <DropdownMenuRadioItem value="rating">
                   <Star className="mr-2 h-4 w-4" />
                   Rating
@@ -241,9 +233,7 @@ export function DropdownShowcase() {
                 </DropdownMenuSubContent>
               </DropdownMenuSub>
               <DropdownMenuSub>
-                <DropdownMenuSubTrigger>
-                  Recipe Templates
-                </DropdownMenuSubTrigger>
+                <DropdownMenuSubTrigger>Recipe Templates</DropdownMenuSubTrigger>
                 <DropdownMenuSubContent>
                   <DropdownMenuItem>Breakfast</DropdownMenuItem>
                   <DropdownMenuItem>Lunch</DropdownMenuItem>
