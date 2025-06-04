@@ -1,18 +1,13 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 interface AuthFooterProps {
-  primaryText: string
-  linkText: string
-  linkUrl: string
-  secondaryText?: string
+  primaryText: string;
+  linkText: string;
+  linkUrl: string;
+  secondaryText?: string;
 }
 
-export function AuthFooter({
-  primaryText,
-  linkText,
-  linkUrl,
-  secondaryText
-}: AuthFooterProps) {
+export function AuthFooter({ primaryText, linkText, linkUrl, secondaryText }: AuthFooterProps) {
   return (
     <div className="text-center text-sm text-gray-600 mt-4">
       {secondaryText && <p>{secondaryText}</p>}
@@ -23,5 +18,5 @@ export function AuthFooter({
         </Link>
       </p>
     </div>
-  )
+  );
 }

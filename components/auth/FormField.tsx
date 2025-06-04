@@ -1,14 +1,14 @@
-import { Input } from '@/components/ui/input'
+import { Input } from '@/components/ui/input';
 
 interface FormFieldProps {
-  id: string
-  label: string
-  type: 'text' | 'email' | 'password'
-  placeholder: string
-  value: string
-  onChange: (value: string) => void
-  required?: boolean
-  error?: string
+  id: string;
+  label: string;
+  type: 'text' | 'email' | 'password';
+  placeholder: string;
+  value: string;
+  onChange: (value: string) => void;
+  required?: boolean;
+  error?: string;
 }
 
 export function FormField({
@@ -19,7 +19,7 @@ export function FormField({
   value,
   onChange,
   required = false,
-  error
+  error,
 }: FormFieldProps) {
   return (
     <div className="space-y-2">
@@ -31,15 +31,11 @@ export function FormField({
         type={type}
         placeholder={placeholder}
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={e => onChange(e.target.value)}
         required={required}
         className={error ? 'border-red-500' : ''}
       />
-      {error && (
-        <div className="text-red-600 text-sm">
-          {error}
-        </div>
-      )}
+      {error && <div className="text-red-600 text-sm">{error}</div>}
     </div>
-  )
+  );
 }
