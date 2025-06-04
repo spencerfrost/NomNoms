@@ -5,6 +5,7 @@ import { prisma } from '@/lib/prisma';
 import PageHeader from '@/components/page-header';
 import ProfileForm from '@/components/profile/profile-form';
 import UserRecipesList from '@/components/profile/user-recipes-list';
+import Logo from '@/components/ui/logo';
 
 export default async function ProfilePage() {
   const session = await getServerSession(authOptions);
@@ -41,7 +42,10 @@ export default async function ProfilePage() {
     <div className="container max-w-4xl mx-auto px-4 py-8">
       <PageHeader>
         <div>
-          <h1 className="text-3xl font-bold mb-2">Profile</h1>
+          <div className="flex items-center gap-4 mb-2">
+            <Logo size="lg" showText={false} />
+            <h1 className="text-3xl font-bold">Profile</h1>
+          </div>
           <p className="text-muted-foreground">Manage your account and recipes</p>
         </div>
       </PageHeader>
