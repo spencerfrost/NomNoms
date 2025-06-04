@@ -1,67 +1,53 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import { useSession, signIn, signOut } from 'next-auth/react'
-import { Button } from '@/components/ui/button'
+import { useState, useEffect } from 'react';
+import { useSession, signIn, signOut } from 'next-auth/react';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { 
-  Menu, 
-  Home, 
-  Plus, 
-  User, 
-  LogIn, 
-  LogOut, 
-  Sun, 
-  Moon,
-} from 'lucide-react'
-import Link from 'next/link'
+} from '@/components/ui/dropdown-menu';
+import { Menu, Home, Plus, User, LogIn, LogOut, Sun, Moon } from 'lucide-react';
+import Link from 'next/link';
 
 export default function HamburgerMenu() {
-  const { data: session, status } = useSession()
-  const [darkMode, setDarkMode] = useState(false)
+  const { data: session, status } = useSession();
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem('theme')
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    
-    const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark)
-    setDarkMode(isDark)
-  }, [])
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+    setDarkMode(isDark);
+  }, []);
 
   const toggleTheme = () => {
-    const newDarkMode = !darkMode
-    setDarkMode(newDarkMode)
-    
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+
     // Update document class
     if (newDarkMode) {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
-  }
+  };
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button 
-          variant="ghost" 
-          size="icon"
-          className="relative"
-          aria-label="Open menu"
-        >
+        <Button variant="ghost" size="icon" className="relative" aria-label="Open menu">
           <Menu className="h-5 w-5" />
         </Button>
       </DropdownMenuTrigger>
-      
+
       <DropdownMenuContent align="end" className="w-56">
         {/* Navigation Items */}
         <DropdownMenuItem asChild>
@@ -70,7 +56,7 @@ export default function HamburgerMenu() {
             Home
           </Link>
         </DropdownMenuItem>
-        
+
         <DropdownMenuItem asChild>
           <Link href="/add" className="flex items-center gap-2 cursor-pointer">
             <Plus className="h-4 w-4" />
@@ -88,11 +74,13 @@ export default function HamburgerMenu() {
           </DropdownMenuItem>
         ) : session ? (
           <>
-            <DropdownMenuItem disabled className="flex items-center gap-2">
-              <User className="h-4 w-4" />
-              <span className="font-medium">{session.user?.name}</span>
+            <DropdownMenuItem asChild>
+              <Link href="/profile" className="flex items-center gap-2 cursor-pointer">
+                <User className="h-4 w-4" />
+                <span className="font-medium">{session.user?.name}</span>
+              </Link>
             </DropdownMenuItem>
-            <DropdownMenuItem 
+            <DropdownMenuItem
               onClick={() => signOut()}
               className="flex items-center gap-2 cursor-pointer"
             >
@@ -102,7 +90,7 @@ export default function HamburgerMenu() {
           </>
         ) : (
           <>
-            <DropdownMenuItem 
+            <DropdownMenuItem
               onClick={() => signIn()}
               className="flex items-center gap-2 cursor-pointer"
             >
@@ -121,10 +109,7 @@ export default function HamburgerMenu() {
         <DropdownMenuSeparator />
 
         {/* Theme Toggle */}
-        <DropdownMenuItem 
-          onClick={toggleTheme}
-          className="flex items-center gap-2 cursor-pointer"
-        >
+        <DropdownMenuItem onClick={toggleTheme} className="flex items-center gap-2 cursor-pointer">
           {darkMode ? (
             <>
               <Sun className="h-4 w-4" />
@@ -139,5 +124,5 @@ export default function HamburgerMenu() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
