@@ -282,6 +282,7 @@ describe('Add Recipe Form Flow', () => {
     
     // Fill image URL
     const imageUrlInput = screen.getByLabelText(/image url/i)
+    await user.clear(imageUrlInput)
     await user.type(imageUrlInput, 'https://example.com/cookies.jpg')
     
     // Image preview should appear

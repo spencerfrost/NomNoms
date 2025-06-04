@@ -91,7 +91,9 @@ describe('RecipeBasicInfoForm', () => {
 
     const image = screen.getByAltText('Recipe preview')
     expect(image).toBeInTheDocument()
-    expect(image).toHaveAttribute('src', 'https://example.com/valid-image.jpg')
+    expect(image).toHaveAttribute('src')
+    // Next.js optimizes images, so check for URL-encoded version
+    expect(image.getAttribute('src')).toContain('example.com%2Fvalid-image.jpg')
   })
 
   it('hides image preview when no imageUrl is provided', () => {

@@ -17,6 +17,19 @@ interface RecipeBasicInfoFormProps {
 }
 
 /**
+ * Validates if a string is a valid image URL
+ */
+function isValidImageUrl(url: string): boolean {
+  try {
+    const parsedUrl = new URL(url)
+    return (parsedUrl.protocol === 'https:' || parsedUrl.protocol === 'http:') && 
+           url.length > 8 // More than just "https://"
+  } catch {
+    return false
+  }
+}
+
+/**
  * Component for basic recipe information (title, description, image, yield)
  */
 export default function RecipeBasicInfoForm({ formData, onChange }: RecipeBasicInfoFormProps) {
@@ -57,12 +70,14 @@ export default function RecipeBasicInfoForm({ formData, onChange }: RecipeBasicI
             onChange={(e) => onChange('imageUrl', e.target.value)}
             placeholder="https://example.com/recipe-image.jpg"
           />
-          {formData.imageUrl && (
+          {formData.imageUrl && isValidImageUrl(formData.imageUrl) && (
             <div className="mt-2">
               <div className="relative w-full h-32 overflow-hidden bg-gray-100">
                 <Image
                   src={formData.imageUrl}
                   alt="Recipe preview"
+                  width={400}
+                  height={128}
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';

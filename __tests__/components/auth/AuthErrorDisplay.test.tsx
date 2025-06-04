@@ -15,8 +15,11 @@ describe('AuthErrorDisplay', () => {
     
     render(<AuthErrorDisplay error={errorMessage} />)
 
-    const errorElement = screen.getByText(errorMessage)
-    expect(errorElement).toHaveClass('text-red-600', 'text-sm', 'text-center')
+    // Check that the Alert component is rendered with the expected destructive styling
+    const alertElement = screen.getByRole('alert')
+    expect(alertElement).toBeInTheDocument()
+    expect(alertElement).toHaveClass('text-destructive')
+    expect(alertElement).toHaveClass('border')
   })
 
   it('applies custom className when provided', () => {
@@ -25,7 +28,7 @@ describe('AuthErrorDisplay', () => {
     
     render(<AuthErrorDisplay error={errorMessage} className={customClass} />)
 
-    const errorElement = screen.getByText(errorMessage)
-    expect(errorElement).toHaveClass(customClass)
+    const alertElement = screen.getByRole('alert')
+    expect(alertElement).toHaveClass(customClass)
   })
 })
