@@ -1,27 +1,27 @@
-import * as React from "react"
-import { LoadingSpinner } from "./LoadingSpinner"
-import { ErrorMessage } from "./ErrorMessage"
-import { EmptyState } from "./EmptyState"
+import * as React from 'react';
+import { LoadingSpinner } from './LoadingSpinner';
+import { ErrorMessage } from './ErrorMessage';
+import { EmptyState } from './EmptyState';
 
 interface StateWrapperProps {
-  loading: boolean
-  error?: string | null
-  empty?: boolean
-  children: React.ReactNode
-  loadingComponent?: React.ReactNode
-  errorComponent?: React.ReactNode
-  emptyComponent?: React.ReactNode
-  loadingText?: string
-  emptyTitle?: string
-  emptyDescription?: string
+  loading: boolean;
+  error?: string | null;
+  empty?: boolean;
+  children: React.ReactNode;
+  loadingComponent?: React.ReactNode;
+  errorComponent?: React.ReactNode;
+  emptyComponent?: React.ReactNode;
+  loadingText?: string;
+  emptyTitle?: string;
+  emptyDescription?: string;
   emptyAction?: {
-    label: string
-    onClick: () => void
-  }
+    label: string;
+    onClick: () => void;
+  };
   errorAction?: {
-    label: string
-    onClick: () => void
-  }
+    label: string;
+    onClick: () => void;
+  };
 }
 
 export function StateWrapper({
@@ -32,24 +32,16 @@ export function StateWrapper({
   loadingComponent,
   errorComponent,
   emptyComponent,
-  loadingText = "Loading...",
-  emptyTitle = "No items found",
-  emptyDescription = "There are no items to display.",
+  loadingText = 'Loading...',
+  emptyTitle = 'No items found',
+  emptyDescription = 'There are no items to display.',
   emptyAction,
-  errorAction
+  errorAction,
 }: StateWrapperProps) {
   if (loading) {
     return (
-      <>
-        {loadingComponent || (
-          <LoadingSpinner
-            text={loadingText}
-            size="medium"
-            fullScreen
-          />
-        )}
-      </>
-    )
+      <>{loadingComponent || <LoadingSpinner text={loadingText} size="medium" fullScreen />}</>
+    );
   }
 
   if (error) {
@@ -68,22 +60,18 @@ export function StateWrapper({
           </div>
         )}
       </>
-    )
+    );
   }
 
   if (empty) {
     return (
       <>
         {emptyComponent || (
-          <EmptyState
-            title={emptyTitle}
-            description={emptyDescription}
-            action={emptyAction}
-          />
+          <EmptyState title={emptyTitle} description={emptyDescription} action={emptyAction} />
         )}
       </>
-    )
+    );
   }
 
-  return <>{children}</>
+  return <>{children}</>;
 }
