@@ -3,6 +3,7 @@ import { Marcellus, Poppins } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "@/components/auth-provider";
 import BackgroundGradient from "@/components/background-gradient";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 
 const marcellus = Marcellus({
@@ -48,9 +49,16 @@ export default function RootLayout({
         className={`${marcellus.variable} ${poppins.variable} antialiased relative min-h-screen text-foreground font-body`}
       >
         <BackgroundGradient />
-        <AuthProvider>
-          {children}
-        </AuthProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AuthProvider>
+            {children}
+          </AuthProvider>
+        </ThemeProvider>
         <Toaster />
       </body>
     </html>
