@@ -75,6 +75,7 @@ model Recipe {
   visibility   String   @default("public")
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+  lastEdited   DateTime? @updatedAt
   authorId     String
   author       User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
 
