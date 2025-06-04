@@ -1,43 +1,43 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react';
 
 interface InfiniteScrollTriggerProps {
-  onIntersect: () => void
-  threshold?: number
-  rootMargin?: string
-  disabled?: boolean
+  onIntersect: () => void;
+  threshold?: number;
+  rootMargin?: string;
+  disabled?: boolean;
 }
 
-export function InfiniteScrollTrigger({ 
-  onIntersect, 
+export function InfiniteScrollTrigger({
+  onIntersect,
   threshold = 0.1,
   rootMargin = '100px',
-  disabled = false
+  disabled = false,
 }: InfiniteScrollTriggerProps) {
-  const triggerRef = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (disabled) return
+    if (disabled) return;
 
     const observer = new IntersectionObserver(
-      (entries) => {
+      entries => {
         if (entries[0].isIntersecting) {
-          onIntersect()
+          onIntersect();
         }
       },
       { threshold, rootMargin }
-    )
+    );
 
-    const currentRef = triggerRef.current
+    const currentRef = triggerRef.current;
     if (currentRef) {
-      observer.observe(currentRef)
+      observer.observe(currentRef);
     }
 
     return () => {
       if (currentRef) {
-        observer.unobserve(currentRef)
+        observer.unobserve(currentRef);
       }
-    }
-  }, [onIntersect, threshold, rootMargin, disabled])
+    };
+  }, [onIntersect, threshold, rootMargin, disabled]);
 
-  return <div ref={triggerRef} className="h-4" aria-hidden="true" />
+  return <div ref={triggerRef} className="h-4" aria-hidden="true" />;
 }

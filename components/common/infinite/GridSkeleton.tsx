@@ -1,7 +1,7 @@
-import { Skeleton } from '@/components/ui/skeleton'
+import { Skeleton } from '@/components/ui/skeleton';
 
 interface GridSkeletonProps {
-  count?: number
+  count?: number;
 }
 
 export function GridSkeleton({ count = 8 }: GridSkeletonProps) {
@@ -11,19 +11,19 @@ export function GridSkeleton({ count = 8 }: GridSkeletonProps) {
         <div key={index} className="space-y-3">
           {/* Image skeleton */}
           <Skeleton className="h-48 w-full rounded-lg" />
-          
+
           {/* Title skeleton */}
           <div className="space-y-2">
             <Skeleton className="h-4 w-3/4" />
             <Skeleton className="h-4 w-1/2" />
           </div>
-          
+
           {/* Description skeleton */}
           <div className="space-y-2">
             <Skeleton className="h-3 w-full" />
             <Skeleton className="h-3 w-2/3" />
           </div>
-          
+
           {/* Tags skeleton */}
           <div className="flex gap-2">
             <Skeleton className="h-6 w-16" />
@@ -32,5 +32,5 @@ export function GridSkeleton({ count = 8 }: GridSkeletonProps) {
         </div>
       ))}
     </div>
-  )
+  );
 }

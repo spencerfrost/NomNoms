@@ -1,7 +1,7 @@
-import { CheckCircle } from 'lucide-react'
+import { CheckCircle } from 'lucide-react';
 
 interface EndOfResultsProps {
-  count: number
+  count: number;
 }
 
 export function EndOfResults({ count }: EndOfResultsProps) {
@@ -13,5 +13,5 @@ export function EndOfResults({ count }: EndOfResultsProps) {
         {count > 0 ? `Showing all ${count} recipe${count === 1 ? '' : 's'}` : 'No recipes found'}
       </p>
     </div>
-  )
+  );
 }
