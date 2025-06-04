@@ -44,3 +44,6 @@ next-env.d.ts
 old_recipes
 /lib/generated/prisma
 tsconfig.tsbuildinfo
+
+/docs/issues
+.idea
