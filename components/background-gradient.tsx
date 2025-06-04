@@ -1,25 +1,25 @@
 export default function BackgroundGradient() {
   return (
     <div className="absolute -z-10 w-full h-full top-0 left-0 overflow-hidden">
-      <svg 
-        className="w-full h-full absolute" 
-        preserveAspectRatio="xMidYMid slice" 
-        viewBox="0 0 1728 1117" 
-        fill="none" 
+      <svg
+        className="w-full h-full absolute"
+        preserveAspectRatio="xMidYMid slice"
+        viewBox="0 0 1728 1117"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         {/* Base background - uses your theme background color */}
         <rect width="1728" height="1117" className="fill-background" />
-        
+
         <g clipPath="url(#clip0_922_15)">
           {/* First set of blurred circles */}
           <g filter="url(#filter0_f_922_15)">
-            <path 
-              d="M1445 -930C1798.46 -930 2085 -643.462 2085 -290C2085 63.4622 1798.46 350 1445 350C1091.54 350 805 63.4622 805 -290C805 -643.462 1091.54 -930 1445 -930ZM167 -241C286.846 -241 384 -143.846 384 -24C384 95.8458 286.846 193 167 193C47.1542 193 -50 95.8458 -50 -24C-50 -143.846 47.1542 -241 167 -241Z" 
-              className="fill-primary/20 dark:fill-primary/30" 
+            <path
+              d="M1445 -930C1798.46 -930 2085 -643.462 2085 -290C2085 63.4622 1798.46 350 1445 350C1091.54 350 805 63.4622 805 -290C805 -643.462 1091.54 -930 1445 -930ZM167 -241C286.846 -241 384 -143.846 384 -24C384 95.8458 286.846 193 167 193C47.1542 193 -50 95.8458 -50 -24C-50 -143.846 47.1542 -241 167 -241Z"
+              className="fill-primary/20 dark:fill-primary/30"
             />
           </g>
-          
+
           {/* Second set of blurred circles */}
           <g filter="url(#filter1_f_922_15)">
             <path
@@ -28,37 +28,37 @@ export default function BackgroundGradient() {
             />
           </g>
         </g>
-        
+
         <defs>
           {/* Blur filters */}
-          <filter 
-            id="filter0_f_922_15" 
-            x="-434" 
-            y="-1314" 
-            width="2903" 
-            height="2048" 
-            filterUnits="userSpaceOnUse" 
+          <filter
+            id="filter0_f_922_15"
+            x="-434"
+            y="-1314"
+            width="2903"
+            height="2048"
+            filterUnits="userSpaceOnUse"
             colorInterpolationFilters="sRGB"
           >
             <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
             <feGaussianBlur stdDeviation="192" result="effect1_foregroundBlur_922_15" />
           </filter>
-          
-          <filter 
-            id="filter1_f_922_15" 
-            x="-700" 
-            y="113" 
-            width="2812" 
-            height="2116" 
-            filterUnits="userSpaceOnUse" 
+
+          <filter
+            id="filter1_f_922_15"
+            x="-700"
+            y="113"
+            width="2812"
+            height="2116"
+            filterUnits="userSpaceOnUse"
             colorInterpolationFilters="sRGB"
           >
             <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
             <feGaussianBlur stdDeviation="192" result="effect1_foregroundBlur_922_15" />
           </filter>
-          
+
           {/* Clipping path */}
           <clipPath id="clip0_922_15">
             <rect width="1728" height="1117" fill="white" />
@@ -66,5 +66,5 @@ export default function BackgroundGradient() {
         </defs>
       </svg>
     </div>
-  )
+  );
 }

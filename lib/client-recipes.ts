@@ -1,4 +1,4 @@
-import { Recipe, getRecipeIngredients, Ingredient } from '@/types'
+import { Recipe, getRecipeIngredients, Ingredient } from '@/types';
 
 // Interface for creating new recipes
 interface CreateRecipeData {
@@ -18,30 +18,30 @@ interface CreateRecipeData {
 // Client-side functions for recipe management
 export async function getAllRecipes(): Promise<Recipe[]> {
   try {
-    const response = await fetch('/api/recipes')
+    const response = await fetch('/api/recipes');
     if (!response.ok) {
-      throw new Error('Failed to fetch recipes')
+      throw new Error('Failed to fetch recipes');
     }
-    return await response.json()
+    return await response.json();
   } catch (error) {
-    console.error('Error fetching recipes:', error)
-    return []
+    console.error('Error fetching recipes:', error);
+    return [];
   }
 }
 
 export async function getRecipeBySlug(slug: string): Promise<Recipe | null> {
   try {
-    const response = await fetch(`/api/recipes/${slug}`)
+    const response = await fetch(`/api/recipes/${slug}`);
     if (!response.ok) {
       if (response.status === 404) {
-        return null
+        return null;
       }
-      throw new Error('Failed to fetch recipe')
+      throw new Error('Failed to fetch recipe');
     }
-    return await response.json()
+    return await response.json();
   } catch (error) {
-    console.error(`Error fetching recipe ${slug}:`, error)
-    return null
+    console.error(`Error fetching recipe ${slug}:`, error);
+    return null;
   }
 }
 
@@ -53,22 +53,25 @@ export async function saveRecipe(recipeData: CreateRecipeData): Promise<string> 
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(recipeData),
-    })
-    
+    });
+
     if (!response.ok) {
-      const errorData = await response.json()
-      throw new Error(errorData.error || 'Failed to save recipe')
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to save recipe');
     }
-    
-    const result = await response.json()
-    return result.slug
+
+    const result = await response.json();
+    return result.slug;
   } catch (error) {
-    console.error('Error saving recipe:', error)
-    throw error
+    console.error('Error saving recipe:', error);
+    throw error;
   }
 }
 
-export async function updateRecipe(slug: string, recipeData: Partial<CreateRecipeData>): Promise<string> {
+export async function updateRecipe(
+  slug: string,
+  recipeData: Partial<CreateRecipeData>
+): Promise<string> {
   try {
     const response = await fetch(`/api/recipes/${slug}`, {
       method: 'PUT',
@@ -76,25 +79,25 @@ export async function updateRecipe(slug: string, recipeData: Partial<CreateRecip
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(recipeData),
-    })
-    
+    });
+
     if (!response.ok) {
-      const errorData = await response.json()
-      throw new Error(errorData.error || 'Failed to update recipe')
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Failed to update recipe');
     }
-    
-    const result = await response.json()
-    return result.slug
+
+    const result = await response.json();
+    return result.slug;
   } catch (error) {
-    console.error('Error updating recipe:', error)
-    throw error
+    console.error('Error updating recipe:', error);
+    throw error;
   }
 }
 
 export function searchRecipes(recipes: Recipe[], query: string): Recipe[] {
-  if (!query.trim()) return recipes
-  
-  const lowerQuery = query.toLowerCase()
+  if (!query.trim()) return recipes;
+
+  const lowerQuery = query.toLowerCase();
   return recipes.filter(recipe => {
     const ingredients = getRecipeIngredients(recipe);
     return (

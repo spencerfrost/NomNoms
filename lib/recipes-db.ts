@@ -1,10 +1,10 @@
 // Database-based recipe utilities - replaces server-recipes.ts
-import { prisma } from './prisma'
-import { Recipe, getRecipeIngredients } from '@/types'
-import { Prisma } from '@prisma/client'
+import { prisma } from './prisma';
+import { Recipe, getRecipeIngredients } from '@/types';
+import { Prisma } from '@prisma/client';
 
 // Re-export types for convenience
-export type { Recipe, Ingredient } from '@/types'
+export type { Recipe, Ingredient } from '@/types';
 
 // Interface for recipe creation (matches what the API receives)
 interface RecipeCreateData {
@@ -26,27 +26,24 @@ export async function getAllRecipes(userId?: string): Promise<Recipe[]> {
     const recipes = await prisma.recipe.findMany({
       where: {
         // Show public recipes and user's own recipes if userId provided
-        OR: [
-          { visibility: 'public' },
-          ...(userId ? [{ authorId: userId }] : [])
-        ]
+        OR: [{ visibility: 'public' }, ...(userId ? [{ authorId: userId }] : [])],
       },
       include: {
         author: {
           select: {
             id: true,
             name: true,
-            email: true
-          }
-        }
+            email: true,
+          },
+        },
       },
-      orderBy: { title: 'asc' }
-    })
-    
-    return recipes
+      orderBy: { title: 'asc' },
+    });
+
+    return recipes;
   } catch (error) {
-    console.error('Error reading recipes from database:', error)
-    return []
+    console.error('Error reading recipes from database:', error);
+    return [];
   }
 }
 
@@ -59,45 +56,50 @@ export async function getRecipeBySlug(slug: string, userId?: string): Promise<Re
           select: {
             id: true,
             name: true,
-            email: true
-          }
-        }
-      }
-    })
-    
+            email: true,
+          },
+        },
+      },
+    });
+
     if (!recipe) {
-      return null
+      return null;
     }
-    
+
     // Check visibility permissions
     if (recipe.visibility === 'private' && recipe.authorId !== userId) {
-      return null // User doesn't have permission to view this recipe
+      return null; // User doesn't have permission to view this recipe
     }
-    
-    return recipe
+
+    return recipe;
   } catch (error) {
-    console.error(`Error reading recipe ${slug} from database:`, error)
-    return null
+    console.error(`Error reading recipe ${slug} from database:`, error);
+    return null;
   }
 }
 
-export async function createRecipe(recipeData: RecipeCreateData, authorId: string): Promise<Recipe> {
+export async function createRecipe(
+  recipeData: RecipeCreateData,
+  authorId: string
+): Promise<Recipe> {
   try {
     // Generate slug from title if not provided
-    const slug = recipeData.slug || recipeData.title
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/^-+|-+$/g, '')
-    
+    const slug =
+      recipeData.slug ||
+      recipeData.title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+
     // Check if slug already exists
     const existingRecipe = await prisma.recipe.findUnique({
-      where: { slug }
-    })
-    
+      where: { slug },
+    });
+
     if (existingRecipe) {
-      throw new Error(`Recipe with slug "${slug}" already exists`)
+      throw new Error(`Recipe with slug "${slug}" already exists`);
     }
-    
+
     const recipe = await prisma.recipe.create({
       data: {
         title: recipeData.title,
@@ -111,49 +113,55 @@ export async function createRecipe(recipeData: RecipeCreateData, authorId: strin
         image: recipeData.image,
         slug,
         authorId,
-        visibility: recipeData.visibility || 'public'
+        visibility: recipeData.visibility || 'public',
       },
       include: {
         author: {
           select: {
             id: true,
             name: true,
-            email: true
-          }
-        }
-      }
-    })
-    
-    return recipe
+            email: true,
+          },
+        },
+      },
+    });
+
+    return recipe;
   } catch (error) {
-    console.error('Error creating recipe:', error)
-    throw error
+    console.error('Error creating recipe:', error);
+    throw error;
   }
 }
 
-export async function updateRecipe(slug: string, recipeData: Partial<Recipe>, userId: string): Promise<Recipe | null> {
+export async function updateRecipe(
+  slug: string,
+  recipeData: Partial<Recipe>,
+  userId: string
+): Promise<Recipe | null> {
   try {
     // First, get the current recipe to check ownership
     const currentRecipe = await prisma.recipe.findUnique({
-      where: { slug }
-    })
-    
+      where: { slug },
+    });
+
     if (!currentRecipe) {
-      throw new Error('Recipe not found')
+      throw new Error('Recipe not found');
     }
-    
+
     // Check if user owns the recipe
     if (currentRecipe.authorId !== userId) {
-      throw new Error('You can only edit your own recipes')
+      throw new Error('You can only edit your own recipes');
     }
-    
+
     // Update the recipe
     const updatedRecipe = await prisma.recipe.update({
       where: { slug },
       data: {
         ...(recipeData.title && { title: recipeData.title }),
         ...(recipeData.description && { description: recipeData.description }),
-        ...(recipeData.ingredients && { ingredients: recipeData.ingredients as Prisma.InputJsonValue }),
+        ...(recipeData.ingredients && {
+          ingredients: recipeData.ingredients as Prisma.InputJsonValue,
+        }),
         ...(recipeData.instructions && { instructions: recipeData.instructions }),
         ...(recipeData.tags && { tags: recipeData.tags }),
         ...(recipeData.yield !== undefined && { yield: recipeData.yield }),
@@ -167,16 +175,16 @@ export async function updateRecipe(slug: string, recipeData: Partial<Recipe>, us
           select: {
             id: true,
             name: true,
-            email: true
-          }
-        }
-      }
-    })
-    
-    return updatedRecipe
+            email: true,
+          },
+        },
+      },
+    });
+
+    return updatedRecipe;
   } catch (error) {
-    console.error('Error updating recipe:', error)
-    throw error
+    console.error('Error updating recipe:', error);
+    throw error;
   }
 }
 
@@ -184,26 +192,26 @@ export async function deleteRecipe(slug: string, userId: string): Promise<boolea
   try {
     // First, get the current recipe to check ownership
     const currentRecipe = await prisma.recipe.findUnique({
-      where: { slug }
-    })
-    
+      where: { slug },
+    });
+
     if (!currentRecipe) {
-      throw new Error('Recipe not found')
+      throw new Error('Recipe not found');
     }
-    
+
     // Check if user owns the recipe
     if (currentRecipe.authorId !== userId) {
-      throw new Error('You can only delete your own recipes')
+      throw new Error('You can only delete your own recipes');
     }
-    
+
     await prisma.recipe.delete({
-      where: { slug }
-    })
-    
-    return true
+      where: { slug },
+    });
+
+    return true;
   } catch (error) {
-    console.error('Error deleting recipe:', error)
-    throw error
+    console.error('Error deleting recipe:', error);
+    throw error;
   }
 }
 
@@ -216,17 +224,17 @@ export async function getUserRecipes(userId: string): Promise<Recipe[]> {
           select: {
             id: true,
             name: true,
-            email: true
-          }
-        }
+            email: true,
+          },
+        },
       },
-      orderBy: { title: 'asc' }
-    })
-    
-    return recipes
+      orderBy: { title: 'asc' },
+    });
+
+    return recipes;
   } catch (error) {
-    console.error('Error getting user recipes:', error)
-    return []
+    console.error('Error getting user recipes:', error);
+    return [];
   }
 }
 
@@ -237,15 +245,15 @@ export function scaleRecipe(recipe: Recipe, multiplier: number): Recipe {
     ...recipe,
     ingredients: ingredients.map(ingredient => ({
       ...ingredient,
-      amount: Math.round((ingredient.amount * multiplier) * 100) / 100
-    }))
-  }
+      amount: Math.round(ingredient.amount * multiplier * 100) / 100,
+    })),
+  };
 }
 
 export function searchRecipes(recipes: Recipe[], query: string): Recipe[] {
-  if (!query.trim()) return recipes
-  
-  const lowerQuery = query.toLowerCase()
+  if (!query.trim()) return recipes;
+
+  const lowerQuery = query.toLowerCase();
   return recipes.filter(recipe => {
     const ingredients = getRecipeIngredients(recipe);
     return (
@@ -258,15 +266,15 @@ export function searchRecipes(recipes: Recipe[], query: string): Recipe[] {
 }
 
 export function formatAmount(amount: number, unit: string): string {
-  if (amount === 0.25) return `¼ ${unit}`
-  if (amount === 0.33) return `⅓ ${unit}`
-  if (amount === 0.5) return `½ ${unit}`
-  if (amount === 0.67) return `⅔ ${unit}`
-  if (amount === 0.75) return `¾ ${unit}`
-  
+  if (amount === 0.25) return `¼ ${unit}`;
+  if (amount === 0.33) return `⅓ ${unit}`;
+  if (amount === 0.5) return `½ ${unit}`;
+  if (amount === 0.67) return `⅔ ${unit}`;
+  if (amount === 0.75) return `¾ ${unit}`;
+
   if (amount % 1 === 0) {
-    return `${amount} ${unit}`
+    return `${amount} ${unit}`;
   }
-  
-  return `${amount} ${unit}`
+
+  return `${amount} ${unit}`;
 }

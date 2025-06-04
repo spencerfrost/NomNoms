@@ -54,24 +54,24 @@ export interface ImportedRecipe {
  */
 export function parseTimeString(timeText: string | undefined | null): number {
   if (!timeText) return 0;
-  
+
   const text = timeText.toLowerCase().trim();
   if (!text || text === '0') return 0;
-  
+
   let totalMinutes = 0;
-  
+
   // Extract hours
   const hourMatch = text.match(/(\d+(?:\.\d+)?)\s*(?:hours?|hrs?|h\b)/);
   if (hourMatch) {
     totalMinutes += parseFloat(hourMatch[1]) * 60;
   }
-  
+
   // Extract minutes
   const minuteMatch = text.match(/(\d+(?:\.\d+)?)\s*(?:minutes?|mins?|min\b|m\b)/);
   if (minuteMatch) {
     totalMinutes += parseFloat(minuteMatch[1]);
   }
-  
+
   // If no specific units found, assume it's minutes
   if (totalMinutes === 0) {
     const numberMatch = text.match(/(\d+(?:\.\d+)?)/);
@@ -79,7 +79,7 @@ export function parseTimeString(timeText: string | undefined | null): number {
       totalMinutes = parseFloat(numberMatch[1]);
     }
   }
-  
+
   return Math.round(totalMinutes);
 }
 
@@ -90,35 +90,35 @@ export function parseIngredientString(ingredientText: string): Ingredient {
   if (!ingredientText?.trim()) {
     return { amount: 0, unit: '', name: '' };
   }
-  
+
   const text = ingredientText.trim();
-  
+
   // Common patterns for ingredient parsing
   // Pattern 1: "1 cup flour" or "1/2 cup flour" or "1.5 cups flour"
   const amountUnitPattern = /^([0-9]+(?:\s*[0-9]*\/[0-9]+)?(?:\.[0-9]+)?)\s+([a-zA-Z]+s?)\s+(.+)$/;
   const match = amountUnitPattern.exec(text);
-  
+
   if (match) {
     const amountStr = match[1].trim();
     const unit = match[2].trim();
     const name = match[3].trim();
-    
+
     const amount = parseAmountToDecimal(amountStr);
     return { amount, unit, name };
   }
-  
+
   // Pattern 2: Just amount and ingredient (no unit): "2 eggs", "3 carrots"
   const amountOnlyPattern = /^([0-9]+(?:\s*[0-9]*\/[0-9]+)?(?:\.[0-9]+)?)\s+(.+)$/;
   const amountMatch = amountOnlyPattern.exec(text);
-  
+
   if (amountMatch) {
     const amountStr = amountMatch[1].trim();
     const name = amountMatch[2].trim();
-    
+
     const amount = parseAmountToDecimal(amountStr);
     return { amount, unit: '', name };
   }
-  
+
   // Pattern 3: No amount found, treat entire text as ingredient name
   return { amount: 0, unit: '', name: text };
 }
@@ -128,17 +128,17 @@ export function parseIngredientString(ingredientText: string): Ingredient {
  */
 export function parseServingsString(servingsText: string | undefined | null): number {
   if (!servingsText) return 1;
-  
+
   const text = servingsText.toLowerCase().trim();
   if (!text) return 1;
-  
+
   // Extract first number from patterns like "4", "4-6", "4 servings", "serves 4"
   const match = text.match(/(\d+)/);
   if (match) {
     const servings = parseInt(match[1]);
     return servings > 0 ? servings : 1;
   }
-  
+
   return 1;
 }
 
@@ -148,17 +148,17 @@ export function parseServingsString(servingsText: string | undefined | null): nu
 export function isValidRecipeUrl(url: string): boolean {
   try {
     const urlObj = new URL(url);
-    
+
     // Check if it's http/https
     if (!['http:', 'https:'].includes(urlObj.protocol)) {
       return false;
     }
-    
+
     // Basic domain validation - must have at least one dot
     if (!urlObj.hostname.includes('.')) {
       return false;
     }
-    
+
     return true;
   } catch {
     return false;
@@ -170,31 +170,31 @@ export function isValidRecipeUrl(url: string): boolean {
  */
 export function getImportErrorMessage(error: unknown): string {
   const errorStr = error instanceof Error ? error.message : String(error);
-  
+
   if (errorStr.includes('timeout') || errorStr.includes('TIMEOUT')) {
     return 'The website took too long to respond. Please try again or add the recipe manually.';
   }
-  
+
   if (errorStr.includes('404') || errorStr.includes('not found')) {
     return 'The recipe page was not found. Please check the URL and try again.';
   }
-  
+
   if (errorStr.includes('network') || errorStr.includes('NETWORK')) {
     return 'Network error occurred. Please check your connection and try again.';
   }
-  
+
   if (errorStr.includes('Could not find recipe data')) {
     return 'No recipe was found at this URL. The site might not have structured recipe data or might not be supported yet.';
   }
-  
+
   if (errorStr.includes('unsupported') || errorStr.includes('UNSUPPORTED')) {
     return 'This website is not supported yet. Try a URL from AllRecipes, Food Network, or other popular recipe sites that use structured data.';
   }
-  
+
   if (errorStr.includes('no recipe')) {
     return 'No recipe was found at this URL. Please check the link and try again.';
   }
-  
+
   return 'Unable to import recipe. Please try again or add the recipe manually.';
 }
 
@@ -203,29 +203,29 @@ export function getImportErrorMessage(error: unknown): string {
  */
 export function parseTimeToMinutes(timeText: string | undefined | null): number {
   if (!timeText) return 0;
-  
+
   const text = timeText.trim();
   if (!text || text === '0') return 0;
-  
+
   // Handle ISO 8601 duration format (PT15M, PT1H30M, etc.)
   if (text.startsWith('PT')) {
     let totalMinutes = 0;
-    
+
     // Extract hours (H)
     const hourMatch = text.match(/(\d+)H/);
     if (hourMatch) {
       totalMinutes += parseInt(hourMatch[1]) * 60;
     }
-    
+
     // Extract minutes (M)
     const minuteMatch = text.match(/(\d+)M/);
     if (minuteMatch) {
       totalMinutes += parseInt(minuteMatch[1]);
     }
-    
+
     return totalMinutes;
   }
-  
+
   // Handle human-readable format
   return parseTimeString(text);
 }
@@ -235,32 +235,36 @@ export function parseTimeToMinutes(timeText: string | undefined | null): number 
  */
 export function extractRecipeFromHtml(htmlContent: string): JsonLdRecipe | null {
   const $ = cheerio.load(htmlContent);
-  
+
   // Find all JSON-LD script tags
   const jsonLdScripts = $('script[type="application/ld+json"]');
-  
+
   for (let i = 0; i < jsonLdScripts.length; i++) {
     try {
       const scriptContent = $(jsonLdScripts[i]).html();
       if (!scriptContent) continue;
-      
+
       const jsonData = JSON.parse(scriptContent);
-      
+
       // Handle both single objects and arrays
       const items = Array.isArray(jsonData) ? jsonData : [jsonData];
-      
+
       for (const item of items) {
         // Look for Recipe type (can be nested in @graph)
-        if (item['@type'] === 'Recipe' || 
-            (Array.isArray(item['@type']) && item['@type'].includes('Recipe'))) {
+        if (
+          item['@type'] === 'Recipe' ||
+          (Array.isArray(item['@type']) && item['@type'].includes('Recipe'))
+        ) {
           return item as JsonLdRecipe;
         }
-        
+
         // Check if it's a nested structure with @graph
         if (item['@graph']) {
           for (const graphItem of item['@graph']) {
-            if (graphItem['@type'] === 'Recipe' || 
-                (Array.isArray(graphItem['@type']) && graphItem['@type'].includes('Recipe'))) {
+            if (
+              graphItem['@type'] === 'Recipe' ||
+              (Array.isArray(graphItem['@type']) && graphItem['@type'].includes('Recipe'))
+            ) {
               return graphItem as JsonLdRecipe;
             }
           }
@@ -272,7 +276,7 @@ export function extractRecipeFromHtml(htmlContent: string): JsonLdRecipe | null 
       continue;
     }
   }
-  
+
   return null;
 }
 
@@ -282,22 +286,24 @@ export function extractRecipeFromHtml(htmlContent: string): JsonLdRecipe | null 
 export function transformJsonLdRecipe(jsonLd: JsonLdRecipe, sourceUrl: string): ImportedRecipe {
   // Parse ingredients
   const ingredients: Ingredient[] = (jsonLd.recipeIngredient || []).map(parseIngredientString);
-  
+
   // Parse instructions
-  const instructions: string[] = (jsonLd.recipeInstructions || []).map(instruction => {
-    if (typeof instruction === 'string') {
-      return instruction;
-    }
-    if (typeof instruction === 'object' && instruction.text) {
-      return instruction.text;
-    }
-    return '';
-  }).filter(Boolean);
-  
+  const instructions: string[] = (jsonLd.recipeInstructions || [])
+    .map(instruction => {
+      if (typeof instruction === 'string') {
+        return instruction;
+      }
+      if (typeof instruction === 'object' && instruction.text) {
+        return instruction.text;
+      }
+      return '';
+    })
+    .filter(Boolean);
+
   // Get image URL with enhanced debugging
   let imageUrl: string | null = null;
   console.log('Processing image data:', jsonLd.image);
-  
+
   if (jsonLd.image) {
     if (typeof jsonLd.image === 'string') {
       imageUrl = jsonLd.image;
@@ -321,7 +327,7 @@ export function transformJsonLdRecipe(jsonLd: JsonLdRecipe, sourceUrl: string): 
       console.log('Single image object:', imageUrl);
     }
   }
-  
+
   // Ensure image URL is absolute
   if (imageUrl && !imageUrl.startsWith('http')) {
     try {
@@ -333,24 +339,28 @@ export function transformJsonLdRecipe(jsonLd: JsonLdRecipe, sourceUrl: string): 
       console.log('Failed to make URL absolute, keeping original:', imageUrl);
     }
   }
-  
+
   console.log('Final image URL:', imageUrl);
-  
+
   // Collect tags
   const tags: string[] = [];
   if (jsonLd.recipeCategory) {
-    const categories = Array.isArray(jsonLd.recipeCategory) ? jsonLd.recipeCategory : [jsonLd.recipeCategory];
+    const categories = Array.isArray(jsonLd.recipeCategory)
+      ? jsonLd.recipeCategory
+      : [jsonLd.recipeCategory];
     tags.push(...categories);
   }
   if (jsonLd.recipeCuisine) {
-    const cuisines = Array.isArray(jsonLd.recipeCuisine) ? jsonLd.recipeCuisine : [jsonLd.recipeCuisine];
+    const cuisines = Array.isArray(jsonLd.recipeCuisine)
+      ? jsonLd.recipeCuisine
+      : [jsonLd.recipeCuisine];
     tags.push(...cuisines);
   }
   if (jsonLd.keywords) {
     const keywords = Array.isArray(jsonLd.keywords) ? jsonLd.keywords : [jsonLd.keywords];
     tags.push(...keywords);
   }
-  
+
   return {
     name: jsonLd.name || 'Imported Recipe',
     description: jsonLd.description || '',
@@ -372,23 +382,24 @@ export function transformJsonLdRecipe(jsonLd: JsonLdRecipe, sourceUrl: string): 
 export async function scrapeRecipeFromUrl(url: string): Promise<ImportedRecipe> {
   try {
     console.log('Attempting to scrape URL:', url);
-    
+
     // Validate URL format
     if (!isValidRecipeUrl(url)) {
       throw new Error('Invalid URL format');
     }
-    
+
     // Fetch the HTML content
     const response = await fetch(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-      }
+        'User-Agent':
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+      },
     });
-    
+
     if (!response.ok) {
       throw new Error(`Failed to fetch URL: ${response.statusText}`);
     }
-    
+
     const html = await response.text();
     console.log('HTML fetched, length:', html.length);
 
@@ -410,7 +421,6 @@ export async function scrapeRecipeFromUrl(url: string): Promise<ImportedRecipe> 
     // Final fallback: basic HTML parsing
     console.log('Falling back to basic HTML parsing...');
     return extractBasicRecipeFromHtml($, url);
-
   } catch (error) {
     console.error('Error scraping recipe:', error);
     throw new Error(getImportErrorMessage(error));
@@ -423,17 +433,18 @@ export async function scrapeRecipeFromUrl(url: string): Promise<ImportedRecipe> 
 function extractMicrodataRecipe($: cheerio.CheerioAPI, sourceUrl: string): JsonLdRecipe | null {
   // Look for elements with itemtype="http://schema.org/Recipe" or "https://schema.org/Recipe"
   const recipeElement = $('[itemscope][itemtype*="schema.org/Recipe"]');
-  
+
   if (recipeElement.length === 0) {
     return null;
   }
-  
+
   const recipe: JsonLdRecipe = {};
-  
+
   // Extract basic recipe info
   recipe.name = recipeElement.find('[itemprop="name"]').first().text().trim() || undefined;
-  recipe.description = recipeElement.find('[itemprop="description"]').first().text().trim() || undefined;
-  
+  recipe.description =
+    recipeElement.find('[itemprop="description"]').first().text().trim() || undefined;
+
   // Extract ingredients
   const ingredients: string[] = [];
   recipeElement.find('[itemprop="recipeIngredient"]').each((_, el) => {
@@ -441,7 +452,7 @@ function extractMicrodataRecipe($: cheerio.CheerioAPI, sourceUrl: string): JsonL
     if (ingredient) ingredients.push(ingredient);
   });
   recipe.recipeIngredient = ingredients.length > 0 ? ingredients : undefined;
-  
+
   // Extract instructions
   const instructions: string[] = [];
   recipeElement.find('[itemprop="recipeInstructions"]').each((_, el) => {
@@ -449,18 +460,24 @@ function extractMicrodataRecipe($: cheerio.CheerioAPI, sourceUrl: string): JsonL
     if (instruction) instructions.push(instruction);
   });
   recipe.recipeInstructions = instructions.length > 0 ? instructions : undefined;
-  
+
   // Extract other fields
-  recipe.recipeYield = recipeElement.find('[itemprop="recipeYield"]').first().text().trim() || undefined;
-  recipe.prepTime = recipeElement.find('[itemprop="prepTime"]').first().attr('datetime') || 
-                   recipeElement.find('[itemprop="prepTime"]').first().text().trim() || undefined;
-  recipe.cookTime = recipeElement.find('[itemprop="cookTime"]').first().attr('datetime') || 
-                   recipeElement.find('[itemprop="cookTime"]').first().text().trim() || undefined;
-  
+  recipe.recipeYield =
+    recipeElement.find('[itemprop="recipeYield"]').first().text().trim() || undefined;
+  recipe.prepTime =
+    recipeElement.find('[itemprop="prepTime"]').first().attr('datetime') ||
+    recipeElement.find('[itemprop="prepTime"]').first().text().trim() ||
+    undefined;
+  recipe.cookTime =
+    recipeElement.find('[itemprop="cookTime"]').first().attr('datetime') ||
+    recipeElement.find('[itemprop="cookTime"]').first().text().trim() ||
+    undefined;
+
   // Extract image
   const imageEl = recipeElement.find('[itemprop="image"]').first();
-  let imageUrl = imageEl.attr('src') || imageEl.attr('content') || imageEl.attr('href') || undefined;
-  
+  let imageUrl =
+    imageEl.attr('src') || imageEl.attr('content') || imageEl.attr('href') || undefined;
+
   // Make URL absolute if it's relative
   if (imageUrl && !imageUrl.startsWith('http')) {
     try {
@@ -470,9 +487,9 @@ function extractMicrodataRecipe($: cheerio.CheerioAPI, sourceUrl: string): JsonL
       // Keep original if URL construction fails
     }
   }
-  
+
   recipe.image = imageUrl;
-  
+
   return Object.keys(recipe).length > 1 ? recipe : null; // Return null if we only have empty object
 }
 
@@ -489,17 +506,17 @@ function transformMicrodataRecipe(microdata: JsonLdRecipe, sourceUrl: string): I
 function extractBasicRecipeFromHtml($: cheerio.CheerioAPI, sourceUrl: string): ImportedRecipe {
   // Try to extract basic info from common HTML patterns
   let name = '';
-  
+
   // Try various common selectors for recipe titles
   const titleSelectors = [
     'h1.recipe-title',
-    'h1.entry-title', 
+    'h1.entry-title',
     '.recipe-header h1',
     '.recipe-title',
     'h1',
-    'title'
+    'title',
   ];
-  
+
   for (const selector of titleSelectors) {
     const titleEl = $(selector).first();
     if (titleEl.length && titleEl.text().trim()) {
@@ -507,16 +524,16 @@ function extractBasicRecipeFromHtml($: cheerio.CheerioAPI, sourceUrl: string): I
       break;
     }
   }
-  
+
   // Try to extract ingredients from common patterns
   const ingredients: Ingredient[] = [];
   const ingredientSelectors = [
     '.recipe-ingredients li',
     '.ingredients li',
     '.recipe-ingredient',
-    '[class*="ingredient"]'
+    '[class*="ingredient"]',
   ];
-  
+
   for (const selector of ingredientSelectors) {
     $(selector).each((_, el) => {
       const text = $(el).text().trim();
@@ -526,7 +543,7 @@ function extractBasicRecipeFromHtml($: cheerio.CheerioAPI, sourceUrl: string): I
     });
     if (ingredients.length > 0) break; // Stop after finding ingredients
   }
-  
+
   // Try to extract instructions
   const instructions: string[] = [];
   const instructionSelectors = [
@@ -535,9 +552,9 @@ function extractBasicRecipeFromHtml($: cheerio.CheerioAPI, sourceUrl: string): I
     '.recipe-instruction',
     '.directions li',
     '[class*="instruction"]',
-    '[class*="direction"]'
+    '[class*="direction"]',
   ];
-  
+
   for (const selector of instructionSelectors) {
     $(selector).each((_, el) => {
       const text = $(el).text().trim();
@@ -547,7 +564,7 @@ function extractBasicRecipeFromHtml($: cheerio.CheerioAPI, sourceUrl: string): I
     });
     if (instructions.length > 0) break; // Stop after finding instructions
   }
-  
+
   // Try to extract image URL
   let imageUrl: string | null = null;
   const imageSelectors = [
@@ -558,9 +575,9 @@ function extractBasicRecipeFromHtml($: cheerio.CheerioAPI, sourceUrl: string): I
     'img[src*="recipe"]',
     'img[alt*="recipe"]',
     'meta[property="og:image"]',
-    'meta[name="twitter:image"]'
+    'meta[name="twitter:image"]',
   ];
-  
+
   for (const selector of imageSelectors) {
     const el = $(selector).first();
     if (el.length) {
@@ -580,7 +597,7 @@ function extractBasicRecipeFromHtml($: cheerio.CheerioAPI, sourceUrl: string): I
       }
     }
   }
-  
+
   return {
     name: name || 'Imported Recipe',
     description: '',

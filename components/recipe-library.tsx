@@ -1,16 +1,16 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Plus } from 'lucide-react'
-import Link from 'next/link'
-import { SearchBar } from '@/components/search-bar'
-import { InfiniteRecipeGrid } from '@/components/common/infinite'
-import { useDebounce } from '@/hooks/useDebounce'
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Plus } from 'lucide-react';
+import Link from 'next/link';
+import { SearchBar } from '@/components/search-bar';
+import { InfiniteRecipeGrid } from '@/components/common/infinite';
+import { useDebounce } from '@/hooks/useDebounce';
 
 export function RecipeLibrary() {
-  const [searchQuery, setSearchQuery] = useState('')
-  const debouncedSearchQuery = useDebounce(searchQuery, 300)
+  const [searchQuery, setSearchQuery] = useState('');
+  const debouncedSearchQuery = useDebounce(searchQuery, 300);
 
   return (
     <div className="space-y-6">
@@ -22,7 +22,7 @@ export function RecipeLibrary() {
           placeholder="Search recipes, ingredients, or tags..."
           className="flex-1"
         />
-        
+
         {/* Add Recipe Button */}
         <Link href="/add">
           <Button>
@@ -42,5 +42,5 @@ export function RecipeLibrary() {
       {/* Recipe Grid with Infinite Scroll */}
       <InfiniteRecipeGrid search={debouncedSearchQuery || undefined} />
     </div>
-  )
+  );
 }

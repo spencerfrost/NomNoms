@@ -1,5 +1,5 @@
-import '@testing-library/jest-dom'
-import React from 'react'
+import '@testing-library/jest-dom';
+import React from 'react';
 
 // Mock Next.js router
 jest.mock('next/navigation', () => ({
@@ -15,14 +15,14 @@ jest.mock('next/navigation', () => ({
     get: jest.fn(),
   }),
   usePathname: () => '/',
-}))
+}));
 
 // Mock Next.js Link component
 jest.mock('next/link', () => {
   return ({ children, href, ...props }: any) => {
-    return React.createElement('a', { href, ...props }, children)
-  }
-})
+    return React.createElement('a', { href, ...props }, children);
+  };
+});
 
 // Mock NextAuth
 jest.mock('next-auth/react', () => ({
@@ -33,27 +33,27 @@ jest.mock('next-auth/react', () => ({
   SessionProvider: ({ children }: { children: React.ReactNode }) => children,
   signIn: jest.fn(),
   signOut: jest.fn(),
-}))
+}));
 
 // Mock client-side recipe saving
 jest.mock('@/lib/client-recipes', () => ({
   saveRecipe: jest.fn(() => Promise.resolve()),
-}))
+}));
 
 // Mock recipe import utils
 jest.mock('@/lib/recipe-import-utils', () => ({
   importRecipeFromUrl: jest.fn(),
-}))
+}));
 
 // Mock fetch globally
-global.fetch = jest.fn()
+global.fetch = jest.fn();
 
 // Global test utilities
 global.ResizeObserver = jest.fn().mockImplementation(() => ({
   observe: jest.fn(),
   unobserve: jest.fn(),
   disconnect: jest.fn(),
-}))
+}));
 
 // Mock window methods (only in jsdom environment)
 if (typeof window !== 'undefined') {
@@ -69,5 +69,5 @@ if (typeof window !== 'undefined') {
       removeEventListener: jest.fn(),
       dispatchEvent: jest.fn(),
     })),
-  })
+  });
 }

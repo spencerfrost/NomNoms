@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { Recipe } from "@/types";
-import { searchRecipes } from "@/lib/recipe-utils";
-import { RecipeCard } from "@/components/recipe-card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Search, Plus } from "lucide-react";
-import Link from "next/link";
-import { EmptyState } from "@/components/common";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from 'react';
+import { Recipe } from '@/types';
+import { searchRecipes } from '@/lib/recipe-utils';
+import { RecipeCard } from '@/components/recipe-card';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Search, Plus } from 'lucide-react';
+import Link from 'next/link';
+import { EmptyState } from '@/components/common';
+import { useRouter } from 'next/navigation';
 
 interface ClientSearchBarProps {
   readonly recipes: Recipe[];
 }
 
 export function ClientSearchBar({ recipes }: ClientSearchBarProps) {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const [filteredRecipes, setFilteredRecipes] = useState<Recipe[]>(recipes);
   const router = useRouter();
 
@@ -35,7 +35,7 @@ export function ClientSearchBar({ recipes }: ClientSearchBarProps) {
             type="text"
             placeholder="Search recipes, ingredients, or tags..."
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={e => setSearchQuery(e.target.value)}
             className="pl-10 border-border"
           />
         </div>
@@ -57,28 +57,28 @@ export function ClientSearchBar({ recipes }: ClientSearchBarProps) {
       {/* Recipe Grid */}
       {filteredRecipes.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredRecipes.map((recipe) => (
+          {filteredRecipes.map(recipe => (
             <RecipeCard key={recipe.slug} recipe={recipe} />
           ))}
         </div>
       ) : (
         <EmptyState
-          title={searchQuery ? "No recipes found" : "No recipes yet"}
+          title={searchQuery ? 'No recipes found' : 'No recipes yet'}
           description={
             searchQuery
-              ? "Try a different search term or browse all recipes"
-              : "Start building your recipe collection by adding your first recipe"
+              ? 'Try a different search term or browse all recipes'
+              : 'Start building your recipe collection by adding your first recipe'
           }
           action={
             searchQuery
               ? {
-                  label: "Clear Search",
-                  onClick: () => setSearchQuery(""),
-                  variant: "secondary" as const
+                  label: 'Clear Search',
+                  onClick: () => setSearchQuery(''),
+                  variant: 'secondary' as const,
                 }
               : {
-                  label: "Add Your First Recipe",
-                  onClick: () => router.push("/add")
+                  label: 'Add Your First Recipe',
+                  onClick: () => router.push('/add'),
                 }
           }
         />

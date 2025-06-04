@@ -1,4 +1,4 @@
-import { Recipe as PrismaRecipe } from '@prisma/client'
+import { Recipe as PrismaRecipe } from '@prisma/client';
 
 export interface Ingredient {
   amount: number; // Always store as decimal number for easy scaling
@@ -13,19 +13,23 @@ export type Recipe = PrismaRecipe & {
     name: string | null;
     email: string;
   };
-}
+};
 
 // Type guard to check if a JsonValue is an array of ingredients
 export function isIngredientArray(value: unknown): value is Ingredient[] {
-  return Array.isArray(value) && value.every(item => 
-    typeof item === 'object' && 
-    item !== null &&
-    'amount' in item &&
-    'unit' in item &&
-    'name' in item &&
-    typeof item.amount === 'number' &&
-    typeof item.unit === 'string' &&
-    typeof item.name === 'string'
+  return (
+    Array.isArray(value) &&
+    value.every(
+      item =>
+        typeof item === 'object' &&
+        item !== null &&
+        'amount' in item &&
+        'unit' in item &&
+        'name' in item &&
+        typeof item.amount === 'number' &&
+        typeof item.unit === 'string' &&
+        typeof item.name === 'string'
+    )
   );
 }
 

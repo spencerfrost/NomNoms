@@ -1,12 +1,12 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { Recipe } from '@/types'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Clock, Users } from 'lucide-react'
+import Link from 'next/link';
+import Image from 'next/image';
+import { Recipe } from '@/types';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Clock, Users } from 'lucide-react';
 
 interface RecipeCardProps {
-  readonly recipe: Recipe
+  readonly recipe: Recipe;
 }
 
 export function RecipeCard({ recipe }: RecipeCardProps) {
@@ -14,7 +14,7 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
     <Link href={`/recipes/${recipe.slug}`}>
       <Card className="h-full transition-colors bg-transparent cursor-pointer overflow-hidden pt-0">
         {recipe.image ? (
-            <div className="relative aspect-video w-full">
+          <div className="relative aspect-video w-full">
             <Image
               src={recipe.image}
               alt={recipe.title}
@@ -22,26 +22,25 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
               className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-            </div>
-          ) : (
-            <div className="aspect-video w-full bg-muted flex items-center justify-center">
+          </div>
+        ) : (
+          <div className="aspect-video w-full bg-muted flex items-center justify-center">
             <span className="text-muted-foreground">No Image</span>
-            </div>
-        )
-        }
+          </div>
+        )}
         <CardHeader>
           <CardTitle className="line-clamp-2">{recipe.title}</CardTitle>
           <CardDescription className="line-clamp-3">{recipe.description}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap gap-1 mb-3">
-            {recipe.tags.map((tag) => (
+            {recipe.tags.map(tag => (
               <Badge key={tag} variant="secondary" className="text-xs">
                 {tag}
               </Badge>
             ))}
           </div>
-          
+
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-1">
               <Users className="h-4 w-4" />
@@ -57,5 +56,5 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
         </CardContent>
       </Card>
     </Link>
-  )
+  );
 }

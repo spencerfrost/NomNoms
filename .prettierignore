@@ -30,3 +30,7 @@ prisma/migrations/
 # Cache
 .eslintcache
 .prettierignore
+
+/components/ui
+/.github
+/data

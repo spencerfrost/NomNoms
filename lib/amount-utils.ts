@@ -29,7 +29,7 @@ export function parseAmountToDecimal(amount: string | number): number {
     return whole + num / denom;
   }
 
-  // Handle "X Y/Z" format (e.g., "1 1/2")  
+  // Handle "X Y/Z" format (e.g., "1 1/2")
   match = /^(\d+)\s+(\d+)\/(\d+)/.exec(str);
   if (match) {
     const whole = parseInt(match[1]);
@@ -48,10 +48,17 @@ export function parseAmountToDecimal(amount: string | number): number {
 
   // Handle unicode fractions
   const unicodeMap: Record<string, number> = {
-    '¼': 0.25, '½': 0.5, '¾': 0.75, '⅓': 1/3, '⅔': 2/3, 
-    '⅛': 0.125, '⅜': 0.375, '⅝': 0.625, '⅞': 0.875
+    '¼': 0.25,
+    '½': 0.5,
+    '¾': 0.75,
+    '⅓': 1 / 3,
+    '⅔': 2 / 3,
+    '⅛': 0.125,
+    '⅜': 0.375,
+    '⅝': 0.625,
+    '⅞': 0.875,
   };
-  
+
   // Check for unicode fractions with optional whole number prefix
   match = /^(\d+)?\s*([¼½¾⅓⅔⅛⅜⅝⅞])/.exec(str);
   if (match) {
@@ -74,19 +81,26 @@ export function parseAmountToDecimal(amount: string | number): number {
  */
 export function formatDecimalAsFraction(decimal: number): string {
   if (decimal === 0) return '0';
-  
+
   const tolerance = 1e-6;
   const whole = Math.floor(decimal);
   const fraction = decimal - whole;
-  
+
   if (fraction < tolerance) {
     return whole.toString();
   }
 
   // Common fractions to check
   const commonFractions: [number, string][] = [
-    [1/8, '1/8'], [1/4, '1/4'], [1/3, '1/3'], [3/8, '3/8'], [1/2, '1/2'],
-    [5/8, '5/8'], [2/3, '2/3'], [3/4, '3/4'], [7/8, '7/8']
+    [1 / 8, '1/8'],
+    [1 / 4, '1/4'],
+    [1 / 3, '1/3'],
+    [3 / 8, '3/8'],
+    [1 / 2, '1/2'],
+    [5 / 8, '5/8'],
+    [2 / 3, '2/3'],
+    [3 / 4, '3/4'],
+    [7 / 8, '7/8'],
   ];
 
   // Find closest common fraction
@@ -117,9 +131,13 @@ export function scaleAndFormatAmount(amount: string | number, multiplier: number
  * Normalize an ingredient amount to a decimal number
  * This should be used when processing/importing recipe data
  */
-export function normalizeIngredientAmount(ingredient: { amount: string | number, unit: string, name: string }) {
+export function normalizeIngredientAmount(ingredient: {
+  amount: string | number;
+  unit: string;
+  name: string;
+}) {
   return {
     ...ingredient,
-    amount: parseAmountToDecimal(ingredient.amount)
+    amount: parseAmountToDecimal(ingredient.amount),
   };
 }

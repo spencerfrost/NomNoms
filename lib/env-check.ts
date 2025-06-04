@@ -4,6 +4,6 @@
  */
 
 // This will throw an error if environment variables are invalid
-import './env'
+import './env';
 
-export { env, isDevelopment, isProduction, isTest } from './env'
+export { env, isDevelopment, isProduction, isTest } from './env';

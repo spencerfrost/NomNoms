@@ -1,74 +1,73 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Card } from '@/components/ui/card'
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog'
-import { Save, User, Mail, Lock } from 'lucide-react'
-import { ErrorMessage, SuccessMessage } from '@/components/common'
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card } from '@/components/ui/card';
+import { Save, User, Mail, Lock } from 'lucide-react';
+import { ErrorMessage, SuccessMessage } from '@/components/common';
 
 interface ProfileFormProps {
   user: {
-    id: string
-    name: string | null
-    email: string
-  }
+    id: string;
+    name: string | null;
+    email: string;
+  };
 }
 
 export default function ProfileForm({ user }: ProfileFormProps) {
-  const router = useRouter()
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState('')
-  
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
   const [formData, setFormData] = useState({
     name: user.name || '',
     email: user.email,
     currentPassword: '',
     newPassword: '',
-    confirmPassword: ''
-  })
+    confirmPassword: '',
+  });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-    setError('')
-    setSuccess('')
-  }
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    setError('');
+    setSuccess('');
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setError('')
-    setSuccess('')
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
+    setSuccess('');
 
     try {
       // Validate password change if provided
       if (formData.newPassword) {
         if (!formData.currentPassword) {
-          setError('Current password is required to change password')
-          return
+          setError('Current password is required to change password');
+          return;
         }
         if (formData.newPassword !== formData.confirmPassword) {
-          setError('New passwords do not match')
-          return
+          setError('New passwords do not match');
+          return;
         }
         if (formData.newPassword.length < 6) {
-          setError('New password must be at least 6 characters')
-          return
+          setError('New password must be at least 6 characters');
+          return;
         }
       }
 
       const updateData: any = {
         name: formData.name,
-        email: formData.email
-      }
+        email: formData.email,
+      };
 
       if (formData.newPassword) {
-        updateData.currentPassword = formData.currentPassword
-        updateData.newPassword = formData.newPassword
+        updateData.currentPassword = formData.currentPassword;
+        updateData.newPassword = formData.newPassword;
       }
 
       const response = await fetch('/api/profile', {
@@ -77,30 +76,30 @@ export default function ProfileForm({ user }: ProfileFormProps) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(updateData),
-      })
+      });
 
-      const result = await response.json()
+      const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || 'Failed to update profile')
+        throw new Error(result.error || 'Failed to update profile');
       }
 
-      setSuccess('Profile updated successfully!')
+      setSuccess('Profile updated successfully!');
       setFormData(prev => ({
         ...prev,
         currentPassword: '',
         newPassword: '',
-        confirmPassword: ''
-      }))
-      
+        confirmPassword: '',
+      }));
+
       // Refresh the page to show updated data
-      router.refresh()
+      router.refresh();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to update profile')
+      setError(err instanceof Error ? err.message : 'Failed to update profile');
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <Card className="p-6">
@@ -146,7 +145,7 @@ export default function ProfileForm({ user }: ProfileFormProps) {
             <Lock className="h-4 w-4" />
             Change Password
           </h3>
-          
+
           <div className="space-y-3">
             <div>
               <label htmlFor="currentPassword" className="block text-sm font-medium mb-2">
@@ -195,15 +194,11 @@ export default function ProfileForm({ user }: ProfileFormProps) {
         {error && <ErrorMessage message={error} />}
         {success && <SuccessMessage message={success} />}
 
-        <Button 
-          type="submit" 
-          disabled={isLoading}
-          className="w-full"
-        >
+        <Button type="submit" disabled={isLoading} className="w-full">
           <Save className="h-4 w-4 mr-2" />
           {isLoading ? 'Saving...' : 'Save Changes'}
         </Button>
       </form>
     </Card>
-  )
+  );
 }

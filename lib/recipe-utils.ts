@@ -1,11 +1,15 @@
 import { Recipe, Ingredient, getRecipeIngredients } from '@/types';
-import { parseAmountToDecimal, formatDecimalAsFraction, scaleAndFormatAmount } from './amount-utils';
+import {
+  parseAmountToDecimal,
+  formatDecimalAsFraction,
+  scaleAndFormatAmount,
+} from './amount-utils';
 
 // Client-safe utility functions for recipes
 
 export function searchRecipes(recipes: Recipe[], query: string): Recipe[] {
   if (!query.trim()) return recipes;
-  
+
   const lowerQuery = query.toLowerCase();
   return recipes.filter(recipe => {
     const ingredients = getRecipeIngredients(recipe);
@@ -27,18 +31,18 @@ export function scaleRecipe(recipe: Recipe, multiplier: number): Recipe {
     ...recipe,
     ingredients: ingredients.map(ingredient => ({
       ...ingredient,
-      amount: parseAmountToDecimal(ingredient.amount) * multiplier
-    }))
+      amount: parseAmountToDecimal(ingredient.amount) * multiplier,
+    })),
   };
 }
 
 /**
- * Scale ingredients by a multiplier  
+ * Scale ingredients by a multiplier
  */
 export function scaleIngredients(ingredients: Ingredient[], multiplier: number): Ingredient[] {
   return ingredients.map(ingredient => ({
     ...ingredient,
-    amount: parseAmountToDecimal(ingredient.amount) * multiplier
+    amount: parseAmountToDecimal(ingredient.amount) * multiplier,
   }));
 }
 
@@ -53,7 +57,10 @@ export function formatIngredientAmount(amount: string | number): string {
 /**
  * Scale and format an ingredient amount for display
  */
-export function scaleAndFormatIngredientAmount(amount: string | number, multiplier: number): string {
+export function scaleAndFormatIngredientAmount(
+  amount: string | number,
+  multiplier: number
+): string {
   return scaleAndFormatAmount(amount, multiplier);
 }
 
@@ -66,7 +73,5 @@ export function generateSlug(title: string): string {
     .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
-    .trim()
+    .trim();
 }
-
-
