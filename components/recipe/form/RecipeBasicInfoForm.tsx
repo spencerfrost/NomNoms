@@ -1,22 +1,22 @@
-'use client'
+'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import RecipeImagePreview from './RecipeImagePreview'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import RecipeImagePreview from './RecipeImagePreview';
 
 interface FormData {
-  title: string
-  description: string
-  imageUrl: string
-  yield: string
-  prepTime: string
-  cookTime: string
-  visibility: string
+  title: string;
+  description: string;
+  imageUrl: string;
+  yield: string;
+  prepTime: string;
+  cookTime: string;
+  visibility: string;
 }
 
 interface RecipeBasicInfoFormProps {
-  formData: FormData
-  onChange: (field: keyof FormData, value: string) => void
+  formData: FormData;
+  onChange: (field: keyof FormData, value: string) => void;
 }
 
 /**
@@ -24,11 +24,10 @@ interface RecipeBasicInfoFormProps {
  */
 function isValidImageUrl(url: string): boolean {
   try {
-    const parsedUrl = new URL(url)
-    return (parsedUrl.protocol === 'https:' || parsedUrl.protocol === 'http:') && 
-           url.length > 8 // More than just "https://"
+    const parsedUrl = new URL(url);
+    return (parsedUrl.protocol === 'https:' || parsedUrl.protocol === 'http:') && url.length > 8; // More than just "https://"
   } catch {
-    return false
+    return false;
   }
 }
 
@@ -44,33 +43,39 @@ export default function RecipeBasicInfoForm({ formData, onChange }: RecipeBasicI
       </CardHeader>
       <CardContent className="space-y-4">
         <div>
-          <label htmlFor="recipe-title" className="block text-sm font-medium mb-2">Title *</label>
+          <label htmlFor="recipe-title" className="block text-sm font-medium mb-2">
+            Title *
+          </label>
           <Input
             id="recipe-title"
             value={formData.title}
-            onChange={(e) => onChange('title', e.target.value)}
+            onChange={e => onChange('title', e.target.value)}
             placeholder="e.g., Spaghetti Carbonara"
             required
           />
         </div>
-        
+
         <div>
-          <label htmlFor="recipe-description" className="block text-sm font-medium mb-2">Description</label>
+          <label htmlFor="recipe-description" className="block text-sm font-medium mb-2">
+            Description
+          </label>
           <Input
             id="recipe-description"
             value={formData.description}
-            onChange={(e) => onChange('description', e.target.value)}
+            onChange={e => onChange('description', e.target.value)}
             placeholder="A brief description of your recipe"
           />
         </div>
 
         <div>
-          <label htmlFor="recipe-image-url" className="block text-sm font-medium mb-2">Image URL</label>
+          <label htmlFor="recipe-image-url" className="block text-sm font-medium mb-2">
+            Image URL
+          </label>
           <Input
             id="recipe-image-url"
             type="url"
             value={formData.imageUrl}
-            onChange={(e) => onChange('imageUrl', e.target.value)}
+            onChange={e => onChange('imageUrl', e.target.value)}
             placeholder="https://example.com/recipe-image.jpg"
           />
           {formData.imageUrl && isValidImageUrl(formData.imageUrl) && (
@@ -81,22 +86,25 @@ export default function RecipeBasicInfoForm({ formData, onChange }: RecipeBasicI
                 className="w-full h-32"
               />
               <p className="text-xs text-muted-foreground mt-1">
-                Image preview - if this doesn&apos;t load, check that the URL is valid and publicly accessible
+                Image preview - if this doesn&apos;t load, check that the URL is valid and publicly
+                accessible
               </p>
             </div>
           )}
         </div>
-        
+
         <div>
-          <label htmlFor="recipe-yield" className="block text-sm font-medium mb-2">Yield</label>
+          <label htmlFor="recipe-yield" className="block text-sm font-medium mb-2">
+            Yield
+          </label>
           <Input
             id="recipe-yield"
             value={formData.yield}
-            onChange={(e) => onChange('yield', e.target.value)}
+            onChange={e => onChange('yield', e.target.value)}
             placeholder="e.g., 4 servings, 12 cookies"
           />
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

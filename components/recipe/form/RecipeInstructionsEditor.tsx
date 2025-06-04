@@ -1,25 +1,25 @@
-'use client'
+'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { Plus, X } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Plus, X } from 'lucide-react';
 
 interface RecipeInstructionsEditorProps {
-  instructions: string[]
-  onChange: (index: number, value: string) => void
-  onAdd: () => void
-  onRemove: (index: number) => void
+  instructions: string[];
+  onChange: (index: number, value: string) => void;
+  onAdd: () => void;
+  onRemove: (index: number) => void;
 }
 
 /**
  * Component for managing step-by-step recipe instructions
  */
-export default function RecipeInstructionsEditor({ 
-  instructions, 
-  onChange, 
-  onAdd, 
-  onRemove 
+export default function RecipeInstructionsEditor({
+  instructions,
+  onChange,
+  onAdd,
+  onRemove,
 }: RecipeInstructionsEditorProps) {
   return (
     <Card>
@@ -36,7 +36,7 @@ export default function RecipeInstructionsEditor({
               </span>
               <Input
                 value={instruction}
-                onChange={(e) => onChange(index, e.target.value)}
+                onChange={e => onChange(index, e.target.value)}
                 placeholder={`Step ${index + 1} instruction`}
                 className="flex-1"
               />
@@ -53,7 +53,7 @@ export default function RecipeInstructionsEditor({
               )}
             </div>
           ))}
-          
+
           <Button type="button" onClick={onAdd} variant="outline" className="w-full">
             <Plus className="h-4 w-4 mr-2" />
             Add Step
@@ -61,5 +61,5 @@ export default function RecipeInstructionsEditor({
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
-import PageHeader from "@/components/page-header";
-import RecipeUrlImport from "@/components/recipe-url-import";
-import { ImportedRecipe } from "@/lib/recipe-import-utils";
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
+import PageHeader from '@/components/page-header';
+import RecipeUrlImport from '@/components/recipe-url-import';
+import { ImportedRecipe } from '@/lib/recipe-import-utils';
 
 interface RecipeUrlImportScreenProps {
   onImported: (recipe: ImportedRecipe) => void;

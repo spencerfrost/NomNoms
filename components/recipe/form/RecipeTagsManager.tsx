@@ -1,35 +1,35 @@
-'use client'
+'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { X } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { X } from 'lucide-react';
 
 interface RecipeTagsManagerProps {
-  tags: string[]
-  newTag: string
-  onTagAdd: () => void
-  onTagRemove: (tag: string) => void
-  onNewTagChange: (value: string) => void
+  tags: string[];
+  newTag: string;
+  onTagAdd: () => void;
+  onTagRemove: (tag: string) => void;
+  onNewTagChange: (value: string) => void;
 }
 
 /**
  * Component for managing recipe tags (add, remove, display)
  */
-export default function RecipeTagsManager({ 
-  tags, 
-  newTag, 
-  onTagAdd, 
-  onTagRemove, 
-  onNewTagChange 
+export default function RecipeTagsManager({
+  tags,
+  newTag,
+  onTagAdd,
+  onTagRemove,
+  onNewTagChange,
 }: RecipeTagsManagerProps) {
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
-      e.preventDefault()
-      onTagAdd()
+      e.preventDefault();
+      onTagAdd();
     }
-  }
+  };
 
   return (
     <Card>
@@ -41,7 +41,7 @@ export default function RecipeTagsManager({
         <div className="flex gap-2 mb-4">
           <Input
             value={newTag}
-            onChange={(e) => onNewTagChange(e.target.value)}
+            onChange={e => onNewTagChange(e.target.value)}
             placeholder="Add a tag (e.g., italian, quick, dessert)"
             onKeyPress={handleKeyPress}
           />
@@ -49,10 +49,10 @@ export default function RecipeTagsManager({
             Add
           </Button>
         </div>
-        
+
         {tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
-            {tags.map((tag) => (
+            {tags.map(tag => (
               <Badge key={tag} variant="secondary" className="flex items-center gap-1">
                 {tag}
                 <button
@@ -68,5 +68,5 @@ export default function RecipeTagsManager({
         )}
       </CardContent>
     </Card>
-  )
+  );
 }

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
-import PageHeader from "@/components/page-header";
-import { ErrorMessage } from "@/components/common";
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
+import PageHeader from '@/components/page-header';
+import { ErrorMessage } from '@/components/common';
 
 interface RecipeFormContainerProps {
   children: React.ReactNode;
@@ -52,10 +52,7 @@ export default function RecipeFormContainer({
 
       {error && (
         <div className="mb-6">
-          <ErrorMessage
-            variant="banner"
-            message={error}
-          />
+          <ErrorMessage variant="banner" message={error} />
         </div>
       )}
 
@@ -65,7 +62,7 @@ export default function RecipeFormContainer({
         {/* Submit */}
         <div className="flex gap-4">
           <Button type="submit" disabled={loading} className="flex-1">
-            {loading ? "Saving..." : "Save Recipe"}
+            {loading ? 'Saving...' : 'Save Recipe'}
           </Button>
         </div>
       </form>
