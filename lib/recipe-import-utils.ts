@@ -271,8 +271,7 @@ export function extractRecipeFromHtml(htmlContent: string): JsonLdRecipe | null 
         }
       }
     } catch (error) {
-      // Continue to next script if this one fails to parse
-      console.log('Failed to parse JSON-LD script:', error);
+      console.error('Failed to parse JSON-LD script:', error);
       continue;
     }
   }
@@ -302,29 +301,29 @@ export function transformJsonLdRecipe(jsonLd: JsonLdRecipe, sourceUrl: string): 
 
   // Get image URL with enhanced debugging
   let imageUrl: string | null = null;
-  console.log('Processing image data:', jsonLd.image);
+  console.info('Processing image data:', jsonLd.image);
 
   if (jsonLd.image) {
     if (typeof jsonLd.image === 'string') {
       imageUrl = jsonLd.image;
-      console.log('Found string image:', imageUrl);
+      console.info('Found string image:', imageUrl);
     } else if (Array.isArray(jsonLd.image)) {
       // Take the first image
       const firstImage = jsonLd.image[0];
-      console.log('Processing array image, first item:', firstImage);
+      console.info('Processing array image, first item:', firstImage);
       if (typeof firstImage === 'string') {
         imageUrl = firstImage;
       } else if (firstImage && typeof firstImage === 'object') {
         // Handle both { url: "..." } and { "@type": "ImageObject", url: "..." }
         const imgObj = firstImage as ImageObject;
         imageUrl = imgObj.url || imgObj['@url'] || null;
-        console.log('Extracted from object:', imageUrl);
+        console.info('Extracted from object:', imageUrl);
       }
     } else if (typeof jsonLd.image === 'object') {
       // Handle single image object
       const imgObj = jsonLd.image as ImageObject;
       imageUrl = imgObj.url || imgObj['@url'] || null;
-      console.log('Single image object:', imageUrl);
+      console.info('Single image object:', imageUrl);
     }
   }
 
@@ -333,14 +332,14 @@ export function transformJsonLdRecipe(jsonLd: JsonLdRecipe, sourceUrl: string): 
     try {
       const baseUrl = new URL(sourceUrl);
       const absoluteUrl = new URL(imageUrl, baseUrl.origin).href;
-      console.log('Made URL absolute:', imageUrl, '->', absoluteUrl);
+      console.info('Made URL absolute:', imageUrl, '->', absoluteUrl);
       imageUrl = absoluteUrl;
     } catch {
-      console.log('Failed to make URL absolute, keeping original:', imageUrl);
+      console.info('Failed to make URL absolute, keeping original:', imageUrl);
     }
   }
 
-  console.log('Final image URL:', imageUrl);
+  console.info('Final image URL:', imageUrl);
 
   // Collect tags
   const tags: string[] = [];
@@ -381,7 +380,7 @@ export function transformJsonLdRecipe(jsonLd: JsonLdRecipe, sourceUrl: string): 
  */
 export async function scrapeRecipeFromUrl(url: string): Promise<ImportedRecipe> {
   try {
-    console.log('Attempting to scrape URL:', url);
+    console.info('Attempting to scrape URL:', url);
 
     // Validate URL format
     if (!isValidRecipeUrl(url)) {
@@ -401,12 +400,12 @@ export async function scrapeRecipeFromUrl(url: string): Promise<ImportedRecipe> 
     }
 
     const html = await response.text();
-    console.log('HTML fetched, length:', html.length);
+    console.info('HTML fetched, length:', html.length);
 
     // Try to extract JSON-LD structured data
     const jsonLdRecipe = extractRecipeFromHtml(html);
     if (jsonLdRecipe) {
-      console.log('Found JSON-LD recipe data');
+      console.info('Found JSON-LD recipe data');
       return transformJsonLdRecipe(jsonLdRecipe, url);
     }
 
@@ -414,12 +413,12 @@ export async function scrapeRecipeFromUrl(url: string): Promise<ImportedRecipe> 
     const $ = cheerio.load(html);
     const microdataRecipe = extractMicrodataRecipe($, url);
     if (microdataRecipe) {
-      console.log('Found microdata recipe');
+      console.info('Found microdata recipe');
       return transformMicrodataRecipe(microdataRecipe, url);
     }
 
     // Final fallback: basic HTML parsing
-    console.log('Falling back to basic HTML parsing...');
+    console.info('Falling back to basic HTML parsing...');
     return extractBasicRecipeFromHtml($, url);
   } catch (error) {
     console.error('Error scraping recipe:', error);

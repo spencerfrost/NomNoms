@@ -19,12 +19,12 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'URL is required' }, { status: 400 });
     }
 
-    console.log('Importing recipe from URL:', url);
+    console.info('Importing recipe from URL:', url);
 
     // Use our custom scraping function with JSON-LD parsing
     const recipe = await scrapeRecipeFromUrl(url);
 
-    console.log('Successfully scraped recipe:', recipe.name);
+    console.info('Successfully scraped recipe:', recipe.name);
 
     // Return the scraped recipe data
     return NextResponse.json(recipe);

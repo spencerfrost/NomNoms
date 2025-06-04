@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { AuthErrorDisplay } from './AuthErrorDisplay';
 
 interface AuthFormProps {
-  onSubmit: (e: React.FormEvent) => Promise<void>;
+  onSubmit: (_e: React.FormEvent) => Promise<void>;
   children: React.ReactNode;
   submitText: string;
   isLoading: boolean;

@@ -70,7 +70,7 @@ export const authOptions: NextAuthOptions = {
         if (user) {
           // Database strategy - user comes from database
           session.user.id = user.id;
-          session.user.role = (user as any).role || 'user';
+          session.user.role = (user as { role?: string }).role || 'user';
         } else if (token) {
           // JWT strategy fallback
           session.user.id = token.id as string;

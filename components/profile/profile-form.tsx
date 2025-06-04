@@ -60,7 +60,12 @@ export default function ProfileForm({ user }: ProfileFormProps) {
         }
       }
 
-      const updateData: any = {
+      const updateData: {
+        name: string;
+        email: string;
+        currentPassword?: string;
+        newPassword?: string;
+      } = {
         name: formData.name,
         email: formData.email,
       };

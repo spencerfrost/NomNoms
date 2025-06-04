@@ -26,7 +26,12 @@ export async function PUT(request: NextRequest) {
     }
 
     // Prepare update data
-    const updateData: any = {
+    const updateData: {
+      name: string | null;
+      email: string;
+      updatedAt: Date;
+      password?: string;
+    } = {
       name: name?.trim() || null,
       email: email.trim().toLowerCase(),
       updatedAt: new Date(),

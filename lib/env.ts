@@ -161,5 +161,5 @@ export const isTest = env.NODE_ENV === 'test';
 
 // Log validation success in development
 if (isDevelopment) {
-  console.log('✅ Environment variables validated successfully');
+  console.info('✅ Environment variables validated successfully');
 }

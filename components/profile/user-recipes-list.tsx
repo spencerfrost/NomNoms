@@ -190,7 +190,7 @@ export default function UserRecipesList({ recipes }: UserRecipesListProps) {
                     <AlertDialogHeader>
                       <AlertDialogTitle>Delete Recipe</AlertDialogTitle>
                       <AlertDialogDescription>
-                        Are you sure you want to delete "{recipe.title}"? This action cannot be
+                        Are you sure you want to delete &ldquo;{recipe.title}&rdquo;? This action cannot be
                         undone.
                       </AlertDialogDescription>
                     </AlertDialogHeader>
