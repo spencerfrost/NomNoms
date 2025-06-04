@@ -69,7 +69,7 @@ export function DialogShowcase() {
                   <AlertDialogTitle>Delete Recipe</AlertDialogTitle>
                   <AlertDialogDescription>
                     This action cannot be undone. This will permanently delete the recipe
-                    "Chocolate Chip Cookies" from your collection.
+                    &ldquo;Chocolate Chip Cookies&rdquo; from your collection.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
@@ -92,7 +92,7 @@ export function DialogShowcase() {
                 <AlertDialogHeader>
                   <AlertDialogTitle>Sign Out</AlertDialogTitle>
                   <AlertDialogDescription>
-                    Are you sure you want to sign out? You'll need to sign in again to access your recipes.
+                    Are you sure you want to sign out? You&apos;ll need to sign in again to access your recipes.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
@@ -142,7 +142,7 @@ export function DialogShowcase() {
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
-                  <AlertDialogTitle>Share "Spaghetti Carbonara"</AlertDialogTitle>
+                  <AlertDialogTitle>Share &ldquo;Spaghetti Carbonara&rdquo;</AlertDialogTitle>
                   <AlertDialogDescription>
                     This will make your recipe public and generate a shareable link. Anyone with the link
                     will be able to view and copy this recipe.
@@ -208,7 +208,7 @@ export function DialogShowcase() {
                     <AlertDialogTitle>Storage Limit Reached</AlertDialogTitle>
                   </div>
                   <AlertDialogDescription>
-                    You've reached your storage limit of 50 recipes. To add more recipes, you'll need to
+                    You&apos;ve reached your storage limit of 50 recipes. To add more recipes, you&apos;ll need to
                     upgrade to a premium plan or delete some existing recipes.
                   </AlertDialogDescription>
                 </AlertDialogHeader>

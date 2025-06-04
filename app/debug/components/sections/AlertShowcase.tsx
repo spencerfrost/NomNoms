@@ -190,7 +190,7 @@ import { AlertCircle } from "lucide-react";
                   <div className="flex-1">
                     <AlertTitle>Cooking Reminder</AlertTitle>
                     <AlertDescription>
-                      Don't forget to preheat your oven 15 minutes before starting the recipe.
+                      Don&apos;t forget to preheat your oven 15 minutes before starting the recipe.
                     </AlertDescription>
                   </div>
                   <Button
@@ -242,7 +242,7 @@ import { AlertCircle } from "lucide-react";
               <AlertTriangle className="h-4 w-4 text-yellow-600" />
               <AlertTitle>Storage Almost Full</AlertTitle>
               <AlertDescription className="mb-3">
-                You've used 90% of your recipe storage. Consider upgrading to premium for unlimited recipes.
+                You&apos;ve used 90% of your recipe storage. Consider upgrading to premium for unlimited recipes.
               </AlertDescription>
               <div className="flex gap-2">
                 <Button size="sm" className="bg-yellow-600 hover:bg-yellow-700">

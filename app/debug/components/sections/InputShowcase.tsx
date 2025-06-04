@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ComponentSection } from "../ComponentSection";
-import { Search, Eye, EyeOff, Mail, Lock, User, Phone } from "lucide-react";
+import { Search, Eye, EyeOff, Mail, Lock, Phone } from "lucide-react";
 import { useState } from "react";
 
 export function InputShowcase() {

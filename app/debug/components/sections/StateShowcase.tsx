@@ -225,7 +225,7 @@ export function StateShowcase() {
                   error={null}
                   loadingText="Loading recipes..."
                 >
-                  <p>This content won't show while loading</p>
+                  <p>This content won&apos;t show while loading</p>
                 </StateWrapper>
               </div>
             </div>
@@ -241,7 +241,7 @@ export function StateShowcase() {
                     onClick: () => alert("Retrying...")
                   }}
                 >
-                  <p>This content won't show when there's an error</p>
+                  <p>This content won&apos;t show when there&apos;s an error</p>
                 </StateWrapper>
               </div>
             </div>
@@ -260,7 +260,7 @@ export function StateShowcase() {
                     onClick: () => alert("Adding item...")
                   }}
                 >
-                  <p>This content won't show when empty</p>
+                  <p>This content won&apos;t show when empty</p>
                 </StateWrapper>
               </div>
             </div>
