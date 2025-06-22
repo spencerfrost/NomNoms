@@ -46,4 +46,6 @@ old_recipes
 tsconfig.tsbuildinfo
 
 /docs/issues
+.serena
 .idea
+.vscode

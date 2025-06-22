@@ -486,6 +486,7 @@ packages:
   '@esbuild/linux-x64@0.25.5':
     resolution: {integrity: sha512-uhj8N2obKTE6pSZ+aMUbqq+1nXxNjZIIjCjGLfsWvVpy7gKCOL6rsY1MhRh9zLtUtAI7vpgLMK6DxjO8Qm9lJw==}
     engines: {node: '>=18'}
+    cpu: [x64]
     os: [linux]
 
   '@esbuild/netbsd-arm64@0.25.5':
