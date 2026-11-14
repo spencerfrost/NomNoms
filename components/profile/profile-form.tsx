@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { Save, User, Mail, Lock } from 'lucide-react';
 import { ErrorMessage, SuccessMessage } from '@/components/common';
+import { validatePassword } from '@/lib/password-policy';
 
 interface ProfileFormProps {
   user: {
@@ -54,8 +55,9 @@ export default function ProfileForm({ user }: ProfileFormProps) {
           setError('New passwords do not match');
           return;
         }
-        if (formData.newPassword.length < 6) {
-          setError('New password must be at least 6 characters');
+        const passwordError = validatePassword(formData.newPassword);
+        if (passwordError) {
+          setError(passwordError);
           return;
         }
       }

@@ -10,6 +10,7 @@ import {
   AuthFooter,
   AuthSuccessMessage,
 } from '@/components/auth';
+import { MIN_PASSWORD_LENGTH, validatePassword } from '@/lib/password-policy';
 
 export default function SignUp() {
   const [name, setName] = useState('');
@@ -39,8 +40,9 @@ export default function SignUp() {
       return;
     }
 
-    if (password.length < 6) {
-      setError('Password must be at least 6 characters long');
+    const passwordError = validatePassword(password);
+    if (passwordError) {
+      setError(passwordError);
       setIsLoading(false);
       return;
     }
@@ -136,7 +138,7 @@ export default function SignUp() {
           id="password"
           label="Password"
           type="password"
-          placeholder="At least 6 characters"
+          placeholder={`At least ${MIN_PASSWORD_LENGTH} characters`}
           value={password}
           onChange={setPassword}
           required
