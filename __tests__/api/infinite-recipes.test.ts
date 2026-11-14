@@ -9,6 +9,7 @@ jest.mock('@/lib/prisma', () => ({
     recipe: {
       findMany: jest.fn().mockResolvedValue([]),
     },
+    $queryRaw: jest.fn().mockResolvedValue([]),
   },
 }));
 
@@ -17,6 +18,13 @@ import { prisma } from '@/lib/prisma';
 
 // Get the mocked function for use in tests
 const mockFindMany = prisma.recipe.findMany as jest.MockedFunction<typeof prisma.recipe.findMany>;
+const mockQueryRaw = prisma.$queryRaw as unknown as jest.Mock;
+
+// Flatten a tagged-template call to its SQL text and bound values.
+function rawCall(call: unknown[]) {
+  const [strings, ...values] = call as [TemplateStringsArray, ...unknown[]];
+  return { sql: strings.join('?'), values };
+}
 
 type MockRecipe = {
   id: string;
@@ -33,7 +41,6 @@ type MockRecipe = {
   visibility: string;
   createdAt: Date;
   updatedAt: Date;
-  lastEdited: Date | null;
   authorId: string;
   author: { id: string; name: string };
 };
@@ -60,7 +67,6 @@ describe('/api/recipes/infinite', () => {
         visibility: 'public',
         createdAt: new Date('2024-01-01'),
         updatedAt: new Date('2024-01-01'),
-        lastEdited: null,
         authorId: 'user1',
         author: { id: 'user1', name: 'Chef 1' },
       },
@@ -79,7 +85,6 @@ describe('/api/recipes/infinite', () => {
         visibility: 'public',
         createdAt: new Date('2024-01-02'),
         updatedAt: new Date('2024-01-02'),
-        lastEdited: null,
         authorId: 'user2',
         author: { id: 'user2', name: 'Chef 2' },
       },
@@ -96,7 +101,8 @@ describe('/api/recipes/infinite', () => {
         const data = await response.json();
 
         expect(response.status).toBe(200);
-        expect(data.recipes).toEqual(mockRecipes);
+        // Dates are serialized to ISO strings in the JSON response
+        expect(data.recipes).toEqual(JSON.parse(JSON.stringify(mockRecipes)));
         expect(data.hasMore).toBe(false);
         expect(data.nextCursor).toBeNull();
       },
@@ -104,8 +110,8 @@ describe('/api/recipes/infinite', () => {
   });
 
   it('should handle search parameters', async () => {
-    const mockRecipes: MockRecipe[] = [];
-    mockFindMany.mockResolvedValue(mockRecipes);
+    mockQueryRaw.mockResolvedValue([{ id: 'match-1' }, { id: 'match-2' }]);
+    mockFindMany.mockResolvedValue([]);
 
     await testApiHandler({
       appHandler,
@@ -120,12 +126,7 @@ describe('/api/recipes/infinite', () => {
         expect(mockFindMany).toHaveBeenCalledWith({
           where: {
             AND: [
-              {
-                OR: [
-                  { title: { contains: 'pasta', mode: 'insensitive' } },
-                  { description: { contains: 'pasta', mode: 'insensitive' } },
-                ],
-              },
+              { id: { in: ['match-1', 'match-2'] } },
               { tags: { hasSome: ['italian', 'dinner'] } },
               { visibility: 'public' },
             ],
@@ -138,6 +139,77 @@ describe('/api/recipes/infinite', () => {
             },
           },
         });
+      },
+    });
+  });
+
+  it('searches title, description, tags and ingredient names', async () => {
+    mockQueryRaw.mockResolvedValue([]);
+    mockFindMany.mockResolvedValue([]);
+
+    await testApiHandler({
+      appHandler,
+      requestPatcher: () => new Request('http://localhost:3000/api/recipes/infinite?search=garlic'),
+      test: async ({ fetch }) => {
+        await fetch({ method: 'GET' });
+      },
+    });
+
+    expect(mockQueryRaw).toHaveBeenCalledTimes(1);
+    const { sql, values } = rawCall(mockQueryRaw.mock.calls[0]);
+    expect(sql).toMatch(/r\.title ILIKE/);
+    expect(sql).toMatch(/r\.description ILIKE/);
+    expect(sql).toMatch(/unnest\(r\.tags\)/);
+    expect(sql).toMatch(/jsonb_array_elements\(r\.ingredients\)/);
+    expect(sql).toMatch(/visibility = 'public'/);
+    expect(values.every(v => v === '%garlic%')).toBe(true);
+  });
+
+  it('escapes LIKE wildcards in the search term', async () => {
+    mockQueryRaw.mockResolvedValue([]);
+    mockFindMany.mockResolvedValue([]);
+
+    await testApiHandler({
+      appHandler,
+      requestPatcher: () =>
+        new Request(
+          'http://localhost:3000/api/recipes/infinite?search=' + encodeURIComponent('50%_off')
+        ),
+      test: async ({ fetch }) => {
+        await fetch({ method: 'GET' });
+      },
+    });
+
+    const { values } = rawCall(mockQueryRaw.mock.calls[0]);
+    expect(values[0]).toBe('%50\\%\\_off%');
+  });
+
+  it('skips the search query when there is no search term', async () => {
+    mockFindMany.mockResolvedValue([]);
+
+    await testApiHandler({
+      appHandler,
+      requestPatcher: () => new Request('http://localhost:3000/api/recipes/infinite?search=%20%20'),
+      test: async ({ fetch }) => {
+        await fetch({ method: 'GET' });
+      },
+    });
+
+    expect(mockQueryRaw).not.toHaveBeenCalled();
+    expect(mockFindMany.mock.calls[0][0]!.where).toEqual({
+      AND: [{}, {}, { visibility: 'public' }],
+    });
+  });
+
+  it('returns 500 when the database fails', async () => {
+    mockFindMany.mockRejectedValue(new Error('connection refused'));
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    await testApiHandler({
+      appHandler,
+      test: async ({ fetch }) => {
+        const res = await fetch({ method: 'GET' });
+        expect(res.status).toBe(500);
       },
     });
   });
@@ -181,7 +253,6 @@ describe('/api/recipes/infinite', () => {
       visibility: 'public',
       createdAt: new Date(),
       updatedAt: new Date(),
-      lastEdited: null,
       authorId: 'user1',
       author: { id: 'user1', name: 'Chef' },
     }));

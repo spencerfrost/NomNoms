@@ -13,7 +13,14 @@ interface UseInfiniteRecipesProps {
   limit?: number;
 }
 
-const fetcher = (url: string) => fetch(url).then(res => res.json());
+const fetcher = async (url: string): Promise<InfiniteRecipeResponse> => {
+  const res = await fetch(url);
+  if (!res.ok) {
+    // Throw so SWR exposes `error` instead of treating an error body as a page of recipes.
+    throw new Error(`Failed to load recipes (${res.status})`);
+  }
+  return res.json();
+};
 
 export function useInfiniteRecipes({ search, tags, limit = 24 }: UseInfiniteRecipesProps = {}) {
   const getKey = (pageIndex: number, previousPageData: InfiniteRecipeResponse | null) => {
