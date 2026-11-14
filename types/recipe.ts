@@ -11,7 +11,6 @@ export type Recipe = PrismaRecipe & {
   author?: {
     id: string;
     name: string | null;
-    email: string;
   };
 };
 

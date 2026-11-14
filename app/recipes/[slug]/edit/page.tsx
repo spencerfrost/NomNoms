@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { Ingredient, Recipe, getRecipeIngredients } from '@/types';
 import { getRecipeBySlug, updateRecipe } from '@/lib/client-recipes';
-import { generateSlug } from '@/lib/recipe-utils';
 import {
   RecipeBasicInfoForm,
   RecipeTagsManager,
@@ -150,7 +149,7 @@ export default function EditRecipePage() {
         throw new Error('Title is required');
       }
 
-      const validIngredients = ingredients.filter(ing => ing.name.trim() && ing.amount > 0);
+      const validIngredients = ingredients.filter(ing => ing.name.trim());
 
       if (validIngredients.length === 0) {
         throw new Error('At least one ingredient is required');
@@ -162,22 +161,18 @@ export default function EditRecipePage() {
         throw new Error('At least one instruction is required');
       }
 
-      // Generate new slug if title changed
-      const newSlug = formData.title !== recipe?.title ? generateSlug(formData.title) : slug;
-
       // Create the recipe data for the API
       const recipeData = {
-        slug: newSlug,
         title: formData.title.trim(),
         description: formData.description.trim(),
-        image: formData.imageUrl.trim() || undefined,
-        yield: formData.yield.trim() || undefined,
-        prepTime: formData.prepTime.trim() || undefined,
-        cookTime: formData.cookTime.trim() || undefined,
+        image: formData.imageUrl.trim() || null,
+        yield: formData.yield.trim() || null,
+        prepTime: formData.prepTime.trim() || null,
+        cookTime: formData.cookTime.trim() || null,
         ingredients: validIngredients,
         instructions: validInstructions,
         tags: tags,
-        visibility: formData.visibility as string,
+        visibility: formData.visibility === 'private' ? ('private' as const) : ('public' as const),
       };
 
       const updatedSlug = await updateRecipe(slug, recipeData);

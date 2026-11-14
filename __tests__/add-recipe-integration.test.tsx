@@ -87,18 +87,20 @@ describe('AddRecipePage Integration', () => {
     // Wait for async operations
     await waitFor(() => {
       expect(mockSaveRecipe).toHaveBeenCalledWith({
-        slug: 'test-recipe',
         title: 'Test Recipe',
         description: 'A delicious test recipe',
         image: null,
         yield: '4 servings',
+        prepTime: null,
+        cookTime: null,
         ingredients: [{ amount: 2, unit: 'cups', name: 'flour' }],
         instructions: ['Mix ingredients together'],
         tags: ['test'],
       });
     });
 
-    expect(mockPush).toHaveBeenCalledWith('/recipes/test-recipe');
+    // Navigates to the slug the server returned (it may differ from the title, e.g. when de-duplicated)
+    expect(mockPush).toHaveBeenCalledWith('/recipes/recipe-123');
   });
 
   it('prevents submission when required fields are missing', async () => {

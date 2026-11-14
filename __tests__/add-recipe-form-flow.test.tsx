@@ -26,7 +26,7 @@ describe('Add Recipe Form Flow', () => {
   beforeEach(() => {
     mockSaveRecipe.mockClear();
     mockPush.mockClear();
-    mockSaveRecipe.mockResolvedValue('test-recipe');
+    mockSaveRecipe.mockResolvedValue('chocolate-chip-cookies');
   });
 
   it('allows user to complete the entire recipe creation flow', async () => {
@@ -120,11 +120,12 @@ describe('Add Recipe Form Flow', () => {
     // Step 8: Verify the recipe was saved with correct data
     await waitFor(() => {
       expect(mockSaveRecipe).toHaveBeenCalledWith({
-        slug: 'chocolate-chip-cookies',
         title: 'Chocolate Chip Cookies',
         description: 'Delicious homemade cookies with chocolate chips',
         image: null,
         yield: '24 cookies',
+        prepTime: null,
+        cookTime: null,
         ingredients: [
           { amount: 2, unit: 'cups', name: 'flour' },
           { amount: 1, unit: 'cup', name: 'chocolate chips' },

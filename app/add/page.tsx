@@ -4,8 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Ingredient } from '@/types';
 import { saveRecipe } from '@/lib/client-recipes';
-import { ImportedRecipe } from '@/lib/recipe-import-utils';
-import { generateSlug } from '@/lib/recipe-utils';
+import type { ImportedRecipe } from '@/lib/recipe-import-utils';
 import {
   RecipeModeSelector,
   RecipeBasicInfoForm,
@@ -101,7 +100,7 @@ export default function AddRecipePage() {
         throw new Error('Title is required');
       }
 
-      const validIngredients = ingredients.filter(ing => ing.name.trim() && ing.amount > 0);
+      const validIngredients = ingredients.filter(ing => ing.name.trim());
 
       if (validIngredients.length === 0) {
         throw new Error('At least one ingredient is required');
@@ -113,21 +112,20 @@ export default function AddRecipePage() {
         throw new Error('At least one instruction is required');
       }
 
-      const slug = generateSlug(formData.title);
-
       // Create the recipe data for the API
       const recipeData = {
-        slug,
         title: formData.title.trim(),
         description: formData.description.trim(),
         image: formData.imageUrl.trim() || null,
         yield: formData.yield.trim() || '1 serving',
+        prepTime: formData.prepTime.trim() || null,
+        cookTime: formData.cookTime.trim() || null,
         ingredients: validIngredients,
         instructions: validInstructions,
         tags: tags,
       };
 
-      await saveRecipe(recipeData);
+      const slug = await saveRecipe(recipeData);
       router.push(`/recipes/${slug}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to save recipe');

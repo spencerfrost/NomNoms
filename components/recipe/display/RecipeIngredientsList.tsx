@@ -1,7 +1,7 @@
 import { Ingredient } from '@/types/recipe';
 import { ScaleControls } from '@/components/scale-controls';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { formatIngredientAmount } from '@/lib/recipe-utils';
+import { formatDecimalAsFraction } from '@/lib/amount-utils';
 
 interface RecipeIngredientsListProps {
   ingredients: Ingredient[];
@@ -32,16 +32,17 @@ export function RecipeIngredientsList({
         )}
 
         <ul className="space-y-2">
-          {ingredients.map(ingredient => {
+          {ingredients.map((ingredient, index) => {
             // Scale the amount and format for display
-            const scaledAmount = ingredient.amount * multiplier;
-            const formattedAmount = formatIngredientAmount(scaledAmount);
-            const displayText = ingredient.unit
-              ? `${formattedAmount} ${ingredient.unit}`
-              : formattedAmount;
+            // Ingredients without an amount (e.g. "salt to taste") show only the unit, if any
+            const hasAmount = ingredient.amount > 0;
+            const formattedAmount = hasAmount
+              ? formatDecimalAsFraction(ingredient.amount * multiplier)
+              : '';
+            const displayText = [formattedAmount, ingredient.unit].filter(Boolean).join(' ');
 
             return (
-              <li key={ingredient.name} className="flex justify-between items-start">
+              <li key={`${index}-${ingredient.name}`} className="flex justify-between items-start">
                 <span className="font-medium">{ingredient.name}</span>
                 <span className="text-muted-foreground text-sm ml-2 flex-shrink-0">
                   {displayText}

@@ -1,12 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getRecipeBySlug, updateRecipe, deleteRecipe } from '@/lib/recipes-db';
+import { parseRecipeUpdate } from '@/lib/recipe-schema';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/lib/auth-config';
 
-export async function GET(request: NextRequest, { params }: { params: Promise<{ slug: string }> }) {
+type Params = { params: Promise<{ slug: string }> };
+
+export async function GET(_request: NextRequest, { params }: Params) {
   try {
     const { slug } = await params;
-    const recipe = await getRecipeBySlug(slug);
+    const session = await getServerSession(authOptions);
+    const recipe = await getRecipeBySlug(slug, session?.user?.id);
 
     if (!recipe) {
       return NextResponse.json({ error: 'Recipe not found' }, { status: 404 });
@@ -19,7 +23,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
   }
 }
 
-export async function PUT(request: NextRequest, { params }: { params: Promise<{ slug: string }> }) {
+export async function PUT(request: NextRequest, { params }: Params) {
   try {
     const session = await getServerSession(authOptions);
 
@@ -28,14 +32,20 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
     }
 
     const { slug } = await params;
-    const updates = await request.json();
 
-    // Validate required fields if provided
-    if (updates.title !== undefined && !updates.title.trim()) {
-      return NextResponse.json({ error: 'Title cannot be empty' }, { status: 400 });
+    let body: unknown;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
     }
 
-    const updatedRecipe = await updateRecipe(slug, updates, session.user.id);
+    const parsed = parseRecipeUpdate(body);
+    if (!parsed.ok) {
+      return NextResponse.json({ error: parsed.error }, { status: 400 });
+    }
+
+    const updatedRecipe = await updateRecipe(slug, parsed.data, session.user.id);
 
     if (!updatedRecipe) {
       return NextResponse.json({ error: 'Recipe not found or access denied' }, { status: 404 });
@@ -48,10 +58,7 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
   }
 }
 
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: Promise<{ slug: string }> }
-) {
+export async function DELETE(_request: NextRequest, { params }: Params) {
   try {
     const session = await getServerSession(authOptions);
 
