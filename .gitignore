@@ -49,3 +49,6 @@ tsconfig.tsbuildinfo
 .serena
 .idea
 .vscode
+
+# local user export (contains password hashes) - never commit
+/data/users.json
