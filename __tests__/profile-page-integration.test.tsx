@@ -8,8 +8,11 @@ import { prisma } from '@/lib/prisma';
 import ProfilePage from '@/app/profile/page';
 
 // Mock next-auth
-jest.mock('next-auth');
+jest.mock('next-auth', () => ({ getServerSession: jest.fn() }));
 const mockGetServerSession = getServerSession as jest.MockedFunction<typeof getServerSession>;
+
+// Mock auth config (the real one pulls in ESM-only next-auth internals Jest can't parse)
+jest.mock('@/lib/auth-config', () => ({ authOptions: {} }));
 
 // Mock prisma
 jest.mock('@/lib/prisma', () => ({

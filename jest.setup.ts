@@ -45,8 +45,17 @@ jest.mock('@/lib/recipe-import-utils', () => ({
   importRecipeFromUrl: jest.fn(),
 }));
 
-// Mock fetch globally
-global.fetch = jest.fn();
+// Mock fetch for browser-environment tests. Node-environment tests (API route tests via
+// next-test-api-route-handler) need the real fetch to call the handler.
+if (typeof window !== 'undefined') {
+  global.fetch = jest.fn();
+}
+
+// jsdom doesn't expose TextEncoder (browsers and Node do); lib/password-policy.ts uses it.
+if (typeof globalThis.TextEncoder === 'undefined') {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  globalThis.TextEncoder = require('node:util').TextEncoder;
+}
 
 // Global test utilities
 global.ResizeObserver = jest.fn().mockImplementation(() => ({
