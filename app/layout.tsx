@@ -5,6 +5,7 @@ import AuthProvider from '@/components/auth-provider';
 import BackgroundGradient from '@/components/background-gradient';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
+import { env } from '@/lib/env';
 
 const marcellus = Marcellus({
   variable: '--font-display',
@@ -19,7 +20,13 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'NomNoms Recipe Manager',
+  // Resolves relative URLs in page metadata (e.g. seed images under /images) to absolute
+  // ones, which Open Graph previews require.
+  metadataBase: new URL(env.NEXTAUTH_URL),
+  title: {
+    default: 'NomNoms Recipe Manager',
+    template: '%s | NomNoms',
+  },
   description: 'Your personal recipe collection. Search, scale, and manage your favorite recipes.',
   icons: {
     icon: [
