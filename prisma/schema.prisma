@@ -84,3 +84,13 @@ model Recipe {
   @@index([visibility, createdAt]) // For filtering public recipes
   @@map("recipes")
 }
+
+// Fixed-window counters for lib/rate-limit.ts. Rows are tiny and reused per key; expired
+// windows are reset in place, so the table only grows with distinct keys.
+model RateLimit {
+  key     String   @id
+  count   Int
+  resetAt DateTime
+
+  @@map("rate_limits")
+}

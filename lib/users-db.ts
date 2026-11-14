@@ -1,47 +1,37 @@
 import bcrypt from 'bcryptjs';
 import { prisma } from './prisma';
 import { User } from '@/types';
+import { isUniqueViolation } from './prisma-errors';
+
+// These functions let database errors propagate. Returning null on failure would make an
+// outage look like "no such user" (and a failed login look like a wrong password).
 
 // Get user by email
 export const getUserByEmail = async (email: string): Promise<User | null> => {
-  try {
-    const user = await prisma.user.findUnique({
-      where: { email: email.toLowerCase() },
-    });
-    return user;
-  } catch (error) {
-    console.error('Error getting user by email:', error);
-    return null;
-  }
+  return prisma.user.findUnique({
+    where: { email: email.toLowerCase() },
+  });
 };
 
-// Get user by ID
-export const getUserById = async (id: string): Promise<User | null> => {
-  try {
-    const user = await prisma.user.findUnique({
-      where: { id },
-    });
-    return user;
-  } catch (error) {
-    console.error('Error getting user by ID:', error);
-    return null;
+export class UserExistsError extends Error {
+  constructor() {
+    super('User already exists');
+    this.name = 'UserExistsError';
   }
-};
+}
 
-// Create new user
+/** Throws UserExistsError when the email is taken, including when a concurrent signup wins. */
 export const createUser = async (email: string, password: string, name: string): Promise<User> => {
+  // Cheap early exit that skips the bcrypt hash; the unique index below is the real guard.
+  const existingUser = await getUserByEmail(email);
+  if (existingUser) {
+    throw new UserExistsError();
+  }
+
+  const hashedPassword = await bcrypt.hash(password, 12);
+
   try {
-    // Check if user already exists
-    const existingUser = await getUserByEmail(email);
-    if (existingUser) {
-      throw new Error('User already exists');
-    }
-
-    // Hash password
-    const hashedPassword = await bcrypt.hash(password, 12);
-
-    // Create user
-    const user = await prisma.user.create({
+    return await prisma.user.create({
       data: {
         email: email.toLowerCase(),
         name,
@@ -49,61 +39,20 @@ export const createUser = async (email: string, password: string, name: string):
         role: 'user',
       },
     });
-
-    return user;
   } catch (error) {
-    console.error('Error creating user:', error);
+    if (isUniqueViolation(error, 'email')) throw new UserExistsError();
     throw error;
   }
 };
 
-// Verify user password
+/** Returns the user when the credentials match, null when they don't. Throws on DB errors. */
 export const verifyPassword = async (email: string, password: string): Promise<User | null> => {
-  try {
-    const user = await getUserByEmail(email);
+  const user = await getUserByEmail(email);
 
-    if (!user) {
-      return null;
-    }
-
-    const isValid = await bcrypt.compare(password, user.password);
-    return isValid ? user : null;
-  } catch (error) {
-    console.error('Error verifying password:', error);
+  if (!user) {
     return null;
   }
-};
 
-// Update user
-export const updateUser = async (
-  id: string,
-  data: Partial<Omit<User, 'id' | 'createdAt' | 'updatedAt'>>
-): Promise<User | null> => {
-  try {
-    const user = await prisma.user.update({
-      where: { id },
-      data: {
-        ...data,
-        // Hash password if being updated
-        ...(data.password && { password: await bcrypt.hash(data.password, 12) }),
-      },
-    });
-    return user;
-  } catch (error) {
-    console.error('Error updating user:', error);
-    return null;
-  }
-};
-
-// Get all users (admin only)
-export const getAllUsers = async (): Promise<User[]> => {
-  try {
-    const users = await prisma.user.findMany({
-      orderBy: { createdAt: 'desc' },
-    });
-    return users;
-  } catch (error) {
-    console.error('Error getting all users:', error);
-    return [];
-  }
+  const isValid = await bcrypt.compare(password, user.password);
+  return isValid ? user : null;
 };

@@ -25,7 +25,15 @@ export default function SignIn() {
       });
 
       if (result?.error) {
-        setError('Invalid credentials');
+        // "CredentialsSignin" means authorize() rejected the email/password. Anything else
+        // (e.g. "AuthUnavailable" from lib/auth-config.ts) means we couldn't check them.
+        setError(
+          result.error === 'CredentialsSignin'
+            ? 'Invalid credentials'
+            : result.error === 'RateLimited'
+              ? 'Too many sign-in attempts. Please wait a few minutes and try again.'
+              : 'Sign-in is temporarily unavailable. Please try again in a moment.'
+        );
       } else {
         // Check if sign in was successful
         const session = await getSession();
