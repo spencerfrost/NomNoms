@@ -6,9 +6,10 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Loader2, Globe, Check, X } from 'lucide-react';
-import { ImportedRecipe } from '@/lib/recipe-import-utils';
+import type { ImportedRecipe } from '@/lib/recipe-import-utils';
 import { Ingredient } from '@/types/recipe';
 import Image from 'next/image';
+import { shouldSkipOptimization } from '@/lib/image-hosts';
 
 interface RecipeUrlImportProps {
   onImported: (recipe: ImportedRecipe) => void;
@@ -108,6 +109,7 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
               <div className="relative w-full h-48 md:h-64 overflow-hidden bg-gray-100">
                 <Image
                   src={importedRecipe.imageUrl}
+                  unoptimized={shouldSkipOptimization(importedRecipe.imageUrl)}
                   alt={importedRecipe.name || 'Recipe image'}
                   className="w-full h-full object-contain"
                   onError={e => {

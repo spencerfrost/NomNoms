@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { shouldSkipOptimization } from '@/lib/image-hosts';
 import { cn } from '@/lib/utils';
 
 interface RecipeImageProps {
@@ -24,6 +25,7 @@ export function RecipeImage({ src, alt, title, size = 'medium', className }: Rec
     <div className={cn('relative w-full overflow-hidden', sizeClasses[size], className)}>
       <Image
         src={src}
+        unoptimized={shouldSkipOptimization(src)}
         alt={alt}
         title={title}
         fill

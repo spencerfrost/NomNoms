@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { shouldSkipOptimization } from '@/lib/image-hosts';
 import { Recipe } from '@/types';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -22,6 +23,7 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
             <div className="relative aspect-video w-full">
               <Image
                 src={recipe.image}
+                unoptimized={shouldSkipOptimization(recipe.image)}
                 alt={recipe.title}
                 fill
                 className="object-cover"
