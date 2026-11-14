@@ -5,6 +5,7 @@
 import { Ingredient } from '@/types/recipe';
 import { parseAmountToDecimal } from './amount-utils';
 import * as cheerio from 'cheerio';
+import { FetchError, UnsafeUrlError, safeFetchText } from './safe-fetch';
 
 // JSON-LD Recipe schema types based on schema.org
 export interface JsonLdRecipe {
@@ -165,37 +166,55 @@ export function isValidRecipeUrl(url: string): boolean {
   }
 }
 
-/**
- * Get user-friendly error messages for import failures
- */
-export function getImportErrorMessage(error: unknown): string {
-  const errorStr = error instanceof Error ? error.message : String(error);
+export type RecipeImportErrorCode =
+  | 'invalid_url' // malformed, non-http(s), or pointing at a private/internal address
+  | 'unreachable' // host doesn't resolve
+  | 'not_found' // the site answered 404/410
+  | 'blocked' // the site refused us (401/403/429)
+  | 'timeout'
+  | 'fetch_failed' // other upstream failures: 5xx, too large, redirect loops, network
+  | 'no_recipe'; // page fetched, but nothing recipe-like on it
 
-  if (errorStr.includes('timeout') || errorStr.includes('TIMEOUT')) {
-    return 'The website took too long to respond. Please try again or add the recipe manually.';
+const IMPORT_ERROR_MESSAGES: Record<RecipeImportErrorCode, string> = {
+  invalid_url: 'Please enter a valid web address starting with http:// or https://.',
+  unreachable: "We couldn't reach that website. Please check the URL and try again.",
+  not_found: 'The recipe page was not found. Please check the URL and try again.',
+  blocked: "This website didn't allow the import. Try adding the recipe manually.",
+  timeout: 'The website took too long to respond. Please try again or add the recipe manually.',
+  fetch_failed: 'Unable to load that page. Please try again or add the recipe manually.',
+  no_recipe:
+    "No recipe was found at this URL. The site might not have structured recipe data, or the page isn't a recipe.",
+};
+
+/** An import failure with a stable code (for the HTTP status) and a user-facing message. */
+export class RecipeImportError extends Error {
+  constructor(
+    public readonly code: RecipeImportErrorCode,
+    message: string = IMPORT_ERROR_MESSAGES[code]
+  ) {
+    super(message);
+    this.name = 'RecipeImportError';
   }
+}
 
-  if (errorStr.includes('404') || errorStr.includes('not found')) {
-    return 'The recipe page was not found. Please check the URL and try again.';
+function toImportError(error: unknown): RecipeImportError | null {
+  if (error instanceof RecipeImportError) return error;
+  if (error instanceof UnsafeUrlError) return new RecipeImportError('invalid_url');
+  if (!(error instanceof FetchError)) return null;
+  switch (error.kind) {
+    case 'unresolvable':
+      return new RecipeImportError('unreachable');
+    case 'timeout':
+      return new RecipeImportError('timeout');
+    case 'http':
+      if (error.status === 404 || error.status === 410) return new RecipeImportError('not_found');
+      if (error.status === 401 || error.status === 403 || error.status === 429) {
+        return new RecipeImportError('blocked');
+      }
+      return new RecipeImportError('fetch_failed');
+    default:
+      return new RecipeImportError('fetch_failed');
   }
-
-  if (errorStr.includes('network') || errorStr.includes('NETWORK')) {
-    return 'Network error occurred. Please check your connection and try again.';
-  }
-
-  if (errorStr.includes('Could not find recipe data')) {
-    return 'No recipe was found at this URL. The site might not have structured recipe data or might not be supported yet.';
-  }
-
-  if (errorStr.includes('unsupported') || errorStr.includes('UNSUPPORTED')) {
-    return 'This website is not supported yet. Try a URL from AllRecipes, Food Network, or other popular recipe sites that use structured data.';
-  }
-
-  if (errorStr.includes('no recipe')) {
-    return 'No recipe was found at this URL. Please check the link and try again.';
-  }
-
-  return 'Unable to import recipe. Please try again or add the recipe manually.';
 }
 
 /**
@@ -384,22 +403,17 @@ export async function scrapeRecipeFromUrl(url: string): Promise<ImportedRecipe> 
 
     // Validate URL format
     if (!isValidRecipeUrl(url)) {
-      throw new Error('Invalid URL format');
+      throw new RecipeImportError('invalid_url');
     }
 
-    // Fetch the HTML content
-    const response = await fetch(url, {
+    // Fetch the HTML content (SSRF-guarded: blocks internal addresses, re-checks
+    // redirects, enforces timeout and size limits)
+    const { text: html } = await safeFetchText(url, {
       headers: {
         'User-Agent':
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
       },
     });
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch URL: ${response.statusText}`);
-    }
-
-    const html = await response.text();
     console.info('HTML fetched, length:', html.length);
 
     // Try to extract JSON-LD structured data
@@ -419,10 +433,15 @@ export async function scrapeRecipeFromUrl(url: string): Promise<ImportedRecipe> 
 
     // Final fallback: basic HTML parsing
     console.info('Falling back to basic HTML parsing...');
-    return extractBasicRecipeFromHtml($, url);
+    const basic = extractBasicRecipeFromHtml($, url);
+    if (basic.ingredients.length === 0 && basic.instructions.length === 0) {
+      throw new RecipeImportError('no_recipe');
+    }
+    return basic;
   } catch (error) {
     console.error('Error scraping recipe:', error);
-    throw new Error(getImportErrorMessage(error));
+    // Unknown errors (parser bugs, etc.) propagate unchanged so the route answers 500.
+    throw toImportError(error) ?? error;
   }
 }
 
