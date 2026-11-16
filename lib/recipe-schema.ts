@@ -11,6 +11,7 @@ export const RECIPE_LIMITS = {
   description: 5000,
   shortText: 100, // yield, prepTime, cookTime
   imageUrl: 2048,
+  sourceUrl: 2048,
   ingredients: 200,
   ingredientName: 200,
   ingredientUnit: 50,
@@ -28,6 +29,16 @@ const text = (label: string) => z.string({ error: `${label} must be a string` })
 /** Root-relative paths (seed images in /public) or absolute http(s) URLs. */
 export function isAllowedImageUrl(value: string): boolean {
   if (value.startsWith('/')) return !value.startsWith('//');
+  try {
+    const { protocol } = new URL(value);
+    return protocol === 'http:' || protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
+/** Absolute http(s) URLs only: the page a recipe was imported from. */
+export function isAllowedSourceUrl(value: string): boolean {
   try {
     const { protocol } = new URL(value);
     return protocol === 'http:' || protocol === 'https:';
@@ -90,6 +101,11 @@ const fields = {
     text('Image')
       .max(L.imageUrl, 'Image URL is too long')
       .refine(v => v === '' || isAllowedImageUrl(v), 'Image must be an http(s) URL')
+  ),
+  sourceUrl: clearable(
+    text('Source URL')
+      .max(L.sourceUrl, 'Source URL is too long')
+      .refine(v => v === '' || isAllowedSourceUrl(v), 'Source URL must be an http(s) URL')
   ),
   visibility: z.enum(['public', 'private'], {
     error: 'Visibility must be "public" or "private"',

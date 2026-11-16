@@ -3,10 +3,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getServerSession } from 'next-auth/next';
-import { ArrowLeft, Edit } from 'lucide-react';
+import { ArrowLeft, Edit, ExternalLink } from 'lucide-react';
 import { authOptions } from '@/lib/auth-config';
 import { getRecipeBySlug } from '@/lib/recipes-db';
 import { getRecipeIngredients } from '@/types';
+import { sourceHost } from '@/lib/source-url';
 import {
   RecipeImage,
   RecipeInstructionsList,
@@ -70,6 +71,7 @@ export default async function RecipePage({ params }: Props) {
   }
 
   const canEdit = viewerId !== undefined && recipe.authorId === viewerId;
+  const sourceSite = recipe.sourceUrl ? sourceHost(recipe.sourceUrl) : null;
 
   return (
     <RecipeLayout>
@@ -111,6 +113,21 @@ export default async function RecipePage({ params }: Props) {
         }
         instructions={<RecipeInstructionsList instructions={recipe.instructions} />}
       />
+
+      {recipe.sourceUrl && sourceSite && (
+        <p className="mt-6 text-sm text-muted-foreground">
+          Source:{' '}
+          <a
+            href={recipe.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="inline-flex items-center gap-1 underline underline-offset-4 hover:text-foreground"
+          >
+            {sourceSite}
+            <ExternalLink className="h-3 w-3" aria-hidden />
+          </a>
+        </p>
+      )}
     </RecipeLayout>
   );
 }

@@ -84,6 +84,19 @@ describe('updateRecipe', () => {
     await updateRecipe('s', { image: null, description: '' }, 'u1');
     expect(recipe.update.mock.calls[0][0].data).toEqual({ image: null, description: '' });
   });
+
+  it('sets and clears sourceUrl, and leaves it alone when omitted', async () => {
+    recipe.findUnique.mockResolvedValue({ slug: 's', authorId: 'u1' });
+    recipe.update.mockResolvedValue({});
+    await updateRecipe('s', { sourceUrl: 'https://example.com/r' }, 'u1');
+    await updateRecipe('s', { sourceUrl: null }, 'u1');
+    await updateRecipe('s', { title: 'x' }, 'u1');
+    expect(recipe.update.mock.calls.map(c => c[0].data)).toEqual([
+      { sourceUrl: 'https://example.com/r' },
+      { sourceUrl: null },
+      { title: 'x' },
+    ]);
+  });
 });
 
 describe('deleteRecipe', () => {
@@ -149,6 +162,13 @@ describe('createRecipe', () => {
       Prisma.PrismaClientKnownRequestError
     );
     expect(recipe.create).toHaveBeenCalledTimes(5);
+  });
+
+  it('stores sourceUrl', async () => {
+    recipe.findMany.mockResolvedValue([]);
+    recipe.create.mockImplementation(({ data }) => Promise.resolve(data));
+    const created = await createRecipe({ ...base, sourceUrl: 'https://example.com/p' }, 'u1');
+    expect(created.sourceUrl).toBe('https://example.com/p');
   });
 
   it('does not retry other errors', async () => {

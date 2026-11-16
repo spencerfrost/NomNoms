@@ -34,6 +34,7 @@ export default function EditRecipePage() {
     prepTime: '',
     cookTime: '',
     visibility: 'public',
+    sourceUrl: '',
     newTag: '',
   });
 
@@ -96,6 +97,7 @@ export default function EditRecipePage() {
           prepTime: recipeData.prepTime || '',
           cookTime: recipeData.cookTime || '',
           visibility: recipeData.visibility || 'public',
+          sourceUrl: recipeData.sourceUrl || '',
           newTag: '',
         });
 
@@ -169,6 +171,7 @@ export default function EditRecipePage() {
         yield: formData.yield.trim() || null,
         prepTime: formData.prepTime.trim() || null,
         cookTime: formData.cookTime.trim() || null,
+        sourceUrl: formData.sourceUrl.trim() || null,
         ingredients: validIngredients,
         instructions: validInstructions,
         tags: tags,

@@ -38,6 +38,7 @@ type MockRecipe = {
   prepTime: string | null;
   cookTime: string | null;
   image: string | null;
+  sourceUrl: string | null;
   visibility: string;
   createdAt: Date;
   updatedAt: Date;
@@ -64,6 +65,7 @@ describe('/api/recipes/infinite', () => {
         prepTime: '10 min',
         cookTime: '20 min',
         image: null,
+        sourceUrl: null,
         visibility: 'public',
         createdAt: new Date('2024-01-01'),
         updatedAt: new Date('2024-01-01'),
@@ -82,6 +84,7 @@ describe('/api/recipes/infinite', () => {
         prepTime: '5 min',
         cookTime: '15 min',
         image: null,
+        sourceUrl: null,
         visibility: 'public',
         createdAt: new Date('2024-01-02'),
         updatedAt: new Date('2024-01-02'),
@@ -250,6 +253,7 @@ describe('/api/recipes/infinite', () => {
       prepTime: '10 min',
       cookTime: '20 min',
       image: null,
+      sourceUrl: null,
       visibility: 'public',
       createdAt: new Date(),
       updatedAt: new Date(),

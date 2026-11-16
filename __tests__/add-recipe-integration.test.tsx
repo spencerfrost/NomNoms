@@ -93,9 +93,11 @@ describe('AddRecipePage Integration', () => {
         yield: '4 servings',
         prepTime: null,
         cookTime: null,
+        sourceUrl: null,
         ingredients: [{ amount: 2, unit: 'cups', name: 'flour' }],
         instructions: ['Mix ingredients together'],
         tags: ['test'],
+        visibility: 'public',
       });
     });
 

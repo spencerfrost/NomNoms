@@ -71,6 +71,35 @@ describe('POST /api/recipes', () => {
     expect(mockCreate).not.toHaveBeenCalled();
   });
 
+  it('accepts an http(s) sourceUrl', async () => {
+    mockSession.mockResolvedValue({ user: { id: 'u1' } });
+    mockCreate.mockResolvedValue({ slug: 'pancakes' });
+    await testApiHandler({
+      appHandler,
+      test: async ({ fetch }) => {
+        const res = await fetch(post({ ...valid, sourceUrl: ' https://example.com/p ' }));
+        expect(res.status).toBe(201);
+      },
+    });
+    expect(mockCreate.mock.calls[0][0].sourceUrl).toBe('https://example.com/p');
+  });
+
+  it.each(['javascript:alert(1)', 'example.com/p', 'ftp://example.com/p'])(
+    'rejects sourceUrl %s with 400',
+    async sourceUrl => {
+      mockSession.mockResolvedValue({ user: { id: 'u1' } });
+      await testApiHandler({
+        appHandler,
+        test: async ({ fetch }) => {
+          const res = await fetch(post({ ...valid, sourceUrl }));
+          expect(res.status).toBe(400);
+          expect(await res.json()).toEqual({ error: 'Source URL must be an http(s) URL' });
+        },
+      });
+      expect(mockCreate).not.toHaveBeenCalled();
+    }
+  );
+
   it('returns 400 for malformed JSON', async () => {
     mockSession.mockResolvedValue({ user: { id: 'u1' } });
     await testApiHandler({

@@ -126,6 +126,7 @@ describe('Add Recipe Form Flow', () => {
         yield: '24 cookies',
         prepTime: null,
         cookTime: null,
+        sourceUrl: null,
         ingredients: [
           { amount: 2, unit: 'cups', name: 'flour' },
           { amount: 1, unit: 'cup', name: 'chocolate chips' },
@@ -136,6 +137,7 @@ describe('Add Recipe Form Flow', () => {
           'Bake for 10-12 minutes until golden brown',
         ],
         tags: ['dessert', 'cookies'],
+        visibility: 'public',
       });
     });
 

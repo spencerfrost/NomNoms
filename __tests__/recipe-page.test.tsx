@@ -129,3 +129,22 @@ describe('generateMetadata', () => {
     expect(meta).toEqual({ title: 'Recipe not found', robots: { index: false } });
   });
 });
+
+describe('RecipePage source link', () => {
+  it('links to the source site in a new tab', async () => {
+    mockSession.mockResolvedValue(null);
+    mockGet.mockResolvedValue({ ...recipe, sourceUrl: 'https://www.example.com/pancakes' });
+    render(await RecipePage(props('with-source')));
+    const link = screen.getByRole('link', { name: /example\.com/ });
+    expect(link).toHaveAttribute('href', 'https://www.example.com/pancakes');
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link.getAttribute('rel')).toContain('noopener');
+  });
+
+  it('shows nothing without a source', async () => {
+    mockSession.mockResolvedValue(null);
+    mockGet.mockResolvedValue({ ...recipe, sourceUrl: null });
+    render(await RecipePage(props('no-source')));
+    expect(screen.queryByText(/source:/i)).not.toBeInTheDocument();
+  });
+});

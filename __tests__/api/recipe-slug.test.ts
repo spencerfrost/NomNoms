@@ -87,6 +87,9 @@ describe('PUT /api/recipes/[slug]', () => {
     [{ visibility: 'secret' }],
     [{ instructions: 'not-an-array' }],
     [{ image: 42 }],
+    [{ sourceUrl: 'javascript:alert(1)' }],
+    [{ sourceUrl: '/relative/path' }],
+    [{ sourceUrl: `https://example.com/${'a'.repeat(2048)}` }],
   ])('rejects invalid input %j with 400', async body => {
     mockSession.mockResolvedValue({ user: { id: 'u1' } });
     await testApiHandler({
@@ -110,6 +113,32 @@ describe('PUT /api/recipes/[slug]', () => {
       },
     });
     expect(mockUpdate).toHaveBeenCalledWith('my-recipe', { image: null, yield: null }, 'u1');
+  });
+});
+
+describe('PUT /api/recipes/[slug] sourceUrl', () => {
+  const put = (body: unknown) => ({
+    method: 'PUT',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+
+  it.each([
+    [{ sourceUrl: 'https://example.com/r' }, { sourceUrl: 'https://example.com/r' }],
+    [{ sourceUrl: null }, { sourceUrl: null }],
+    [{ sourceUrl: '' }, { sourceUrl: null }],
+    [{ title: 'Only title' }, { title: 'Only title' }],
+  ])('passes %j to the data layer as %j', async (body, expected) => {
+    mockSession.mockResolvedValue({ user: { id: 'u1' } });
+    mockUpdate.mockResolvedValue({ slug: 'my-recipe' });
+    await testApiHandler({
+      appHandler,
+      params,
+      test: async ({ fetch }) => {
+        expect((await fetch(put(body))).status).toBe(200);
+      },
+    });
+    expect(mockUpdate).toHaveBeenCalledWith('my-recipe', expected, 'u1');
   });
 });
 

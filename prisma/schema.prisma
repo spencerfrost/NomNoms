@@ -32,6 +32,7 @@ model Recipe {
   prepTime     String?
   cookTime     String?
   image        String?
+  sourceUrl    String?
   visibility   String   @default("public")
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
@@ -41,6 +42,7 @@ model Recipe {
   @@index([createdAt, id]) // For cursor pagination
   @@index([title, createdAt]) // For search + pagination
   @@index([visibility, createdAt]) // For filtering public recipes
+  @@index([authorId, sourceUrl]) // For "already saved" lookups in Discover
   @@map("recipes")
 }
 

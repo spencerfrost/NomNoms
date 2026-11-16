@@ -31,6 +31,7 @@ export default function AddRecipePage() {
     prepTime: '',
     cookTime: '',
     visibility: 'public',
+    sourceUrl: '',
     newTag: '',
   });
 
@@ -120,9 +121,11 @@ export default function AddRecipePage() {
         yield: formData.yield.trim() || '1 serving',
         prepTime: formData.prepTime.trim() || null,
         cookTime: formData.cookTime.trim() || null,
+        sourceUrl: formData.sourceUrl.trim() || null,
         ingredients: validIngredients,
         instructions: validInstructions,
         tags: tags,
+        visibility: formData.visibility === 'private' ? ('private' as const) : ('public' as const),
       };
 
       const slug = await saveRecipe(recipeData);
@@ -189,6 +192,7 @@ export default function AddRecipePage() {
           prepTime: formData.prepTime,
           cookTime: formData.cookTime,
           visibility: formData.visibility,
+          sourceUrl: formData.sourceUrl,
         }}
         onChange={handleInputChange}
       />

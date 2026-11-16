@@ -12,6 +12,7 @@ interface FormData {
   prepTime: string;
   cookTime: string;
   visibility: string;
+  sourceUrl: string;
 }
 
 interface RecipeBasicInfoFormProps {
@@ -103,6 +104,35 @@ export default function RecipeBasicInfoForm({ formData, onChange }: RecipeBasicI
             onChange={e => onChange('yield', e.target.value)}
             placeholder="e.g., 4 servings, 12 cookies"
           />
+        </div>
+
+        <div>
+          <label htmlFor="recipe-source-url" className="block text-sm font-medium mb-2">
+            Source URL
+          </label>
+          <Input
+            id="recipe-source-url"
+            type="url"
+            value={formData.sourceUrl}
+            onChange={e => onChange('sourceUrl', e.target.value)}
+            placeholder="https://example.com/the-original-recipe"
+          />
+        </div>
+
+        <div className="flex items-start gap-2">
+          <input
+            id="recipe-private"
+            type="checkbox"
+            className="mt-1 h-4 w-4 accent-primary"
+            checked={formData.visibility === 'private'}
+            onChange={e => onChange('visibility', e.target.checked ? 'private' : 'public')}
+          />
+          <label htmlFor="recipe-private" className="text-sm">
+            <span className="font-medium">Private</span>
+            <span className="block text-muted-foreground">
+              Only you can see it. Private recipes appear on your profile, not the home page.
+            </span>
+          </label>
         </div>
       </CardContent>
     </Card>

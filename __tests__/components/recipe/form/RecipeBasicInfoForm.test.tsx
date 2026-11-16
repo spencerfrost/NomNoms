@@ -12,6 +12,7 @@ const defaultFormData = {
   prepTime: '',
   cookTime: '',
   visibility: 'public',
+  sourceUrl: '',
 };
 
 describe('RecipeBasicInfoForm', () => {
@@ -37,6 +38,7 @@ describe('RecipeBasicInfoForm', () => {
       prepTime: '10 min',
       cookTime: '20 min',
       visibility: 'public',
+      sourceUrl: '',
     };
 
     render(<RecipeBasicInfoForm formData={filledFormData} onChange={mockOnChange} />);
