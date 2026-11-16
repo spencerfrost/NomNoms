@@ -54,14 +54,26 @@ const clearable = (schema: z.ZodType<string>) =>
 const shortText = (label: string) =>
   clearable(text(label).max(L.shortText, `${label} must be at most ${L.shortText} characters`));
 
-export const ingredientSchema = z.object({
-  amount: z
-    .number({ error: 'amount must be a number' })
-    .min(0, 'amount cannot be negative')
-    .max(L.ingredientAmount, 'amount is too large'),
-  unit: text('unit').max(L.ingredientUnit, 'unit is too long'),
-  name: text('name').min(1, 'name is required').max(L.ingredientName, 'name is too long'),
-});
+export const ingredientSchema = z
+  .object({
+    amount: z
+      .number({ error: 'amount must be a number' })
+      .min(0, 'amount cannot be negative')
+      .max(L.ingredientAmount, 'amount is too large'),
+    // High end of a range ("2-3 Tbsp"). null is accepted as "not a range" and dropped.
+    amountMax: z
+      .number({ error: 'amountMax must be a number' })
+      .max(L.ingredientAmount, 'amount is too large')
+      .nullish()
+      .transform(v => v ?? undefined),
+    unit: text('unit').max(L.ingredientUnit, 'unit is too long'),
+    name: text('name').min(1, 'name is required').max(L.ingredientName, 'name is too long'),
+  })
+  .refine(i => i.amountMax === undefined || (i.amount > 0 && i.amountMax > i.amount), {
+    message: 'the end of a range must be more than its start',
+    path: ['amountMax'],
+  })
+  .transform(({ amountMax, ...rest }) => (amountMax === undefined ? rest : { ...rest, amountMax }));
 
 // Ingredient messages are prefixed with "Ingredient N: " by formatRecipeError.
 

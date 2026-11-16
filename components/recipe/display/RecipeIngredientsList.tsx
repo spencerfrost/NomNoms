@@ -1,7 +1,7 @@
 import { Ingredient } from '@/types/recipe';
 import { ScaleControls } from '@/components/scale-controls';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { formatDecimalAsFraction } from '@/lib/amount-utils';
+import { formatAmountRange } from '@/lib/amount-utils';
 
 interface RecipeIngredientsListProps {
   ingredients: Ingredient[];
@@ -30,12 +30,9 @@ export function RecipeIngredientsList({
 
         <ul>
           {ingredients.map((ingredient, index) => {
-            // Scale the amount and format for display
-            // Ingredients without an amount (e.g. "salt to taste") show only the unit, if any
-            const hasAmount = ingredient.amount > 0;
-            const formattedAmount = hasAmount
-              ? formatDecimalAsFraction(ingredient.amount * multiplier)
-              : '';
+            // Scaled amount or range ("2–3"). Ingredients without an amount (e.g. "salt to
+            // taste") show only the unit, if any.
+            const formattedAmount = formatAmountRange(ingredient, multiplier);
             const displayText = [formattedAmount, ingredient.unit].filter(Boolean).join(' ');
 
             return (

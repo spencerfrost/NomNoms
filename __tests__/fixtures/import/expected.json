@@ -1,0 +1,326 @@
+{
+  "_format": "Each page: url, steps (true step count), and ingredients as [source line, amount, unit, flag?]. unit is canonical (see UNIT_ALIASES in probe.ts); '*' accepts any unit. flag 'range' marks ranges, whose expected amount is the low value.",
+  "pages": {
+    "bbcgoodfood-pancakes": {
+      "url": "https://www.bbcgoodfood.com/recipes/easy-pancakes",
+      "steps": 5,
+      "yield": "Makes 12",
+      "ingredients": [
+        ["100g plain flour", 100, "g"],
+        ["2 large eggs", 2, ""],
+        ["300ml milk", 300, "ml"],
+        ["1 tbsp sunflower or vegetable oil plus a little extra for frying", 1, "tbsp"],
+        ["lemon wedges to serve (optional)", 0, ""],
+        ["caster sugar to serve (optional)", 0, ""]
+      ]
+    },
+    "bbcgoodfood-spaghetti": {
+      "url": "https://www.bbcgoodfood.com/recipes/best-spaghetti-bolognese-recipe",
+      "steps": 9,
+      "ingredients": [
+        ["1 tbsp olive oil", 1, "tbsp"],
+        ["4 rashers smoked streaky bacon finely chopped", 4, "*"],
+        ["2 medium onions finely chopped", 2, ""],
+        ["2 carrots trimmed and finely chopped", 2, ""],
+        ["2 celery sticks finely chopped", 2, ""],
+        ["2 garlic cloves finely chopped", 2, ""],
+        ["2-3 sprigs rosemary leaves picked and finely chopped", 2, "*", "range"],
+        ["500g beef mince", 500, "g"],
+        ["2 x 400g tins plum tomatoes", 2, "*"],
+        ["small pack basil leaves picked, ¾ finely chopped and the rest left whole for garnish", 0, "*"],
+        ["1 tsp dried oregano", 1, "tsp"],
+        ["2 fresh bay leaves", 2, ""],
+        ["2 tbsp tomato purée", 2, "tbsp"],
+        ["1 beef stock", 1, ""],
+        ["1 red chilli deseeded and finely chopped (optional)", 1, ""],
+        ["125ml red wine", 125, "ml"],
+        ["6 cherry tomatoes sliced in half", 6, ""],
+        ["75g parmesan grated, plus extra to serve", 75, "g"],
+        ["400g spaghetti", 400, "g"],
+        ["crusty bread to serve (optional)", 0, ""]
+      ]
+    },
+    "bonappetit-cookies": {
+      "url": "https://www.bonappetit.com/recipe/bas-best-chocolate-chip-cookies",
+      "steps": 4,
+      "yield": "Makes 16",
+      "ingredients": [
+        ["1½ cups plus 1 Tbsp. (200 g) all-purpose flour (spooning into measuring cups, then leveling)", 1.5, "cup"],
+        ["1¼ tsp. (4 g) Diamond Crystal or ¾ tsp. (4 g) Morton kosher salt", 1.25, "tsp"],
+        ["¾ tsp. (4 g) baking soda", 0.75, "tsp"],
+        ["¾ cup (1½ sticks; 169 g) unsalted butter, divided", 0.75, "cup"],
+        ["1 cup (200 g) (packed) dark brown sugar", 1, "cup"],
+        ["¼ cup (50 g) granulated sugar", 0.25, "cup"],
+        ["1 large egg", 1, ""],
+        ["2 large egg yolks", 2, ""],
+        ["2 tsp. vanilla extract", 2, "tsp"],
+        ["6 oz. (170 g) bittersweet chocolate (60%–70% cacao), coarsely chopped, or semisweet chocolate chips", 6, "oz"]
+      ]
+    },
+    "food-banana-bread": {
+      "url": "https://www.food.com/recipe/best-banana-bread-2886",
+      "steps": 10,
+      "yield": "1 loaf, 10 serving(s)",
+      "ingredients": [
+        ["1/2 cup butter, softened", 0.5, "cup"],
+        ["1 cup granulated sugar", 1, "cup"],
+        ["2 eggs, beaten", 2, ""],
+        ["3 bananas, finely crushed (for serious and extreme moist and delicious, try 4 bananas)", 3, ""],
+        ["1 1/2 cups all-purpose flour", 1.5, "cup"],
+        ["1 teaspoon baking soda", 1, "tsp"],
+        ["1/2 teaspoon salt", 0.5, "tsp"],
+        ["1/2 teaspoon vanilla (optional)", 0.5, "tsp"]
+      ]
+    },
+    "inspiredtaste-hummus": {
+      "url": "https://www.inspiredtaste.net/15938/easy-and-smooth-hummus-recipe/",
+      "steps": 5,
+      "ingredients": [
+        ["1 (15-ounce) can chickpeas, drained or 1 ½ cups cooked chickpeas (250g)", 1, "*"],
+        ["¼ cup fresh lemon juice, from 1 large lemon (60ml)", 0.25, "cup"],
+        ["¼ cup well-stirred tahini, try our tahini recipe (60ml)", 0.25, "cup"],
+        ["1 small garlic clove, minced", 1, ""],
+        ["2 tablespoons extra-virgin olive oil, plus more for serving (30ml)", 2, "tbsp"],
+        ["½ teaspoon ground cumin", 0.5, "tsp"],
+        ["Salt to taste", 0, ""],
+        ["2 to 3 tablespoons cold water or aquafaba (45ml)", 2, "tbsp", "range"],
+        ["Dash ground paprika, sumac, or Za&#8217;atar for serving", 0, "*"]
+      ]
+    },
+    "justonecookbook-teriyaki": {
+      "url": "https://www.justonecookbook.com/teriyaki-chicken/",
+      "steps": 13,
+      "ingredients": [
+        ["1 lb boneless, skin-on chicken thighs", 1, "lb"],
+        ["¼ tsp Diamond Crystal kosher salt (use half the amount or the same weight for table salt)", 0.25, "tsp"],
+        ["⅛ tsp freshly ground black pepper", 0.125, "tsp"],
+        ["1 Tbsp neutral oil", 1, "tbsp"],
+        ["4 Tbsp sake ((or water; for steaming))", 4, "tbsp"],
+        ["1 Tbsp unsalted butter", 1, "tbsp"],
+        ["2½ Tbsp soy sauce", 2.5, "tbsp"],
+        ["2 Tbsp sake", 2, "tbsp"],
+        ["1 Tbsp mirin", 1, "tbsp"],
+        ["1 Tbsp sugar", 1, "tbsp"]
+      ]
+    },
+    "kingarthur-sandwich-bread": {
+      "url": "https://www.kingarthurbaking.com/recipes/classic-sandwich-bread-recipe",
+      "steps": 10,
+      "ingredients": [
+        ["3 cups (360g) King Arthur Unbleached All-Purpose Flour", 3, "cup"],
+        ["1/2 cup (113g) milk, (skim, 1%, 2% or whole, your choice)*", 0.5, "cup"],
+        ["1/2 to 2/3 cup (113g to 152g) hot water, enough to make a soft, smooth dough* (see \"tips,\" below)", 0.5, "cup", "range"],
+        ["4 tablespoons (57g) melted butter or 1/4 cup (50g) vegetable oil", 4, "tbsp"],
+        ["2 tablespoons (25g) granulated sugar", 2, "tbsp"],
+        ["1 1/4 teaspoons (8g) table salt", 1.25, "tsp"],
+        ["2 teaspoons instant yeast", 2, "tsp"]
+      ]
+    },
+    "loveandlemons-hummus": {
+      "url": "https://www.loveandlemons.com/hummus-recipe/",
+      "steps": 2,
+      "ingredients": [
+        ["1½ cups cooked chickpeas (drained and rinsed)", 1.5, "cup"],
+        ["⅓ cup smooth tahini*", 0.3333, "cup"],
+        ["2 tablespoons extra-virgin olive oil", 2, "tbsp"],
+        ["2 tablespoons fresh lemon juice (plus more to taste)", 2, "tbsp"],
+        ["1 garlic clove", 1, ""],
+        ["½ teaspoon sea salt", 0.5, "tsp"],
+        ["5 tablespoons water (or as needed to blend)", 5, "tbsp"],
+        ["Paprika, red pepper flakes, and/or fresh parsley", 0, ""],
+        ["Warm pita bread (and/or veggies, for serving)", 0, ""]
+      ]
+    },
+    "minimalistbaker-fried-rice": {
+      "url": "https://minimalistbaker.com/easy-vegan-fried-rice/",
+      "steps": 10,
+      "ingredients": [
+        ["1 cup extra-firm tofu* ((8 ounces yields ~1 cup))", 1, "cup"],
+        ["1 cup long- or short-grain brown rice* ((rinsed thoroughly in a fine mesh strainer))", 1, "cup"],
+        ["4 cloves garlic ((minced))", 4, "*"],
+        ["1 cup chopped green onion", 1, "cup"],
+        ["1/2 cup peas", 0.5, "cup"],
+        ["1/2 cup carrots ((finely diced))", 0.5, "cup"],
+        ["3 Tbsp tamari or soy sauce ((plus more for veggies + to taste))", 3, "tbsp"],
+        ["1 Tbsp peanut butter", 1, "tbsp"],
+        ["2-3 Tbsp organic brown sugar, muscovado sugar, or maple syrup", 2, "tbsp", "range"],
+        ["1 clove garlic ((minced))", 1, "*"],
+        ["1-2 tsp chili garlic sauce ((more or less depending on preferred spice))", 1, "tsp", "range"],
+        ["1 tsp toasted sesame oil ((optional // or sub peanut or avocado oil))", 1, "tsp"]
+      ]
+    },
+    "natashaskitchen-borscht": {
+      "url": "https://natashaskitchen.com/classic-russian-borscht-recipe/",
+      "steps": 5,
+      "ingredients": [
+        ["3 medium beets (peeled and grated)", 3, ""],
+        ["4 Tbsp olive oil (divided)", 4, "tbsp"],
+        ["8 cups chicken broth (+ 2 cups water)", 8, "cup"],
+        ["3 medium yukon potatoes (peeled and sliced into bite-sized pieces)", 3, ""],
+        ["2 carrots (peeled and thinly sliced)", 2, ""],
+        ["2 celery ribs (trimmed and finely chopped)", 2, ""],
+        ["1 small red bell pepper (finely chopped, optional)", 1, ""],
+        ["1 medium onion (finely chopped)", 1, ""],
+        ["4 Tbsp ketchup or 3 Tbsp tomato sauce", 4, "tbsp"],
+        ["1 can white cannelini beans with their juice", 1, "can"],
+        ["2 bay leaves", 2, ""],
+        ["2-3 Tbsp white vinegar (or to taste)", 2, "tbsp", "range"],
+        ["1 tsp sea salt (or to taste)", 1, "tsp"],
+        ["1/4 tsp black pepper (freshly ground)", 0.25, "tsp"],
+        ["1 large garlic clove (pressed)", 1, ""],
+        ["3 Tbsp chopped dill", 3, "tbsp"]
+      ]
+    },
+    "onceuponachef-banana-bread": {
+      "url": "https://www.onceuponachef.com/recipes/banana-bread.html",
+      "steps": 4,
+      "ingredients": [
+        ["1¾ cups all-purpose flour, (spooned into measuring cup and leveled-off)", 1.75, "cup"],
+        ["1 teaspoon baking soda", 1, "tsp"],
+        ["1 teaspoon baking powder", 1, "tsp"],
+        ["½ teaspoon salt", 0.5, "tsp"],
+        ["1/2 cup (1 stick) unsalted butter, softened", 0.5, "cup"],
+        ["¾ cup sugar", 0.75, "cup"],
+        ["2 large eggs", 2, ""],
+        ["1 cup mashed very ripe bananas, (from 2 to 3 large bananas)", 1, "cup"],
+        ["2 tablespoons fresh lemon juice, (from 1 lemon)", 2, "tbsp"],
+        ["1½ teaspoons vanilla extract", 1.5, "tsp"]
+      ]
+    },
+    "pinchofyum-cookies": {
+      "url": "https://pinchofyum.com/the-best-soft-chocolate-chip-cookies",
+      "steps": 5,
+      "ingredients": [
+        ["8 tablespoons of salted butter", 8, "tbsp"],
+        ["1/2 cup white sugar (I like to use raw cane sugar with a coarser texture)", 0.5, "cup"],
+        ["1/4 cup packed light brown sugar", 0.25, "cup"],
+        ["1 teaspoon vanilla", 1, "tsp"],
+        ["1 egg", 1, ""],
+        ["1 1/2 cups all purpose flour (6.75 ounces)", 1.5, "cup"],
+        ["1/2 teaspoon baking soda", 0.5, "tsp"],
+        ["1/4 teaspoon salt (but I always add a little extra)", 0.25, "tsp"],
+        ["3/4 cup chocolate chips (I use a combination of chocolate chips and chocolate chunks)", 0.75, "cup"]
+      ]
+    },
+    "recipetineats-chicken-chasseur": {
+      "url": "https://www.recipetineats.com/chicken-chasseur/",
+      "steps": 10,
+      "ingredients": [
+        ["4 chicken thighs, bone-in, skin on ((~250g/8oz each) (Note 1))", 4, ""],
+        ["4 chicken drumsticks ((Note 1))", 4, ""],
+        ["3/4 tsp cooking salt / kosher salt", 0.75, "tsp"],
+        ["1/2 tsp black pepper", 0.5, "tsp"],
+        ["3 tbsp plain flour ((all-purpose flour))", 3, "tbsp"],
+        ["2 tbsp vegetable oil ((or any other neutral flavoured oil))", 2, "tbsp"],
+        ["30g / 2 tbsp unsalted butter", 30, "g"],
+        ["400g / 14oz white mushrooms (, sliced 6mm/0.2”)", 400, "g"],
+        ["2 onions (, brown or yellow, halved then sliced 6mm/0.2” thick)", 2, ""],
+        ["3 garlic cloves (, finely minced)", 3, ""],
+        ["1/4 cup brandy ((Note 2))", 0.25, "cup"],
+        ["1/2 cup chardonnay or other dry white wine ((Note 3))", 0.5, "cup"],
+        ["3 tbsp tomato paste", 3, "tbsp"],
+        ["2 1/2 cups beef stock (, low-sodium (note 4))", 2.5, "cup"],
+        ["3/4 tsp cooking salt/kosher salt", 0.75, "tsp"],
+        ["1/4 tsp black pepper", 0.25, "tsp"],
+        ["30g / 2 tbsp unsalted butter (, COLD and cubed (KEEP REFRIGERATED until required) )", 30, "g"],
+        ["1 tbsp fresh tarragon (, finely chopped (Note 5))", 1, "tbsp"],
+        ["Creamy mashed potato ((or rice or small pasta))", 0, ""]
+      ]
+    },
+    "recipetineats-lasagna": {
+      "url": "https://www.recipetineats.com/lasagna/",
+      "steps": 18,
+      "ingredients": [
+        ["1 tbsp olive oil", 1, "tbsp"],
+        ["1 onion (, finely chopped (white, yellow or brown))", 1, ""],
+        ["1 medium carrot (, peeled and very finely diced)", 1, ""],
+        ["1 celery stick (, very finely diced)", 1, ""],
+        ["2 garlic cloves (, minced)", 2, ""],
+        ["1 kg / 2 lb beef mince ((ground beef) (Note 1))", 1, "kg"],
+        ["800g / 28 oz canned crushed tomato", 800, "g"],
+        ["1/4 cup tomato paste", 0.25, "cup"],
+        ["1 cup pinot noir red wine (, or other dry red wine (Note 2))", 1, "cup"],
+        ["3 beef bouillon cubes (, crumbled)", 3, ""],
+        ["2 bay leaves (, dried or fresh)", 2, ""],
+        ["1/2 tsp EACH dried thyme and oregano", 0.5, "tsp"],
+        ["2 tsp Worcestershire Sauce", 2, "tsp"],
+        ["1 - 2 tsp sugar ((if needed - Note 3))", 1, "tsp", "range"],
+        ["1/2 tsp salt and black pepper", 0.5, "tsp"],
+        ["60g / 4 tbsp butter", 60, "g"],
+        ["1/2 cup flour", 0.5, "cup"],
+        ["4 cups milk (, preferably full fat but low fat ok)", 4, "cup"],
+        ["2 cups gruyere or Colby cheese (, shred yourself (or cheddar, Monterey Jack, OR 1 cup / 100g shredded parmesan) (Note 4))", 2, "cup"],
+        ["Pinch of freshly ground nutmeg", 0, "*"],
+        ["Salt and pepper", 0, ""],
+        ["350g/ 12 oz fresh lasagna sheets ((or 250g/8oz dried) (Note 5))", 350, "g"],
+        ["1 1/2 cups (tightly packed) mozzarella cheese (, shred yourself (Note 4))", 1.5, "cup"],
+        ["Finely chopped basil or parsley (, for garnish (optional))", 0, ""]
+      ]
+    },
+    "skinnytaste-turkey-chili": {
+      "url": "https://www.skinnytaste.com/turkey-chili/",
+      "steps": 8,
+      "ingredients": [
+        ["2 acorn squash (halved, seeded)", 2, ""],
+        ["1 pound 93% lean ground turkey", 1, "lb"],
+        ["½ teaspoon kosher salt", 0.5, "tsp"],
+        ["Freshly ground black pepper", 0, ""],
+        ["⅓ cup onion (chopped)", 0.3333, "cup"],
+        ["2 cloves garlic (crushed)", 2, "*"],
+        ["10 ounces canned Rotel mild tomatoes with green chilies", 10, "oz"],
+        ["½ cup canned tomato sauce", 0.5, "cup"],
+        ["½ cup water", 0.5, "cup"],
+        ["¾ tsp cumin", 0.75, "tsp"],
+        ["¼ tsp chili powder", 0.25, "tsp"],
+        ["¼ tsp paprika", 0.25, "tsp"],
+        ["1 bay leaf", 1, ""],
+        ["6 tablespoons shredded sharp cheese (omit for Whole 30 and dairy free)", 6, "tbsp"],
+        ["fresh cilantro (for garnish)", 0, ""]
+      ]
+    },
+    "tasteofhome-shepherds-pie": {
+      "url": "https://www.tasteofhome.com/recipes/shepherd-s-pie/",
+      "steps": 3,
+      "yield": "8 servings",
+      "ingredients": [
+        ["1 pound ground beef", 1, "lb"],
+        ["3 bacon strips, diced", 3, ""],
+        ["1 small onion, chopped", 1, ""],
+        ["1/4 teaspoon dried oregano", 0.25, "tsp"],
+        ["2 garlic cloves, minced", 2, ""],
+        ["1/2 cup tomato sauce", 0.5, "cup"],
+        ["1 can (11 ounces) Mexicorn, drained", 1, "can"],
+        ["5-1/2 cups hot mashed potatoes (prepared without milk and butter)", 5.5, "cup"],
+        ["2 eggs, lightly beaten", 2, ""],
+        ["2 tablespoons butter, softened", 2, "tbsp"],
+        ["1 to 2 tablespoons minced fresh parsley", 1, "tbsp", "range"],
+        ["1/4 teaspoon salt", 0.25, "tsp"],
+        ["Additional butter, melted", 0, ""]
+      ]
+    },
+    "synthetic-microdata-stew": {
+      "url": "https://example.com/beef-stew",
+      "steps": 4,
+      "ingredients": [
+        ["2 lb. beef chuck, cubed", 2, "lb"],
+        ["1 ½ cups beef broth", 1.5, "cup"],
+        ["3 medium carrots, sliced", 3, ""],
+        ["2 tablespoons tomato paste", 2, "tbsp"],
+        ["Salt &amp; pepper to taste", 0, ""]
+      ]
+    },
+    "synthetic-wprm-no-jsonld": {
+      "url": "https://example.com/sauced-meatballs",
+      "steps": 5,
+      "ingredients": [
+        ["1 lb ground beef", 1, "lb"],
+        ["½ cup breadcrumbs", 0.5, "cup"],
+        ["1 large egg", 1, ""],
+        ["2 cloves garlic, minced", 2, "*"],
+        ["1 (28 ounce) can crushed tomatoes", 1, "*"],
+        ["2-3 tablespoons olive oil", 2, "tbsp", "range"],
+        ["1 teaspoon dried basil", 1, "tsp"]
+      ]
+    }
+  }
+}

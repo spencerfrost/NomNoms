@@ -126,14 +126,8 @@ export default function EditRecipePage() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleIngredientChange = (
-    index: number,
-    field: keyof Ingredient,
-    value: string | number
-  ) => {
-    setIngredients(prev =>
-      prev.map((ingredient, i) => (i === index ? { ...ingredient, [field]: value } : ingredient))
-    );
+  const handleIngredientChange = (index: number, updated: Ingredient) => {
+    setIngredients(prev => prev.map((ingredient, i) => (i === index ? updated : ingredient)));
   };
 
   const handleInstructionChange = (index: number, value: string) => {

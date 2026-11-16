@@ -58,12 +58,19 @@ const clip = (value: string, max: number) => value.trim().slice(0, max);
  * message, and the user can fix them with "Edit first".
  */
 function cleanIngredients(ingredients: Ingredient[]): Ingredient[] {
+  const clampAmount = (n: number | undefined) =>
+    n !== undefined && Number.isFinite(n) ? Math.min(Math.max(n, 0), L.ingredientAmount) : 0;
   return ingredients
-    .map(i => ({
-      amount: Number.isFinite(i.amount) ? Math.min(Math.max(i.amount, 0), L.ingredientAmount) : 0,
-      unit: clip(i.unit ?? '', L.ingredientUnit),
-      name: clip(i.name ?? '', L.ingredientName),
-    }))
+    .map(i => {
+      const amount = clampAmount(i.amount);
+      const amountMax = clampAmount(i.amountMax);
+      return {
+        amount,
+        ...(amount > 0 && amountMax > amount ? { amountMax } : {}),
+        unit: clip(i.unit ?? '', L.ingredientUnit),
+        name: clip(i.name ?? '', L.ingredientName),
+      };
+    })
     .filter(i => i.name)
     .slice(0, L.ingredients);
 }

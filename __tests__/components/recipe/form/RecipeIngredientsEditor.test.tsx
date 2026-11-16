@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import RecipeIngredientsEditor from '@/components/recipe/form/RecipeIngredientsEditor';
@@ -55,7 +56,54 @@ describe('RecipeIngredientsEditor', () => {
     await user.clear(amountInput);
     await user.type(amountInput, '2');
 
-    expect(mockOnChange).toHaveBeenCalledWith(0, 'amount', 2);
+    expect(mockOnChange).toHaveBeenLastCalledWith(0, expect.objectContaining({ amount: 2 }));
+  });
+
+  it('accepts a range in the amount field and keeps what is typed', async () => {
+    const user = userEvent.setup();
+
+    function Harness() {
+      const [ingredients, setIngredients] = useState<Ingredient[]>([{ amount: 0, unit: 'tsp', name: 'salt' }]);
+      return (
+        <RecipeIngredientsEditor
+          ingredients={ingredients}
+          onChange={(index, updated) => {
+            mockOnChange(index, updated);
+            setIngredients(prev => prev.map((ing, i) => (i === index ? updated : ing)));
+          }}
+          onAdd={mockOnAdd}
+          onRemove={mockOnRemove}
+        />
+      );
+    }
+    render(<Harness />);
+
+    const amountInput = screen.getByPlaceholderText('Amount');
+    await user.type(amountInput, '1 1/2 - 2');
+    expect(amountInput).toHaveValue('1 1/2 - 2');
+    expect(mockOnChange).toHaveBeenLastCalledWith(0, { amount: 1.5, amountMax: 2, unit: 'tsp', name: 'salt' });
+
+    await user.tab();
+    expect(amountInput).toHaveValue('1 1/2-2');
+
+    await user.clear(amountInput);
+    await user.type(amountInput, '3');
+    expect(mockOnChange).toHaveBeenLastCalledWith(0, { amount: 3, unit: 'tsp', name: 'salt' });
+  });
+
+  it('flags text that is not an amount', async () => {
+    const user = userEvent.setup();
+    render(
+      <RecipeIngredientsEditor
+        ingredients={defaultIngredients}
+        onChange={mockOnChange}
+        onAdd={mockOnAdd}
+        onRemove={mockOnRemove}
+      />
+    );
+    const amountInput = screen.getByPlaceholderText('Amount');
+    await user.type(amountInput, 'x');
+    expect(amountInput).toHaveAttribute('aria-invalid', 'true');
   });
 
   it('calls onChange when ingredient unit is updated', async () => {
@@ -75,7 +123,7 @@ describe('RecipeIngredientsEditor', () => {
     await user.type(unitInput, 'cups');
 
     expect(mockOnChange).toHaveBeenCalled();
-    expect(mockOnChange).toHaveBeenCalledWith(0, 'unit', expect.any(String));
+    expect(mockOnChange).toHaveBeenCalledWith(0, expect.objectContaining({ unit: expect.any(String) }));
   });
 
   it('calls onChange when ingredient name is updated', async () => {
@@ -95,7 +143,7 @@ describe('RecipeIngredientsEditor', () => {
     await user.type(nameInput, 'flour');
 
     expect(mockOnChange).toHaveBeenCalled();
-    expect(mockOnChange).toHaveBeenCalledWith(0, 'name', expect.any(String));
+    expect(mockOnChange).toHaveBeenCalledWith(0, expect.objectContaining({ name: expect.any(String) }));
   });
 
   it('calls onAdd when Add Ingredient button is clicked', async () => {

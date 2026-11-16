@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { importRecipe, saveRecipe } from '@/lib/client-recipes';
-import { formatDecimalAsFraction } from '@/lib/amount-utils';
+import { formatAmountRange } from '@/lib/amount-utils';
 import { shouldSkipOptimization } from '@/lib/image-hosts';
 import {
   formatMinutes,
@@ -216,7 +216,7 @@ function ParsedRecipe({
             ) : (
               <ul className="space-y-1 text-sm">
                 {recipe.ingredients.map((ingredient, i) => {
-                  const amount = ingredient.amount > 0 ? formatDecimalAsFraction(ingredient.amount) : '';
+                  const amount = formatAmountRange(ingredient);
                   const quantity = [amount, ingredient.unit].filter(Boolean).join(' ');
                   return (
                     <li key={`${i}-${ingredient.name}`}>

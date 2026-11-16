@@ -5,10 +5,13 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Plus, X } from 'lucide-react';
 import { Ingredient } from '@/types';
+import { withAmount } from '@/lib/amount-utils';
+import { AmountInput } from './AmountInput';
 
 interface RecipeIngredientsEditorProps {
   ingredients: Ingredient[];
-  onChange: (index: number, field: keyof Ingredient, value: string | number) => void;
+  /** Called with the whole updated ingredient. */
+  onChange: (index: number, ingredient: Ingredient) => void;
   onAdd: () => void;
   onRemove: (index: number) => void;
 }
@@ -32,23 +35,20 @@ export default function RecipeIngredientsEditor({
         <div className="space-y-3">
           {ingredients.map((ingredient, index) => (
             <div key={index} className="flex items-center gap-1.5 sm:gap-2">
-              <Input
-                type="number"
-                step="0.01"
-                value={ingredient.amount || ''}
-                onChange={e => onChange(index, 'amount', parseFloat(e.target.value) || 0)}
-                placeholder="Amount"
+              <AmountInput
+                value={ingredient}
+                onChange={amount => onChange(index, withAmount(ingredient, amount))}
                 className="w-20 shrink-0 px-3 sm:w-24"
               />
               <Input
                 value={ingredient.unit}
-                onChange={e => onChange(index, 'unit', e.target.value)}
+                onChange={e => onChange(index, { ...ingredient, unit: e.target.value })}
                 placeholder="Unit"
                 className="w-16 shrink-0 px-3 sm:w-20"
               />
               <Input
                 value={ingredient.name}
-                onChange={e => onChange(index, 'name', e.target.value)}
+                onChange={e => onChange(index, { ...ingredient, name: e.target.value })}
                 placeholder="Ingredient name"
                 className="min-w-0 flex-1"
               />

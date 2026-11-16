@@ -53,6 +53,30 @@ describe('parseRecipeCreate', () => {
     expect(errorOf(parseRecipeCreate(body))).toBe('Request body must be a JSON object');
   });
 
+  it('keeps a range and drops a null or missing amountMax', () => {
+    const result = parseRecipeCreate({
+      ...valid,
+      ingredients: [
+        { amount: 2, amountMax: 3, unit: 'tbsp', name: 'oil' },
+        { amount: 1, amountMax: null, unit: '', name: 'egg' },
+      ],
+    });
+    expect(result.ok && result.data.ingredients).toStrictEqual([
+      { amount: 2, amountMax: 3, unit: 'tbsp', name: 'oil' },
+      { amount: 1, unit: '', name: 'egg' },
+    ]);
+  });
+
+  it.each([
+    [{ amount: 3, amountMax: 2 }, 'lower'],
+    [{ amount: 2, amountMax: 2 }, 'equal'],
+    [{ amount: 0, amountMax: 2 }, 'no start'],
+  ])('rejects a range whose end is not above its start (%j, %s)', amounts => {
+    expect(errorOf(parseRecipeCreate({ ...valid, ingredients: [{ ...amounts, unit: '', name: 'egg' }] }))).toBe(
+      'Ingredient 1: the end of a range must be more than its start'
+    );
+  });
+
   it('keeps zero-amount ingredients ("salt to taste")', () => {
     const ingredients = [{ amount: 0, unit: '', name: 'salt' }];
     const result = parseRecipeCreate({ ...valid, ingredients });

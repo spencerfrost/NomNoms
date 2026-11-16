@@ -1,7 +1,10 @@
 import { Recipe as PrismaRecipe } from '@prisma/client';
 
 export interface Ingredient {
-  amount: number; // Always store as decimal number for easy scaling
+  /** Decimal, for easy scaling. 0 means "no amount" ("salt to taste"). The low end of a range. */
+  amount: number;
+  /** High end of a range ("2-3 Tbsp"). Only set when it's a range: always > `amount` > 0. */
+  amountMax?: number;
   unit: string;
   name: string;
 }
@@ -26,6 +29,7 @@ export function isIngredientArray(value: unknown): value is Ingredient[] {
         'unit' in item &&
         'name' in item &&
         typeof item.amount === 'number' &&
+        (!('amountMax' in item) || item.amountMax === undefined || typeof item.amountMax === 'number') &&
         typeof item.unit === 'string' &&
         typeof item.name === 'string'
     )

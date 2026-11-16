@@ -52,3 +52,4 @@ tsconfig.tsbuildinfo
 
 # local user export (contains password hashes) - never commit
 /data/users.json
+/data/backups/

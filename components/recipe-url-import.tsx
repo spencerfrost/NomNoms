@@ -10,6 +10,8 @@ import type { ImportedRecipe } from '@/lib/recipe-import-utils';
 import { Ingredient } from '@/types/recipe';
 import Image from 'next/image';
 import { shouldSkipOptimization } from '@/lib/image-hosts';
+import { withAmount } from '@/lib/amount-utils';
+import { AmountInput } from '@/components/recipe/form/AmountInput';
 
 interface RecipeUrlImportProps {
   onImported: (recipe: ImportedRecipe) => void;
@@ -60,11 +62,11 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
     }
   };
 
-  const handleEditIngredient = (index: number, field: keyof Ingredient, value: string | number) => {
+  const handleEditIngredient = (index: number, updated: Ingredient) => {
     if (!importedRecipe) return;
 
     const updatedIngredients = importedRecipe.ingredients.map((ingredient, i) =>
-      i === index ? { ...ingredient, [field]: value } : ingredient
+      i === index ? updated : ingredient
     );
 
     setImportedRecipe({
@@ -171,25 +173,20 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
             <div className="space-y-2 max-h-60 overflow-y-auto">
               {importedRecipe.ingredients.map((ingredient, index) => (
                 <div key={index} className="flex gap-2">
-                  <Input
-                    type="number"
-                    step="0.25"
-                    value={ingredient.amount || ''}
-                    onChange={e =>
-                      handleEditIngredient(index, 'amount', parseFloat(e.target.value) || 0)
-                    }
-                    placeholder="Amount"
+                  <AmountInput
+                    value={ingredient}
+                    onChange={amount => handleEditIngredient(index, withAmount(ingredient, amount))}
                     className="w-20"
                   />
                   <Input
                     value={ingredient.unit}
-                    onChange={e => handleEditIngredient(index, 'unit', e.target.value)}
+                    onChange={e => handleEditIngredient(index, { ...ingredient, unit: e.target.value })}
                     placeholder="Unit"
                     className="w-24"
                   />
                   <Input
                     value={ingredient.name}
-                    onChange={e => handleEditIngredient(index, 'name', e.target.value)}
+                    onChange={e => handleEditIngredient(index, { ...ingredient, name: e.target.value })}
                     placeholder="Ingredient name"
                     className="flex-1"
                   />

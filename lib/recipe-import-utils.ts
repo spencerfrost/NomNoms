@@ -3,7 +3,7 @@
  */
 
 import { Ingredient } from '@/types/recipe';
-import { parseAmountToDecimal } from './amount-utils';
+import { parseIngredientLine, parseIngredientLines } from './ingredient-parser';
 import * as cheerio from 'cheerio';
 import { FetchError, UnsafeUrlError, safeFetchText } from './safe-fetch';
 
@@ -82,46 +82,6 @@ export function parseTimeString(timeText: string | undefined | null): number {
   }
 
   return Math.round(totalMinutes);
-}
-
-/**
- * Parse an ingredient string like "1 cup flour" into structured ingredient
- */
-export function parseIngredientString(ingredientText: string): Ingredient {
-  if (!ingredientText?.trim()) {
-    return { amount: 0, unit: '', name: '' };
-  }
-
-  const text = ingredientText.trim();
-
-  // Common patterns for ingredient parsing
-  // Pattern 1: "1 cup flour" or "1/2 cup flour" or "1.5 cups flour"
-  const amountUnitPattern = /^([0-9]+(?:\s*[0-9]*\/[0-9]+)?(?:\.[0-9]+)?)\s+([a-zA-Z]+s?)\s+(.+)$/;
-  const match = amountUnitPattern.exec(text);
-
-  if (match) {
-    const amountStr = match[1].trim();
-    const unit = match[2].trim();
-    const name = match[3].trim();
-
-    const amount = parseAmountToDecimal(amountStr);
-    return { amount, unit, name };
-  }
-
-  // Pattern 2: Just amount and ingredient (no unit): "2 eggs", "3 carrots"
-  const amountOnlyPattern = /^([0-9]+(?:\s*[0-9]*\/[0-9]+)?(?:\.[0-9]+)?)\s+(.+)$/;
-  const amountMatch = amountOnlyPattern.exec(text);
-
-  if (amountMatch) {
-    const amountStr = amountMatch[1].trim();
-    const name = amountMatch[2].trim();
-
-    const amount = parseAmountToDecimal(amountStr);
-    return { amount, unit: '', name };
-  }
-
-  // Pattern 3: No amount found, treat entire text as ingredient name
-  return { amount: 0, unit: '', name: text };
 }
 
 /**
@@ -303,7 +263,7 @@ export function extractRecipeFromHtml(htmlContent: string): JsonLdRecipe | null 
  */
 export function transformJsonLdRecipe(jsonLd: JsonLdRecipe, sourceUrl: string): ImportedRecipe {
   // Parse ingredients
-  const ingredients: Ingredient[] = (jsonLd.recipeIngredient || []).map(parseIngredientString);
+  const ingredients: Ingredient[] = parseIngredientLines(jsonLd.recipeIngredient || []);
 
   // Parse instructions
   const instructions: string[] = (jsonLd.recipeInstructions || [])
@@ -394,6 +354,35 @@ export function transformJsonLdRecipe(jsonLd: JsonLdRecipe, sourceUrl: string): 
   };
 }
 
+/** Which extraction path produced a recipe. */
+export type RecipeExtractionMethod = 'json-ld' | 'microdata' | 'html';
+
+/**
+ * Extracts a recipe from a fetched page: JSON-LD first, then microdata, then common HTML
+ * patterns. Throws `RecipeImportError('no_recipe')` when nothing recipe-like is found.
+ */
+export function parseRecipeHtml(
+  html: string,
+  sourceUrl: string
+): { recipe: ImportedRecipe; method: RecipeExtractionMethod } {
+  const jsonLdRecipe = extractRecipeFromHtml(html);
+  if (jsonLdRecipe) {
+    return { recipe: transformJsonLdRecipe(jsonLdRecipe, sourceUrl), method: 'json-ld' };
+  }
+
+  const $ = cheerio.load(html);
+  const microdataRecipe = extractMicrodataRecipe($, sourceUrl);
+  if (microdataRecipe) {
+    return { recipe: transformMicrodataRecipe(microdataRecipe, sourceUrl), method: 'microdata' };
+  }
+
+  const basic = extractBasicRecipeFromHtml($, sourceUrl);
+  if (basic.ingredients.length === 0 && basic.instructions.length === 0) {
+    throw new RecipeImportError('no_recipe');
+  }
+  return { recipe: basic, method: 'html' };
+}
+
 /**
  * Main function to scrape a recipe from a URL
  */
@@ -416,28 +405,7 @@ export async function scrapeRecipeFromUrl(url: string): Promise<ImportedRecipe> 
     });
     console.info('HTML fetched, length:', html.length);
 
-    // Try to extract JSON-LD structured data
-    const jsonLdRecipe = extractRecipeFromHtml(html);
-    if (jsonLdRecipe) {
-      console.info('Found JSON-LD recipe data');
-      return transformJsonLdRecipe(jsonLdRecipe, url);
-    }
-
-    // Fall back to microdata parsing (using cheerio to extract microdata)
-    const $ = cheerio.load(html);
-    const microdataRecipe = extractMicrodataRecipe($, url);
-    if (microdataRecipe) {
-      console.info('Found microdata recipe');
-      return transformMicrodataRecipe(microdataRecipe, url);
-    }
-
-    // Final fallback: basic HTML parsing
-    console.info('Falling back to basic HTML parsing...');
-    const basic = extractBasicRecipeFromHtml($, url);
-    if (basic.ingredients.length === 0 && basic.instructions.length === 0) {
-      throw new RecipeImportError('no_recipe');
-    }
-    return basic;
+    return parseRecipeHtml(html, url).recipe;
   } catch (error) {
     console.error('Error scraping recipe:', error);
     // Unknown errors (parser bugs, etc.) propagate unchanged so the route answers 500.
@@ -556,7 +524,8 @@ function extractBasicRecipeFromHtml($: cheerio.CheerioAPI, sourceUrl: string): I
     $(selector).each((_, el) => {
       const text = $(el).text().trim();
       if (text && !text.toLowerCase().includes('advertisement')) {
-        ingredients.push(parseIngredientString(text));
+        const ingredient = parseIngredientLine(text);
+        if (ingredient) ingredients.push(ingredient);
       }
     });
     if (ingredients.length > 0) break; // Stop after finding ingredients

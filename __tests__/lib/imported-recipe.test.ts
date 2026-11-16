@@ -72,6 +72,25 @@ describe('importedRecipeToPayload', () => {
   });
 });
 
+describe('importedRecipeToPayload ranges', () => {
+  it('keeps a valid range and drops a broken one', () => {
+    const payload = importedRecipeToPayload({
+      ...imported,
+      ingredients: [
+        { amount: 2, amountMax: 3, unit: 'tbsp', name: 'oil' },
+        { amount: 3, amountMax: 2, unit: '', name: 'eggs' },
+        { amount: 0, amountMax: 2, unit: '', name: 'salt' },
+      ],
+    });
+    expect(payload.ingredients).toStrictEqual([
+      { amount: 2, amountMax: 3, unit: 'tbsp', name: 'oil' },
+      { amount: 3, unit: '', name: 'eggs' },
+      { amount: 0, unit: '', name: 'salt' },
+    ]);
+    expect(parseRecipeCreate(payload).ok).toBe(true);
+  });
+});
+
 describe('importedRecipeToForm', () => {
   it('prefills the add form, keeping no-amount ingredients', () => {
     const { formData, ingredients, instructions, tags } = importedRecipeToForm(imported);
