@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface RecipeInstructionsListProps {
   instructions: string[];
@@ -15,23 +15,24 @@ export function RecipeInstructionsList({
     <Card>
       <CardHeader>
         <CardTitle>Instructions</CardTitle>
-        <CardDescription>Follow these steps to make your recipe</CardDescription>
       </CardHeader>
       <CardContent>
-        <ol className="space-y-4">
+        <ol className="space-y-5">
           {instructions.map((instruction, index) => (
             <li
               key={`step-${index}-${instruction.slice(0, 20)}`}
               className={`flex gap-4 ${
-                interactive ? 'cursor-pointer hover:bg-muted/50 p-2 rounded' : ''
+                interactive ? 'cursor-pointer rounded-2xl p-2 hover:bg-muted/50' : ''
               }`}
             >
               {showStepNumbers && (
-                <span className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-medium">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-tile-mint font-display text-xl text-tile-foreground">
                   {index + 1}
                 </span>
               )}
-              <p className={showStepNumbers ? 'pt-1' : ''}>{instruction}</p>
+              <p className={`text-lg leading-relaxed ${showStepNumbers ? 'pt-1' : ''}`}>
+                {instruction}
+              </p>
             </li>
           ))}
         </ol>

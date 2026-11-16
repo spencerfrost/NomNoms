@@ -1,6 +1,6 @@
 import { Ingredient } from '@/types/recipe';
 import { ScaleControls } from '@/components/scale-controls';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { formatDecimalAsFraction } from '@/lib/amount-utils';
 
 interface RecipeIngredientsListProps {
@@ -20,18 +20,15 @@ export function RecipeIngredientsList({
     <Card>
       <CardHeader>
         <CardTitle>Ingredients</CardTitle>
-        <CardDescription>
-          {showScaleControls ? 'Scale the recipe to your needs' : ''}
-        </CardDescription>
       </CardHeader>
       <CardContent>
         {showScaleControls && onMultiplierChange && (
-          <div className="mb-6">
+          <div className="mb-4">
             <ScaleControls multiplier={multiplier} onMultiplierChange={onMultiplierChange} />
           </div>
         )}
 
-        <ul className="space-y-2">
+        <ul>
           {ingredients.map((ingredient, index) => {
             // Scale the amount and format for display
             // Ingredients without an amount (e.g. "salt to taste") show only the unit, if any
@@ -42,11 +39,17 @@ export function RecipeIngredientsList({
             const displayText = [formattedAmount, ingredient.unit].filter(Boolean).join(' ');
 
             return (
-              <li key={`${index}-${ingredient.name}`} className="flex justify-between items-start">
-                <span className="font-medium">{ingredient.name}</span>
-                <span className="text-muted-foreground text-sm ml-2 flex-shrink-0">
-                  {displayText}
-                </span>
+              <li key={`${index}-${ingredient.name}`} className="border-t-2 border-background">
+                {/* The checkbox is only a "got it" tick while gathering; it isn't saved. */}
+                <label className="flex min-h-12 cursor-pointer items-center gap-3 py-2 text-lg leading-snug">
+                  <input type="checkbox" className="peer size-6 shrink-0 accent-primary" />
+                  <span className="w-24 shrink-0 font-bold peer-checked:text-muted-foreground peer-checked:line-through">
+                    {displayText}
+                  </span>
+                  <span className="font-medium peer-checked:text-muted-foreground peer-checked:line-through">
+                    {ingredient.name}
+                  </span>
+                </label>
               </li>
             );
           })}

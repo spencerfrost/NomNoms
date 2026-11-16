@@ -18,13 +18,18 @@ export function SearchBar({
 }: SearchBarProps) {
   return (
     <div className={`relative ${className}`}>
-      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+      <Search
+        className="pointer-events-none absolute left-4 top-1/2 size-5 -translate-y-1/2 text-foreground"
+        strokeWidth={2.5}
+        aria-hidden="true"
+      />
       <Input
-        type="text"
+        type="search"
+        aria-label={placeholder}
         placeholder={placeholder}
         value={value}
         onChange={e => onChange(e.target.value)}
-        className="pl-10"
+        className="h-14 rounded-[20px] bg-card pl-12 text-lg"
       />
     </div>
   );

@@ -31,34 +31,35 @@ export default function RecipeIngredientsEditor({
       <CardContent>
         <div className="space-y-3">
           {ingredients.map((ingredient, index) => (
-            <div key={index} className="flex gap-2 items-start">
+            <div key={index} className="flex items-center gap-1.5 sm:gap-2">
               <Input
                 type="number"
                 step="0.01"
                 value={ingredient.amount || ''}
                 onChange={e => onChange(index, 'amount', parseFloat(e.target.value) || 0)}
                 placeholder="Amount"
-                className="w-24"
+                className="w-20 shrink-0 px-3 sm:w-24"
               />
               <Input
                 value={ingredient.unit}
                 onChange={e => onChange(index, 'unit', e.target.value)}
                 placeholder="Unit"
-                className="w-20"
+                className="w-16 shrink-0 px-3 sm:w-20"
               />
               <Input
                 value={ingredient.name}
                 onChange={e => onChange(index, 'name', e.target.value)}
                 placeholder="Ingredient name"
-                className="flex-1"
+                className="min-w-0 flex-1"
               />
               {ingredients.length > 1 && (
                 <Button
                   type="button"
                   variant="ghost"
-                  size="sm"
+                  size="icon"
                   onClick={() => onRemove(index)}
-                  className="text-destructive hover:text-destructive"
+                  aria-label={`Remove ingredient ${index + 1}`}
+                  className="shrink-0 text-destructive hover:text-destructive"
                 >
                   <X className="h-4 w-4" />
                 </Button>

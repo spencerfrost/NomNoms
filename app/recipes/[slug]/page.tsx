@@ -76,18 +76,18 @@ export default async function RecipePage({ params }: Props) {
   return (
     <RecipeLayout>
       <PageHeader>
-        <div className="flex items-center justify-between w-full mb-4">
+        <div className="flex w-full items-center justify-between gap-2 pr-2">
           <Link href="/">
-            <Button variant="ghost">
-              <ArrowLeft className="h-4 w-4 mr-2" />
+            <Button variant="ghost" className="bg-card hover:bg-card/70">
+              <ArrowLeft className="size-5" />
               Back to Recipes
             </Button>
           </Link>
 
           {canEdit && (
             <Link href={`/recipes/${encodeURIComponent(recipe.slug)}/edit`}>
-              <Button variant="outline" size="sm">
-                <Edit className="h-4 w-4 mr-2" />
+              <Button variant="ghost" className="bg-card hover:bg-card/70">
+                <Edit className="size-5" />
                 Edit Recipe
               </Button>
             </Link>

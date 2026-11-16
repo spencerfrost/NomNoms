@@ -61,6 +61,6 @@ describe('AuthFooter', () => {
 
     const link = screen.getByRole('link');
     expect(link).toHaveAttribute('href', '/auth/signup');
-    expect(link).toHaveClass('text-blue-600', 'hover:underline');
+    expect(link).toHaveClass('text-foreground', 'underline');
   });
 });

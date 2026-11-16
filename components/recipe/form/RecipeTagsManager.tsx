@@ -58,6 +58,7 @@ export default function RecipeTagsManager({
                 <button
                   type="button"
                   onClick={() => onTagRemove(tag)}
+                  aria-label={`Remove tag ${tag}`}
                   className="ml-1 hover:text-destructive"
                 >
                   <X className="h-3 w-3" />

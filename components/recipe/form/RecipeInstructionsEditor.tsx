@@ -30,23 +30,24 @@ export default function RecipeInstructionsEditor({
       <CardContent>
         <div className="space-y-3">
           {instructions.map((instruction, index) => (
-            <div key={index} className="flex gap-2 items-start">
-              <span className="flex-shrink-0 w-8 h-8 bg-muted rounded-full flex items-center justify-center text-sm font-medium mt-1">
+            <div key={index} className="flex items-center gap-1.5 sm:gap-2">
+              <span className="flex-shrink-0 w-8 h-8 bg-muted rounded-full flex items-center justify-center text-sm font-bold">
                 {index + 1}
               </span>
               <Input
                 value={instruction}
                 onChange={e => onChange(index, e.target.value)}
                 placeholder={`Step ${index + 1} instruction`}
-                className="flex-1"
+                className="min-w-0 flex-1"
               />
               {instructions.length > 1 && (
                 <Button
                   type="button"
                   variant="ghost"
-                  size="sm"
+                  size="icon"
                   onClick={() => onRemove(index)}
-                  className="text-destructive hover:text-destructive mt-1"
+                  aria-label={`Remove step ${index + 1}`}
+                  className="shrink-0 text-destructive hover:text-destructive"
                 >
                   <X className="h-4 w-4" />
                 </Button>

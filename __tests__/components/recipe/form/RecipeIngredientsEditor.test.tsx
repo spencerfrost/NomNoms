@@ -131,7 +131,7 @@ describe('RecipeIngredientsEditor', () => {
       />
     );
 
-    const removeButtons = screen.getAllByRole('button', { name: '' });
+    const removeButtons = screen.getAllByRole('button', { name: /^Remove ingredient/ });
     // Filter for remove buttons (they have X icon, not text)
     const xButtons = removeButtons.filter(
       button => button.querySelector('svg') && !button.textContent?.includes('Add')
@@ -171,7 +171,7 @@ describe('RecipeIngredientsEditor', () => {
       />
     );
 
-    const removeButtons = screen.getAllByRole('button', { name: '' });
+    const removeButtons = screen.getAllByRole('button', { name: /^Remove ingredient/ });
     const xButtons = removeButtons.filter(
       button => button.querySelector('svg') && !button.textContent?.includes('Add')
     );

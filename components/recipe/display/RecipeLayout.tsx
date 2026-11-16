@@ -8,7 +8,7 @@ interface RecipeLayoutProps {
 
 export function RecipeLayout({ children, sidebar, className }: RecipeLayoutProps) {
   return (
-    <div className={cn('container mx-auto px-4 py-8', className)}>
+    <div className={cn('container mx-auto px-4 pt-10 pb-8 md:pt-8', className)}>
       <div className="max-w-4xl mx-auto">
         {children}
 

@@ -11,6 +11,9 @@ interface RecipeHeaderProps {
   multiplier?: number;
 }
 
+const factClass =
+  'inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1.5 text-sm font-bold text-primary-foreground';
+
 export function RecipeHeader({
   title,
   description,
@@ -24,37 +27,34 @@ export function RecipeHeader({
     recipeYield?.replace(/\d+/g, match => String(Math.round(parseInt(match) * multiplier))) || '';
 
   return (
-    <div>
-      <h1 className="text-4xl font-bold mb-2">{title}</h1>
-      {description && <p className="text-muted-foreground text-lg mb-4">{description}</p>}
+    <div className="flex flex-col gap-3">
+      <h1 className="text-4xl md:text-6xl">{title}</h1>
+      {description && <p className="text-lg text-muted-foreground">{description}</p>}
 
-      <div className="flex flex-wrap gap-2 mb-4">
-        {tags.map(tag => (
-          <Badge key={tag} variant="secondary">
-            {tag}
-          </Badge>
-        ))}
-      </div>
-
-      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+      <div className="flex flex-wrap gap-2">
         {scaledYield && (
-          <div className="flex items-center gap-1">
-            <ChefHat className="h-4 w-4" />
+          <div className={factClass}>
+            <ChefHat className="size-4" aria-hidden="true" />
             <span>Yields: {scaledYield}</span>
           </div>
         )}
         {prepTime && (
-          <div className="flex items-center gap-1">
-            <Clock className="h-4 w-4" />
+          <div className={factClass}>
+            <Clock className="size-4" aria-hidden="true" />
             <span>Prep: {prepTime}</span>
           </div>
         )}
         {cookTime && (
-          <div className="flex items-center gap-1">
-            <Clock className="h-4 w-4" />
+          <div className={factClass}>
+            <Clock className="size-4" aria-hidden="true" />
             <span>Cook: {cookTime}</span>
           </div>
         )}
+        {tags.map(tag => (
+          <Badge key={tag} variant="secondary" className="bg-card px-3 py-1.5 text-sm">
+            {tag}
+          </Badge>
+        ))}
       </div>
     </div>
   );

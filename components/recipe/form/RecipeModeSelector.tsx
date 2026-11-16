@@ -17,10 +17,10 @@ interface RecipeModeSelectorProps {
  */
 export default function RecipeModeSelector({ onModeChange }: RecipeModeSelectorProps) {
   return (
-    <div className="container max-w-3xl mx-auto px-4 py-8">
+    <div className="container max-w-3xl mx-auto px-4 pt-10 pb-8 md:pt-8">
       <PageHeader>
         <Link href="/">
-          <Button variant="ghost" className="mb-4">
+          <Button variant="ghost" className="bg-card hover:bg-card/70">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Recipes
           </Button>
@@ -28,14 +28,12 @@ export default function RecipeModeSelector({ onModeChange }: RecipeModeSelectorP
       </PageHeader>
 
       <div className="mb-6">
-        <h1 className="text-4xl font-bold mb-2">Add New Recipe</h1>
+        <h1 className="text-4xl md:text-5xl mb-2">Add New Recipe</h1>
         <p className="text-muted-foreground">Choose how you&apos;d like to create your recipe</p>
       </div>
 
       <div className="grid gap-4">
-        <Card
-          className="cursor-pointer hover:shadow-md transition-shadow"
-          onClick={() => onModeChange('manual')}
+        <Card className="cursor-pointer" onClick={() => onModeChange('manual')}
         >
           <CardHeader>
             <div className="flex items-center gap-3">
@@ -49,7 +47,7 @@ export default function RecipeModeSelector({ onModeChange }: RecipeModeSelectorP
         </Card>
 
         <Card
-          className="cursor-pointer hover:shadow-md transition-shadow"
+          className="cursor-pointer bg-tile-pink text-tile-foreground"
           onClick={() => onModeChange('url')}
         >
           <CardHeader>
@@ -57,7 +55,7 @@ export default function RecipeModeSelector({ onModeChange }: RecipeModeSelectorP
               <Globe className="h-6 w-6" />
               <div>
                 <CardTitle>Import from URL</CardTitle>
-                <CardDescription>
+                <CardDescription className="text-tile-foreground">
                   Import recipe from AllRecipes, Food Network, and other popular sites
                 </CardDescription>
               </div>

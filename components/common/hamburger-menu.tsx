@@ -43,7 +43,12 @@ export default function HamburgerMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="relative" aria-label="Open menu">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="relative bg-card hover:bg-card/70"
+          aria-label="Open menu"
+        >
           <Menu className="h-5 w-5" />
         </Button>
       </DropdownMenuTrigger>

@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
-import { Marcellus, Poppins } from 'next/font/google';
+import { Bagel_Fat_One, Onest } from 'next/font/google';
 import './globals.css';
 import AuthProvider from '@/components/auth-provider';
-import BackgroundGradient from '@/components/background-gradient';
+import BottomNav from '@/components/bottom-nav';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import { env } from '@/lib/env';
 
-const marcellus = Marcellus({
+const display = Bagel_Fat_One({
   variable: '--font-display',
   subsets: ['latin'],
   weight: '400',
 });
 
-const poppins = Poppins({
+const body = Onest({
   variable: '--font-body',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
@@ -65,16 +65,18 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${marcellus.variable} ${poppins.variable} antialiased relative min-h-screen text-foreground font-body`}
+        className={`${display.variable} ${body.variable} antialiased relative min-h-screen bg-background text-foreground font-body pb-28 md:pb-0`}
       >
-        <BackgroundGradient />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <AuthProvider>{children}</AuthProvider>
+          <AuthProvider>
+            {children}
+            <BottomNav />
+          </AuthProvider>
         </ThemeProvider>
         <Toaster />
       </body>

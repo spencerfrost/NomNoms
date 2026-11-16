@@ -30,17 +30,17 @@ export default function RecipeFormContainer({
   recipeTitle,
 }: RecipeFormContainerProps) {
   return (
-    <div className="container max-w-3xl mx-auto px-4 py-8">
+    <div className="container max-w-3xl mx-auto px-4 pt-10 pb-8 md:pt-8">
       {/* Header */}
       <PageHeader>
-        <Button variant="ghost" className="mb-4" onClick={onBack}>
+        <Button variant="ghost" className="bg-card hover:bg-card/70" onClick={onBack}>
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Options
         </Button>
       </PageHeader>
 
       <div className="mb-6">
-        <h1 className="text-4xl font-bold mb-2">
+        <h1 className="text-4xl md:text-5xl mb-2">
           {isEditing ? `Edit Recipe: ${recipeTitle}` : 'Add New Recipe'}
         </h1>
         <p className="text-muted-foreground">
@@ -61,7 +61,7 @@ export default function RecipeFormContainer({
 
         {/* Submit */}
         <div className="flex gap-4">
-          <Button type="submit" disabled={loading} className="flex-1">
+          <Button type="submit" size="lg" disabled={loading} className="flex-1">
             {loading ? 'Saving...' : 'Save Recipe'}
           </Button>
         </div>

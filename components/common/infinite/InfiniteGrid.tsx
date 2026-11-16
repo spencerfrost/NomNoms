@@ -65,7 +65,7 @@ export function InfiniteGrid<T = unknown>({
   if (isEmpty) {
     return (
       <div className="text-center py-12">
-        <h3 className="text-lg font-medium mb-2">{emptyState.title}</h3>
+        <h3 className="text-2xl mb-2">{emptyState.title}</h3>
         <p className="text-muted-foreground">{emptyState.message}</p>
       </div>
     );
@@ -74,7 +74,7 @@ export function InfiniteGrid<T = unknown>({
   return (
     <div className="space-y-6">
       {/* Item Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
         {items.map(item => renderItem(item))}
       </div>
 

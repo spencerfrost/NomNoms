@@ -13,7 +13,7 @@ interface RecipeImageProps {
 const sizeClasses = {
   small: 'h-32',
   medium: 'h-48',
-  large: 'h-64',
+  large: 'h-56 lg:h-64',
 };
 
 export function RecipeImage({ src, alt, title, size = 'medium', className }: RecipeImageProps) {
@@ -22,7 +22,7 @@ export function RecipeImage({ src, alt, title, size = 'medium', className }: Rec
   }
 
   return (
-    <div className={cn('relative w-full overflow-hidden', sizeClasses[size], className)}>
+    <div className={cn('relative w-full overflow-hidden rounded-3xl', sizeClasses[size], className)}>
       <Image
         src={src}
         unoptimized={shouldSkipOptimization(src)}

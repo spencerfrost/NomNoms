@@ -1,80 +1,84 @@
 @import "tailwindcss";
 @import "./palette.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Custom Font Utilities */
 @utility font-display {
   font-weight: 400;
-  font-family: Marcellus;
+  font-synthesis-weight: none;
+  font-family: var(--font-display), 'Arial Rounded MT Bold', system-ui, sans-serif;
 }
 
 @utility font-body {
-  font-weight: 400;
-  font-family: Poppins;
+  font-family: var(--font-body), system-ui, sans-serif;
 }
 
 @layer base {
   :root {
-    --background: var(--color-secondary-100);
-    --foreground: var(--color-primary-1900);
+    /* "Bite" theme: lilac ground, grape ink, white cards, candy-coloured recipe tiles. */
+    --background: #f1ecfb;
+    --foreground: #2b1447;
 
-    --primary: var(--color-primary-900);
-    --primary-foreground: var(--color-primary-2200);
-    --secondary: var(--color-secondary-1200);
-    --secondary-foreground: var(--color-primary-100);
-    --muted: var(--color-primary-200);
-    --muted-foreground: var(--color-primary-1600);
-    --accent: var(--color-secondary-900);
-    --accent-foreground: var(--color-primary-100);
-    --destructive: #d30000;
-    --destructive-foreground: var(--color-primary-0);
+    --primary: #2b1447;
+    --primary-foreground: #ffffff;
+    --secondary: #ffb627;
+    --secondary-foreground: #2b1447;
+    --muted: #e4dbf6;
+    --muted-foreground: #5a4775;
+    --accent: #ff9cb8;
+    --accent-foreground: #2b1447;
+    --destructive: #b3261e;
+    --destructive-foreground: #ffffff;
 
-    --card: var(--color-secondary-100);
-    --card-foreground: var(--color-primary-1900);
-    --popover: var(--color-secondary-100);
-    --popover-foreground: var(--color-primary-1900);
+    --card: #ffffff;
+    --card-foreground: #2b1447;
+    --popover: #ffffff;
+    --popover-foreground: #2b1447;
 
-    --border: var(--color-primary-600);
-    --input: var(--color-primary-300);
-    --ring: var(--color-primary-900);
+    --border: #d9cef0;
+    --input: #f1ecfb;
+    --ring: #2b1447;
 
-    /* Chart Colors (example selection from your palette) */
-    --chart-1: var(--color-primary-800);
-    --chart-2: var(--color-secondary-900);
-    --chart-3: var(--color-primary-1600);
-    --chart-4: var(--color-secondary-600);
-    --chart-5: var(--color-primary-1400);
+    /* Recipe tile colours. Text on a tile is always --tile-foreground, in both themes. */
+    --tile-mango: #ffb627;
+    --tile-pink: #ff9cb8;
+    --tile-mint: #8fe0bf;
+    --tile-sky: #9cc9ff;
+    --tile-foreground: #2b1447;
+
+    --chart-1: #ffb627;
+    --chart-2: #ff9cb8;
+    --chart-3: #8fe0bf;
+    --chart-4: #9cc9ff;
+    --chart-5: #2b1447;
   }
 
   .dark {
-    --background: var(--color-primary-2200);
-    --foreground: var(--color-primary-0);
+    --background: #1a0d2b;
+    --foreground: #f1ecfb;
 
-    --primary: var(--color-primary-1000);
-    --primary-foreground: var(--color-primary-2200);
-    --secondary: var(--color-secondary-1600);
-    --secondary-foreground: var(--color-primary-0);
-    --muted: var(--color-primary-2000);
-    --muted-foreground: var(--color-primary-500);
-    --accent: var(--color-primary-1200);
-    --accent-foreground: var(--color-primary-2200);
-    --destructive: #a00000;
-    --destructive-foreground: var(--color-primary-0);
-    
-    --card: var(--color-primary-2400);
-    --card-foreground: var(--color-primary-300);
-    --popover: var(--color-primary-2400);
-    --popover-foreground: var(--color-primary-300);
+    --primary: #f1ecfb;
+    --primary-foreground: #2b1447;
+    --secondary: #ffb627;
+    --secondary-foreground: #2b1447;
+    --muted: #3a2259;
+    --muted-foreground: #c9bbe3;
+    --accent: #ff9cb8;
+    --accent-foreground: #2b1447;
+    --destructive: #ff8a80;
+    --destructive-foreground: #2b1447;
 
-    --border: var(--color-primary-1600);
-    --input: var(--color-primary-2100);
-    --ring: var(--color-primary-800);
+    --card: #2b1447;
+    --card-foreground: #f1ecfb;
+    --popover: #2b1447;
+    --popover-foreground: #f1ecfb;
 
-    /* Chart Colors (example selection for dark theme) */
-    --chart-1: var(--color-primary-700);
-    --chart-2: var(--color-secondary-500);
-    --chart-3: var(--color-primary-1500);
-    --chart-4: var(--color-secondary-800);
-    --chart-5: var(--color-primary-500);
+    --border: #4a3170;
+    --input: #1a0d2b;
+    --ring: #f1ecfb;
+
+    --chart-5: #f1ecfb;
   }
 }
 
@@ -98,6 +102,11 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-tile-mango: var(--tile-mango);
+  --color-tile-pink: var(--tile-pink);
+  --color-tile-mint: var(--tile-mint);
+  --color-tile-sky: var(--tile-sky);
+  --color-tile-foreground: var(--tile-foreground);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -107,33 +116,28 @@
 
 @layer base {
   * {
-    border-color: hsl(var(--border));
+    border-color: var(--border);
   }
   body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body), system-ui, sans-serif;
     overflow-x: hidden;
   }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-display font-medium;
-}
-
-div,
-p,
-span,
-a,
-li,
-button,
-input,
-textarea,
-label,
-select {
-  @apply font-body;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    /* The display face only has one weight; don't let font-bold fake a heavier one. */
+    font-family: var(--font-display), 'Arial Rounded MT Bold', system-ui, sans-serif;
+    font-weight: 400;
+    font-synthesis-weight: none;
+    line-height: 1.05;
+  }
+  :focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+  }
 }

@@ -24,23 +24,40 @@ export function ScaleControls({ multiplier, onMultiplierChange }: ScaleControlsP
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-center gap-2">
-        <Button variant="outline" size="sm" onClick={decreaseScale} disabled={multiplier <= 0.25}>
-          <Minus className="h-4 w-4" />
+        <Button
+          variant="secondary"
+          size="icon"
+          onClick={decreaseScale}
+          disabled={multiplier <= 0.25}
+          aria-label="Scale down"
+          className="bg-background hover:bg-muted text-foreground"
+        >
+          <Minus className="size-5" strokeWidth={3} />
         </Button>
-        <span className="min-w-12 text-center font-medium">{multiplier}×</span>
-        <Button variant="outline" size="sm" onClick={increaseScale}>
-          <Plus className="h-4 w-4" />
+        <span className="min-w-16 text-center font-display text-2xl">{multiplier}×</span>
+        <Button
+          variant="secondary"
+          size="icon"
+          onClick={increaseScale}
+          aria-label="Scale up"
+          className="bg-background hover:bg-muted text-foreground"
+        >
+          <Plus className="size-5" strokeWidth={3} />
         </Button>
       </div>
 
-      <div className="flex flex-wrap gap-1">
+      <div role="group" aria-label="Scale this recipe" className="grid grid-cols-6 gap-1.5">
         {commonMultipliers.map(mult => (
           <Button
             key={mult}
-            variant={multiplier === mult ? 'default' : 'outline'}
-            size="sm"
+            variant={multiplier === mult ? 'default' : 'secondary'}
+            aria-pressed={multiplier === mult}
             onClick={() => onMultiplierChange(mult)}
-            className="text-xs"
+            className={
+              multiplier === mult
+                ? 'px-0 text-sm'
+                : 'bg-background px-0 text-sm text-foreground hover:bg-muted'
+            }
           >
             {mult}×
           </Button>
