@@ -1,6 +1,6 @@
 # Recipe Discovery Plan
 
-Status: planned, not started (written 2026-11-14)
+Status: implemented, all four phases (written 2026-11-14, implemented 2026-11-16)
 
 ## Goal
 
@@ -27,7 +27,7 @@ Paprika is native and embeds a real web view. A web app can only embed other sit
 - New `lib/recipe-search.ts` exporting `searchRecipes(query, page)` which returns `{ title, url, site, snippet, thumbnail }[]`.
 - The provider sits behind a small interface so it can be swapped. Default provider: Brave Search API (`GET https://api.search.brave.com/res/v1/web/search`, key in the `X-Subscription-Token` header). Confirm the endpoint, response shape and pricing against Brave's docs when implementing.
 - The query sent to the provider is the user's text plus the word "recipe".
-- The key is a new optional env var `SEARCH_API_KEY` in `lib/env.ts` and `.env.example`. It must stay optional so the app still boots without it.
+- The key is a new optional env var `BRAVE_SEARCH_API_KEY` in `lib/env.ts` and `.env.example`. It must stay optional so the app still boots without it.
 - With no key set, Discover still works in a reduced mode: the search box opens a web search in a new tab, and the paste-a-URL and clipper paths work as normal.
 - The provider host is fixed, not user-supplied, so this call does not need the SSRF checks in `lib/safe-fetch.ts`. It still needs a timeout.
 

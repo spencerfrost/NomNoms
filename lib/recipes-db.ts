@@ -5,6 +5,7 @@ import { Recipe } from '@/types';
 import { Prisma } from '@prisma/client';
 import { isUniqueViolation } from './prisma-errors';
 import type { RecipeCreateInput, RecipeUpdateInput } from './recipe-schema';
+import { sourceUrlVariants } from './source-url';
 
 // Re-export types for convenience
 export type { Recipe, Ingredient } from '@/types';
@@ -121,4 +122,33 @@ export async function updateRecipe(
 export async function deleteRecipe(slug: string, userId: string): Promise<boolean> {
   const { count } = await prisma.recipe.deleteMany({ where: { slug, authorId: userId } });
   return count > 0;
+}
+
+/**
+ * For each of `urls`, the slug of a recipe `userId` already saved from that page, if any.
+ * Keys are the URLs exactly as passed in; URLs with no saved recipe are absent.
+ */
+export async function findSavedSlugsBySourceUrl(
+  userId: string,
+  urls: string[]
+): Promise<Map<string, string>> {
+  const saved = new Map<string, string>();
+  if (urls.length === 0) return saved;
+
+  const variantsByUrl = new Map(urls.map(url => [url, sourceUrlVariants(url)]));
+  const rows = await prisma.recipe.findMany({
+    where: { authorId: userId, sourceUrl: { in: [...new Set([...variantsByUrl.values()].flat())] } },
+    select: { slug: true, sourceUrl: true },
+    orderBy: { createdAt: 'asc' },
+  });
+  const slugBySource = new Map<string, string>();
+  for (const row of rows) {
+    if (row.sourceUrl && !slugBySource.has(row.sourceUrl)) slugBySource.set(row.sourceUrl, row.slug);
+  }
+
+  for (const [url, variants] of variantsByUrl) {
+    const slug = variants.map(v => slugBySource.get(v)).find(Boolean);
+    if (slug) saved.set(url, slug);
+  }
+  return saved;
 }

@@ -5,6 +5,15 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { AuthFormContainer, AuthForm, FormField, AuthFooter } from '@/components/auth';
 
+/** Where to go after signing in: a same-site path from ?callbackUrl=, else home. */
+function afterSignInPath(): string {
+  const target = new URLSearchParams(window.location.search).get('callbackUrl');
+  // Only root-relative paths, so this can't be used to bounce users to another site.
+  return target && target.startsWith('/') && !target.startsWith('//') && !target.startsWith('/\\')
+    ? target
+    : '/';
+}
+
 export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -38,7 +47,7 @@ export default function SignIn() {
         // Check if sign in was successful
         const session = await getSession();
         if (session) {
-          router.push('/');
+          router.push(afterSignInPath());
         }
       }
     } catch (err) {

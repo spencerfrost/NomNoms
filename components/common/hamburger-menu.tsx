@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Menu, Home, Plus, User, LogIn, LogOut, Sun, Moon } from 'lucide-react';
+import { Menu, Home, Plus, Compass, User, LogIn, LogOut, Sun, Moon } from 'lucide-react';
 import Link from 'next/link';
 
 export default function HamburgerMenu() {
@@ -66,6 +66,13 @@ export default function HamburgerMenu() {
           <Link href="/add" className="flex items-center gap-2 cursor-pointer">
             <Plus className="h-4 w-4" />
             Add Recipe
+          </Link>
+        </DropdownMenuItem>
+
+        <DropdownMenuItem asChild>
+          <Link href="/discover" className="flex items-center gap-2 cursor-pointer">
+            <Compass className="h-4 w-4" />
+            Discover
           </Link>
         </DropdownMenuItem>
 

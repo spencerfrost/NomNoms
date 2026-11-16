@@ -6,6 +6,7 @@ import { prisma } from '@/lib/prisma';
 import {
   createRecipe,
   deleteRecipe,
+  findSavedSlugsBySourceUrl,
   getAllRecipes,
   getRecipeBySlug,
   updateRecipe,
@@ -178,4 +179,33 @@ describe('createRecipe', () => {
     expect(recipe.create).toHaveBeenCalledTimes(1);
   });
 
+});
+
+describe('findSavedSlugsBySourceUrl', () => {
+  it('skips the query when there are no URLs', async () => {
+    expect((await findSavedSlugsBySourceUrl('u1', [])).size).toBe(0);
+    expect(recipe.findMany).not.toHaveBeenCalled();
+  });
+
+  it("only looks at the user's own recipes", async () => {
+    recipe.findMany.mockResolvedValue([]);
+    await findSavedSlugsBySourceUrl('u1', ['https://a.example/x']);
+    expect(recipe.findMany.mock.calls[0][0].where.authorId).toBe('u1');
+  });
+
+  it('matches across trailing-slash and fragment differences, keyed by the given URL', async () => {
+    recipe.findMany.mockResolvedValue([
+      { slug: 'tikka', sourceUrl: 'https://a.example/tikka/' },
+      { slug: 'soup', sourceUrl: 'https://b.example/soup' },
+    ]);
+    const saved = await findSavedSlugsBySourceUrl('u1', [
+      'https://a.example/tikka',
+      'https://b.example/soup#recipe',
+      'https://c.example/none',
+    ]);
+    expect(Object.fromEntries(saved)).toEqual({
+      'https://a.example/tikka': 'tikka',
+      'https://b.example/soup#recipe': 'soup',
+    });
+  });
 });

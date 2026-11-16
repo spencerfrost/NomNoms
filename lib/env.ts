@@ -20,6 +20,10 @@ export interface Environment {
   GITHUB_ID?: string;
   GITHUB_SECRET?: string;
 
+  // Optional: recipe web search on /discover (Brave Search API). Without it, Discover
+  // falls back to opening a web search in a new tab.
+  BRAVE_SEARCH_API_KEY?: string;
+
   // Optional Security
   RATE_LIMIT_ENABLED?: boolean;
   LOG_LEVEL?: 'debug' | 'info' | 'warn' | 'error';
@@ -103,6 +107,8 @@ function validateEnvironment(): Environment {
     GOOGLE_CLIENT_SECRET: googleClientSecret,
     GITHUB_ID: githubId,
     GITHUB_SECRET: githubSecret,
+
+    BRAVE_SEARCH_API_KEY: process.env.BRAVE_SEARCH_API_KEY?.trim() || undefined,
 
     // Optional Security
     RATE_LIMIT_ENABLED: process.env.RATE_LIMIT_ENABLED === 'true',

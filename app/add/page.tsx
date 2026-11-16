@@ -1,10 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Ingredient } from '@/types';
 import { saveRecipe } from '@/lib/client-recipes';
 import type { ImportedRecipe } from '@/lib/recipe-import-utils';
+import {
+  EMPTY_INGREDIENT,
+  importedRecipeToForm,
+  takeStashedImportedRecipe,
+  type RecipeFormData,
+} from '@/lib/imported-recipe';
 import {
   RecipeModeSelector,
   RecipeBasicInfoForm,
@@ -23,7 +29,7 @@ export default function AddRecipePage() {
   const [error, setError] = useState<string | null>(null);
   const [createMode, setCreateMode] = useState<CreateMode>('select');
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<RecipeFormData>({
     title: '',
     description: '',
     imageUrl: '',
@@ -35,7 +41,7 @@ export default function AddRecipePage() {
     newTag: '',
   });
 
-  const [ingredients, setIngredients] = useState<Ingredient[]>([{ amount: 0, unit: '', name: '' }]);
+  const [ingredients, setIngredients] = useState<Ingredient[]>([{ ...EMPTY_INGREDIENT }]);
 
   const [instructions, setInstructions] = useState<string[]>(['']);
   const [tags, setTags] = useState<string[]>([]);
@@ -138,27 +144,20 @@ export default function AddRecipePage() {
   };
 
   const handleImportedRecipe = (imported: ImportedRecipe) => {
-    // Populate form with imported data
-    setFormData({
-      title: imported.name,
-      description: imported.description,
-      imageUrl: imported.imageUrl || '',
-      yield: `${imported.servings} ${imported.servings === 1 ? 'serving' : 'servings'}`,
-      prepTime: imported.prepTimeMinutes ? `${imported.prepTimeMinutes} min` : '',
-      cookTime: imported.cookTimeMinutes ? `${imported.cookTimeMinutes} min` : '',
-      visibility: imported.isPublic ? 'public' : 'private',
-      newTag: '',
-    });
-
-    setIngredients(
-      imported.ingredients.length > 0 ? imported.ingredients : [{ amount: 0, unit: '', name: '' }]
-    );
-    setInstructions(imported.instructions.length > 0 ? imported.instructions : ['']);
-    setTags(imported.tags);
-
+    const prefill = importedRecipeToForm(imported);
+    setFormData(prefill.formData);
+    setIngredients(prefill.ingredients);
+    setInstructions(prefill.instructions);
+    setTags(prefill.tags);
     // Switch to manual mode to allow editing
     setCreateMode('manual');
   };
+
+  // "Edit first" on Discover stashes the parsed recipe; open straight into the form with it.
+  useEffect(() => {
+    const stashed = takeStashedImportedRecipe();
+    if (stashed) handleImportedRecipe(stashed);
+  }, []);
 
   // Mode selection screen
   if (createMode === 'select') {

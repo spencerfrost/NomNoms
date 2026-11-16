@@ -1,5 +1,46 @@
 import type { Recipe } from '@/types';
 import type { RecipeCreatePayload, RecipeUpdatePayload } from '@/lib/recipe-schema';
+import type { ImportedRecipe } from '@/lib/recipe-import-utils';
+import type { RecipeSearchResponse } from '@/lib/recipe-search-types';
+
+/** A failed API call, carrying the server's user-facing message and error code. */
+export class ApiError extends Error {
+  constructor(
+    message: string,
+    public readonly status: number,
+    public readonly code?: string
+  ) {
+    super(message);
+    this.name = 'ApiError';
+  }
+}
+
+async function apiError(response: Response, fallback: string): Promise<ApiError> {
+  const data = (await response.json().catch(() => null)) as { error?: unknown; code?: unknown } | null;
+  return new ApiError(
+    typeof data?.error === 'string' ? data.error : fallback,
+    response.status,
+    typeof data?.code === 'string' ? data.code : undefined
+  );
+}
+
+/** Parses a recipe page on the server. Saves nothing. */
+export async function importRecipe(url: string): Promise<ImportedRecipe> {
+  const response = await fetch('/api/recipes/import', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ url }),
+  });
+  if (!response.ok) throw await apiError(response, 'Failed to import recipe');
+  return response.json();
+}
+
+export async function searchRecipes(query: string, page = 0): Promise<RecipeSearchResponse> {
+  const params = new URLSearchParams({ q: query, page: String(page) });
+  const response = await fetch(`/api/discover/search?${params}`);
+  if (!response.ok) throw await apiError(response, 'Search failed');
+  return response.json();
+}
 
 
 /**

@@ -236,4 +236,29 @@ describe('AddRecipePage Integration', () => {
     // Should be back to mode selection
     expect(screen.getByText("Choose how you'd like to create your recipe")).toBeInTheDocument();
   });
+
+  it('opens the form prefilled with a recipe handed over by Discover', async () => {
+    sessionStorage.setItem(
+      'nomnoms:imported-recipe',
+      JSON.stringify({
+        name: 'Chicken Tikka Masala',
+        description: '',
+        ingredients: [{ amount: 1, unit: 'lb', name: 'chicken' }],
+        instructions: ['Cook.'],
+        servings: 4,
+        prepTimeMinutes: 0,
+        cookTimeMinutes: 0,
+        imageUrl: null,
+        tags: [],
+        sourceUrl: 'https://example.com/tikka',
+        isPublic: false,
+      })
+    );
+    render(<AddRecipePage />);
+
+    expect(await screen.findByDisplayValue('Chicken Tikka Masala')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('https://example.com/tikka')).toBeInTheDocument();
+    expect(screen.getByLabelText(/private/i)).toBeChecked();
+    expect(sessionStorage.getItem('nomnoms:imported-recipe')).toBeNull();
+  });
 });

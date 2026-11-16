@@ -31,8 +31,11 @@ export const RATE_LIMITS = {
   loginEmail: { limit: 10, windowMs: 15 * MINUTE },
   // Per IP: spraying many accounts from one source.
   loginIp: { limit: 50, windowMs: 15 * MINUTE },
-  // Per user: each import makes the server fetch a third-party URL.
-  recipeImport: { limit: 20, windowMs: 10 * MINUTE },
+  // Per user: each import makes the server fetch a third-party URL. Discover uses one
+  // import per result clicked, so this allows a fair amount of browsing.
+  recipeImport: { limit: 60, windowMs: 10 * MINUTE },
+  // Per user: protects the search provider's API quota from a runaway client.
+  recipeSearch: { limit: 30, windowMs: 10 * MINUTE },
   // Per user: guessing the current password on the profile form.
   passwordChange: { limit: 10, windowMs: 15 * MINUTE },
 } satisfies Record<string, RateLimitRule>;

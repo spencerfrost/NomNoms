@@ -18,15 +18,24 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  // Protect the /add page
-  if (request.nextUrl.pathname.startsWith('/add')) {
+  // Protect the /add and /discover pages
+  const { pathname } = request.nextUrl;
+  if (
+    pathname === '/add' ||
+    pathname.startsWith('/add/') ||
+    pathname === '/discover' ||
+    pathname.startsWith('/discover/')
+  ) {
     const token = await getToken({
       req: request,
       secret: env.NEXTAUTH_SECRET,
     });
 
     if (!token) {
-      return NextResponse.redirect(new URL('/auth/signin', request.url));
+      // Keep the query (e.g. a clipped ?url=) so sign-in returns to the same preview.
+      const signIn = new URL('/auth/signin', request.url);
+      signIn.searchParams.set('callbackUrl', `${pathname}${request.nextUrl.search}`);
+      return NextResponse.redirect(signIn);
     }
   }
 
@@ -34,5 +43,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/api/recipes/:path*', '/add/:path*'],
+  matcher: ['/api/recipes/:path*', '/add/:path*', '/discover/:path*'],
 };
