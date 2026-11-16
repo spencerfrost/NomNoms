@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, within } from '@testing-library/react';
 import { notFound } from 'next/navigation';
 import { getServerSession } from 'next-auth/next';
 import { getRecipeBySlug } from '@/lib/recipes-db';
@@ -77,6 +77,31 @@ describe('RecipePage (server component)', () => {
     fireEvent.click(screen.getByRole('button', { name: '2×' }));
     expect(screen.getByText('3 cups')).toBeInTheDocument();
     expect(screen.getByText('Yields: 8 servings')).toBeInTheDocument();
+  });
+
+  it('walks through the steps one at a time in the cooking view', async () => {
+    mockSession.mockResolvedValue(null);
+    mockGet.mockResolvedValue(recipe);
+    render(await RecipePage(props()));
+
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '2×' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Start cooking' }));
+
+    const dialog = within(screen.getByRole('dialog', { name: 'Cooking Pancakes' }));
+    expect(dialog.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '1');
+    expect(dialog.getByRole('button', { name: 'Back' })).toBeDisabled();
+
+    // The ingredient list keeps the scale chosen on the recipe page.
+    fireEvent.click(dialog.getByRole('button', { name: 'Check ingredients' }));
+    expect(dialog.getByText('3 cups')).toBeInTheDocument();
+
+    fireEvent.click(dialog.getByRole('button', { name: 'Next step' }));
+    expect(dialog.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '2');
+    expect(dialog.queryByText('3 cups')).not.toBeInTheDocument();
+
+    fireEvent.click(dialog.getByRole('button', { name: 'Done' }));
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
   it('calls notFound() for a missing or hidden recipe', async () => {

@@ -103,6 +103,7 @@ export default async function RecipePage({ params }: Props) {
         prepTime={recipe.prepTime || undefined}
         cookTime={recipe.cookTime || undefined}
         ingredients={getRecipeIngredients(recipe)}
+        steps={recipe.instructions}
         image={
           <RecipeImage
             src={recipe.image || undefined}
