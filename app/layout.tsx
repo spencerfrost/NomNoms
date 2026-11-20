@@ -6,6 +6,7 @@ import BottomNav from '@/components/bottom-nav';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/sonner';
 import { env } from '@/lib/env';
+import { SITE_DESCRIPTION, SITE_NAME, siteOpenGraph } from '@/lib/site-metadata';
 
 const display = Bagel_Fat_One({
   variable: '--font-display',
@@ -27,7 +28,20 @@ export const metadata: Metadata = {
     default: 'NomNoms Recipe Manager',
     template: '%s | NomNoms',
   },
-  description: 'Your personal recipe collection. Search, scale, and manage your favorite recipes.',
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  // The share image comes from app/opengraph-image.tsx; Next adds og:image and
+  // twitter:image tags for it automatically.
+  openGraph: {
+    ...siteOpenGraph,
+    type: 'website',
+    url: '/',
+    title: 'NomNoms Recipe Manager',
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },

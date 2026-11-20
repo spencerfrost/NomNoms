@@ -8,6 +8,7 @@ import { authOptions } from '@/lib/auth-config';
 import { getRecipeBySlug } from '@/lib/recipes-db';
 import { getRecipeIngredients } from '@/types';
 import { sourceHost } from '@/lib/source-url';
+import { DEFAULT_SHARE_IMAGE, siteOpenGraph } from '@/lib/site-metadata';
 import {
   RecipeImage,
   RecipeInstructionsList,
@@ -48,14 +49,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const description = summarize(recipe.description);
+  // A page-level `openGraph` replaces the root layout's, including its share image, so
+  // fall back to the site card explicitly when the recipe has no photo.
+  const images = recipe.image ? [{ url: recipe.image, alt: recipe.title }] : [DEFAULT_SHARE_IMAGE];
   return {
     title: recipe.title,
     description,
     openGraph: {
+      ...siteOpenGraph,
       type: 'article',
+      url: `/recipes/${slug}`,
       title: recipe.title,
       description,
-      images: recipe.image ? [{ url: recipe.image, alt: recipe.title }] : undefined,
+      images,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: recipe.title,
+      description,
+      images,
     },
     // Only the author can load a private recipe, but keep it out of indexes regardless.
     robots: recipe.visibility === 'private' ? { index: false, follow: false } : undefined,
