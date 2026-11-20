@@ -135,7 +135,7 @@ export default async function OpenGraphImage() {
               color: GRAPE,
             }}
           >
-            {['Search', 'Scale', 'Save'].map((label) => (
+            {['Search', 'Save', 'Cook', 'Scale'].map((label) => (
               <div
                 key={label}
                 style={{
