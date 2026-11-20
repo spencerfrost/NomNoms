@@ -1,0 +1,6 @@
+node_modules/
+out/
+# The soundtrack stays local: a royalty-free licence covers using the song
+# in the video, not redistributing the file.
+*.mp3
+*.wav

@@ -1,0 +1,3 @@
+# Its own workspace, so pnpm doesn't treat this as part of the app's.
+allowBuilds:
+  esbuild: true
