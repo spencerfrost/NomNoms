@@ -78,6 +78,12 @@
     --input: #1a0d2b;
     --ring: #f1ecfb;
 
+    /* Tiles mixed ~25% toward --background so they don't glare; --tile-foreground still passes AA (5:1+). */
+    --tile-mango: #c68c28;
+    --tile-pink: #c67895;
+    --tile-mint: #72ab9a;
+    --tile-sky: #7c9aca;
+
     --chart-5: #f1ecfb;
   }
 }
