@@ -30,7 +30,7 @@ export default function BottomNav() {
   return (
     <nav
       aria-label="Main"
-      className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between rounded-t-[28px] bg-card px-7 pt-2 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 flex transform-gpu items-center justify-between rounded-t-[28px] bg-card px-7 pt-2 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden"
     >
       <Link href="/" aria-current={onRecipes ? 'page' : undefined} className={tab(onRecipes)}>
         <LayoutGrid className="size-6" aria-hidden="true" />
