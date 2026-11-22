@@ -2,7 +2,6 @@
 
 import { signIn, getSession } from 'next-auth/react';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { AuthFormContainer, AuthForm, FormField, AuthFooter } from '@/components/auth';
 
 /** Where to go after signing in: a same-site path from ?callbackUrl=, else home. */
@@ -19,7 +18,6 @@ export default function SignIn() {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,10 +42,14 @@ export default function SignIn() {
               : 'Sign-in is temporarily unavailable. Please try again in a moment.'
         );
       } else {
-        // Check if sign in was successful
         const session = await getSession();
         if (session) {
-          router.push(afterSignInPath());
+          // Full page load, not router.push: the client router cache still holds
+          // prefetches made while signed out (e.g. /add -> middleware redirect to sign-in),
+          // and a client-side navigation would replay them.
+          window.location.assign(afterSignInPath());
+        } else {
+          setError('Signed in, but the session could not be loaded. Please try again.');
         }
       }
     } catch (err) {

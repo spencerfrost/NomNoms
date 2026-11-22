@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
 import {
   AuthFormContainer,
   AuthForm,
@@ -20,7 +19,6 @@ export default function SignUp() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
-  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -77,7 +75,8 @@ export default function SignUp() {
         });
 
         if (result?.ok) {
-          router.push('/');
+          // Full page load so signed-out prefetches in the router cache are dropped.
+          window.location.assign('/');
         }
       }, 1500);
     } catch (error: unknown) {
