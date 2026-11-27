@@ -130,16 +130,19 @@ export type RecipeImportErrorCode =
   | 'invalid_url' // malformed, non-http(s), or pointing at a private/internal address
   | 'unreachable' // host doesn't resolve
   | 'not_found' // the site answered 404/410
-  | 'blocked' // the site refused us (401/403/429)
+  | 'blocked' // the site refused us (401/402/403/429)
   | 'timeout'
   | 'fetch_failed' // other upstream failures: 5xx, too large, redirect loops, network
+  | 'too_large' // a clipped page over MAX_CLIPPED_HTML_LENGTH
   | 'no_recipe'; // page fetched, but nothing recipe-like on it
 
 const IMPORT_ERROR_MESSAGES: Record<RecipeImportErrorCode, string> = {
   invalid_url: 'Please enter a valid web address starting with http:// or https://.',
   unreachable: "We couldn't reach that website. Please check the URL and try again.",
   not_found: 'The recipe page was not found. Please check the URL and try again.',
-  blocked: "This website didn't allow the import. Try adding the recipe manually.",
+  blocked:
+    "This website blocks imports from our server. Use the NomNoms bookmarklet on the recipe page instead, or add the recipe manually.",
+  too_large: 'That page is too large to import. Try adding the recipe manually.',
   timeout: 'The website took too long to respond. Please try again or add the recipe manually.',
   fetch_failed: 'Unable to load that page. Please try again or add the recipe manually.',
   no_recipe:
@@ -157,6 +160,19 @@ export class RecipeImportError extends Error {
   }
 }
 
+/** Largest clipped page we parse. Vercel caps request bodies at 4.5 MB. */
+export const MAX_CLIPPED_HTML_LENGTH = 4_000_000;
+
+/**
+ * Parses a page the user's own browser already loaded (sent by the bookmarklet), for
+ * sites that refuse server-side fetches. Nothing is fetched here.
+ */
+export function parseClippedRecipe(html: string, url: string): ImportedRecipe {
+  if (!isValidRecipeUrl(url)) throw new RecipeImportError('invalid_url');
+  if (html.length > MAX_CLIPPED_HTML_LENGTH) throw new RecipeImportError('too_large');
+  return parseRecipeHtml(html, url).recipe;
+}
+
 function toImportError(error: unknown): RecipeImportError | null {
   if (error instanceof RecipeImportError) return error;
   if (error instanceof UnsafeUrlError) return new RecipeImportError('invalid_url');
@@ -168,7 +184,8 @@ function toImportError(error: unknown): RecipeImportError | null {
       return new RecipeImportError('timeout');
     case 'http':
       if (error.status === 404 || error.status === 410) return new RecipeImportError('not_found');
-      if (error.status === 401 || error.status === 403 || error.status === 429) {
+      // 402: Dotdash Meredith sites (Allrecipes, Serious Eats, ...) answer scrapers with it.
+      if ([401, 402, 403, 429].includes(error.status ?? 0)) {
         return new RecipeImportError('blocked');
       }
       return new RecipeImportError('fetch_failed');

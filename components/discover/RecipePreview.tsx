@@ -84,6 +84,14 @@ export default function RecipePreview({ url, savedSlug, onSaved }: RecipePreview
               <p className="text-sm text-muted-foreground">
                 {error instanceof Error ? error.message : 'Failed to import recipe'}
               </p>
+              {(error as { code?: unknown } | undefined)?.code === 'blocked' && (
+                <p className="text-sm mt-1">
+                  <Link href="/bookmarklet" className="underline font-medium">
+                    Get the bookmarklet
+                  </Link>
+                  , then open the original and click it there.
+                </p>
+              )}
             </div>
           </div>
           <OpenOriginal url={url} />

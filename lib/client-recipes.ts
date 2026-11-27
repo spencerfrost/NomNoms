@@ -35,6 +35,17 @@ export async function importRecipe(url: string): Promise<ImportedRecipe> {
   return response.json();
 }
 
+/** Parses a page the bookmarklet sent from the user's browser. Saves nothing. */
+export async function importClippedRecipe(url: string, html: string): Promise<ImportedRecipe> {
+  const response = await fetch('/api/recipes/import', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ url, html }),
+  });
+  if (!response.ok) throw await apiError(response, 'Failed to import recipe');
+  return response.json();
+}
+
 export async function searchRecipes(query: string, page = 0): Promise<RecipeSearchResponse> {
   const params = new URLSearchParams({ q: query, page: String(page) });
   const response = await fetch(`/api/discover/search?${params}`);

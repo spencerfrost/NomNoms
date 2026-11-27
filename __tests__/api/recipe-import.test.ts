@@ -4,7 +4,11 @@
 import { testApiHandler } from 'next-test-api-route-handler'; // Must be first import
 import { getServerSession } from 'next-auth';
 import { rateLimit } from '@/lib/rate-limit';
-import { RecipeImportError, scrapeRecipeFromUrl } from '@/lib/recipe-import-utils';
+import {
+  RecipeImportError,
+  parseClippedRecipe,
+  scrapeRecipeFromUrl,
+} from '@/lib/recipe-import-utils';
 
 jest.mock('next-auth', () => ({ getServerSession: jest.fn() }));
 jest.mock('@/lib/auth-config', () => ({ authOptions: {} }));
@@ -17,6 +21,7 @@ jest.mock('@/lib/prisma', () => ({ prisma: {} }));
 jest.mock('@/lib/recipe-import-utils', () => ({
   ...jest.requireActual('@/lib/recipe-import-utils'),
   scrapeRecipeFromUrl: jest.fn(),
+  parseClippedRecipe: jest.fn(),
 }));
 
 import * as appHandler from '@/app/api/recipes/import/route';
@@ -24,6 +29,7 @@ import * as appHandler from '@/app/api/recipes/import/route';
 const mockSession = getServerSession as jest.Mock;
 const mockRateLimit = rateLimit as jest.Mock;
 const mockScrape = scrapeRecipeFromUrl as jest.Mock;
+const mockParseClipped = parseClippedRecipe as jest.Mock;
 
 beforeEach(() => {
   jest.resetAllMocks();
@@ -83,6 +89,7 @@ describe('POST /api/recipes/import', () => {
     ['no_recipe', 422],
     ['blocked', 502],
     ['fetch_failed', 502],
+    ['too_large', 413],
     ['timeout', 504],
   ] as const)('maps %s to %i', async (code, status) => {
     mockScrape.mockRejectedValue(new RecipeImportError(code));
@@ -90,6 +97,28 @@ describe('POST /api/recipes/import', () => {
     expect(res.status).toBe(status);
     expect(res.json.code).toBe(code);
     expect(typeof res.json.error).toBe('string');
+  });
+
+  it('parses clipped html instead of fetching when html is sent', async () => {
+    mockParseClipped.mockReturnValue({ name: 'Cookies' });
+    const res = await post(JSON.stringify({ url: 'https://example.com/r', html: '<html></html>' }));
+    expect(res.status).toBe(200);
+    expect(res.json).toEqual({ name: 'Cookies' });
+    expect(mockParseClipped).toHaveBeenCalledWith('<html></html>', 'https://example.com/r');
+    expect(mockScrape).not.toHaveBeenCalled();
+  });
+
+  it('rejects non-string html', async () => {
+    const res = await post(JSON.stringify({ url: 'https://example.com/r', html: 42 }));
+    expect(res.status).toBe(400);
+    expect(mockParseClipped).not.toHaveBeenCalled();
+  });
+
+  it('rate limits clipped imports too', async () => {
+    mockRateLimit.mockResolvedValue({ allowed: false, retryAfterSeconds: 90 });
+    const res = await post(JSON.stringify({ url: 'https://example.com/r', html: '<p></p>' }));
+    expect(res.status).toBe(429);
+    expect(mockParseClipped).not.toHaveBeenCalled();
   });
 
   it('hides internal error text on unexpected failures', async () => {

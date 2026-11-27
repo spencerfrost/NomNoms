@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth-config';
 import {
   RecipeImportError,
+  parseClippedRecipe,
   scrapeRecipeFromUrl,
   type RecipeImportErrorCode,
 } from '@/lib/recipe-import-utils';
@@ -17,6 +18,7 @@ const STATUS_BY_CODE: Record<RecipeImportErrorCode, number> = {
   no_recipe: 422,
   blocked: 502,
   fetch_failed: 502,
+  too_large: 413,
   timeout: 504,
 };
 
@@ -32,9 +34,12 @@ export async function POST(request: NextRequest) {
   } catch {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
   }
-  const url = (body as { url?: unknown } | null)?.url;
+  const { url, html } = (body ?? {}) as { url?: unknown; html?: unknown };
   if (typeof url !== 'string' || !url.trim()) {
     return NextResponse.json({ error: 'URL is required' }, { status: 400 });
+  }
+  if (html !== undefined && typeof html !== 'string') {
+    return NextResponse.json({ error: 'html must be a string' }, { status: 400 });
   }
 
   const limited = await rateLimit(`import:${session.user.id}`, RATE_LIMITS.recipeImport);
@@ -43,7 +48,12 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const recipe = await scrapeRecipeFromUrl(url.trim());
+    // With `html` (from the bookmarklet), parse the page the user's browser loaded instead
+    // of fetching it: many recipe sites block server-side fetches.
+    const recipe =
+      html === undefined
+        ? await scrapeRecipeFromUrl(url.trim())
+        : parseClippedRecipe(html, url.trim());
     return NextResponse.json(recipe);
   } catch (error) {
     if (error instanceof RecipeImportError) {

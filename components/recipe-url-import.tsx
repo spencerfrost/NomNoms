@@ -9,6 +9,7 @@ import { Loader2, Globe, Check, X } from 'lucide-react';
 import type { ImportedRecipe } from '@/lib/recipe-import-utils';
 import { Ingredient } from '@/types/recipe';
 import Image from 'next/image';
+import Link from 'next/link';
 import { shouldSkipOptimization } from '@/lib/image-hosts';
 import { withAmount } from '@/lib/amount-utils';
 import { AmountInput } from '@/components/recipe/form/AmountInput';
@@ -22,6 +23,7 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [blocked, setBlocked] = useState(false);
   const [importedRecipe, setImportedRecipe] = useState<ImportedRecipe | null>(null);
 
   const handleImport = async () => {
@@ -32,6 +34,7 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
 
     setLoading(true);
     setError(null);
+    setBlocked(false);
 
     try {
       const response = await fetch('/api/recipes/import', {
@@ -45,6 +48,7 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
       const data = await response.json();
 
       if (!response.ok) {
+        setBlocked(data.code === 'blocked');
         throw new Error(data.error || 'Failed to import recipe');
       }
 
@@ -264,7 +268,7 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
             type="url"
             value={url}
             onChange={e => setUrl(e.target.value)}
-            placeholder="https://www.allrecipes.com/recipe/..."
+            placeholder="https://www.example.com/recipe/..."
             disabled={loading}
           />
         </div>
@@ -272,7 +276,17 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
         {error && (
           <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200">
             <X className="h-4 w-4 text-red-600" />
-            <p className="text-sm text-red-700">{error}</p>
+            <p className="text-sm text-red-700">
+              {error}
+              {blocked && (
+                <>
+                  {' '}
+                  <Link href="/bookmarklet" className="underline font-medium">
+                    Get the bookmarklet
+                  </Link>
+                </>
+              )}
+            </p>
           </div>
         )}
 
@@ -293,10 +307,14 @@ export default function RecipeUrlImport({ onImported, onCancel }: RecipeUrlImpor
         </div>
 
         <div className="text-xs text-gray-500">
-          <p className="font-medium mb-1">Works with sites that include structured recipe data:</p>
+          <p className="font-medium mb-1">Works with sites that include structured recipe data,</p>
           <p>
-            AllRecipes, Food Network, Simply Recipes, Bon Appétit, Serious Eats, Minimalist Baker,
-            BBC Good Food, and many more modern recipe sites
+            like BBC Good Food, RecipeTin Eats, Bon Appétit and King Arthur. Some sites (Allrecipes,
+            Serious Eats, Food Network and others) block imports from our server; for those, use the{' '}
+            <Link href="/bookmarklet" className="underline">
+              Save to NomNoms bookmarklet
+            </Link>
+            .
           </p>
         </div>
       </CardContent>
